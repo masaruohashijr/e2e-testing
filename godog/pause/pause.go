@@ -1,6 +1,6 @@
 package main
 
-import "integration/internal/config"
+import "e2e-testing/internal/config"
 
 var Configuration config.ConfigType
 

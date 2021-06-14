@@ -1,4 +1,4 @@
-module integration
+module e2e-testing
 
 go 1.16
 

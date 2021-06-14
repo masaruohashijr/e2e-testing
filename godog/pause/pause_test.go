@@ -1,8 +1,8 @@
 package main
 
 import (
+	"e2e-testing/internal/config"
 	"encoding/xml"
-	"integration/internal/config"
 	"os"
 	"testing"
 	"time"

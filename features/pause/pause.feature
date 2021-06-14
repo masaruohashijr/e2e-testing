@@ -6,7 +6,7 @@ Feature: pause
   Scenario: Pause a sequence of sentences
 
     Given my test setup runs
-    And "NumberB" configured to pause 5 seconds
+    And "NumberB" configured to pause 3 seconds
     And append To "NumberB" config hangup
     When I make a call from "NumberA" to "NumberB"
-    Then "NumberA" should get last call duration equals to 5
+    Then "NumberA" should get last call duration equals to 3
