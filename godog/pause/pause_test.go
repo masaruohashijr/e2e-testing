@@ -1,23 +1,30 @@
 package main
 
 import (
+	"e2e-testing/godog/general"
+	"e2e-testing/internal/adapters/primary"
+	"e2e-testing/internal/adapters/secondary"
 	"e2e-testing/internal/config"
+	d "e2e-testing/pkg/domains"
 	"encoding/xml"
+	"log"
 	"os"
+	"strings"
 	"testing"
 	"time"
 
 	"github.com/cucumber/godog"
 )
 
-var ResponsePause config.ResponsePause
-
-func appendToConfigHangup(arg1 string) error {
+func appendToConfigHangup(numberB string) error {
+	h := &d.Hangup{}
+	x, _ := xml.MarshalIndent(h, "", "")
+	println(string(x))
 	return nil
 }
 
 func configuredToPauseSeconds(numberB string, timeInSeconds int) error {
-	p := &config.Pause{
+	p := &d.Pause{
 		Length: timeInSeconds,
 	}
 	ResponsePause.Pause = *p
@@ -26,20 +33,33 @@ func configuredToPauseSeconds(numberB string, timeInSeconds int) error {
 	return nil
 }
 
-func iMakeACallFromTo(arg1, arg2 string) error {
+func iMakeACallFromTo(numberA, numberB string) error {
+	x, _ := xml.MarshalIndent(ResponsePause, "", "")
+	strXML := d.Header + string(x)
+	println(strXML)
+	writeActionXML(strXML)
+	PrimaryPort.MakeCall()
 	return nil
 }
 
 func myTestSetupRuns() error {
-	//Configuration = config.NewConfig()
-	/*secondaryPort := secondary.NewCallsApi(Configuration) // The Secondary Adapter
-	primaryPort := primary.NewService(secondaryPort)
-	primaryAdapter := primary.NewCLIPrimaryAdapter(primaryPort)*/
+	Configuration = config.NewConfig()
+	go general.RunServer(Ch)
+	Configuration.From = "+558140423562" //+558140421695
+	Configuration.To = "+5561984385415"
+	Configuration.StatusCallback = "https://918a4971ed21.ngrok.io/Callback"
+	Configuration.ActionUrl = "https://918a4971ed21.ngrok.io/InboundXml"
+	println(Configuration.AccountSid)
+	SecondaryPort = secondary.NewCallsApi(&Configuration)
+	PrimaryPort = primary.NewService(SecondaryPort)
 	// instantiate the proper Response
+
 	return nil
 }
 
-func shouldGetLastCallDurationEqualsTo(arg1 string, arg2 int) error {
+func shouldGetLastCallDurationMoreThanOrEqualsTo(number string, timeInSeconds int) error {
+	<-Ch
+	println("GOT IT")
 	return nil
 }
 
@@ -48,7 +68,7 @@ func InitializeScenario(ctx *godog.ScenarioContext) {
 	ctx.Step(`^"([^"]*)" configured to pause (\d+) seconds$`, configuredToPauseSeconds)
 	ctx.Step(`^append To "([^"]*)" config hangup$`, appendToConfigHangup)
 	ctx.Step(`^I make a call from "([^"]*)" to "([^"]*)"$`, iMakeACallFromTo)
-	ctx.Step(`^"([^"]*)" should get last call duration equals to (\d+)$`, shouldGetLastCallDurationEqualsTo)
+	ctx.Step(`^"([^"]*)" should get last call duration more than or equals to (\d+)$`, shouldGetLastCallDurationMoreThanOrEqualsTo)
 }
 
 func InitializeTestSuite(ctx *godog.TestSuiteContext) {
@@ -74,4 +94,27 @@ func TestMain(m *testing.M) {
 	}
 
 	os.Exit(status)
+}
+
+func selectNumber(option string) string {
+	switch option {
+	case "NumberA":
+		return Configuration.NumberA
+	case "NumberB":
+		return Configuration.NumberB
+	}
+	return ""
+}
+
+func writeActionXML(strXML string) {
+	f, err := os.Create("../../xml/inbound.xml")
+	if err != nil {
+		log.Fatal(err)
+	}
+	defer f.Close()
+	strXML = strings.Replace(strXML, "<Hangup></Hangup>", "<Hangup/>", 1)
+	_, err2 := f.WriteString(strXML)
+	if err2 != nil {
+		log.Fatal(err2)
+	}
 }

@@ -18,21 +18,22 @@ const (
 )
 
 type ConfigType struct {
-	HttpClient http.Client
-	AccountSid string
-	AuthToken  string
-	From       string
-	To         string
-	AvayaNumBR string
-	AvayaNumCA string
-	NumberCA1  string
-	NumberCA2  string
-	NumberBR1  string
-	NumberBR2  string
-	NumberBR3  string
-	ActionUrl  string
-	ApiUrl     string
-	ApiVersion string
+	HttpClient     http.Client
+	AccountSid     string
+	AuthToken      string
+	From           string
+	To             string
+	AvayaNumBR     string
+	AvayaNumCA     string
+	NumberA        string
+	NumberB        string
+	NumberBR1      string
+	NumberBR2      string
+	NumberBR3      string
+	ActionUrl      string
+	ApiUrl         string
+	ApiVersion     string
+	StatusCallback string
 }
 
 func (c ConfigType) GetBaseURL() string {
@@ -48,7 +49,7 @@ func NewConfig() (config ConfigType) {
 }
 
 func ReadConfig(config ConfigType) ConfigType {
-	var configfile = "internal/config/config.ini"
+	var configfile = "../../internal/config/config.ini"
 	_, err := os.Stat(configfile)
 	if err != nil {
 		log.Fatal("File configuration "+configfile+" missing: ", configfile)
