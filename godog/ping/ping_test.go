@@ -10,33 +10,24 @@ import (
 	"fmt"
 	"log"
 	"os"
-	"strconv"
-	"strings"
 	"testing"
 	"time"
 
 	"github.com/cucumber/godog"
 )
 
-func appendToConfigHangup(numberA string) error {
-	h := &domains.Hangup{}
-	x, _ := xml.MarshalIndent(h, "", "")
-	println(string(x))
-	return nil
-}
-
-func configuredToPauseSeconds(numberA string, timeInSeconds int) error {
-	p := &domains.Pause{
-		Length: timeInSeconds,
+func configuredToPingURL(numberA string) error {
+	p := &domains.Ping{
+		Value: "https://f6c74cb11c76.ngrok.io/Ping",
 	}
-	ResponsePause.Pause = *p
+	ResponsePing.Ping = *p
 	x, _ := xml.MarshalIndent(p, "", "")
 	println(string(x))
 	return nil
 }
 
-func iMakeACallFromTo(numberA, numberB string) error {
-	x, _ := xml.MarshalIndent(ResponsePause, "", "")
+func iMakeACallFromTo(arg1, arg2 string) error {
+	x, _ := xml.MarshalIndent(ResponsePing, "", "")
 	strXML := domains.Header + string(x)
 	println(strXML)
 	writeActionXML(strXML)
@@ -49,7 +40,6 @@ func myTestSetupRuns() error {
 	go general.RunServer(Ch)
 	Configuration.From = "+558140423562" //+558140421695
 	Configuration.To = "+5561984385415"
-	Configuration.StatusCallback = "https://f6c74cb11c76.ngrok.io/Callback"
 	Configuration.ActionUrl = "https://f6c74cb11c76.ngrok.io/InboundXml"
 	println(Configuration.AccountSid)
 	SecondaryPort = secondary.NewCallsApi(&Configuration)
@@ -58,35 +48,33 @@ func myTestSetupRuns() error {
 	return nil
 }
 
-func shouldGetLastCallDurationMoreThanOrEqualsTo(number string, timeInSeconds int) error {
-	bodyContent := <-Ch
-	data := strings.Split(bodyContent, "&")
-	callDuration := data[3] // CallDuration
-	duration := strings.Split(callDuration, "=")
-	durationInSeconds, _ := strconv.Atoi(duration[1])
-	fmt.Printf("Duration %d\n ", durationInSeconds)
-	if durationInSeconds < timeInSeconds {
-		return fmt.Errorf("The call duration should be more than the pause interval."+
-			" Expected at least %d seconds but got %d seconds.", timeInSeconds, durationInSeconds)
+func shouldGetAPingRequestOnTheURL() error {
+	println("Timer has started.")
+	select {
+	case res := <-Ch:
+		fmt.Println(res)
+	case <-time.After(60 * time.Second):
+		fmt.Println("timeout 60")
+		return fmt.Errorf("timeout 60")
 	}
 	return nil
 }
 
 func InitializeScenario(ctx *godog.ScenarioContext) {
-	ctx.Step(`^my test setup runs$`, myTestSetupRuns)
-	ctx.Step(`^"([^"]*)" configured to pause (\d+) seconds$`, configuredToPauseSeconds)
-	ctx.Step(`^append To "([^"]*)" config hangup$`, appendToConfigHangup)
+	ctx.Step(`^"([^"]*)" configured to ping URL$`, configuredToPingURL)
 	ctx.Step(`^I make a call from "([^"]*)" to "([^"]*)"$`, iMakeACallFromTo)
-	ctx.Step(`^"([^"]*)" should get last call duration more than or equals to (\d+)$`, shouldGetLastCallDurationMoreThanOrEqualsTo)
+	ctx.Step(`^my test setup runs$`, myTestSetupRuns)
+	ctx.Step(`^should get a ping request on the URL$`, shouldGetAPingRequestOnTheURL)
 }
 
 func InitializeTestSuite(ctx *godog.TestSuiteContext) {
+
 }
 
 func TestMain(m *testing.M) {
 	opts := godog.Options{
 		Format:    "progress",
-		Paths:     []string{"../../features/pause"},
+		Paths:     []string{"../../features/ping"},
 		Randomize: time.Now().UTC().UnixNano(),
 	}
 
@@ -105,25 +93,12 @@ func TestMain(m *testing.M) {
 	os.Exit(status)
 }
 
-func SelectNumber(option string) string {
-	switch option {
-	case "NumberA":
-		return Configuration.NumberA
-	case "NumberB":
-		return Configuration.NumberB
-	}
-	return ""
-}
-
 func writeActionXML(strXML string) {
 	f, err := os.Create("../../xml/inbound.xml")
 	if err != nil {
 		log.Fatal(err)
 	}
 	defer f.Close()
-	// TODO remove this part below
-	strXML = strings.Replace(strXML, "<Hangup></Hangup>", "<Hangup/>", 1)
-
 	_, err2 := f.WriteString(strXML)
 	if err2 != nil {
 		log.Fatal(err2)
