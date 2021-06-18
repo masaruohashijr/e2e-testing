@@ -2,11 +2,11 @@ package domains
 
 import "encoding/xml"
 
-type ResponsePause struct {
+type ResponseHangup struct {
 	XMLName xml.Name `xml:"Response"`
 	Pause   Pause    `xml:"Pause,omitempty"`
+	Hangup  Hangup   ``
 }
 
-type Pause struct {
-	Length int `xml:"length,attr"`
+type Hangup struct {
 }
