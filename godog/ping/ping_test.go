@@ -8,7 +8,6 @@ import (
 	"e2e-testing/pkg/domains"
 	"encoding/xml"
 	"fmt"
-	"log"
 	"os"
 	"testing"
 	"time"
@@ -18,7 +17,7 @@ import (
 
 func configuredToPingURL(numberA string) error {
 	p := &domains.Ping{
-		Value: "https://f6c74cb11c76.ngrok.io/Ping",
+		Value: "http://fe6732d93b0e.ngrok.io/Ping",
 	}
 	ResponsePing.Ping = *p
 	x, _ := xml.MarshalIndent(p, "", "")
@@ -30,7 +29,7 @@ func iMakeACallFromTo(arg1, arg2 string) error {
 	x, _ := xml.MarshalIndent(ResponsePing, "", "")
 	strXML := domains.Header + string(x)
 	println(strXML)
-	writeActionXML(strXML)
+	general.WriteActionXML(strXML)
 	PrimaryPort.MakeCall()
 	return nil
 }
@@ -38,9 +37,9 @@ func iMakeACallFromTo(arg1, arg2 string) error {
 func myTestSetupRuns() error {
 	Configuration = config.NewConfig()
 	go general.RunServer(Ch)
-	Configuration.From = "+558140423562" //+558140421695
-	Configuration.To = "+5561984385415"
-	Configuration.ActionUrl = "https://f6c74cb11c76.ngrok.io/InboundXml"
+	Configuration.From = "+12267781734" //+558140421695
+	Configuration.To = "+13432022744"
+	Configuration.ActionUrl = "http://fe6732d93b0e.ngrok.io/InboundXml"
 	println(Configuration.AccountSid)
 	SecondaryPort = secondary.NewCallsApi(&Configuration)
 	PrimaryPort = primary.NewService(SecondaryPort)
@@ -91,16 +90,4 @@ func TestMain(m *testing.M) {
 	}
 
 	os.Exit(status)
-}
-
-func writeActionXML(strXML string) {
-	f, err := os.Create("../../xml/inbound.xml")
-	if err != nil {
-		log.Fatal(err)
-	}
-	defer f.Close()
-	_, err2 := f.WriteString(strXML)
-	if err2 != nil {
-		log.Fatal(err2)
-	}
 }
