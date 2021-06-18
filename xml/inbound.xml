@@ -1,2 +1,2 @@
 <?xml version="1.0"?>
-<Response><Ping>http://fe6732d93b0e.ngrok.io/Ping</Ping></Response>
+<Response><Pause length="3"></Pause><Hangup></Hangup></Response>

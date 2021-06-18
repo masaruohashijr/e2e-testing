@@ -8,9 +8,9 @@ import (
 	"e2e-testing/pkg/domains"
 	"encoding/xml"
 	"fmt"
+	"net/url"
 	"os"
 	"strconv"
-	"strings"
 	"testing"
 	"time"
 
@@ -59,10 +59,12 @@ func myTestSetupRuns() error {
 
 func shouldGetLastCallDurationMoreThanOrEqualsTo(number string, timeInSeconds int) error {
 	bodyContent := <-Ch
-	data := strings.Split(bodyContent, "&")
-	callDuration := data[3] // CallDuration
-	duration := strings.Split(callDuration, "=")
-	durationInSeconds, _ := strconv.Atoi(duration[1])
+
+	url_parameters, e := url.ParseQuery(bodyContent)
+	if e != nil {
+		panic(e)
+	}
+	durationInSeconds, _ := strconv.Atoi(url_parameters["CallDuration"][0])
 	fmt.Printf("Duration %d\n ", durationInSeconds)
 	if durationInSeconds < timeInSeconds {
 		return fmt.Errorf("The call duration should be more than the pause interval."+
