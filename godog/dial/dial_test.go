@@ -10,32 +10,29 @@ import (
 	"fmt"
 	"net/url"
 	"os"
-	"strconv"
 	"testing"
 	"time"
 
 	"github.com/cucumber/godog"
 )
 
-func appendToConfigHangup(numberA string) error {
-	h := &domains.Hangup{}
-	x, _ := xml.MarshalIndent(h, "", "")
-	println(string(x))
-	return nil
-}
-
-func configuredToPauseSeconds(numberA string, timeInSeconds int) error {
-	p := &domains.Pause{
-		Length: timeInSeconds,
+func configuredToDial(arg1, arg2 string) error {
+	d := &domains.Dial{
+		Value:       "+15146627677",
+		CallBackURL: "http://fe6732d93b0e.ngrok.io/Callback",
 	}
-	ResponsePause.Pause = *p
-	x, _ := xml.MarshalIndent(p, "", "")
-	println(string(x))
+	ResponseDial.Dial = *d
+	p := &domains.Hangup{}
+	ResponseDial.Hangup = *p
+	x, _ := xml.MarshalIndent(d, "", "")
+	y, _ := xml.MarshalIndent(p, "", "")
+
+	println(string(x), string(y))
 	return nil
 }
 
-func iMakeACallFromTo(numberA, numberB string) error {
-	x, _ := xml.MarshalIndent(ResponsePause, "", "")
+func iMakeACallFromTo(arg1, arg2 string) error {
+	x, _ := xml.MarshalIndent(ResponseDial, "", "")
 	strXML := domains.Header + string(x)
 	println(strXML)
 	general.WriteActionXML(strXML)
@@ -48,37 +45,40 @@ func myTestSetupRuns() error {
 	go general.RunServer(Ch)
 	Configuration.From = "+12267781734" //+558140421695
 	Configuration.To = "+13432022744"
-	Configuration.StatusCallback = "http://fe6732d93b0e.ngrok.io/Callback"
+	//Configuration.StatusCallback = "http://fe6732d93b0e.ngrok.io/Callback"
 	Configuration.ActionUrl = "http://fe6732d93b0e.ngrok.io/InboundXml"
 	println(Configuration.AccountSid)
 	SecondaryPort = secondary.NewCallsApi(&Configuration)
 	PrimaryPort = primary.NewService(SecondaryPort)
-	// instantiate the proper Response
 	return nil
 }
 
-func shouldGetLastCallDurationMoreThanOrEqualsTo(number string, timeInSeconds int) error {
+func shouldGetTheIncomingCallFrom(arg1, arg2 string) error {
 	bodyContent := <-Ch
-
 	url_parameters, e := url.ParseQuery(bodyContent)
 	if e != nil {
 		panic(e)
 	}
-	durationInSeconds, _ := strconv.Atoi(url_parameters["CallDuration"][0])
-	fmt.Printf("Duration %d\n ", durationInSeconds)
-	if durationInSeconds < timeInSeconds {
-		return fmt.Errorf("The call duration should be more than the pause interval."+
-			" Expected at least %d seconds but got %d seconds.", timeInSeconds, durationInSeconds)
+	orig_dialed := "+15146627677"
+	orig_parent := "+12267781734"
+	dialed_number := string(url_parameters["To"][0])
+	parent_number := string(url_parameters["From"][0])
+
+	if dialed_number != orig_dialed {
+		return fmt.Errorf("Expected dialed: %s and found %s.", orig_dialed, dialed_number)
 	}
+	if parent_number != orig_parent {
+		return fmt.Errorf("Expected From: %s and found %s.", orig_parent, parent_number)
+	}
+
 	return nil
 }
 
 func InitializeScenario(ctx *godog.ScenarioContext) {
-	ctx.Step(`^my test setup runs$`, myTestSetupRuns)
-	ctx.Step(`^"([^"]*)" configured to pause (\d+) seconds$`, configuredToPauseSeconds)
-	ctx.Step(`^append To "([^"]*)" config hangup$`, appendToConfigHangup)
+	ctx.Step(`^"([^"]*)" configured to dial "([^"]*)"$`, configuredToDial)
 	ctx.Step(`^I make a call from "([^"]*)" to "([^"]*)"$`, iMakeACallFromTo)
-	ctx.Step(`^"([^"]*)" should get last call duration more than or equals to (\d+)$`, shouldGetLastCallDurationMoreThanOrEqualsTo)
+	ctx.Step(`^my test setup runs$`, myTestSetupRuns)
+	ctx.Step(`^"([^"]*)" should get the incoming call from "([^"]*)"$`, shouldGetTheIncomingCallFrom)
 }
 
 func InitializeTestSuite(ctx *godog.TestSuiteContext) {
@@ -87,7 +87,7 @@ func InitializeTestSuite(ctx *godog.TestSuiteContext) {
 func TestMain(m *testing.M) {
 	opts := godog.Options{
 		Format:    "progress",
-		Paths:     []string{"../../features/pause"},
+		Paths:     []string{"../../features/dial"},
 		Randomize: time.Now().UTC().UnixNano(),
 	}
 
@@ -104,14 +104,4 @@ func TestMain(m *testing.M) {
 	}
 
 	os.Exit(status)
-}
-
-func SelectNumber(option string) string {
-	switch option {
-	case "NumberA":
-		return Configuration.NumberA
-	case "NumberB":
-		return Configuration.NumberB
-	}
-	return ""
 }
