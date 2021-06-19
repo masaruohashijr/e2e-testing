@@ -7,8 +7,8 @@ import (
 )
 
 var Configuration config.ConfigType
-var SecondaryPort calls.SecondaryPort
-var PrimaryPort calls.PrimaryPort
+var CallSecondaryPort calls.SecondaryPort
+var CallPrimaryPort calls.PrimaryPort
 var ResponsePlay domains.ResponsePlay
 var Ch = make(chan string)
 

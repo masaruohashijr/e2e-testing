@@ -46,10 +46,10 @@ func myTestSetupRuns() error {
 	Configuration.From = "+12267781734" //+558140421695
 	Configuration.To = "+13432022744"
 	//Configuration.StatusCallback = "http://fe6732d93b0e.ngrok.io/Callback"
-	Configuration.ActionUrl = "http://fe6732d93b0e.ngrok.io/InboundXml"
+	Configuration.ActionUrl = general.BaseUrl + "/InboundXml"
 	println(Configuration.AccountSid)
 	SecondaryPort = secondary.NewCallsApi(&Configuration)
-	PrimaryPort = primary.NewService(SecondaryPort)
+	PrimaryPort = primary.NewCallsService(SecondaryPort)
 	return nil
 }
 

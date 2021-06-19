@@ -47,12 +47,12 @@ func myTestSetupRuns() error {
 	Configuration = config.NewConfig()
 	go general.RunServer(Ch)
 	Configuration.From = "+558140423562"
-	Configuration.To = "+5561982584100"
+	Configuration.To = "+5561984385415"
 	Configuration.StatusCallback = general.BaseUrl + "/Callback"
 	Configuration.ActionUrl = general.BaseUrl + "/InboundXml"
 	println(Configuration.AccountSid)
 	SecondaryPort = secondary.NewCallsApi(&Configuration)
-	PrimaryPort = primary.NewService(SecondaryPort)
+	PrimaryPort = primary.NewCallsService(SecondaryPort)
 	// instantiate the proper Response
 	return nil
 }

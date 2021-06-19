@@ -32,6 +32,7 @@ type ConfigType struct {
 	NumberBR3      string
 	ActionUrl      string
 	ApiUrl         string
+	VoiceUrl       string
 	ApiVersion     string
 	StatusCallback string
 }

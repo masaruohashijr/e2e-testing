@@ -55,7 +55,7 @@ func myTestSetupRuns() error {
 	Configuration.StatusCallback = general.BaseUrl + "/Callback"
 	Configuration.ActionUrl = general.BaseUrl + "/InboundXml"
 	SecondaryPort = secondary.NewCallsApi(&Configuration)
-	PrimaryPort = primary.NewService(SecondaryPort)
+	PrimaryPort = primary.NewCallsService(SecondaryPort)
 	return nil
 }
 

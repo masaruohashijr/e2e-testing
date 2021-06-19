@@ -11,8 +11,8 @@ import (
 )
 
 type numbersAPI struct {
-	VoiceUrl string `json:"VoiceUrl"`
 	config   *config.ConfigType
+	VoiceUrl string `json:"VoiceUrl"`
 }
 
 func NewNumbersApi(config *config.ConfigType) numbers.SecondaryPort {

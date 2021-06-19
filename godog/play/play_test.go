@@ -45,10 +45,8 @@ func myTestSetupRuns() error {
 }
 
 func shouldBeAbleToListen(arg1 string) error {
-	println("This is the last method")
 	body := <-Ch
 	println(body)
-	// get the speechResult
 	speechResult := ""
 	if speechResult != "" {
 		return fmt.Errorf("Error %s", arg1)
@@ -92,8 +90,8 @@ func configurationSetup() {
 	Configuration = config.NewConfig()
 	go general.RunServer(Ch)
 	Configuration.From = "+558140423562"
-	Configuration.To = "+5561982584100"
+	Configuration.To = "+5561984385415"
 	Configuration.StatusCallback = general.BaseUrl + "/Callback"
 	Configuration.ActionUrl = general.BaseUrl + "/InboundXml"
-	Configuration.VoiceURL = general.BaseUrl + "/Gather"
+	Configuration.VoiceUrl = general.BaseUrl + "/Gather"
 }

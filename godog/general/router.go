@@ -8,7 +8,7 @@ import (
 
 var Ch chan string
 
-var BaseUrl = "https://9b30be1bc4b3.ngrok.io"
+var BaseUrl = "https://4f75a27fe603.ngrok.io"
 
 func RunServer(c chan string) {
 	Ch = c
@@ -17,6 +17,14 @@ func RunServer(c chan string) {
 	r.HandleFunc("/InboundXml", InboundXmlHandler).Methods("POST")
 	r.HandleFunc("/Callback", CallbackHandler).Methods("POST")
 	r.HandleFunc("/Ping", PingHandler).Methods("POST")
+	http.Handle("/mp3/",
+		http.StripPrefix("/mp3/", http.FileServer(http.Dir("./mp3"))),
+	)
 	http.Handle("/", r)
 	http.ListenAndServe(":5000", nil)
+}
+
+func main() {
+	c := make(chan string)
+	RunServer(c)
 }

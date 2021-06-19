@@ -6,7 +6,7 @@ type port struct {
 	driven calls.SecondaryPort
 }
 
-func NewService(driven calls.SecondaryPort) calls.PrimaryPort {
+func NewCallsService(driven calls.SecondaryPort) calls.PrimaryPort {
 	return &port{
 		driven,
 	}

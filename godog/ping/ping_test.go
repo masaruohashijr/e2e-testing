@@ -37,12 +37,12 @@ func iMakeACallFromTo(arg1, arg2 string) error {
 func myTestSetupRuns() error {
 	Configuration = config.NewConfig()
 	go general.RunServer(Ch)
-	Configuration.From = "+12267781734" //+558140421695
-	Configuration.To = "+13432022744"
+	Configuration.From = "+558140421695"
+	Configuration.To = "+5561984385415"
 	Configuration.ActionUrl = general.BaseUrl + "/InboundXml"
 	println(Configuration.AccountSid)
 	SecondaryPort = secondary.NewCallsApi(&Configuration)
-	PrimaryPort = primary.NewService(SecondaryPort)
+	PrimaryPort = primary.NewCallsService(SecondaryPort)
 	// instantiate the proper Response
 	return nil
 }
