@@ -15,65 +15,61 @@ import (
 	"github.com/cucumber/godog"
 )
 
-func configuredToPingURL(numberA string) error {
-	p := &domains.Ping{
-		Value: general.BaseUrl + "/Ping",
+func configuredToPlay(arg1, arg2 string) error {
+	p := &domains.Play{
+		Value: general.BaseUrl + "/mp3/sample.mp3",
+		Loop:  1,
 	}
-	ResponsePing.Ping = *p
+	ResponsePlay.Play = *p
 	x, _ := xml.MarshalIndent(p, "", "")
 	println(string(x))
 	return nil
 }
 
 func iMakeACallFromTo(arg1, arg2 string) error {
-	x, _ := xml.MarshalIndent(ResponsePing, "", "")
+	x, _ := xml.MarshalIndent(ResponsePlay, "", "")
 	strXML := domains.Header + string(x)
 	println(strXML)
 	general.WriteActionXML(strXML)
-	PrimaryPort.MakeCall()
+	CallPrimaryPort.MakeCall()
 	return nil
 }
 
 func myTestSetupRuns() error {
-	Configuration = config.NewConfig()
-	go general.RunServer(Ch)
-	Configuration.From = "+12267781734" //+558140421695
-	Configuration.To = "+13432022744"
-	Configuration.ActionUrl = general.BaseUrl + "/InboundXml"
+	configurationSetup()
 	println(Configuration.AccountSid)
-	SecondaryPort = secondary.NewCallsApi(&Configuration)
-	PrimaryPort = primary.NewService(SecondaryPort)
+	CallSecondaryPort = secondary.NewCallsApi(&Configuration)
+	CallPrimaryPort = primary.NewCallsService(CallSecondaryPort)
 	// instantiate the proper Response
 	return nil
 }
 
-func shouldGetAPingRequestOnTheURL() error {
-	println("Timer has started.")
-	select {
-	case res := <-Ch:
-		fmt.Println(res)
-	case <-time.After(60 * time.Second):
-		fmt.Println("timeout 60")
-		return fmt.Errorf("timeout 60")
+func shouldBeAbleToListen(arg1 string) error {
+	println("This is the last method")
+	body := <-Ch
+	println(body)
+	// get the speechResult
+	speechResult := ""
+	if speechResult != "" {
+		return fmt.Errorf("Error %s", arg1)
 	}
 	return nil
 }
 
 func InitializeScenario(ctx *godog.ScenarioContext) {
-	ctx.Step(`^"([^"]*)" configured to ping URL$`, configuredToPingURL)
+	ctx.Step(`^"([^"]*)" configured to play "([^"]*)"$`, configuredToPlay)
 	ctx.Step(`^I make a call from "([^"]*)" to "([^"]*)"$`, iMakeACallFromTo)
 	ctx.Step(`^my test setup runs$`, myTestSetupRuns)
-	ctx.Step(`^should get a ping request on the URL$`, shouldGetAPingRequestOnTheURL)
+	ctx.Step(`^"([^"]*)" should be able to listen$`, shouldBeAbleToListen)
 }
 
 func InitializeTestSuite(ctx *godog.TestSuiteContext) {
-
 }
 
 func TestMain(m *testing.M) {
 	opts := godog.Options{
 		Format:    "progress",
-		Paths:     []string{"../../features/ping"},
+		Paths:     []string{"../../features/play"},
 		Randomize: time.Now().UTC().UnixNano(),
 	}
 
@@ -90,4 +86,14 @@ func TestMain(m *testing.M) {
 	}
 
 	os.Exit(status)
+}
+
+func configurationSetup() {
+	Configuration = config.NewConfig()
+	go general.RunServer(Ch)
+	Configuration.From = "+558140423562"
+	Configuration.To = "+5561982584100"
+	Configuration.StatusCallback = general.BaseUrl + "/Callback"
+	Configuration.ActionUrl = general.BaseUrl + "/InboundXml"
+	Configuration.VoiceURL = general.BaseUrl + "/Gather"
 }

@@ -46,10 +46,10 @@ func iMakeACallFromTo(numberA, numberB string) error {
 func myTestSetupRuns() error {
 	Configuration = config.NewConfig()
 	go general.RunServer(Ch)
-	Configuration.From = "+12267781734" //+558140421695
-	Configuration.To = "+13432022744"
-	Configuration.StatusCallback = "http://fe6732d93b0e.ngrok.io/Callback"
-	Configuration.ActionUrl = "http://fe6732d93b0e.ngrok.io/InboundXml"
+	Configuration.From = "+558140423562"
+	Configuration.To = "+5561982584100"
+	Configuration.StatusCallback = general.BaseUrl + "/Callback"
+	Configuration.ActionUrl = general.BaseUrl + "/InboundXml"
 	println(Configuration.AccountSid)
 	SecondaryPort = secondary.NewCallsApi(&Configuration)
 	PrimaryPort = primary.NewService(SecondaryPort)

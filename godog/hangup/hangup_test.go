@@ -52,8 +52,8 @@ func myTestSetupRuns() error {
 	go general.RunServer(Ch)
 	Configuration.From = "+12267781734"
 	Configuration.To = "+13432022744"
-	Configuration.StatusCallback = "http://fe6732d93b0e.ngrok.io/Callback"
-	Configuration.ActionUrl = "http://fe6732d93b0e.ngrok.io/InboundXml"
+	Configuration.StatusCallback = general.BaseUrl + "/Callback"
+	Configuration.ActionUrl = general.BaseUrl + "/InboundXml"
 	SecondaryPort = secondary.NewCallsApi(&Configuration)
 	PrimaryPort = primary.NewService(SecondaryPort)
 	return nil

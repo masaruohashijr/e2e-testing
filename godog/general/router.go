@@ -8,6 +8,8 @@ import (
 
 var Ch chan string
 
+var BaseUrl = "https://9b30be1bc4b3.ngrok.io"
+
 func RunServer(c chan string) {
 	Ch = c
 	println("Run Server")
