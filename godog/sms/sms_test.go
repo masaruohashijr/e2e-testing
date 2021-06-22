@@ -46,7 +46,7 @@ func myTestSetupRuns() error {
 	Configuration.ActionUrl = "https://018d09d8beb2.ngrok.io/InboundXml"
 	println(Configuration.AccountSid)
 	SecondaryPort = secondary.NewCallsApi(&Configuration)
-	PrimaryPort = primary.NewService(SecondaryPort)
+	PrimaryPort = primary.NewCallsService(SecondaryPort)
 	// instantiate the proper Response
 	return nil
 }
