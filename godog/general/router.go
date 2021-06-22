@@ -14,6 +14,7 @@ func RunServer(c chan string) {
 	r := mux.NewRouter()
 	r.HandleFunc("/InboundXml", InboundXmlHandler).Methods("POST")
 	r.HandleFunc("/Callback", CallbackHandler).Methods("POST")
+	r.HandleFunc("/StatusCallback", StatusCallbackHandler).Methods("POST")
 	r.HandleFunc("/Ping", PingHandler).Methods("POST")
 	http.Handle("/", r)
 	http.ListenAndServe(":5000", nil)

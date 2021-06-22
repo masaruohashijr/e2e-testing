@@ -1,2 +1,2 @@
 <?xml version="1.0"?>
-<Response><Pause length="3"></Pause><Hangup></Hangup></Response>
+<Response><Sms from="+12267781734" to="+13432022744" statusCallback="https://018d09d8beb2.ngrok.io/StatusCallback">Test SMS</Sms></Response>

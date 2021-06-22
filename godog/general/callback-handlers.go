@@ -23,3 +23,16 @@ func CallbackHandler(w http.ResponseWriter, r *http.Request) {
 		Ch <- b
 	}
 }
+
+func StatusCallbackHandler(w http.ResponseWriter, r *http.Request) {
+	println("******************************** Status Callback")
+	body, err := ioutil.ReadAll(r.Body)
+	if err != nil {
+		println(err.Error())
+	}
+	b := string(body)
+	println(b)
+	if strings.Contains(b, "DlrStatus=delivered") {
+		Ch <- b
+	}
+}
