@@ -16,6 +16,7 @@ func RunServer(c chan string) {
 	r := mux.NewRouter()
 	r.HandleFunc("/InboundXml", InboundXmlHandler).Methods("POST")
 	r.HandleFunc("/Callback", CallbackHandler).Methods("POST")
+	r.HandleFunc("/StatusCallback", StatusCallbackHandler).Methods("POST")
 	r.HandleFunc("/Ping", PingHandler).Methods("POST")
 	http.Handle("/mp3/",
 		http.StripPrefix("/mp3/", http.FileServer(http.Dir("./mp3"))),
