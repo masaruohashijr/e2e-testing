@@ -2,6 +2,7 @@ package main
 
 import (
 	"e2e-testing/godog/general"
+	"e2e-testing/godog/services"
 	"e2e-testing/internal/adapters/primary"
 	"e2e-testing/internal/adapters/secondary"
 	"e2e-testing/internal/config"
@@ -33,7 +34,7 @@ func iMakeACallFromTo(numberA, numberB string) error {
 	x, _ := xml.MarshalIndent(ResponseSMS, "", "")
 	strXML := domains.Header + string(x)
 	println(strXML)
-	general.WriteActionXML(strXML)
+	services.WriteActionXML("sms", strXML)
 	PrimaryPort.MakeCall()
 	return nil
 }
