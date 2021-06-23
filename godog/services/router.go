@@ -8,13 +8,17 @@ import (
 
 var Ch chan string
 
-var BaseUrl = "https://e28d5a0ae640.ngrok.io"
+var BaseUrl = "https://mohashi.ngrok.io"
 var TestTimeout int64 = 120
-var FeatureFolder = "play/play1"
+var FeatureFolder = "play/play1/"
 var GatherTimeOut = 60
 var GatherPause = 0
 var PlayPause = 3
-var PlayLoop = 1
+var PlayLoop = 100
+var Timeout = 10
+var Background = false
+var MaxLength = 10
+var FileFormat = "wav"
 
 func RunServer(c chan string) {
 	Ch = c
@@ -29,8 +33,10 @@ func RunServer(c chan string) {
 	r.HandleFunc("/Pinging", PingingHandler).Methods("POST")
 	r.HandleFunc("/Hangup", HangupHandler).Methods("POST")
 	r.HandleFunc("/SpeechResult", SpeechResultHandler).Methods("POST", "GET")
+	r.HandleFunc("/Record", RecordHandler).Methods("POST", "GET")
+	r.HandleFunc("/RecordAction", RecordActionHandler).Methods("POST", "GET")
 	http.Handle("/mp3/",
-		http.StripPrefix("/mp3/", http.FileServer(http.Dir("../../mp3"))),
+		http.StripPrefix("/mp3/", http.FileServer(http.Dir("../../media"))),
 	)
 	http.Handle("/", r)
 	http.ListenAndServe(":5000", nil)

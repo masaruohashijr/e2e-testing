@@ -19,7 +19,7 @@ func RunServer(c chan string) {
 	r.HandleFunc("/StatusCallback", StatusCallbackHandler).Methods("POST")
 	r.HandleFunc("/Ping", PingHandler).Methods("POST")
 	http.Handle("/mp3/",
-		http.StripPrefix("/mp3/", http.FileServer(http.Dir("./mp3"))),
+		http.StripPrefix("/mp3/", http.FileServer(http.Dir("./media"))),
 	)
 	http.Handle("/", r)
 	http.ListenAndServe(":5000", nil)

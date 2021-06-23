@@ -47,6 +47,7 @@ type ConfigType struct {
 	ApiVersion     string
 	StatusCallback string
 	Fallback       string
+	Timeout        int
 }
 
 func (c ConfigType) GetBaseURL() string {

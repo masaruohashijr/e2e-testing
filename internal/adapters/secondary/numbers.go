@@ -23,7 +23,9 @@ func NewNumbersApi(config *config.ConfigType) numbers.SecondaryPort {
 }
 
 func (a *numbersAPI) UpdateNumber() error {
-	apiEndpoint := fmt.Sprintf(a.config.GetBaseURL()+"/Accounts/%s/IncomingPhoneNumbers/{IncomingPhoneNumberSid}.json", a.config.AccountSid)
+	apiEndpoint := fmt.Sprintf(a.config.GetBaseURL()+
+		"/Accounts/%s/IncomingPhoneNumbers/%s.json",
+		a.config.AccountSid, a.config.ToSid)
 
 	values := &url.Values{}
 	values.Add("VoiceUrl", a.config.VoiceUrl)
@@ -44,7 +46,7 @@ func (a *numbersAPI) UpdateNumber() error {
 	}
 	defer resp.Body.Close()
 	fmt.Println("response Status:", resp.Status)
-	fmt.Println("response Headers:", resp.Header)
+	//fmt.Println("response Headers:", resp.Header)
 	body, err := ioutil.ReadAll(resp.Body)
 	if err != nil {
 		return err

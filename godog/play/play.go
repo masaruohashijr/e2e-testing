@@ -14,8 +14,8 @@ var NumberSecondaryPort numbers.SecondaryPort
 var NumberPrimaryPort numbers.PrimaryPort
 var ResponsePlay domains.ResponsePlay
 var ResponseGather domains.ResponseGather
+var ResponseRecord domains.ResponseRecord
 var Ch = make(chan string)
 
 func main() {
-	println("main")
 }
