@@ -6,8 +6,8 @@ Feature: play
   Scenario: Play a MP3
 
     Given my test setup runs
-    And "NumberA" configured to play "sample"
-    And "NumberB" configured to gather speech
+    And "NumberA" configured to play tone "500,500,440,800,1600"
+    And "NumberB" configured to record calls
     When I make a call from "NumberA" to "NumberB"
     Then "NumberB" should be able to listen 
   

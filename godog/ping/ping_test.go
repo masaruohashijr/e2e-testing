@@ -1,7 +1,7 @@
 package main
 
 import (
-	"e2e-testing/godog/general"
+	"e2e-testing/godog/services"
 	"e2e-testing/internal/adapters/primary"
 	"e2e-testing/internal/adapters/secondary"
 	"e2e-testing/internal/config"
@@ -17,7 +17,7 @@ import (
 
 func configuredToPingURL(numberA string) error {
 	p := &domains.Ping{
-		Value: general.BaseUrl + "/Ping",
+		Value: services.BaseUrl + "/Pinging",
 	}
 	ResponsePing.Ping = *p
 	x, _ := xml.MarshalIndent(p, "", "")
@@ -25,21 +25,21 @@ func configuredToPingURL(numberA string) error {
 	return nil
 }
 
-func iMakeACallFromTo(arg1, arg2 string) error {
+func iMakeACallFromTo(numberA, numberB string) error {
+	Configuration.From, _ = Configuration.SelectNumber(numberA)
+	Configuration.To, _ = Configuration.SelectNumber(numberB)
 	x, _ := xml.MarshalIndent(ResponsePing, "", "")
 	strXML := domains.Header + string(x)
 	println(strXML)
-	general.WriteActionXML(strXML)
+	services.WriteActionXML("ping", strXML)
 	PrimaryPort.MakeCall()
 	return nil
 }
 
 func myTestSetupRuns() error {
 	Configuration = config.NewConfig()
-	go general.RunServer(Ch)
-	Configuration.From = "+558140421695"
-	Configuration.To = "+5561984385415"
-	Configuration.ActionUrl = general.BaseUrl + "/InboundXml"
+	go services.RunServer(Ch)
+	Configuration.ActionUrl = services.BaseUrl + "/Ping"
 	println(Configuration.AccountSid)
 	SecondaryPort = secondary.NewCallsApi(&Configuration)
 	PrimaryPort = primary.NewCallsService(SecondaryPort)
@@ -48,7 +48,6 @@ func myTestSetupRuns() error {
 }
 
 func shouldGetAPingRequestOnTheURL() error {
-	println("Timer has started.")
 	select {
 	case res := <-Ch:
 		fmt.Println(res)

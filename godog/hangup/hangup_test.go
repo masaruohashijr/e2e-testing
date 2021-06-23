@@ -1,7 +1,7 @@
 package main
 
 import (
-	"e2e-testing/godog/general"
+	"e2e-testing/godog/services"
 	"e2e-testing/internal/adapters/primary"
 	"e2e-testing/internal/adapters/secondary"
 	"e2e-testing/internal/config"
@@ -35,7 +35,7 @@ func iMakeACallFromTo(NumberA, NumberB string) error {
 	x, _ := xml.MarshalIndent(ResponseHangup, "", "")
 	strXML := domains.Header + string(x)
 	println(strXML)
-	general.WriteActionXML(strXML)
+	services.WriteActionXML("hangup", strXML)
 	PrimaryPort.MakeCall()
 	return nil
 }
@@ -49,11 +49,11 @@ func InitializeScenario(ctx *godog.ScenarioContext) {
 
 func myTestSetupRuns() error {
 	Configuration = config.NewConfig()
-	go general.RunServer(Ch)
+	go services.RunServer(Ch)
 	Configuration.From = "+12267781734"
 	Configuration.To = "+13432022744"
-	Configuration.StatusCallback = general.BaseUrl + "/Callback"
-	Configuration.ActionUrl = general.BaseUrl + "/InboundXml"
+	Configuration.StatusCallback = services.BaseUrl + "/Callback"
+	Configuration.ActionUrl = services.BaseUrl + "/Hangup"
 	SecondaryPort = secondary.NewCallsApi(&Configuration)
 	PrimaryPort = primary.NewCallsService(SecondaryPort)
 	return nil

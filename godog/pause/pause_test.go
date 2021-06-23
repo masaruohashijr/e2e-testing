@@ -1,7 +1,7 @@
 package main
 
 import (
-	"e2e-testing/godog/general"
+	"e2e-testing/godog/services"
 	"e2e-testing/internal/adapters/primary"
 	"e2e-testing/internal/adapters/secondary"
 	"e2e-testing/internal/config"
@@ -35,21 +35,21 @@ func configuredToPauseSeconds(numberA string, timeInSeconds int) error {
 }
 
 func iMakeACallFromTo(numberA, numberB string) error {
+	Configuration.From = numberA
+	Configuration.To = numberB
 	x, _ := xml.MarshalIndent(ResponsePause, "", "")
 	strXML := domains.Header + string(x)
 	println(strXML)
-	general.WriteActionXML(strXML)
+	services.WriteActionXML("pause", strXML)
 	PrimaryPort.MakeCall()
 	return nil
 }
 
 func myTestSetupRuns() error {
 	Configuration = config.NewConfig()
-	go general.RunServer(Ch)
-	Configuration.From = "+558140423562"
-	Configuration.To = "+5561984385415"
-	Configuration.StatusCallback = general.BaseUrl + "/Callback"
-	Configuration.ActionUrl = general.BaseUrl + "/InboundXml"
+	go services.RunServer(Ch)
+	Configuration.StatusCallback = services.BaseUrl + "/Callback"
+	Configuration.ActionUrl = services.BaseUrl + "/Pause"
 	println(Configuration.AccountSid)
 	SecondaryPort = secondary.NewCallsApi(&Configuration)
 	PrimaryPort = primary.NewCallsService(SecondaryPort)
@@ -98,20 +98,9 @@ func TestMain(m *testing.M) {
 		Options:              &opts,
 	}.Run()
 
-	// Optional: Run `testing` package's logic besides godog.
 	if st := m.Run(); st > status {
 		status = st
 	}
 
 	os.Exit(status)
-}
-
-func SelectNumber(option string) string {
-	switch option {
-	case "NumberA":
-		return Configuration.NumberA
-	case "NumberB":
-		return Configuration.NumberB
-	}
-	return ""
 }

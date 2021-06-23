@@ -1,7 +1,7 @@
 package main
 
 import (
-	"e2e-testing/godog/general"
+	"e2e-testing/godog/services"
 	"e2e-testing/internal/adapters/primary"
 	"e2e-testing/internal/adapters/secondary"
 	"e2e-testing/internal/config"
@@ -35,18 +35,17 @@ func iMakeACallFromTo(arg1, arg2 string) error {
 	x, _ := xml.MarshalIndent(ResponseDial, "", "")
 	strXML := domains.Header + string(x)
 	println(strXML)
-	general.WriteActionXML(strXML)
+	services.WriteActionXML("dial", strXML)
 	PrimaryPort.MakeCall()
 	return nil
 }
 
 func myTestSetupRuns() error {
 	Configuration = config.NewConfig()
-	go general.RunServer(Ch)
-	Configuration.From = "+12267781734" //+558140421695
-	Configuration.To = "+13432022744"
-	//Configuration.StatusCallback = "http://fe6732d93b0e.ngrok.io/Callback"
-	Configuration.ActionUrl = general.BaseUrl + "/InboundXml"
+	go services.RunServer(Ch)
+	Configuration.From = "+558140423562"
+	Configuration.To = "+5561982584100"
+	Configuration.ActionUrl = services.BaseUrl + "/Dial"
 	println(Configuration.AccountSid)
 	SecondaryPort = secondary.NewCallsApi(&Configuration)
 	PrimaryPort = primary.NewCallsService(SecondaryPort)
@@ -70,7 +69,6 @@ func shouldGetTheIncomingCallFrom(arg1, arg2 string) error {
 	if parent_number != orig_parent {
 		return fmt.Errorf("Expected From: %s and found %s.", orig_parent, parent_number)
 	}
-
 	return nil
 }
 

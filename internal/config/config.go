@@ -23,10 +23,21 @@ type ConfigType struct {
 	AuthToken      string
 	From           string
 	To             string
+	ToSid          string
 	AvayaNumBR     string
 	AvayaNumCA     string
 	NumberA        string
 	NumberB        string
+	NumberASid     string
+	NumberBSid     string
+	NumberC        string
+	NumberD        string
+	NumberCSid     string
+	NumberDSid     string
+	NumberE        string
+	NumberF        string
+	NumberESid     string
+	NumberFSid     string
 	NumberBR1      string
 	NumberBR2      string
 	NumberBR3      string
@@ -35,6 +46,7 @@ type ConfigType struct {
 	VoiceUrl       string
 	ApiVersion     string
 	StatusCallback string
+	Fallback       string
 }
 
 func (c ConfigType) GetBaseURL() string {
@@ -59,4 +71,22 @@ func ReadConfig(config ConfigType) ConfigType {
 		log.Fatal(err)
 	}
 	return config
+}
+
+func (c *ConfigType) SelectNumber(option string) (string, string) {
+	switch option {
+	case "NumberA":
+		return c.NumberA, c.NumberASid
+	case "NumberB":
+		return c.NumberB, c.NumberBSid
+	case "NumberC":
+		return c.NumberC, c.NumberCSid
+	case "NumberD":
+		return c.NumberD, c.NumberDSid
+	case "NumberE":
+		return c.NumberE, c.NumberESid
+	case "NumberF":
+		return c.NumberF, c.NumberFSid
+	}
+	return option, ""
 }
