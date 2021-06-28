@@ -20,7 +20,7 @@ func CallbackHandler(w http.ResponseWriter, r *http.Request) {
 	b := string(body)
 	println(b)
 	if strings.Contains(b, "CallStatus=completed") {
-		//Ch <- b
+		Ch <- b
 	}
 }
 

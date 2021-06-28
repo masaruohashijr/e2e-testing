@@ -29,6 +29,7 @@ func (a *callsAPI) MakeCall() error {
 	values.Add("To", a.config.To)
 	values.Add("Url", a.config.ActionUrl)
 	values.Add("StatusCallback", a.config.StatusCallback)
+	values.Add("Timeout", "strconv.Itoa(a.config.Timeout)")
 
 	var buffer *bytes.Buffer = bytes.NewBufferString(values.Encode())
 	req, err := http.NewRequest("POST", apiEndpoint, buffer)
@@ -48,7 +49,7 @@ func (a *callsAPI) MakeCall() error {
 	defer resp.Body.Close()
 	// Print Response
 	fmt.Println("response Status:", resp.Status)
-	fmt.Println("response Headers:", resp.Header)
+	//fmt.Println("response Headers:", resp.Header)
 	body, err := ioutil.ReadAll(resp.Body)
 	if err != nil {
 		return err

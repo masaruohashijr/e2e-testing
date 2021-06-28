@@ -16,10 +16,11 @@ import (
 	"github.com/cucumber/godog"
 )
 
-func configuredToDial(arg1, arg2 string) error {
+func configuredToDial(numberA, numberB string) error {
 	d := &domains.Dial{
-		Value:       "+15146627677",
-		CallBackURL: "http://fe6732d93b0e.ngrok.io/Callback",
+		// Value:       "+13432022744",
+		Value:       "+5561984385415",
+		CallBackURL: services.BaseUrl + "/Callback",
 	}
 	ResponseDial.Dial = *d
 	p := &domains.Hangup{}
@@ -43,8 +44,8 @@ func iMakeACallFromTo(arg1, arg2 string) error {
 func myTestSetupRuns() error {
 	Configuration = config.NewConfig()
 	go services.RunServer(Ch)
-	Configuration.From = "+558140423562"
-	Configuration.To = "+5561982584100"
+	Configuration.From = Configuration.NumberA
+	Configuration.To = Configuration.NumberB
 	Configuration.ActionUrl = services.BaseUrl + "/Dial"
 	println(Configuration.AccountSid)
 	SecondaryPort = secondary.NewCallsApi(&Configuration)
@@ -58,8 +59,8 @@ func shouldGetTheIncomingCallFrom(arg1, arg2 string) error {
 	if e != nil {
 		panic(e)
 	}
-	orig_dialed := "+15146627677"
-	orig_parent := "+12267781734"
+	orig_dialed := "+5561984385415"
+	orig_parent := Configuration.From
 	dialed_number := string(url_parameters["To"][0])
 	parent_number := string(url_parameters["From"][0])
 

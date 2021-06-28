@@ -4,11 +4,14 @@ import "encoding/xml"
 
 type ResponseRecord struct {
 	XMLName xml.Name `xml:"Response"`
+	Pause   Pause    `xml:"Pause,omitempty"`
 	Record  Record   `xml:"Record,omitempty"`
+	Hangup  Hangup   `xml:"Hangup,omitempty"`
 }
 
 type Record struct {
 	Background bool   `xml:"background,attr"`
 	Action     string `xml:"action,attr"`
-	MaxLength  string `xml:"maxLength,attr"`
+	MaxLength  int    `xml:"maxLength,attr"`
+	FileFormat string `xml:"fileFormat,attr"`
 }
