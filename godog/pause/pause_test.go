@@ -35,13 +35,17 @@ func configuredToPauseSeconds(numberA string, timeInSeconds int) error {
 }
 
 func iMakeACallFromTo(numberA, numberB string) error {
-	Configuration.From = numberA
-	Configuration.To = numberB
+	Configuration.From = Configuration.NumberA
+	Configuration.To = Configuration.NumberB
+	Configuration.ToSid = Configuration.NumberBSid
+	Configuration.ActionUrl = ""
+	NumbersPrimaryPort.UpdateNumber()
+	Configuration.ActionUrl = services.BaseUrl + "/Pause"
 	x, _ := xml.MarshalIndent(ResponsePause, "", "")
 	strXML := domains.Header + string(x)
 	println(strXML)
 	services.WriteActionXML("pause", strXML)
-	PrimaryPort.MakeCall()
+	CallsPrimaryPort.MakeCall()
 	return nil
 }
 
@@ -51,8 +55,10 @@ func myTestSetupRuns() error {
 	Configuration.StatusCallback = services.BaseUrl + "/Callback"
 	Configuration.ActionUrl = services.BaseUrl + "/Pause"
 	println(Configuration.AccountSid)
-	SecondaryPort = secondary.NewCallsApi(&Configuration)
-	PrimaryPort = primary.NewCallsService(SecondaryPort)
+	CallsSecondaryPort = secondary.NewCallsApi(&Configuration)
+	CallsPrimaryPort = primary.NewCallsService(CallsSecondaryPort)
+	NumbersSecondaryPort = secondary.NewNumbersApi(&Configuration)
+	NumbersPrimaryPort = primary.NewNumbersService(NumbersSecondaryPort)
 	// instantiate the proper Response
 	return nil
 }

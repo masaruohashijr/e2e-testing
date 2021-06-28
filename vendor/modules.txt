@@ -34,3 +34,5 @@ github.com/hashicorp/go-memdb
 github.com/hashicorp/golang-lru/simplelru
 # github.com/spf13/pflag v1.0.5
 github.com/spf13/pflag
+# github.com/xigh/go-wavreader v0.0.0-20210516212152-f49019aa7352
+## explicit

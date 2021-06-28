@@ -4,7 +4,9 @@ import "encoding/xml"
 
 type ResponseRecord struct {
 	XMLName xml.Name `xml:"Response"`
+	Pause   Pause    `xml:"Pause,omitempty"`
 	Record  Record   `xml:"Record,omitempty"`
+	Hangup  Hangup   `xml:"Hangup,omitempty"`
 }
 
 type Record struct {

@@ -6,9 +6,9 @@ Feature: play
   Scenario: Play a tone
 
     Given my test setup runs
-    And "NumberA" configured to play tone "5000,100,440,800"
+    And "NumberA" configured to play tone "5000,10,880"
     And "NumberB" configured to record calls
     When I make a call from "NumberA" to "NumberB"
-    Then "NumberB" should be able to listen to frequencies "440,800"
+    Then "NumberB" should be able to listen to frequencies "880"
   
   

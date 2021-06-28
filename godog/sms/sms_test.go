@@ -1,7 +1,6 @@
 package main
 
 import (
-	"e2e-testing/godog/general"
 	"e2e-testing/godog/services"
 	"e2e-testing/internal/adapters/primary"
 	"e2e-testing/internal/adapters/secondary"
@@ -41,7 +40,7 @@ func iMakeACallFromTo(numberA, numberB string) error {
 
 func myTestSetupRuns() error {
 	Configuration = config.NewConfig()
-	go general.RunServer(Ch)
+	go services.RunServer(Ch)
 	Configuration.From = "+12267781734" //+558140421695
 	Configuration.To = "+13432022744"
 	Configuration.ActionUrl = "https://018d09d8beb2.ngrok.io/InboundXml"

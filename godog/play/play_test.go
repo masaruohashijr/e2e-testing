@@ -9,6 +9,7 @@ import (
 	"encoding/xml"
 	"fmt"
 	"os"
+	"strconv"
 	"testing"
 	"time"
 
@@ -28,7 +29,7 @@ func configuredToPlayTone(number, tone string) error {
 }
 
 func configuredToRecordCalls(number string) error {
-	//Configuration.To = "+5561984385415"
+	// Configuration.To = "+5561984385415"
 	Configuration.To, Configuration.ToSid = Configuration.SelectNumber(number) //"+5561984385415"
 	r := &domains.Record{
 		Background: services.Background,
@@ -36,6 +37,10 @@ func configuredToRecordCalls(number string) error {
 		FileFormat: services.FileFormat,
 		Action:     services.BaseUrl + "/RecordAction",
 	}
+	p := &domains.Pause{
+		Length: 3,
+	}
+	ResponseRecord.Pause = *p
 	ResponseRecord.Record = *r
 	x, _ := xml.MarshalIndent(ResponseRecord, "", "")
 	strXML := domains.Header + string(x)
@@ -76,7 +81,7 @@ func configurationSetup() {
 	Configuration.VoiceUrl = services.BaseUrl + "/Record"
 }
 
-func shouldBeAbleToListenToFrequencies(frequencies string) error {
+func shouldBeAbleToListenToFrequencies(number, frequencies string) error {
 	recordUrl := ""
 	select {
 	case recordUrl = <-Ch:
@@ -89,9 +94,9 @@ func shouldBeAbleToListenToFrequencies(frequencies string) error {
 	if err != nil {
 		return fmt.Errorf("Error %s", "Not able to download the record.")
 	}
-	frequenciesFromFile := services.GetFrequencies("../../media/record.wav")
-
-	if frequencies != frequenciesFromFile {
+	iFrequencies, _ := strconv.Atoi(frequencies)
+	err = services.GetFrequencies("../../media/record.wav", iFrequencies, 90)
+	if err != nil {
 		return fmt.Errorf("Error %s", "Not able to listen correct frequencies.")
 	}
 	return nil
@@ -102,7 +107,7 @@ func InitializeScenario(ctx *godog.ScenarioContext) {
 	ctx.Step(`^"([^"]*)" configured to record calls$`, configuredToRecordCalls)
 	ctx.Step(`^I make a call from "([^"]*)" to "([^"]*)"$`, iMakeACallFromTo)
 	ctx.Step(`^my test setup runs$`, myTestSetupRuns)
-	ctx.Step(`^"([^"]*)" should be able to listen to frequencies$`, shouldBeAbleToListenToFrequencies)
+	ctx.Step(`^"([^"]*)" should be able to listen to frequencies "([^"]*)"$`, shouldBeAbleToListenToFrequencies)
 }
 
 func InitializeTestSuite(ctx *godog.TestSuiteContext) {
@@ -128,4 +133,11 @@ func TestMain(m *testing.M) {
 	}
 
 	os.Exit(status)
+}
+
+// 880
+func compareFrequencies(frequenciesExpected string, frequencyFromFile int) float64 {
+	f, _ := strconv.Atoi(frequenciesExpected)
+	result := frequencyFromFile / f
+	return float64(result)
 }

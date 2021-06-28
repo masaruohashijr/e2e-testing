@@ -24,7 +24,9 @@ func RunServer(c chan string) {
 	Ch = c
 	println("Server running")
 	r := mux.NewRouter()
+	r.HandleFunc("/Dial", DialHandler).Methods("POST")
 	r.HandleFunc("/Ping", PingHandler).Methods("POST")
+	r.HandleFunc("/Pause", PauseHandler).Methods("POST")
 	r.HandleFunc("/Play", PlayHandler).Methods("POST")
 	r.HandleFunc("/Say", SayHandler).Methods("POST")
 	r.HandleFunc("/Gather", GatherHandler).Methods("POST")
