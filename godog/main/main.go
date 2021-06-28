@@ -1,5 +1,15 @@
 package main
 
 func main() {
-	//services.GetFrequencies("../../media/record-880.wav")
+	/*	expectedFrequency := 880
+		fq := 800
+			result = float64(expectedFrequency/fq) - 1
+			if result < float32((100-similarity)/100) {
+				println("************************")
+				println(result)
+				println("************************")
+				return nil
+			}
+		}
+	*/
 }

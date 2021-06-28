@@ -27,8 +27,7 @@ func GetFrequencies(filePath string, expectedFrequency int, similarity int) (err
 		log.Fatal(err)
 	}
 
-	fmt.Printf("%s: %dHz, %d channels, %d samples, %v\n",
-		filePath, wr.Rate(), wr.Chans(), wr.Len(), wr.Duration())
+	// fmt.Printf("%s: %dHz, %d channels, %d samples, %v\n",filePath, wr.Rate(), wr.Chans(), wr.Len(), wr.Duration())
 
 	samples := make([]float64, LENGTH)
 	for i := uint64(0); i < LENGTH; i++ {
@@ -55,14 +54,12 @@ func GetFrequencies(filePath string, expectedFrequency int, similarity int) (err
 		m := cmplx.Abs(freqs[i])
 		if m > max/2 {
 			fmt.Println(i, m)
-			fq = append(fq, i)
+			fq = append(fq, int(wr.Rate())/LENGTH*i)
 		}
 	}
-	var result float64 = 0
 	fmt.Printf("The maximum index is %d\n", maxi)
 	for j := range fq {
-		result = float64(expectedFrequency/fq[j]) - 1
-		if result < float64((100-similarity)/100) {
+		if float64(fq[j]) < float64(expectedFrequency)*float64(1.10) && float64(fq[j]) > float64(expectedFrequency)*float64(0.9) {
 			return nil
 		}
 	}
