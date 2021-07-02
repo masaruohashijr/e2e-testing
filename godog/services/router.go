@@ -8,7 +8,7 @@ import (
 
 var Ch chan string
 
-var BaseUrl = "http://49410032a8b3.ngrok.io"
+var BaseUrl = "http://mohashi.ngrok.io"
 var TestTimeout int64 = 120
 var FeatureFolder = "play/play1/"
 var GatherTimeOut = 60

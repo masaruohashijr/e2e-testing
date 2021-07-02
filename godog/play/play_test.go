@@ -17,7 +17,7 @@ import (
 )
 
 func configuredToPlayTone(number, tone string) error {
-	Configuration.From, _ = Configuration.SelectNumber(number)
+	//Configuration.From, _ = Configuration.SelectNumber(number)
 	p := &domains.Play{
 		Value: "tone_stream://%(" + tone + ")",
 		Loop:  services.PlayLoop,
@@ -30,7 +30,9 @@ func configuredToPlayTone(number, tone string) error {
 
 func configuredToRecordCalls(number string) error {
 	// Configuration.To = "+5561984385415"
-	Configuration.To, Configuration.ToSid = Configuration.SelectNumber(number) //"+5561984385415"
+	// Configuration.To, Configuration.ToSid = Configuration.SelectNumber(number) //"+5561984385415"
+	Configuration.To, Configuration.ToSid = Configuration.SelectNumber("NumberA")     //"+5561984385415"
+	Configuration.From, Configuration.FromSid = Configuration.SelectNumber("NumberB") //"+5561984385415"
 	r := &domains.Record{
 		Background: services.Background,
 		MaxLength:  services.MaxLength,

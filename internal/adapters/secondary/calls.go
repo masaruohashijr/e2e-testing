@@ -8,7 +8,6 @@ import (
 	"io/ioutil"
 	"net/http"
 	"net/url"
-	"strconv"
 )
 
 type callsAPI struct {
@@ -24,13 +23,12 @@ func NewCallsApi(config *config.ConfigType) calls.SecondaryPort {
 
 func (a *callsAPI) MakeCall() error {
 	apiEndpoint := fmt.Sprintf(a.config.GetBaseURL()+"/Accounts/%s/Calls.json", a.config.AccountSid)
-
+	println(apiEndpoint)
 	values := &url.Values{}
 	values.Add("From", a.config.From)
 	values.Add("To", a.config.To)
 	values.Add("Url", a.config.ActionUrl)
 	values.Add("StatusCallback", a.config.StatusCallback)
-	values.Add("Timeout", strconv.Itoa(a.config.Timeout))
 
 	var buffer *bytes.Buffer = bytes.NewBufferString(values.Encode())
 	req, err := http.NewRequest("POST", apiEndpoint, buffer)
