@@ -27,12 +27,14 @@ func configuredToPingURL(numberA string) error {
 
 func iMakeACallFromTo(numberA, numberB string) error {
 	Configuration.From, _ = Configuration.SelectNumber(numberA)
-	Configuration.To, _ = Configuration.SelectNumber(numberB)
+	Configuration.To, Configuration.ToSid = Configuration.SelectNumber(numberB)
+	Configuration.VoiceUrl = ""
+	NumbersSecondaryPort.UpdateNumber()
 	x, _ := xml.MarshalIndent(ResponsePing, "", "")
 	strXML := domains.Header + string(x)
 	println(strXML)
 	services.WriteActionXML("ping", strXML)
-	PrimaryPort.MakeCall()
+	CallsPrimaryPort.MakeCall()
 	return nil
 }
 
@@ -41,8 +43,10 @@ func myTestSetupRuns() error {
 	go services.RunServer(Ch)
 	Configuration.ActionUrl = services.BaseUrl + "/Ping"
 	println(Configuration.AccountSid)
-	SecondaryPort = secondary.NewCallsApi(&Configuration)
-	PrimaryPort = primary.NewCallsService(SecondaryPort)
+	CallsSecondaryPort = secondary.NewCallsApi(&Configuration)
+	CallsPrimaryPort = primary.NewCallsService(CallsSecondaryPort)
+	NumbersSecondaryPort = secondary.NewNumbersApi(&Configuration)
+	NumbersPrimaryPort = primary.NewNumbersService(NumbersSecondaryPort)
 	// instantiate the proper Response
 	return nil
 }
