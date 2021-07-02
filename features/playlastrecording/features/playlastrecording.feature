@@ -5,7 +5,7 @@ Feature: play last recording
 
   Scenario: Play Last Recording
 
-    Given my test setup runs #-> myTestSetupRuns()
+    Given my test setup runs
       And "NumberA" configured to say "This is the last recording" #-> configuredToSay(numberB string, text string)
       And "NumberB" configured to record calls #-> configuredToRecordCalls(numberB string)
       When I make a call from "NumberA" to "NumbeB" #-> iMakeACallFromTo(numberA string, numberB string)
