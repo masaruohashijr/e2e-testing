@@ -23,7 +23,9 @@ func configuredToRejectCall(numberA string) error {
 	return nil
 }
 
-func iMakeACallFromTo(arg1, arg2 string) error {
+func iMakeACallFromTo(numberA, numberB string) error {
+	Configuration.From, _ = Configuration.SelectNumber(numberA)
+	Configuration.To, Configuration.ToSid = Configuration.SelectNumber(numberB)
 	x, _ := xml.MarshalIndent(ResponseReject, "", "")
 	strXML := domains.Header + string(x)
 	println(strXML)
@@ -39,18 +41,13 @@ func myTestSetupRuns() error {
 	CallPrimaryPort = primary.NewCallsService(CallSecondaryPort)
 	NumberSecondaryPort = secondary.NewNumbersApi(&Configuration)
 	NumberPrimaryPort = primary.NewNumbersService(NumberSecondaryPort)
-	// instantiate the proper Response
 	return nil
 
 }
 
 func configurationSetup() {
 	Configuration = config.NewConfig()
-	Configuration.To, Configuration.ToSid = Configuration.SelectNumber("NumberE")
-	//Configuration.To = "+13432022744"
-	Configuration.From, _ = Configuration.SelectNumber("NumberF")
 	go services.RunServer(Ch)
-	//Configuration.ActionUrl = services.BaseUrl + "/Reject"
 	Configuration.StatusCallback = services.BaseUrl + "/RejectCallBack"
 	Configuration.VoiceUrl = services.BaseUrl + "/Reject"
 }
@@ -75,7 +72,6 @@ func InitializeScenario(ctx *godog.ScenarioContext) {
 }
 
 func InitializeTestSuite(ctx *godog.TestSuiteContext) {
-
 }
 
 func TestMain(m *testing.M) {

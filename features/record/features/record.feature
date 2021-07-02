@@ -5,8 +5,8 @@ Feature: record
 
   Scenario: Pause a sequence of sentences
 
-    Given my test setup runs #-> myTestSetupRuns()
-      And "NumberA" configured to say "You would never break the chain." #-> configuredToSay(numberB string, text string)
-      And "NumberB" configured to record calls #-> configuredToRecordCalls(numberB string)
-      When I make a call from "NumberA" to "NumbeB" #-> iMakeACallFromTo(numberA string, numberB string)
-      Then "NumberA" should get transcription "You would never break the chain." #-> shouldGetTranscription(numberA string, transcription string)
+    Given my test setup runs
+      And "NumberA" configured to say "You would never break the chain."
+      And "NumberB" configured to record calls
+      When I make a call from "NumberA" to "NumbeB"
+      Then "NumberA" should get transcription "You would never break the chain."
