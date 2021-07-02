@@ -8,7 +8,7 @@ import (
 
 var Ch chan string
 
-var BaseUrl = "https://mohashi.ngrok.io"
+var BaseUrl = "http://49410032a8b3.ngrok.io"
 var TestTimeout int64 = 120
 var FeatureFolder = "play/play1/"
 var GatherTimeOut = 60
@@ -38,6 +38,8 @@ func RunServer(c chan string) {
 	r.HandleFunc("/Callback", CallbackHandler).Methods("POST", "GET")
 	r.HandleFunc("/Hangup", HangupHandler).Methods("POST", "GET")
 	r.HandleFunc("/SpeechResult", SpeechResultHandler).Methods("POST", "GET")
+	r.HandleFunc("/sms", SmsHandler).Methods("POST", "GET")
+	r.HandleFunc("/SmsStatus", SmsStatusHanlder).Methods("POST", "GET")
 	r.HandleFunc("/Record", RecordHandler).Methods("POST", "GET")
 	r.HandleFunc("/RecordAction", RecordActionHandler).Methods("POST", "GET")
 	http.Handle("/mp3/",

@@ -21,7 +21,7 @@ func configuredToSendSms(numberA string) error {
 		Value:          "Test SMS",
 		To:             "+13432022744",
 		From:           "+12267781734",
-		StatusCallback: "https://018d09d8beb2.ngrok.io/StatusCallback",
+		StatusCallback: services.BaseUrl + "/SmsStatus",
 	}
 	ResponseSMS.Sms = *s
 	x, _ := xml.MarshalIndent(s, "", "")
@@ -30,6 +30,9 @@ func configuredToSendSms(numberA string) error {
 }
 
 func iMakeACallFromTo(numberA, numberB string) error {
+	Configuration.From, _ = Configuration.SelectNumber(numberA)
+	Configuration.To, _ = Configuration.SelectNumber(numberB)
+	Configuration.VoiceUrl = ""
 	x, _ := xml.MarshalIndent(ResponseSMS, "", "")
 	strXML := domains.Header + string(x)
 	println(strXML)
@@ -41,9 +44,7 @@ func iMakeACallFromTo(numberA, numberB string) error {
 func myTestSetupRuns() error {
 	Configuration = config.NewConfig()
 	go services.RunServer(Ch)
-	Configuration.From = "+12267781734" //+558140421695
-	Configuration.To = "+13432022744"
-	Configuration.ActionUrl = "https://018d09d8beb2.ngrok.io/InboundXml"
+	Configuration.ActionUrl = services.BaseUrl + "/sms"
 	println(Configuration.AccountSid)
 	SecondaryPort = secondary.NewCallsApi(&Configuration)
 	PrimaryPort = primary.NewCallsService(SecondaryPort)
