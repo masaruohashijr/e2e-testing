@@ -18,25 +18,28 @@ import (
 )
 
 func configuredToHangupAfterSeconds(NumberA string, timeInSeconds int) error {
+	Configuration.From, _ = Configuration.SelectNumber(NumberA)
 	p := &domains.Pause{
 		Length: timeInSeconds,
 	}
 	ResponseHangup.Pause = *p
 	h := &domains.Hangup{}
 	ResponseHangup.Hangup = *h
-	x, _ := xml.MarshalIndent(p, "", "")
-	y, _ := xml.MarshalIndent(h, "", "")
-	println(string(x), string(y))
+	x, _ := xml.MarshalIndent(ResponseHangup, "", "")
+	println(string(x))
 	return nil
 
 }
 
 func iMakeACallFromTo(NumberA, NumberB string) error {
 	x, _ := xml.MarshalIndent(ResponseHangup, "", "")
+	Configuration.To, Configuration.ToSid = Configuration.SelectNumber(NumberB)
+	Configuration.VoiceUrl = ""
+	NumbersPrimaryPort.UpdateNumber()
 	strXML := domains.Header + string(x)
 	println(strXML)
 	services.WriteActionXML("hangup", strXML)
-	PrimaryPort.MakeCall()
+	CallsPrimaryPort.MakeCall()
 	return nil
 }
 
@@ -50,12 +53,12 @@ func InitializeScenario(ctx *godog.ScenarioContext) {
 func myTestSetupRuns() error {
 	Configuration = config.NewConfig()
 	go services.RunServer(Ch)
-	Configuration.From = "+12267781734"
-	Configuration.To = "+13432022744"
 	Configuration.StatusCallback = services.BaseUrl + "/Callback"
 	Configuration.ActionUrl = services.BaseUrl + "/Hangup"
-	SecondaryPort = secondary.NewCallsApi(&Configuration)
-	PrimaryPort = primary.NewCallsService(SecondaryPort)
+	CallsSecondaryPort = secondary.NewCallsApi(&Configuration)
+	CallsPrimaryPort = primary.NewCallsService(CallsSecondaryPort)
+	NumbersSecondaryPort = secondary.NewNumbersApi(&Configuration)
+	NumbersPrimaryPort = primary.NewNumbersService(NumbersSecondaryPort)
 	return nil
 }
 
