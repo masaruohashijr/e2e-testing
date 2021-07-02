@@ -8,7 +8,7 @@ import (
 
 var Ch chan string
 
-var BaseUrl = "https://mohashi.ngrok.io/"
+var BaseUrl = "https://mohashi.ngrok.io"
 var TestTimeout int64 = 120
 var FeatureFolder = "play/play1/"
 var GatherTimeOut = 60
@@ -24,18 +24,18 @@ func RunServer(c chan string) {
 	Ch = c
 	println("Server running")
 	r := mux.NewRouter()
-	r.HandleFunc("/Dial", DialHandler).Methods("POST")
-	r.HandleFunc("/Ping", PingHandler).Methods("POST")
-	r.HandleFunc("/Pause", PauseHandler).Methods("POST")
-	r.HandleFunc("/Play", PlayHandler).Methods("POST")
-	r.HandleFunc("/Say", SayHandler).Methods("POST")
-	r.HandleFunc("/Reject", RejectHandler).Methods("POST")
-	r.HandleFunc("/RejectCallBack", RejectCallBackHandler).Methods("POST")
-	r.HandleFunc("/Gather", GatherHandler).Methods("POST")
-	r.HandleFunc("/Fallback", FallbackHandler).Methods("POST")
-	r.HandleFunc("/Callback", CallbackHandler).Methods("POST")
-	r.HandleFunc("/Pinging", PingingHandler).Methods("POST")
-	r.HandleFunc("/Hangup", HangupHandler).Methods("POST")
+	r.HandleFunc("/Dial", DialHandler).Methods("POST", "GET")
+	r.HandleFunc("/Ping", PingHandler).Methods("POST", "GET")
+	r.HandleFunc("/Pause", PauseHandler).Methods("POST", "GET")
+	r.HandleFunc("/Play", PlayHandler).Methods("POST", "GET")
+	r.HandleFunc("/Say", SayHandler).Methods("POST", "GET")
+	r.HandleFunc("/RejectXml", RejectHandler).Methods("POST", "GET")
+	r.HandleFunc("/RejectCallBack", RejectCallBackHandler).Methods("POST", "GET")
+	r.HandleFunc("/Gather", GatherHandler).Methods("POST", "GET")
+	r.HandleFunc("/Fallback", FallbackHandler).Methods("POST", "GET")
+	r.HandleFunc("/Callback", CallbackHandler).Methods("POST", "GET")
+	r.HandleFunc("/Pinging", PingingHandler).Methods("POST", "GET")
+	r.HandleFunc("/Hangup", HangupHandler).Methods("POST", "GET")
 	r.HandleFunc("/SpeechResult", SpeechResultHandler).Methods("POST", "GET")
 	r.HandleFunc("/Record", RecordHandler).Methods("POST", "GET")
 	r.HandleFunc("/RecordAction", RecordActionHandler).Methods("POST", "GET")

@@ -5,6 +5,6 @@ Feature: dial
 
 Scenario: Dial
     Given my test setup runs
-    And "NumberA" configured to dial "NumberC"
+    And "NumberB" configured to dial "NumberBR1"
     When I make a call from "NumberA" to "NumberB"
-    Then "NumberC" should get the incoming call from "NumberA"
+    Then "NumberBR1" should get the incoming call from "NumberB"

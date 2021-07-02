@@ -50,7 +50,7 @@ func configuredToRecordCalls(number string) error {
 	return nil
 }
 
-func iMakeACallFromTo(arg1, arg2 string) error {
+func iMakeACallFromTo(numberA, numberB string) error {
 	Configuration.Timeout = services.Timeout
 	x, _ := xml.MarshalIndent(ResponsePlay, "", "")
 	strXML := domains.Header + string(x)
@@ -62,7 +62,7 @@ func iMakeACallFromTo(arg1, arg2 string) error {
 
 func myTestSetupRuns() error {
 	configurationSetup()
-	println(Configuration.AccountSid)
+	//println(Configuration.AccountSid)
 	CallSecondaryPort = secondary.NewCallsApi(&Configuration)
 	CallPrimaryPort = primary.NewCallsService(CallSecondaryPort)
 	NumberSecondaryPort = secondary.NewNumbersApi(&Configuration)

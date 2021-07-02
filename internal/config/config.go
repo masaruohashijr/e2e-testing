@@ -22,6 +22,7 @@ type ConfigType struct {
 	AccountSid     string
 	AuthToken      string
 	From           string
+	FromSid        string
 	To             string
 	ToSid          string
 	AvayaNumBR     string
@@ -88,6 +89,8 @@ func (c *ConfigType) SelectNumber(option string) (string, string) {
 		return c.NumberE, c.NumberESid
 	case "NumberF":
 		return c.NumberF, c.NumberFSid
+	case "NumberBR1":
+		return c.NumberBR1, ""
 	}
 	return option, ""
 }
