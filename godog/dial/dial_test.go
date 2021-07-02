@@ -37,6 +37,7 @@ func configuredToDial(dialerNumber, dialedNumber string) error {
 func iMakeACallFromTo(numberA, numberB string) error {
 	Configuration.From, Configuration.FromSid = Configuration.SelectNumber(numberA)
 	Configuration.To, Configuration.ToSid = Configuration.SelectNumber(numberB)
+	Configuration.VoiceUrl = ""
 	x, _ := xml.MarshalIndent(ResponseDial, "", "")
 	strXML := domains.Header + string(x)
 	println(strXML)
