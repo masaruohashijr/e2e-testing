@@ -28,6 +28,7 @@ func configuredToRedirectToPingURL(numberB string) error {
 func iMakeACallFromTo(numberA, numberB string) error {
 	Configuration.From, _ = Configuration.SelectNumber(numberA)
 	Configuration.To, Configuration.ToSid = Configuration.SelectNumber(numberB)
+	Configuration.VoiceUrl = ""
 	x, _ := xml.MarshalIndent(ResponseRedirect, "", "")
 	strXML := domains.Header + string(x)
 	println(strXML)
