@@ -1,7 +1,7 @@
 Feature: pause    
-  In order to pause a sequence of phrases
+  In order to pause a call for a certain time
   As an end user
-  I want to call to a Number and say some words or phrases pausing some seconds between each sentence.
+  I want to call to a Number and pause some seconds and after hangup.
 
   Scenario: Pause a sequence of sentences
 

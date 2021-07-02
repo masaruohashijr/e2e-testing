@@ -20,11 +20,12 @@ import (
 func appendToConfigHangup(numberA string) error {
 	h := &domains.Hangup{}
 	x, _ := xml.MarshalIndent(h, "", "")
+	ResponsePause.Hangup = *h
 	println(string(x))
 	return nil
 }
 
-func configuredToPauseSeconds(numberA string, timeInSeconds int) error {
+func configuredToPauseSeconds(numberB string, timeInSeconds int) error {
 	p := &domains.Pause{
 		Length: timeInSeconds,
 	}
@@ -35,10 +36,9 @@ func configuredToPauseSeconds(numberA string, timeInSeconds int) error {
 }
 
 func iMakeACallFromTo(numberA, numberB string) error {
-	Configuration.From = Configuration.NumberA
-	Configuration.To = Configuration.NumberB
-	Configuration.ToSid = Configuration.NumberBSid
-	Configuration.ActionUrl = ""
+	Configuration.From, Configuration.FromSid = Configuration.SelectNumber(numberA)
+	Configuration.To, Configuration.ToSid = Configuration.SelectNumber(numberB)
+	Configuration.VoiceUrl = ""
 	NumbersPrimaryPort.UpdateNumber()
 	Configuration.ActionUrl = services.BaseUrl + "/Pause"
 	x, _ := xml.MarshalIndent(ResponsePause, "", "")
