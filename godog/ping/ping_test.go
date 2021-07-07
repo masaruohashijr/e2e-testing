@@ -26,7 +26,7 @@ func configuredToPingURL(numberA string) error {
 }
 
 func iMakeACallFromTo(numberA, numberB string) error {
-	Configuration.From, _ = Configuration.SelectNumber(numberA)
+	Configuration.From, Configuration.FromSid = Configuration.SelectNumber(numberA)
 	Configuration.To, Configuration.ToSid = Configuration.SelectNumber(numberB)
 	Configuration.VoiceUrl = ""
 	NumbersSecondaryPort.UpdateNumber()
