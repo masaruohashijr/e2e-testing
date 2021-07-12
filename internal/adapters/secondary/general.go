@@ -17,6 +17,6 @@ type ZangClient struct {
 func EncodeToBasicAuth(username, password string) string {
 	auth := username + ":" + password
 	r := base64.StdEncoding.EncodeToString([]byte(auth))
-	println(r)
+	//println(r)
 	return r
 }

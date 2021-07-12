@@ -23,7 +23,7 @@ func NewCallsApi(config *config.ConfigType) calls.SecondaryPort {
 
 func (a *callsAPI) MakeCall() error {
 	apiEndpoint := fmt.Sprintf(a.config.GetBaseURL()+"/Accounts/%s/Calls.json", a.config.AccountSid)
-	println(apiEndpoint)
+	//println(apiEndpoint)
 	values := &url.Values{}
 	values.Add("From", a.config.From)
 	values.Add("To", a.config.To)
@@ -48,7 +48,7 @@ func (a *callsAPI) MakeCall() error {
 	defer resp.Body.Close()
 	// Print Response
 	fmt.Println("response Status:", resp.Status)
-	//fmt.Println("response Headers:", resp.Header)
+	fmt.Println("response Headers:", resp.Header)
 	body, err := ioutil.ReadAll(resp.Body)
 	if err != nil {
 		return err

@@ -1,10 +1,21 @@
-package main
+package dial
 
 import (
+	"e2e-testing/godog/services"
+	"e2e-testing/internal/adapters/primary"
+	"e2e-testing/internal/adapters/secondary"
 	"e2e-testing/internal/config"
+	"e2e-testing/pkg/domains"
 	d "e2e-testing/pkg/domains"
 	"e2e-testing/pkg/ports/calls"
 	"e2e-testing/pkg/ports/numbers"
+	"encoding/xml"
+	"fmt"
+	"net/url"
+	"strconv"
+	"time"
+
+	"github.com/cucumber/godog"
 )
 
 var Configuration config.ConfigType
@@ -15,6 +26,83 @@ var NumbersPrimaryPort numbers.PrimaryPort
 var ResponseDial d.ResponseDial
 var Ch = make(chan string)
 
-func main() {
+func ConfiguredToDial(dialerNumber, dialedNumber string) error {
+	number, _ := Configuration.SelectNumber(dialedNumber)
+	d := &domains.Dial{
+		Value:       number,
+		CallBackURL: services.BaseUrl + "/Callback",
+	}
+	ResponseDial.Dial = *d
+	p := &domains.Hangup{}
+	ResponseDial.Hangup = *p
+	x, _ := xml.MarshalIndent(ResponseDial, "", "")
+	strXML := domains.Header + string(x)
+	services.WriteActionXML("dial", strXML)
+	Configuration.To, Configuration.ToSid = Configuration.SelectNumber(dialerNumber)
+	NumbersPrimaryPort.UpdateNumber()
+	println(string(x))
+	return nil
+}
 
+func IMakeACallFromTo(numberA, numberB string) error {
+	Configuration.From, Configuration.FromSid = Configuration.SelectNumber(numberA)
+	Configuration.To, Configuration.ToSid = Configuration.SelectNumber(numberB)
+	//x, _ := xml.MarshalIndent(ResponseDial, "", "")
+	//strXML := domains.Header + string(x)
+	NumbersPrimaryPort.UpdateNumber()
+	//println(strXML)
+	CallsPrimaryPort.MakeCall()
+	return nil
+}
+
+func MyTestSetupRuns() error {
+	Configuration = config.NewConfig()
+	go services.RunServer(Ch)
+	Configuration.VoiceUrl = services.BaseUrl + "/Dial"
+	CallsSecondaryPort = secondary.NewCallsApi(&Configuration)
+	CallsPrimaryPort = primary.NewCallsService(CallsSecondaryPort)
+	NumbersSecondaryPort = secondary.NewNumbersApi(&Configuration)
+	NumbersPrimaryPort = primary.NewNumbersService(NumbersSecondaryPort)
+	return nil
+}
+
+func ShouldGetTheIncomingCallFrom(dialedNumber, dialerNumber string) error {
+	bodyContent := ""
+	select {
+	case bodyContent = <-Ch:
+		fmt.Println(bodyContent)
+	case <-time.After(time.Duration(services.TestTimeout) * time.Second):
+		tt := strconv.FormatInt(services.TestTimeout, 10)
+		return fmt.Errorf("Timeout %s.", tt)
+	}
+	url_parameters, e := url.ParseQuery(bodyContent)
+	if e != nil {
+		panic(e)
+	}
+	dialed, _ := Configuration.SelectNumber(dialedNumber)
+	orig_dialed := dialed
+	orig_dialer := Configuration.To
+	dialed_number := string(url_parameters["To"][0])
+	dialer_number := string(url_parameters["From"][0])
+
+	if dialed_number != orig_dialed {
+		return fmt.Errorf("Expected dialed: %s and found %s.", orig_dialed, dialed_number)
+	}
+	if dialer_number != orig_dialer {
+		return fmt.Errorf("Expected From: %s and found %s.", orig_dialer, dialer_number)
+	}
+	Configuration.To, Configuration.ToSid = Configuration.SelectNumber(dialerNumber)
+	Configuration.VoiceUrl = ""
+	NumbersPrimaryPort.UpdateNumber()
+	return nil
+}
+
+func InitializeScenario(ctx *godog.ScenarioContext) {
+	ctx.Step(`^"([^"]*)" configured to dial "([^"]*)"$`, ConfiguredToDial)
+	ctx.Step(`^I make a call from "([^"]*)" to "([^"]*)"$`, IMakeACallFromTo)
+	ctx.Step(`^my test setup runs$`, MyTestSetupRuns)
+	ctx.Step(`^"([^"]*)" should get the incoming call from "([^"]*)"$`, ShouldGetTheIncomingCallFrom)
+}
+
+func InitializeTestSuite(ctx *godog.TestSuiteContext) {
 }

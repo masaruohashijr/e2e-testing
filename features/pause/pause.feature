@@ -3,10 +3,12 @@ Feature: pause
   As an end user
   I want to call to a Number and pause some seconds and after hangup.
 
-  Scenario: Pause a sequence of sentences
-
+  Background: setup
     Given my test setup runs
-    And "NumberB" configured to pause 3 seconds
-    And append To "NumberB" config hangup
-    When I make a call from "NumberA" to "NumberB"
-    Then "NumberA" should get last call duration more than or equals to 3
+
+  Scenario: Pause a sequence of sentences
+    And "NumberA" configured to pause 3 seconds
+    And append To "NumberA" config hangup
+    When I make a call from "NumberB" to "NumberA"
+    Then "NumberB" should get last call duration more than or equals to 3
+

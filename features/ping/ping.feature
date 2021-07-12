@@ -3,8 +3,10 @@ Feature: ping
   As an end user
   I want to call to a Number and ping a URL.
 
-  Scenario: Ping a URL
+  Background: setup
     Given my test setup runs
-    And "NumberA" configured to ping URL
+
+  Scenario: Ping a URL
+    And "NumberB" configured to ping URL
     When I make a call from "NumberA" to "NumberB"
     Then should get a ping request on the URL

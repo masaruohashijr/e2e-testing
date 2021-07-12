@@ -1,4 +1,4 @@
-Feature: hangup    
+Feature: Hangup    
   In order to hangup a call after a certain time in seconds
   As an end user
   I want to have my call automatically off

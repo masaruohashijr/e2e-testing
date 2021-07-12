@@ -5,7 +5,6 @@ import (
 	"e2e-testing/internal/config"
 	"e2e-testing/pkg/ports/numbers"
 	"fmt"
-	"io/ioutil"
 	"net/http"
 	"net/url"
 )
@@ -45,13 +44,13 @@ func (a *numbersAPI) UpdateNumber() error {
 		return err
 	}
 	defer resp.Body.Close()
-	fmt.Println("response Status:", resp.Status)
+	//fmt.Println("response Status:", resp.Status)
 	//fmt.Println("response Headers:", resp.Header)
-	body, err := ioutil.ReadAll(resp.Body)
-	if err != nil {
+	//body, err := ioutil.ReadAll(resp.Body)
+	/*if err != nil {
 		return err
 	}
-	fmt.Println("response Body:", string(body))
+	//fmt.Println("response Body:", string(body))*/
 
 	return nil
 }

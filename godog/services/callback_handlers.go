@@ -4,24 +4,24 @@ import (
 	"fmt"
 	"io/ioutil"
 	"net/http"
-	"strings"
+	"net/url"
 )
 
 func CallbackHandler(w http.ResponseWriter, r *http.Request) {
-	println("******************************** Callback")
+	println("******************************** Callback START")
 	body, err := ioutil.ReadAll(r.Body)
 	if err != nil {
 		println(err.Error())
 	}
-	r.ParseForm()                 // Parses the request body
-	x := r.Form.Get("CallStatus") // x will be "" if parameter is not set
-	fmt.Printf("CallStatus: %s\n", x)
-
+	r.ParseForm()
 	b := string(body)
-	println(b)
-	if strings.Contains(b, "CallStatus=completed") {
+	url_parameters, err := url.ParseQuery(b)
+	status := url_parameters["CallStatus"][0]
+	fmt.Printf("Call Status %s.\n", status)
+	if status == "completed" {
 		Ch <- b
 	}
+	println("******************************** Callback END")
 }
 
 func FallbackHandler(w http.ResponseWriter, r *http.Request) {
