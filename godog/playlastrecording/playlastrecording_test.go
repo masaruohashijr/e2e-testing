@@ -43,7 +43,7 @@ func TestMain(m *testing.M) {
 	}
 
 	status := godog.TestSuite{
-		Name:                 "e2e-testing",
+		Name:                 "zarbat_test",
 		TestSuiteInitializer: InitializeTestSuite,
 		ScenarioInitializer:  InitializeScenario,
 		Options:              &opts,

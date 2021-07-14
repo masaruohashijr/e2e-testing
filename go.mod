@@ -1,4 +1,4 @@
-module e2e-testing
+module zarbat_test
 
 go 1.16
 

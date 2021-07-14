@@ -1,6 +1,6 @@
 package primary
 
-import "e2e-testing/pkg/ports/calls"
+import "zarbat_test/pkg/ports/calls"
 
 type CLIPrimaryAdapter struct {
 	service calls.PrimaryPort

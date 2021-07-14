@@ -1,0 +1,8 @@
+{
+    "go.testEnvVars": {
+        "GOFLAGS":"-count=1"
+    },
+    "files.watcherExclude": {
+        "**/target": true
+    }
+}

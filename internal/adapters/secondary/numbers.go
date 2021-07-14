@@ -2,11 +2,11 @@ package secondary
 
 import (
 	"bytes"
-	"e2e-testing/internal/config"
-	"e2e-testing/pkg/ports/numbers"
 	"fmt"
 	"net/http"
 	"net/url"
+	"zarbat_test/internal/config"
+	"zarbat_test/pkg/ports/numbers"
 )
 
 type numbersAPI struct {

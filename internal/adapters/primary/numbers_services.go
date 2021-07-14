@@ -1,7 +1,7 @@
 package primary
 
 import (
-	"e2e-testing/pkg/ports/numbers"
+	"zarbat_test/pkg/ports/numbers"
 )
 
 type port_number struct {

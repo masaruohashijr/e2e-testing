@@ -1,7 +1,7 @@
 package primary
 
 import (
-	"e2e-testing/internal/config"
+	"zarbat_test/internal/config"
 )
 
 func (a *CLIPrimaryAdapter) HandleCall(c config.Operations) (string, error) {

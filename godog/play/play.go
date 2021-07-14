@@ -1,17 +1,17 @@
 package play
 
 import (
-	"e2e-testing/godog/services"
-	"e2e-testing/internal/adapters/primary"
-	"e2e-testing/internal/adapters/secondary"
-	"e2e-testing/internal/config"
-	"e2e-testing/pkg/domains"
-	"e2e-testing/pkg/ports/calls"
-	"e2e-testing/pkg/ports/numbers"
 	"encoding/xml"
 	"fmt"
 	"strconv"
 	"time"
+	"zarbat_test/godog/services"
+	"zarbat_test/internal/adapters/primary"
+	"zarbat_test/internal/adapters/secondary"
+	"zarbat_test/internal/config"
+	"zarbat_test/pkg/domains"
+	"zarbat_test/pkg/ports/calls"
+	"zarbat_test/pkg/ports/numbers"
 
 	"github.com/cucumber/godog"
 )

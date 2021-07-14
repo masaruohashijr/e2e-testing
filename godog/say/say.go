@@ -1,10 +1,10 @@
 package main
 
 import (
-	"e2e-testing/internal/config"
-	"e2e-testing/pkg/domains"
-	"e2e-testing/pkg/ports/calls"
-	"e2e-testing/pkg/ports/numbers"
+	"zarbat_test/internal/config"
+	"zarbat_test/pkg/domains"
+	"zarbat_test/pkg/ports/calls"
+	"zarbat_test/pkg/ports/numbers"
 )
 
 var Configuration config.ConfigType

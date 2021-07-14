@@ -1,16 +1,16 @@
 package main
 
 import (
-	"e2e-testing/godog/services"
-	"e2e-testing/internal/adapters/primary"
-	"e2e-testing/internal/adapters/secondary"
-	"e2e-testing/internal/config"
-	"e2e-testing/pkg/domains"
 	"encoding/xml"
 	"fmt"
 	"os"
 	"testing"
 	"time"
+	"zarbat_test/godog/services"
+	"zarbat_test/internal/adapters/primary"
+	"zarbat_test/internal/adapters/secondary"
+	"zarbat_test/internal/config"
+	"zarbat_test/pkg/domains"
 
 	"github.com/cucumber/godog"
 )
@@ -83,7 +83,7 @@ func TestMain(m *testing.M) {
 	}
 
 	status := godog.TestSuite{
-		Name:                 "e2e-testing",
+		Name:                 "zarbat_test",
 		TestSuiteInitializer: InitializeTestSuite,
 		ScenarioInitializer:  InitializeScenario,
 		Options:              &opts,
