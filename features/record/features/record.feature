@@ -6,7 +6,7 @@ Feature: record
   Scenario: Pause a sequence of sentences
 
     Given my test setup runs
-      And "NumberA" configured to say "You would never break the chain."
+      And "NumberA" configured to say "what we do in life echoes in eternity"
       And "NumberB" configured to record calls
-      When I make a call from "NumberA" to "NumbeB"
-      Then "NumberA" should get transcription "You would never break the chain."
+      When I make a call from "NumberA" to "NumberB"
+      Then should get transcription "what we do in life echoes in eternity"

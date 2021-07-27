@@ -49,6 +49,7 @@ func RunServer(c chan string, close bool) {
 	router.HandleFunc("/SmsStatus", SmsStatusHanlder).Methods("POST", "GET")
 	router.HandleFunc("/Record", RecordHandler).Methods("POST", "GET")
 	router.HandleFunc("/RecordAction", RecordActionHandler).Methods("POST", "GET")
+	router.HandleFunc("/TranscribeCallback", TranscribeCallbackHandler).Methods("POST", "GET")
 	http.Handle("/mp3/",
 		http.StripPrefix("/mp3/", http.FileServer(http.Dir("../../media"))),
 	)

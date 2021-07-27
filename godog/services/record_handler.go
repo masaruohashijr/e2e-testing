@@ -24,3 +24,12 @@ func RecordActionHandler(w http.ResponseWriter, r *http.Request) {
 	println(rURL)
 	Ch <- rURL
 }
+
+func TranscribeCallbackHandler(w http.ResponseWriter, r *http.Request) {
+	r.ParseForm()
+	rURL := r.FormValue("TranscriptionText")
+	println("************************************************")
+	println("Transcribe Callback")
+	println(rURL)
+	Ch <- rURL
+}

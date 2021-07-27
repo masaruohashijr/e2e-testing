@@ -1,0 +1,33 @@
+PS I:\workspace\src\zarbat_test> .\zarbat_test.exe record
+features/record record
+Server running
+.<?xml version="1.0"?>
+<Response><Pause length="5"></Pause><Say voice="man" language="en-US" loop="1">what we do in life echoes in eternity</Say></Response>
+.<?xml version="1.0"?>
+<Response><Pause length="3"></Pause><Record background="false" action="" maxLength="10" fileFormat="wav" transcribe="true" transcribeCallback="http://testris0.ngrok.io/TranscribeCallback"></Record><Hangup></Hangup></Response>
+RecordHandler
+<?xml version="1.0"?>
+<Response><Pause length="3"></Pause><Record background="false" action="" maxLength="10" fileFormat="wav" transcribe="true" transcribeCallback="http://testris0.ngrok.io/TranscribeCallback"></Record><Hangup></Hangup></Response>
+******************************** Callback START
+Call Status completed.
+******************************** Callback END
+************************************************
+Transcribe Callback
+what we do in life echoes in eternity
+******************************** Callback START
+Call Status completed.
+******************************** Callback END
+.https://api.zang.io/v2/Accounts/AC777c3e324ee0fc681c8946cdbd6310e5/Calls.json
+Basic QUM3NzdjM2UzMjRlZTBmYzY4MWM4OTQ2Y2RiZDYzMTBlNTphMDgzNzZjZGM1YWU0OTI3YjcxNjM0YjgwMTk5YTc2Zg==
+response Status: 200 OK
+response Headers: map[Alt-Svc:[h3-27=":443"; ma=86400, h3-28=":443"; ma=86400, h3-29=":443"; ma=86400, h3=":443"; ma=86400] Cf-Cache-Status:[DYNAMIC] Cf-Ray:[67574da4eebcf720-GRU] Content-Type:[application/json] Date:[Tue, 27 Jul 2021 16:39:21 GMT] Expect-Ct:[max-age=604800, report-uri="https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct"] Server:[cloudflare] Vary:[Accept-Encoding Authorization, Cookie] Via:[1.1 google] X-In:[base-api] X-Telapi-Hostname:[35.227.199.119]]
+response Body: {"date_updated": "Tue, 27 Jul 2021 16:39:21 -0000", "parent_call_sid": "", "duration": 0, "from": "+12048003001", "to": "+12048003002", "caller_id_blocked": "false", "answered_by": "nobody", "sid": "CA777c3e3277b5715beac742d9a65d9170", "recordings_count": "", "price": "0.00", "api_version": "v2", "status": "queued", "direction": "outbound-api", "start_time": null, "date_created": "Tue, 27 Jul 2021 16:39:21 -0000", "subresource_uris": {"notifications": "/v2/Accounts/AC777c3e324ee0fc681c8946cdbd6310e5/Calls/CA777c3e3277b5715beac742d9a65d9170/Notifications", "recordings": "/v2/Accounts/AC777c3e324ee0fc681c8946cdbd6310e5/Calls/CA777c3e3277b5715beac742d9a65d9170/Recordings"}, "forwarded_from": "", "uri": "/v2/Accounts/AC777c3e324ee0fc681c8946cdbd6310e5/Calls/CA777c3e3277b5715beac742d9a65d9170", "account_sid": "AC777c3e324ee0fc681c8946cdbd6310e5", "duration_billed": 0, "end_time": null, "phone_number_sid": ""}
+.Result: what we do in life echoes in eternity
+. 5
+
+
+1 scenarios (1 passed)
+5 steps (5 passed)
+1.9701958s
+
+Randomized with seed: 1627403957709488100

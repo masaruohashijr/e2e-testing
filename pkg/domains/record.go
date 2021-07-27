@@ -10,8 +10,10 @@ type ResponseRecord struct {
 }
 
 type Record struct {
-	Background bool   `xml:"background,attr"`
-	Action     string `xml:"action,attr"`
-	MaxLength  int    `xml:"maxLength,attr"`
-	FileFormat string `xml:"fileFormat,attr"`
+	Background         bool   `xml:"background,attr"`
+	Action             string `xml:"action,attr"`
+	MaxLength          int    `xml:"maxLength,attr"`
+	FileFormat         string `xml:"fileFormat,attr"`
+	Transcribe         bool   `xml:"transcribe,attr"`
+	TranscribeCallback string `xml:"transcribeCallback,attr"`
 }

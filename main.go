@@ -8,6 +8,7 @@ import (
 	"zarbat_test/godog/pause"
 	"zarbat_test/godog/ping"
 	"zarbat_test/godog/play"
+	"zarbat_test/godog/record"
 	"zarbat_test/godog/redirect"
 	"zarbat_test/godog/reject"
 	"zarbat_test/godog/say"
@@ -50,6 +51,10 @@ func initRegister() {
 	RegMap["say"] = FeatureTest{
 		Path:                "features/say",
 		ScenarioInitializer: say.InitializeScenario,
+	}
+	RegMap["record"] = FeatureTest{
+		Path:                "features/record",
+		ScenarioInitializer: record.InitializeScenario,
 	}
 }
 
