@@ -6,7 +6,7 @@ import (
 )
 
 func WriteActionXML(xmlName, strXML string) {
-	f, err := os.Create("../../xml/" + xmlName + ".xml")
+	f, err := os.Create("xml/" + xmlName + ".xml")
 	if err != nil {
 		log.Fatal(err)
 	}

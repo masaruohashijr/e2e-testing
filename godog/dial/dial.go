@@ -11,7 +11,6 @@ import (
 	"zarbat_test/internal/adapters/secondary"
 	"zarbat_test/internal/config"
 	"zarbat_test/pkg/domains"
-	d "zarbat_test/pkg/domains"
 	"zarbat_test/pkg/ports/calls"
 	"zarbat_test/pkg/ports/numbers"
 
@@ -23,7 +22,7 @@ var CallsSecondaryPort calls.SecondaryPort
 var CallsPrimaryPort calls.PrimaryPort
 var NumbersSecondaryPort numbers.SecondaryPort
 var NumbersPrimaryPort numbers.PrimaryPort
-var ResponseDial d.ResponseDial
+var ResponseDial domains.ResponseDial
 var Ch = make(chan string)
 
 func ConfiguredToDial(dialerNumber, dialedNumber string) error {
@@ -39,6 +38,7 @@ func ConfiguredToDial(dialerNumber, dialedNumber string) error {
 	strXML := domains.Header + string(x)
 	services.WriteActionXML("dial", strXML)
 	Configuration.To, Configuration.ToSid = Configuration.SelectNumber(dialerNumber)
+	Configuration.VoiceUrl = services.BaseUrl + "/Dial"
 	NumbersPrimaryPort.UpdateNumber()
 	println(string(x))
 	return nil
@@ -46,23 +46,18 @@ func ConfiguredToDial(dialerNumber, dialedNumber string) error {
 
 func IMakeACallFromTo(numberA, numberB string) error {
 	Configuration.From, Configuration.FromSid = Configuration.SelectNumber(numberA)
-	Configuration.To, Configuration.ToSid = Configuration.SelectNumber(numberB)
-	//x, _ := xml.MarshalIndent(ResponseDial, "", "")
-	//strXML := domains.Header + string(x)
-	NumbersPrimaryPort.UpdateNumber()
-	//println(strXML)
 	CallsPrimaryPort.MakeCall()
 	return nil
 }
 
 func MyTestSetupRuns() error {
 	Configuration = config.NewConfig()
-	go services.RunServer(Ch)
-	Configuration.VoiceUrl = services.BaseUrl + "/Dial"
+	go services.RunServer(Ch, true)
 	CallsSecondaryPort = secondary.NewCallsApi(&Configuration)
 	CallsPrimaryPort = primary.NewCallsService(CallsSecondaryPort)
 	NumbersSecondaryPort = secondary.NewNumbersApi(&Configuration)
 	NumbersPrimaryPort = primary.NewNumbersService(NumbersSecondaryPort)
+	Configuration.ActionUrl = "http://zang.io/ivr/welcome/call"
 	return nil
 }
 

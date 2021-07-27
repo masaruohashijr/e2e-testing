@@ -5,12 +5,11 @@ Feature: play
   And should be able to record and extract these frequencies
 
   Background: setup
-    Given my test setup runs
+    Given my test setup runs 
     
   Scenario: Play a tone
-    And "NumberA" configured to play tone "5000,10,1050"
-    And "NumberB" configured to record calls
-    When I make a call from "NumberA" to "NumberB"
-    Then "NumberB" should be able to listen to frequencies "1050"
-  
+    And "NumberD" configured to play tone "5000,10,850"
+    And "NumberE" configured to record calls 
+    When I make a call from "NumberD" to "NumberE"
+    Then "NumberE" should be able to listen to frequencies "850"
   

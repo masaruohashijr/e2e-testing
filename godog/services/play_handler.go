@@ -7,7 +7,7 @@ import (
 
 func PlayHandler(w http.ResponseWriter, r *http.Request) {
 	println("PlayHandler")
-	xml, err := os.ReadFile("../../xml/play.xml")
+	xml, err := os.ReadFile("xml/play.xml")
 	if err != nil {
 		println(err.Error())
 	}

@@ -11,7 +11,6 @@ import (
 	"zarbat_test/internal/adapters/secondary"
 	"zarbat_test/internal/config"
 	"zarbat_test/pkg/domains"
-	d "zarbat_test/pkg/domains"
 	"zarbat_test/pkg/ports/calls"
 	"zarbat_test/pkg/ports/numbers"
 
@@ -23,14 +22,13 @@ var CallsSecondaryPort calls.SecondaryPort
 var CallsPrimaryPort calls.PrimaryPort
 var NumbersSecondaryPort numbers.SecondaryPort
 var NumbersPrimaryPort numbers.PrimaryPort
-var ResponsePause d.ResponsePause
+var ResponsePause domains.ResponsePause
 var Ch = make(chan string)
+var Finish = true
 
 func AppendToConfigHangup(numberA string) error {
 	h := &domains.Hangup{}
 	ResponsePause.Hangup = *h
-	//x, _ := xml.MarshalIndent(h, "", "")
-	//println(string(x))
 	return nil
 }
 
@@ -39,20 +37,15 @@ func ConfiguredToPauseSeconds(numberB string, timeInSeconds int) error {
 		Length: timeInSeconds,
 	}
 	ResponsePause.Pause = *p
-	//x, _ := xml.MarshalIndent(p, "", "")
-	//println(string(x))
 	return nil
 }
 
 func IMakeACallFromTo(numberA, numberB string) error {
 	Configuration.From, Configuration.FromSid = Configuration.SelectNumber(numberA)
 	Configuration.To, Configuration.ToSid = Configuration.SelectNumber(numberB)
-	Configuration.VoiceUrl = ""
 	Configuration.ActionUrl = services.BaseUrl + "/Pause"
-	NumbersPrimaryPort.UpdateNumber()
 	x, _ := xml.MarshalIndent(ResponsePause, "", "")
 	strXML := domains.Header + string(x)
-	//println(strXML)
 	services.WriteActionXML("pause", strXML)
 	CallsPrimaryPort.MakeCall()
 	return nil
@@ -60,13 +53,15 @@ func IMakeACallFromTo(numberA, numberB string) error {
 
 func MyTestSetupRuns() error {
 	Configuration = config.NewConfig()
-	go services.RunServer(Ch)
+	go services.RunServer(Ch, true)
 	Configuration.StatusCallback = services.BaseUrl + "/Callback"
 	Configuration.ActionUrl = services.BaseUrl + "/Pause"
 	CallsSecondaryPort = secondary.NewCallsApi(&Configuration)
 	CallsPrimaryPort = primary.NewCallsService(CallsSecondaryPort)
 	NumbersSecondaryPort = secondary.NewNumbersApi(&Configuration)
 	NumbersPrimaryPort = primary.NewNumbersService(NumbersSecondaryPort)
+	Configuration.VoiceUrl = ""
+	NumbersPrimaryPort.UpdateNumber()
 	// instantiate the proper Response
 	return nil
 }

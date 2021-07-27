@@ -43,7 +43,7 @@ func iMakeACallFromTo(numberA, numberB string) error {
 
 func myTestSetupRuns() error {
 	Configuration = config.NewConfig()
-	go services.RunServer(Ch)
+	go services.RunServer(Ch, false)
 	Configuration.ActionUrl = services.BaseUrl + "/sms"
 	println(Configuration.AccountSid)
 	SecondaryPort = secondary.NewCallsApi(&Configuration)

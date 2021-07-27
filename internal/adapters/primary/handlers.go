@@ -1,8 +1,6 @@
 package primary
 
-import (
-	"zarbat_test/internal/config"
-)
+import "zarbat_test/internal/config"
 
 func (a *CLIPrimaryAdapter) HandleCall(c config.Operations) (string, error) {
 	message := "Call established"

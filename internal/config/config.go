@@ -17,6 +17,8 @@ const (
 	ViewCall
 )
 
+var ConfigPath = "config/config.ini"
+
 type ConfigType struct {
 	HttpClient     http.Client
 	AccountSid     string
@@ -49,9 +51,10 @@ type ConfigType struct {
 	StatusCallback string
 	Fallback       string
 	Timeout        int
+	BaseUrl        string
 }
 
-func (c ConfigType) GetBaseURL() string {
+func (c ConfigType) GetApiURL() string {
 	return c.ApiUrl + "/" + c.ApiVersion
 }
 
@@ -64,12 +67,11 @@ func NewConfig() (config ConfigType) {
 }
 
 func ReadConfig(config ConfigType) ConfigType {
-	var configfile = "../../internal/config/config.ini"
-	_, err := os.Stat(configfile)
+	_, err := os.Stat(ConfigPath)
 	if err != nil {
-		log.Fatal("File configuration "+configfile+" missing: ", configfile)
+		log.Fatal("File configuration "+ConfigPath+" missing: ", ConfigPath)
 	}
-	if _, err := toml.DecodeFile(configfile, &config); err != nil {
+	if _, err := toml.DecodeFile(ConfigPath, &config); err != nil {
 		log.Fatal(err)
 	}
 	return config
@@ -91,6 +93,8 @@ func (c *ConfigType) SelectNumber(option string) (string, string) {
 		return c.NumberF, c.NumberFSid
 	case "NumberBR1":
 		return c.NumberBR1, ""
+	case "NumberBR2":
+		return c.NumberBR2, ""
 	}
 	return option, ""
 }

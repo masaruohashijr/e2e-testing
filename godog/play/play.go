@@ -27,6 +27,7 @@ var ResponseRecord domains.ResponseRecord
 var Ch = make(chan string)
 
 func ConfiguredToPlayTone(number, tone string) error {
+	Configuration.From, Configuration.FromSid = Configuration.SelectNumber(number) //"+5561984385415"
 	//Configuration.From, _ = Configuration.SelectNumber(number)
 	p := &domains.Play{
 		Value: "tone_stream://%(" + tone + ")",
@@ -41,8 +42,7 @@ func ConfiguredToPlayTone(number, tone string) error {
 func ConfiguredToRecordCalls(number string) error {
 	// Configuration.To = "+5561984385415"
 	// Configuration.To, Configuration.ToSid = Configuration.SelectNumber(number) //"+5561984385415"
-	Configuration.To, Configuration.ToSid = Configuration.SelectNumber("NumberA")     //"+5561984385415"
-	Configuration.From, Configuration.FromSid = Configuration.SelectNumber("NumberB") //"+5561984385415"
+	Configuration.To, Configuration.ToSid = Configuration.SelectNumber(number) //"+5561984385415"
 	r := &domains.Record{
 		Background: services.Background,
 		MaxLength:  services.MaxLength,
@@ -74,7 +74,7 @@ func IMakeACallFromTo(numberA, numberB string) error {
 
 func MyTestSetupRuns() error {
 	ConfigurationSetup()
-	//println(Configuration.AccountSid)
+	// println(Configuration.AccountSid)
 	CallSecondaryPort = secondary.NewCallsApi(&Configuration)
 	CallPrimaryPort = primary.NewCallsService(CallSecondaryPort)
 	NumberSecondaryPort = secondary.NewNumbersApi(&Configuration)
@@ -85,10 +85,10 @@ func MyTestSetupRuns() error {
 
 func ConfigurationSetup() {
 	Configuration = config.NewConfig()
-	go services.RunServer(Ch)
+	go services.RunServer(Ch, false)
 	Configuration.ActionUrl = services.BaseUrl + "/Play"
 	//Configuration.Fallback = services.BaseUrl + "/Fallback"
-	//Configuration.StatusCallback = services.BaseUrl + "/Callback"
+	Configuration.StatusCallback = services.BaseUrl + "/Callback"
 	//Configuration.VoiceUrl = services.BaseUrl + "/Gather"
 	Configuration.VoiceUrl = services.BaseUrl + "/Record"
 }
@@ -99,15 +99,16 @@ func ShouldBeAbleToListenToFrequencies(number, frequencies string) error {
 	case recordUrl = <-Ch:
 		fmt.Printf("Result: %s\n", recordUrl)
 	case <-time.After(time.Duration(services.TestTimeout) * time.Second):
+		fmt.Println("timeout")
 		Ch = nil
 		return fmt.Errorf("timeout")
 	}
-	err := services.DownloadFile("../../media/record.wav", recordUrl)
+	err := services.DownloadFile("media/record.wav", recordUrl)
 	if err != nil {
 		return fmt.Errorf("Error %s", "Not able to download the record.")
 	}
 	iFrequencies, _ := strconv.Atoi(frequencies)
-	err = services.GetFrequencies("../../media/record.wav", iFrequencies, 90)
+	err = services.GetFrequencies("media/record.wav", iFrequencies, 90)
 	if err != nil {
 		return fmt.Errorf("Error %s", "Not able to listen correct frequencies.")
 	}
@@ -120,7 +121,4 @@ func InitializeScenario(ctx *godog.ScenarioContext) {
 	ctx.Step(`^I make a call from "([^"]*)" to "([^"]*)"$`, IMakeACallFromTo)
 	ctx.Step(`^my test setup runs$`, MyTestSetupRuns)
 	ctx.Step(`^"([^"]*)" should be able to listen to frequencies "([^"]*)"$`, ShouldBeAbleToListenToFrequencies)
-}
-
-func InitializeTestSuite(ctx *godog.TestSuiteContext) {
 }

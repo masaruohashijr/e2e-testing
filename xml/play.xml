@@ -1,2 +1,2 @@
 <?xml version="1.0"?>
-<Response><Play loop="100">tone_stream://%(5000,10,1050)</Play><Pause length="0"></Pause></Response>
+<Response><Play loop="100">tone_stream://%(5000,10,850)</Play><Pause length="0"></Pause></Response>

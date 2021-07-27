@@ -16,12 +16,52 @@ import (
 )
 
 var Configuration config.ConfigType
-var ResponsePing domains.ResponsePing
-var CallsSecondaryPort calls.SecondaryPort
-var CallsPrimaryPort calls.PrimaryPort
+var CallSecondaryPort calls.SecondaryPort
+var CallPrimaryPort calls.PrimaryPort
 var NumbersSecondaryPort numbers.SecondaryPort
 var NumbersPrimaryPort numbers.PrimaryPort
+var ResponseGather domains.ResponseGather
+var ResponseRecord domains.ResponseRecord
+var ResponsePing domains.ResponsePing
 var Ch = make(chan string)
+
+func IMakeACallFromTo(numberA, numberB string) error {
+	Configuration.From, Configuration.FromSid = Configuration.SelectNumber(numberA) //"+5561984385415"
+	Configuration.To, Configuration.ToSid = Configuration.SelectNumber(numberB)     //"+5561984385415"
+	x, _ := xml.MarshalIndent(ResponsePing, "", "")
+	strXML := domains.Header + string(x)
+	services.WriteActionXML("ping", strXML)
+	CallPrimaryPort.MakeCall()
+	return nil
+}
+
+func MyTestSetupRuns() error {
+	Configuration = config.NewConfig()
+	go services.RunServer(Ch, false)
+	Configuration.StatusCallback = services.BaseUrl + "/Callback"
+	Configuration.ActionUrl = services.BaseUrl + "/Ping"
+	CallSecondaryPort = secondary.NewCallsApi(&Configuration)
+	CallPrimaryPort = primary.NewCallsService(CallSecondaryPort)
+	NumbersSecondaryPort = secondary.NewNumbersApi(&Configuration)
+	NumbersPrimaryPort = primary.NewNumbersService(NumbersSecondaryPort)
+	Configuration.VoiceUrl = ""
+	NumbersPrimaryPort.UpdateNumber()
+	// instantiate the proper Response
+	return nil
+}
+
+func ShouldBeAbleToListenToFrequencies(number, frequencies string) error {
+	recordUrl := ""
+	select {
+	case recordUrl = <-Ch:
+		fmt.Printf("Result: %s\n", recordUrl)
+	case <-time.After(time.Duration(services.TestTimeout) * time.Second):
+		fmt.Println("timeout")
+		Ch = nil
+		return fmt.Errorf("timeout")
+	}
+	return nil
+}
 
 func ConfiguredToPingURL(numberA string) error {
 	p := &domains.Ping{
@@ -33,40 +73,14 @@ func ConfiguredToPingURL(numberA string) error {
 	return nil
 }
 
-func IMakeACallFromTo(numberA, numberB string) error {
-	Configuration.From, Configuration.FromSid = Configuration.SelectNumber(numberA)
-	Configuration.To, Configuration.ToSid = Configuration.SelectNumber(numberB)
-	Configuration.VoiceUrl = ""
-	NumbersSecondaryPort.UpdateNumber()
-	x, _ := xml.MarshalIndent(ResponsePing, "", "")
-	strXML := domains.Header + string(x)
-	//println(strXML)
-	services.WriteActionXML("ping", strXML)
-	CallsPrimaryPort.MakeCall()
-	return nil
-}
-
-func MyTestSetupRuns() error {
-	Configuration = config.NewConfig()
-	go services.RunServer(Ch)
-	Configuration.ActionUrl = services.BaseUrl + "/Ping"
-	//println(Configuration.AccountSid)
-	CallsSecondaryPort = secondary.NewCallsApi(&Configuration)
-	CallsPrimaryPort = primary.NewCallsService(CallsSecondaryPort)
-	NumbersSecondaryPort = secondary.NewNumbersApi(&Configuration)
-	NumbersPrimaryPort = primary.NewNumbersService(NumbersSecondaryPort)
-	// instantiate the proper Response
-	return nil
-}
-
 func ShouldGetAPingRequestOnTheURL() error {
 	select {
 	case res := <-Ch:
 		fmt.Println(res)
 	case <-time.After(time.Duration(services.TestTimeout) * time.Second):
-		fmt.Println("timeout 60")
+		fmt.Println("timeout")
 		Ch = nil
-		return fmt.Errorf("timeout 60")
+		return fmt.Errorf("timeout")
 	}
 	return nil
 }
@@ -79,5 +93,4 @@ func InitializeScenario(ctx *godog.ScenarioContext) {
 }
 
 func InitializeTestSuite(ctx *godog.TestSuiteContext) {
-
 }

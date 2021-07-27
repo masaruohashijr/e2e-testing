@@ -18,7 +18,7 @@ func CallbackHandler(w http.ResponseWriter, r *http.Request) {
 	url_parameters, err := url.ParseQuery(b)
 	status := url_parameters["CallStatus"][0]
 	fmt.Printf("Call Status %s.\n", status)
-	if status == "completed" {
+	if status == "completed" && CloseChannel {
 		Ch <- b
 	}
 	println("******************************** Callback END")

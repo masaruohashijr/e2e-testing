@@ -7,7 +7,7 @@ import (
 
 func RedirectHandler(w http.ResponseWriter, r *http.Request) {
 	println("Redirect Handler")
-	xml, err := os.ReadFile("../../xml/redirect.xml")
+	xml, err := os.ReadFile("xml/redirect.xml")
 	if err != nil {
 		println(err.Error())
 	}

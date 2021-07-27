@@ -13,7 +13,7 @@ func PingingHandler(w http.ResponseWriter, r *http.Request) {
 func PingHandler(w http.ResponseWriter, r *http.Request) {
 	println("PingHandler")
 
-	xml, err := os.ReadFile("../../xml/ping.xml")
+	xml, err := os.ReadFile("xml/ping.xml")
 	if err != nil {
 		println(err.Error())
 	}

@@ -7,7 +7,7 @@ import (
 
 func SayHandler(w http.ResponseWriter, r *http.Request) {
 	println("SayHandler")
-	xml, err := os.ReadFile("../../xml/say.xml")
+	xml, err := os.ReadFile("xml/say.xml")
 	if err != nil {
 		println(err.Error())
 	}

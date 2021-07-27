@@ -7,7 +7,7 @@ import (
 
 func RecordHandler(w http.ResponseWriter, r *http.Request) {
 	println("RecordHandler")
-	xml, err := os.ReadFile("../../xml/record.xml")
+	xml, err := os.ReadFile("xml/record.xml")
 	if err != nil {
 		println(err.Error())
 	}

@@ -22,7 +22,7 @@ func NewNumbersApi(config *config.ConfigType) numbers.SecondaryPort {
 }
 
 func (a *numbersAPI) UpdateNumber() error {
-	apiEndpoint := fmt.Sprintf(a.config.GetBaseURL()+
+	apiEndpoint := fmt.Sprintf(a.config.GetApiURL()+
 		"/Accounts/%s/IncomingPhoneNumbers/%s.json",
 		a.config.AccountSid, a.config.ToSid)
 

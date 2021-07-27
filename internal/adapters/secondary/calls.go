@@ -22,8 +22,7 @@ func NewCallsApi(config *config.ConfigType) calls.SecondaryPort {
 }
 
 func (a *callsAPI) MakeCall() error {
-	apiEndpoint := fmt.Sprintf(a.config.GetBaseURL()+"/Accounts/%s/Calls.json", a.config.AccountSid)
-	//println(apiEndpoint)
+	apiEndpoint := fmt.Sprintf(a.config.GetApiURL()+"/Accounts/%s/Calls.json", a.config.AccountSid)
 	values := &url.Values{}
 	values.Add("From", a.config.From)
 	values.Add("To", a.config.To)
@@ -32,13 +31,16 @@ func (a *callsAPI) MakeCall() error {
 
 	var buffer *bytes.Buffer = bytes.NewBufferString(values.Encode())
 	req, err := http.NewRequest("POST", apiEndpoint, buffer)
+	println(apiEndpoint)
 
 	if err != nil {
 		return err
 	}
 
 	req.Header.Set("Content-Type", "application/json")
-	req.Header.Add("Authorization", "Basic "+EncodeToBasicAuth(a.config.AccountSid, a.config.AuthToken))
+	encoded := EncodeToBasicAuth(a.config.AccountSid, a.config.AuthToken)
+	println("Basic " + encoded)
+	req.Header.Add("Authorization", "Basic "+encoded)
 	// TODO
 	client := &http.Client{}
 	resp, err := client.Do(req)

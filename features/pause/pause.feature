@@ -7,8 +7,8 @@ Feature: pause
     Given my test setup runs
 
   Scenario: Pause a sequence of sentences
-    And "NumberA" configured to pause 3 seconds
-    And append To "NumberA" config hangup
-    When I make a call from "NumberB" to "NumberA"
-    Then "NumberB" should get last call duration more than or equals to 3
+    And "NumberE" configured to pause 3 seconds
+    And append To "NumberE" config hangup
+    When I make a call from "NumberC" to "NumberE"
+    Then "NumberC" should get last call duration more than or equals to 3
 

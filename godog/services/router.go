@@ -2,13 +2,16 @@ package services
 
 import (
 	"net/http"
+	"zarbat_test/internal/config"
 
 	"github.com/gorilla/mux"
 )
 
 var Ch chan string
+var CloseChannel bool
+var ChComplete chan string
 
-var BaseUrl = "http://mohashi.ngrok.io"
+var BaseUrl = config.NewConfig().BaseUrl
 var TestTimeout int64 = 60
 var GatherTimeOut = 60
 var GatherPause = 0
@@ -20,8 +23,9 @@ var MaxLength = 10
 var FileFormat = "wav"
 var router *mux.Router
 
-func RunServer(c chan string) {
+func RunServer(c chan string, close bool) {
 	Ch = c
+	CloseChannel = close
 	if router != nil {
 		return
 	}

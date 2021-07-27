@@ -1,7 +1,6 @@
 package hangup
 
 import (
-	"encoding/xml"
 	"fmt"
 	"net/url"
 	"strconv"
@@ -25,7 +24,6 @@ var NumbersPrimaryPort numbers.PrimaryPort
 var Ch = make(chan string)
 
 func ConfiguredToHangupAfterSeconds(NumberA string, timeInSeconds int) error {
-	Configuration.From, _ = Configuration.SelectNumber(NumberA)
 	p := &domains.Pause{
 		Length: timeInSeconds,
 	}
@@ -37,31 +35,23 @@ func ConfiguredToHangupAfterSeconds(NumberA string, timeInSeconds int) error {
 }
 
 func IMakeACallFromTo(NumberA, NumberB string) error {
-	x, _ := xml.MarshalIndent(ResponseHangup, "", "")
+	Configuration.From, Configuration.FromSid = Configuration.SelectNumber(NumberA)
 	Configuration.To, Configuration.ToSid = Configuration.SelectNumber(NumberB)
-	strXML := domains.Header + string(x)
-	println(strXML)
-	services.WriteActionXML("hangup", strXML)
+	Configuration.VoiceUrl = services.BaseUrl + "/Hangup"
+	NumbersSecondaryPort.UpdateNumber()
 	CallsPrimaryPort.MakeCall()
 	return nil
 }
 
-func InitializeScenario(ctx *godog.ScenarioContext) {
-	ctx.Step(`^"([^"]*)" configured to hangup after "([^"]*)" seconds$`, ConfiguredToHangupAfterSeconds)
-	ctx.Step(`^"([^"]*)" should get last call duration greater than or equals to "([^"]*)"$`, ShouldGetLastCallDurationGreaterThanOrEqualsTo)
-	ctx.Step(`^I make a call from "([^"]*)" to "([^"]*)"$`, IMakeACallFromTo)
-	ctx.Step(`^my test setup runs$`, MyTestSetupRuns)
-}
-
 func MyTestSetupRuns() error {
 	Configuration = config.NewConfig()
-	go services.RunServer(Ch)
+	go services.RunServer(Ch, true)
 	Configuration.StatusCallback = services.BaseUrl + "/Callback"
-	Configuration.ActionUrl = services.BaseUrl + "/Hangup"
 	CallsSecondaryPort = secondary.NewCallsApi(&Configuration)
 	CallsPrimaryPort = primary.NewCallsService(CallsSecondaryPort)
 	NumbersSecondaryPort = secondary.NewNumbersApi(&Configuration)
 	NumbersPrimaryPort = primary.NewNumbersService(NumbersSecondaryPort)
+	// instantiate the proper Response
 	return nil
 }
 
@@ -77,9 +67,14 @@ func ShouldGetLastCallDurationGreaterThanOrEqualsTo(number string, timeInSeconds
 		return fmt.Errorf("The call duration should be more than the pause interval."+
 			" Expected at least %d seconds but got %d seconds.", timeInSeconds, durationInSeconds)
 	}
-	Configuration.VoiceUrl = ""
-	NumbersPrimaryPort.UpdateNumber()
 	return nil
+}
+
+func InitializeScenario(ctx *godog.ScenarioContext) {
+	ctx.Step(`^"([^"]*)" configured to hangup after "([^"]*)" seconds$`, ConfiguredToHangupAfterSeconds)
+	ctx.Step(`^"([^"]*)" should get last call duration greater than or equals to "([^"]*)"$`, ShouldGetLastCallDurationGreaterThanOrEqualsTo)
+	ctx.Step(`^I make a call from "([^"]*)" to "([^"]*)"$`, IMakeACallFromTo)
+	ctx.Step(`^my test setup runs$`, MyTestSetupRuns)
 }
 
 func InitializeTestSuite(ctx *godog.TestSuiteContext) {
