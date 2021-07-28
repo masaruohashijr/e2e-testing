@@ -77,8 +77,11 @@ func ShouldGetTheIncomingCallFrom(dialedNumber, dialerNumber string) error {
 	dialed, _ := Configuration.SelectNumber(dialedNumber)
 	orig_dialed := dialed
 	orig_dialer := Configuration.To
-	dialed_number := string(url_parameters["To"][0])
+	if len(url_parameters["From"]) == 0 || len(url_parameters["To"]) == 0 {
+		return fmt.Errorf("Expected dialed: %s and found %s.", orig_dialed, "none")
+	}
 	dialer_number := string(url_parameters["From"][0])
+	dialed_number := string(url_parameters["To"][0])
 
 	if dialed_number != orig_dialed {
 		return fmt.Errorf("Expected dialed: %s and found %s.", orig_dialed, dialed_number)

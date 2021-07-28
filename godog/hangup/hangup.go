@@ -30,15 +30,15 @@ func ConfiguredToHangupAfterSeconds(NumberA string, timeInSeconds int) error {
 	ResponseHangup.Pause = *p
 	h := &domains.Hangup{}
 	ResponseHangup.Hangup = *h
+	Configuration.To, Configuration.ToSid = Configuration.SelectNumber(NumberA)
+	Configuration.VoiceUrl = services.BaseUrl + "/Hangup"
+	NumbersSecondaryPort.UpdateNumber()
 	return nil
-
 }
 
 func IMakeACallFromTo(NumberA, NumberB string) error {
 	Configuration.From, Configuration.FromSid = Configuration.SelectNumber(NumberA)
 	Configuration.To, Configuration.ToSid = Configuration.SelectNumber(NumberB)
-	Configuration.VoiceUrl = services.BaseUrl + "/Hangup"
-	NumbersSecondaryPort.UpdateNumber()
 	CallsPrimaryPort.MakeCall()
 	return nil
 }
@@ -58,6 +58,10 @@ func MyTestSetupRuns() error {
 func ShouldGetLastCallDurationGreaterThanOrEqualsTo(number string, timeInSeconds int) error {
 	bodyContent := <-Ch
 	url_parameters, e := url.ParseQuery(bodyContent)
+	if len(url_parameters["CallDuration"]) == 0 {
+		return fmt.Errorf("The call duration should be more than the pause interval."+
+			" Expected at least %d seconds but got %d seconds.", timeInSeconds, 0)
+	}
 	if e != nil {
 		panic(e)
 	}

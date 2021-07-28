@@ -1,6 +1,8 @@
 package main
 
 import (
+	"flag"
+	"fmt"
 	"os"
 	"time"
 	"zarbat_test/godog/dial"
@@ -70,9 +72,9 @@ func initRegister() {
 
 func main() {
 	initRegister()
-	args := os.Args[1:]
+	tests := initArgs()
 	status := 0
-	for _, a := range args {
+	for _, a := range tests {
 		ft := RegMap[a]
 		opts := godog.Options{
 			Format:    "progress",
@@ -93,4 +95,27 @@ type FeatureTest struct {
 	Path                 string
 	ScenarioInitializer  func(ctx *godog.ScenarioContext)
 	TestSuiteInitializer func(ctx *godog.TestSuiteContext)
+}
+
+func initArgs() []string {
+	var tests []string
+	configPtr := flag.String("config", "config/config.txt", "a configuration file")
+	triesPtr := flag.String("n", "2", "number of tries")
+	logPtr := flag.String("l", "log/zarbat.log", "log location")
+	logLevelPtr := flag.String("level", "info", "logging level")
+	testPtr := flag.String("test", "buy", "ctlang")
+	flag.Parse()
+	addons := flag.Args()
+	tests = append(tests, *testPtr)
+	for _, a := range addons {
+		tests = append(tests, a)
+	}
+	fmt.Println("************************************************")
+	fmt.Println("*** Config:", *configPtr)
+	fmt.Println("*** Number of Tries:", *triesPtr)
+	fmt.Println("*** Log:", *logPtr)
+	fmt.Println("*** Logging Level:", *logLevelPtr)
+	fmt.Printf("*** Tests: %+q\n", tests)
+	fmt.Println("************************************************")
+	return tests
 }
