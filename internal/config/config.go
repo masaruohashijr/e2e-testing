@@ -17,9 +17,10 @@ const (
 	ViewCall
 )
 
-var ConfigPath = "config/config.ini"
+var ConfigPath string
 
 type ConfigType struct {
+	ConfigPath     string
 	HttpClient     http.Client
 	AccountSid     string
 	AuthToken      string
@@ -52,6 +53,7 @@ type ConfigType struct {
 	Fallback       string
 	Timeout        int
 	BaseUrl        string
+	Logger         string
 }
 
 func (c ConfigType) GetApiURL() string {
@@ -59,6 +61,7 @@ func (c ConfigType) GetApiURL() string {
 }
 
 func NewConfig() (config ConfigType) {
+	config.ConfigPath = ConfigPath
 	config = ReadConfig(config)
 	config.HttpClient = http.Client{
 		Timeout: 60 * time.Second,
@@ -67,11 +70,11 @@ func NewConfig() (config ConfigType) {
 }
 
 func ReadConfig(config ConfigType) ConfigType {
-	_, err := os.Stat(ConfigPath)
+	_, err := os.Stat(config.ConfigPath)
 	if err != nil {
-		log.Fatal("File configuration "+ConfigPath+" missing: ", ConfigPath)
+		log.Fatal("File configuration "+config.ConfigPath+" missing: ", config.ConfigPath)
 	}
-	if _, err := toml.DecodeFile(ConfigPath, &config); err != nil {
+	if _, err := toml.DecodeFile(config.ConfigPath, &config); err != nil {
 		log.Fatal(err)
 	}
 	return config

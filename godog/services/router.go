@@ -11,8 +11,8 @@ var Ch chan string
 var CloseChannel bool
 var ChComplete chan string
 
-var BaseUrl = config.NewConfig().BaseUrl
-var TestTimeout int64 = 60
+var BaseUrl string
+var TestTimeout int64 = 120
 var GatherTimeOut = 60
 var GatherPause = 0
 var PlayPause = 3
@@ -24,6 +24,7 @@ var FileFormat = "wav"
 var router *mux.Router
 
 func RunServer(c chan string, close bool) {
+	BaseUrl = config.NewConfig().BaseUrl
 	Ch = c
 	CloseChannel = close
 	if router != nil {

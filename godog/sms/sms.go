@@ -3,6 +3,7 @@ package sms
 import (
 	"encoding/xml"
 	"fmt"
+	"log"
 	"net/url"
 	"time"
 	"zarbat_test/godog/services"
@@ -42,7 +43,7 @@ func ConfiguredToSendSmsTo(numberA, numberB string) error {
 	}
 	ResponseSMS.Sms = *s
 	x, _ := xml.MarshalIndent(s, "", "")
-	println(string(x))
+	log.Println(string(x))
 	return nil
 }
 

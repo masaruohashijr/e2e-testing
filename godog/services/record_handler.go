@@ -31,5 +31,7 @@ func TranscribeCallbackHandler(w http.ResponseWriter, r *http.Request) {
 	println("************************************************")
 	println("Transcribe Callback")
 	println(rURL)
-	Ch <- rURL
+	if rURL != "" {
+		Ch <- rURL
+	}
 }
