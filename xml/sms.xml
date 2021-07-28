@@ -1,0 +1,2 @@
+<?xml version="1.0"?>
+<Response><Sms from="+12048003001" to="+12048003002" statusCallback="http://mohashi.ngrok.io/SmsStatus">SMS Test</Sms></Response>

@@ -5,6 +5,7 @@ import (
 	"time"
 	"zarbat_test/godog/dial"
 	"zarbat_test/godog/hangup"
+	"zarbat_test/godog/number"
 	"zarbat_test/godog/pause"
 	"zarbat_test/godog/ping"
 	"zarbat_test/godog/play"
@@ -12,6 +13,7 @@ import (
 	"zarbat_test/godog/redirect"
 	"zarbat_test/godog/reject"
 	"zarbat_test/godog/say"
+	"zarbat_test/godog/sms"
 
 	"github.com/cucumber/godog"
 )
@@ -55,6 +57,14 @@ func initRegister() {
 	RegMap["record"] = FeatureTest{
 		Path:                "features/record",
 		ScenarioInitializer: record.InitializeScenario,
+	}
+	RegMap["buy"] = FeatureTest{
+		Path:                "features/number",
+		ScenarioInitializer: number.InitializeScenario,
+	}
+	RegMap["sms"] = FeatureTest{
+		Path:                "features/sms",
+		ScenarioInitializer: sms.InitializeScenario,
 	}
 }
 

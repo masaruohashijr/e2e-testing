@@ -1,0 +1,17 @@
+PS I:\workspace\src\zarbat_test> .\zarbat_test.exe sms
+features/sms sms
+Server running  
+..*********** SMS Status Callback
+AccountSid=AC777c3e324ee0fc681c8946cdbd6310e5&ApiVersion=v2&Body=what+we+do+in+life+echoes+in+eternity&DlrStatus=&ErrorMessage=&From=%2B12048003001&Price=0.005&SmsSid=SMe18057c84141486695b710c67a2abdb8&SmsStatus=sent&To=%2B12048003002
+*********** SMS Status Callback
+AccountSid=12604431&ApiVersion=v2&Body=what+we+do+in+life+echoes+in+eternity&DlrStatus=sent&ErrorMessage=&From=%2B12048003001&Price=0.005&SmsSid=SMe18057c84141486695b710c67a2abdb8&SmsStatus=sent&To=%2B12048003002
+Result: AccountSid=12604431&ApiVersion=v2&Body=what+we+do+in+life+echoes+in+eternity&DlrStatus=sent&ErrorMessage=&From=%2B12048003001&Price=0.005&SmsSid=SMe18057c84141486695b710c67a2abdb8&SmsStatus=sent&To=%2B12048003002
+0xc00006b2d0
+. 3
+
+
+1 scenarios (1 passed)
+3 steps (3 passed)
+3.1639456s
+
+Randomized with seed: 1627433442961492900

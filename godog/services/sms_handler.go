@@ -9,7 +9,7 @@ import (
 
 func SmsHandler(w http.ResponseWriter, r *http.Request) {
 	println("GatherHandler")
-	xml, err := os.ReadFile("../../xml/sms.xml")
+	xml, err := os.ReadFile("xml/sms.xml")
 	if err != nil {
 		println(err.Error())
 	}
@@ -25,7 +25,7 @@ func SmsStatusHanlder(w http.ResponseWriter, r *http.Request) {
 	}
 	b := string(body)
 	println(b)
-	if strings.Contains(b, "DlrStatus=delivered") {
+	if strings.Contains(b, "DlrStatus=sent") {
 		Ch <- b
 	}
 }

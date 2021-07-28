@@ -1,0 +1,27 @@
+PS I:\workspace\src\zarbat_test> .\zarbat_test.exe hangup
+features/hangup hangup
+Server running
+..https://api.zang.io/v2/Accounts/AC777c3e324ee0fc681c8946cdbd6310e5/Calls.json
+Basic QUM3NzdjM2UzMjRlZTBmYzY4MWM4OTQ2Y2RiZDYzMTBlNTphMDgzNzZjZGM1YWU0OTI3YjcxNjM0YjgwMTk5YTc2Zg==
+response Status: 200 OK
+response Headers: map[Alt-Svc:[h3-27=":443"; ma=86400, h3-28=":443"; ma=86400, h3-29=":443"; ma=86400, h3=":443"; ma=86400] Cf-Cache-Status:[DYNAMIC] Cf-Ray:[6755f5318a3bf6bf-GRU] Content-Type:[application/json] Date:[Tue, 27 Jul 2021 12:44:13 GMT] Expect-Ct:[max-age=604800, report-uri="https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct"] Server:[cloudflare] Vary:[Accept-Encoding Authorization, Cookie] Via:[1.1 google] X-In:[base-api] X-Telapi-Hostname:[35.227.199.119]]
+response Body: {"date_updated": "Tue, 27 Jul 2021 12:44:13 -0000", "parent_call_sid": "", "duration": 0, "from": "+12048003001", "to": "+12048003002", "caller_id_blocked": "false", "answered_by": "nobody", "sid": "CA777c3e32ea0ac59b2ab8429e9698e37b", "recordings_count": "", "price": "0.00", "api_version": "v2", "status": "queued", "direction": "outbound-api", "start_time": null, "date_created": "Tue, 27 Jul 2021 12:44:12 -0000", "subresource_uris": {"notifications": 
+"/v2/Accounts/AC777c3e324ee0fc681c8946cdbd6310e5/Calls/CA777c3e32ea0ac59b2ab8429e9698e37b/Notifications", "recordings": "/v2/Accounts/AC777c3e324ee0fc681c8946cdbd6310e5/Calls/CA777c3e32ea0ac59b2ab8429e9698e37b/Recordings"}, "forwarded_from": "", "uri": "/v2/Accounts/AC777c3e324ee0fc681c8946cdbd6310e5/Calls/CA777c3e32ea0ac59b2ab8429e9698e37b", "account_sid": "AC777c3e324ee0fc681c8946cdbd6310e5", "duration_billed": 0, "end_time": null, "phone_number_sid": ""}
+.HangupHandler
+<?xml version="1.0"?>
+<Response><Pause length="3"></Pause><Hangup></Hangup></Response>
+******************************** Callback START
+Call Status in-progress.
+******************************** Callback END
+******************************** Callback START
+Call Status completed.
+******************************** Callback END
+Duration 3
+ . 4
+
+
+1 scenarios (1 passed)
+4 steps (4 passed)
+7.5651953s
+
+Randomized with seed: 1627389849923260900
