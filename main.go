@@ -99,10 +99,10 @@ type FeatureTest struct {
 
 func initArgs() []string {
 	var tests []string
-	configPtr := flag.String("config", "config/config.txt", "a configuration file")
+	configPtr := flag.String("config", "", "a configuration file")
 	triesPtr := flag.String("n", "2", "number of tries")
 	logPtr := flag.String("l", "log/zarbat.log", "log location")
-	logLevelPtr := flag.String("level", "info", "logging level")
+	logLevelPtr := flag.String("level", "info", "options: info, summary, debug, error")
 	testPtr := flag.String("test", "buy", "ctlang")
 	flag.Parse()
 	addons := flag.Args()
