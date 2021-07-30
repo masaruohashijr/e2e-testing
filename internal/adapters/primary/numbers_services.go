@@ -28,3 +28,8 @@ func (p *port_number) ListAvailableNumbers() ([]string, error) {
 	list, err := p.driven.ListAvailableNumbers()
 	return list, err
 }
+
+func (p *port_number) ListNumbers() ([]string, error) {
+	list, err := p.driven.ListNumbers()
+	return list, err
+}

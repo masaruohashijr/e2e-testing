@@ -7,84 +7,31 @@ import (
 	"os"
 	"strings"
 	"time"
-	"zarbat_test/godog/dial"
-	"zarbat_test/godog/hangup"
-	"zarbat_test/godog/number"
-	"zarbat_test/godog/pause"
-	"zarbat_test/godog/ping"
-	"zarbat_test/godog/play"
-	"zarbat_test/godog/record"
-	"zarbat_test/godog/redirect"
-	"zarbat_test/godog/reject"
-	"zarbat_test/godog/say"
-	"zarbat_test/godog/sms"
 	"zarbat_test/internal/config"
+	"zarbat_test/internal/files"
+	"zarbat_test/internal/godog/services"
+	"zarbat_test/internal/godog/test"
 
 	"github.com/cucumber/godog"
 )
 
-var RegMap map[string]*FeatureTest
+var RegMap map[string]*test.FeatureTest
 var logPtr *string
+var logLevelPtr *string
+var configPtr *string
 var triesPtr *int
-
-func initRegister() {
-	RegMap = make(map[string]*FeatureTest)
-	RegMap["play"] = &FeatureTest{
-		Path:                "features/play",
-		ScenarioInitializer: play.InitializeScenario,
-	}
-	RegMap["ping"] = &FeatureTest{
-		Path:                "features/ping",
-		ScenarioInitializer: ping.InitializeScenario,
-	}
-	RegMap["pause"] = &FeatureTest{
-		Path:                "features/pause",
-		ScenarioInitializer: pause.InitializeScenario,
-	}
-	RegMap["dial"] = &FeatureTest{
-		Path:                "features/dial",
-		ScenarioInitializer: dial.InitializeScenario,
-	}
-	RegMap["redirect"] = &FeatureTest{
-		Path:                "features/redirect",
-		ScenarioInitializer: redirect.InitializeScenario,
-	}
-	RegMap["reject"] = &FeatureTest{
-		Path:                "features/reject",
-		ScenarioInitializer: reject.InitializeScenario,
-	}
-	RegMap["hangup"] = &FeatureTest{
-		Path:                "features/hangup",
-		ScenarioInitializer: hangup.InitializeScenario,
-	}
-	RegMap["say"] = &FeatureTest{
-		Path:                "features/say",
-		ScenarioInitializer: say.InitializeScenario,
-	}
-	RegMap["record"] = &FeatureTest{
-		Path:                "features/record",
-		ScenarioInitializer: record.InitializeScenario,
-	}
-	RegMap["buy"] = &FeatureTest{
-		Path:                "features/number",
-		ScenarioInitializer: number.InitializeScenario,
-	}
-	RegMap["sms"] = &FeatureTest{
-		Path:                "features/sms",
-		ScenarioInitializer: sms.InitializeScenario,
-	}
-}
+var tests []test.FeatureTest
 
 func main() {
-	initRegister()
-	tests := initArgs()
+	RegMap = test.InitRegister()
+	tests = initArgs(RegMap)
 	initLogger()
-	log.Println("**********************************")
+	log.Println("****************************************")
 	log.Println("START OF TEST SUITE")
+	logArgs()
 	status := 0
-	result := "OK"
 	for i := 0; i < len(tests); i++ {
-		ft := RegMap[tests[i]]
+		ft := RegMap[tests[i].Name]
 		opts := godog.Options{
 			Format:    "progress",
 			Paths:     []string{ft.Path},
@@ -96,51 +43,55 @@ func main() {
 			Options:             &opts,
 		}.Run()
 		if status != 0 {
-			result = "Not OK"
-			log.Println("* Feature/Scenario: ", strings.ToUpper(tests[i]), result)
-			ft.tries += 1
-			if ft.tries <= *triesPtr {
+			logResult(tests[i].Name, "Not OK")
+			ft.Tries += 1
+			if ft.Tries < *triesPtr {
 				i--
 			}
-			time.Sleep(5 * time.Second)
 		} else {
-			result = "OK"
-			log.Println("* Feature/Scenario: ", strings.ToUpper(tests[i]), result)
+			logResult(tests[i].Name, "OK")
 		}
+		time.Sleep(5 * time.Second)
 	}
 	log.Println("...END OF TEST SUITE")
 	os.Exit(status)
 }
 
-type FeatureTest struct {
-	Path                 string
-	ScenarioInitializer  func(ctx *godog.ScenarioContext)
-	TestSuiteInitializer func(ctx *godog.TestSuiteContext)
-	tries                int
+func initArgs(regMap map[string]*test.FeatureTest) (fts []test.FeatureTest) {
+
+	configPtr = flag.String("config", "config/config.ini", "A configuration file")
+	config.ConfigPath = *configPtr
+	services.BaseUrl = config.NewConfig().BaseUrl
+	triesPtr = flag.Int("n", 5, "number of tries")
+	logPtr = flag.String("l", "log/.log", "log location")
+	logLevelPtr = flag.String("level", "summary", "options: info, summary, debug, error")
+	testPtr := flag.String("test", "buy", "ctlang")
+
+	flag.Parse()
+
+	if strings.HasSuffix(*testPtr, ".ctlang") {
+		tempFiles := files.NewTempFiles(*testPtr)
+		return files.NewFeatureTests(tempFiles, regMap)
+	} else {
+		var tests []string
+		tests = append(tests, *testPtr)
+		addons := flag.Args() // tail of the arguments
+		for _, a := range addons {
+			tests = append(tests, a)
+		}
+		files.NewSingleFile(tests)
+		return files.GetFeatureTestsFromMap(tests, regMap)
+	}
 }
 
-func initArgs() []string {
-	var tests []string
-	configPtr := flag.String("config", "config/config.ini", "a configuration file")
-	config.ConfigPath = *configPtr
-	triesPtr = flag.Int("n", 2, "number of tries")
-	logPtr = flag.String("l", "log/.log", "log location")
-	logLevelPtr := flag.String("level", "summary", "options: info, summary, debug, error")
-	testPtr := flag.String("test", "buy", "ctlang")
-	flag.Parse()
-	addons := flag.Args()
-	tests = append(tests, *testPtr)
-	for _, a := range addons {
-		tests = append(tests, a)
-	}
+func printArgs(tests []string) {
 	fmt.Println("************************************************")
 	fmt.Println("*** Config:", *configPtr)
 	fmt.Println("*** Number of Tries:", *triesPtr)
 	fmt.Println("*** Log:", *logPtr)
 	fmt.Println("*** Logging Level:", *logLevelPtr)
-	fmt.Printf("*** Tests: %+q\n", tests)
+	fmt.Printf("*** Features: %v\n", tests)
 	fmt.Println("************************************************")
-	return tests
 }
 
 func initLogger() {
@@ -149,4 +100,20 @@ func initLogger() {
 		log.Fatal(err)
 	}
 	log.SetOutput(file)
+}
+
+func logArgs() {
+	log.Println("Config:", *configPtr)
+	log.Println("Number of Tries:", *triesPtr)
+	log.Println("Log:", *logPtr)
+	var tsts = ""
+	for _, t := range tests {
+		tsts += "[" + t.Name + "]"
+	}
+	log.Println("Tests:", tsts)
+	log.Println(".........................................")
+}
+
+func logResult(test, result string) {
+	log.Printf("* Feature/Scenario: %s - Status: %s\n", strings.ToUpper(test), result)
 }

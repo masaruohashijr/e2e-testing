@@ -5,8 +5,8 @@ import (
 	"fmt"
 	"net/http"
 	"net/url"
-	"zarbat_test/godog/services"
 	"zarbat_test/internal/config"
+	"zarbat_test/internal/godog/services"
 	"zarbat_test/pkg/ports/sms"
 )
 

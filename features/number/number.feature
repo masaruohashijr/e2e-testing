@@ -8,3 +8,6 @@ Feature: number
     Given my test setup runs    
     When I list all available numbers
     Then I should get to buy 1 from list 
+
+    # error tests - ran out of balance, I get the number
+
