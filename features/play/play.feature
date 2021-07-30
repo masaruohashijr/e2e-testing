@@ -1,4 +1,4 @@
-Feature: play    
+Feature: Play    
   In order to play a tone with frequencies
   As an end user
   I want to set a tone to play after the call is established

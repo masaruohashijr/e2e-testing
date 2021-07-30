@@ -1,4 +1,4 @@
-Feature: number    
+Feature: Number    
   In order to list available numbers from one area code
   As an end user
   I want to list at least one number from this area

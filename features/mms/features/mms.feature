@@ -1,4 +1,4 @@
-Feature: mms    
+Feature: MMS    
   In order to my sent MMS messages can be seem by my destination numbers
   And getting a receiving confirmation from them
   As an end user

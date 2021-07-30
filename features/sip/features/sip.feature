@@ -1,4 +1,4 @@
-Feature: sip    
+Feature: SIP    
   In order to make a seamless call transfer to another number using sip
   As an end user
   I want to make an outgoing dial from an already made and current call using sip

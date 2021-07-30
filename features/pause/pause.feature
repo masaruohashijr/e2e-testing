@@ -1,4 +1,4 @@
-Feature: pause    
+Feature: Pause    
   In order to pause a call for a certain time
   As an end user
   I want to call to a Number and pause some seconds and after hangup.

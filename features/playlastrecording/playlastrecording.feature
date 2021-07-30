@@ -1,4 +1,4 @@
-Feature: play last recording    
+Feature: PlayLastRecording    
   In order to listen the last recording of my calls
   As an end user
   I want to call a number and set to play the last recording.

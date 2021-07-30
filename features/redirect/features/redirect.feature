@@ -1,4 +1,4 @@
-Feature: redirect    
+Feature: Redirect    
   In order to redirect a call
   As an end user
   I want to make a call to a Number

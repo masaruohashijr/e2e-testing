@@ -1,4 +1,4 @@
-Feature: sms    
+Feature: SMS    
   In order to send an SMS during a call
   As an end user
   I want to make a call and send a text as SMS.

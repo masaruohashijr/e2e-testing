@@ -24,7 +24,7 @@ var triesPtr *int
 func main() {
 	RegMap = test.InitRegister()
 	tests, tempDir := initArgs(RegMap)
-	initLogger()
+	initLoggers()
 	log.Println("****************************************")
 	log.Println("START OF TEST SUITE")
 	logArgs(tests)
@@ -64,7 +64,7 @@ func initArgs(regMap map[string]*test.FeatureTest) (fts []test.FeatureTest, temp
 	services.BaseUrl = config.NewConfig().BaseUrl
 	triesPtr = flag.Int("n", 5, "number of tries")
 	logPtr = flag.String("l", "log/.log", "log location")
-	logLevelPtr = flag.String("level", "summary", "options: info, summary, debug, error")
+	logLevelPtr = flag.String("level", "summary", "options: info, debug")
 	testPtr := flag.String("test", "buy", "ctlang")
 
 	flag.Parse()
@@ -94,7 +94,7 @@ func printArgs(tests []string) {
 	fmt.Println("************************************************")
 }
 
-func initLogger() {
+func initLoggers() {
 	file, err := os.OpenFile(*logPtr, os.O_APPEND|os.O_CREATE|os.O_WRONLY, 0666)
 	if err != nil {
 		log.Fatal(err)
