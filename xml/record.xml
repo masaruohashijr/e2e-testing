@@ -1,2 +1,2 @@
 <?xml version="1.0"?>
-<Response><Pause length="3"></Pause><Record background="false" action="http://cpaas2.ngrok.io/RecordAction" maxLength="10" fileFormat="wav" transcribe="false" transcribeCallback=""></Record><Hangup></Hangup></Response>
+<Response><Pause length="3"></Pause><Record background="false" action="" maxLength="10" fileFormat="wav" transcribe="true" transcribeCallback="http://cpaas2.ngrok.io/TranscribeCallback"></Record><Hangup></Hangup></Response>

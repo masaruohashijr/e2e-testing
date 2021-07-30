@@ -39,6 +39,7 @@ func ConfiguredToHangupAfterSeconds(NumberA string, timeInSeconds int) error {
 func IMakeACallFromTo(NumberA, NumberB string) error {
 	Configuration.From, Configuration.FromSid = Configuration.SelectNumber(NumberA)
 	Configuration.To, Configuration.ToSid = Configuration.SelectNumber(NumberB)
+	Configuration.ActionUrl = "http://zang.io/ivr/welcome/call"
 	CallsPrimaryPort.MakeCall()
 	return nil
 }

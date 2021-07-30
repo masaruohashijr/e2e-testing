@@ -13,11 +13,10 @@ var finalFileContent bytes.Buffer
 var featuresDir = "./features"
 var testDir = "./test"
 
-func NewTempFiles(testFile string) []*os.File {
-	tempDir := NewTempDir()
+func NewTempFiles(testFile string) (tmps []*os.File, tempDir string) {
+	tempDir = NewTempDir()
 	lines, _ := ReadFileAsLines(testFile)
 	var tmp *os.File
-	var tmps []*os.File
 	for _, line := range lines {
 		line = strings.TrimSpace(line)
 		if strings.HasPrefix(line, "Feature:") {
@@ -28,7 +27,7 @@ func NewTempFiles(testFile string) []*os.File {
 		}
 		AddLineToTemp(tmp, line)
 	}
-	return tmps
+	return tmps, tempDir
 }
 
 func NewTempDir() string {

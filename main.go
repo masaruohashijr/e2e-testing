@@ -20,15 +20,14 @@ var logPtr *string
 var logLevelPtr *string
 var configPtr *string
 var triesPtr *int
-var tests []test.FeatureTest
 
 func main() {
 	RegMap = test.InitRegister()
-	tests = initArgs(RegMap)
+	tests, tempDir := initArgs(RegMap)
 	initLogger()
 	log.Println("****************************************")
 	log.Println("START OF TEST SUITE")
-	logArgs()
+	logArgs(tests)
 	status := 0
 	for i := 0; i < len(tests); i++ {
 		ft := RegMap[tests[i].Name]
@@ -54,10 +53,11 @@ func main() {
 		time.Sleep(5 * time.Second)
 	}
 	log.Println("...END OF TEST SUITE")
+	os.RemoveAll(tempDir)
 	os.Exit(status)
 }
 
-func initArgs(regMap map[string]*test.FeatureTest) (fts []test.FeatureTest) {
+func initArgs(regMap map[string]*test.FeatureTest) (fts []test.FeatureTest, tempDir string) {
 
 	configPtr = flag.String("config", "config/config.ini", "A configuration file")
 	config.ConfigPath = *configPtr
@@ -70,8 +70,8 @@ func initArgs(regMap map[string]*test.FeatureTest) (fts []test.FeatureTest) {
 	flag.Parse()
 
 	if strings.HasSuffix(*testPtr, ".ctlang") {
-		tempFiles := files.NewTempFiles(*testPtr)
-		return files.NewFeatureTests(tempFiles, regMap)
+		tempFiles, tempDir := files.NewTempFiles(*testPtr)
+		return files.NewFeatureTests(tempFiles, regMap), tempDir
 	} else {
 		var tests []string
 		tests = append(tests, *testPtr)
@@ -80,7 +80,7 @@ func initArgs(regMap map[string]*test.FeatureTest) (fts []test.FeatureTest) {
 			tests = append(tests, a)
 		}
 		files.NewSingleFile(tests)
-		return files.GetFeatureTestsFromMap(tests, regMap)
+		return files.GetFeatureTestsFromMap(tests, regMap), ""
 	}
 }
 
@@ -102,7 +102,7 @@ func initLogger() {
 	log.SetOutput(file)
 }
 
-func logArgs() {
+func logArgs(tests []test.FeatureTest) {
 	log.Println("Config:", *configPtr)
 	log.Println("Number of Tries:", *triesPtr)
 	log.Println("Log:", *logPtr)
