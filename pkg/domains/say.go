@@ -6,6 +6,7 @@ type ResponseSay struct {
 	XMLName xml.Name `xml:"Response"`
 	Pause   Pause    `xml:"Pause"`
 	Say     Say      `xml:"Say"`
+	Hangup  Hangup   `xml:"Hangup"`
 }
 
 type Say struct {

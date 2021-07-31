@@ -7,12 +7,12 @@ import (
 )
 
 func GatherHandler(w http.ResponseWriter, r *http.Request) {
-	logging.Debug.Println("GatherHandler")
+	//logging.Debug.Println("GatherHandler")
 	xml, err := os.ReadFile("xml/gather.xml")
 	if err != nil {
 		println(err.Error())
 	}
-	logging.Debug.Println(string(xml))
+	//logging.Debug.Println(string(xml))
 	w.Write([]byte(xml))
 }
 

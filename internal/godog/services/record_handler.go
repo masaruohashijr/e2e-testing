@@ -1,6 +1,7 @@
 package services
 
 import (
+	"fmt"
 	"net/http"
 	"os"
 	"zarbat_test/internal/logging"
@@ -32,11 +33,12 @@ func TranscribeCallbackHandler(w http.ResponseWriter, r *http.Request) {
 	rURL := r.FormValue("TranscriptionText")
 	logging.Debug.Println("************************************************")
 	logging.Debug.Println("Transcribe Callback")
-	//reflect.TypeOf(Ch)
-	//reflect.TypeOf(rURL)
-	logging.Debug.Println(rURL)
+	logging.Debug.Println("transcribed text: ", rURL)
+	fmt.Println("transcribed text: ", rURL)
 	if rURL != "" {
 		Ch <- rURL
+	} else {
+		fmt.Println("TranscribeCallbackHandler - Erro: ", rURL)
 	}
 	logging.Debug.Println("******************************** Transcribe END")
 }

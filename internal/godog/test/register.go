@@ -7,6 +7,7 @@ import (
 	"zarbat_test/internal/godog/pause"
 	"zarbat_test/internal/godog/ping"
 	"zarbat_test/internal/godog/play"
+	"zarbat_test/internal/godog/playlastrecording"
 	"zarbat_test/internal/godog/record"
 	"zarbat_test/internal/godog/redirect"
 	"zarbat_test/internal/godog/reject"
@@ -30,6 +31,11 @@ func InitRegister() (RegMap map[string]*FeatureTest) {
 		Name:                "play",
 		Path:                "features/play",
 		ScenarioInitializer: play.InitializeScenario,
+	}
+	RegMap["playlastrecording"] = &FeatureTest{
+		Name:                "playlastrecording",
+		Path:                "features/playlastrecording",
+		ScenarioInitializer: playlastrecording.InitializeScenario,
 	}
 	RegMap["ping"] = &FeatureTest{
 		Name:                "ping",

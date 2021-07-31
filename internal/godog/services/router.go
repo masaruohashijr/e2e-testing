@@ -12,7 +12,7 @@ var CloseChannel bool
 var ChComplete chan string
 
 var BaseUrl string
-var TestTimeout int64 = 50
+var TestTimeout int64 = 120
 var GatherTimeOut = 60
 var GatherPause = 0
 var PlayPause = 3
@@ -29,13 +29,16 @@ func RunServer(c chan string, close bool) {
 	if router != nil {
 		return
 	}
-	logging.Debug.Println("Server running")
+	if logging.Debug != nil {
+		logging.Debug.Println("Server running")
+	}
 	router = mux.NewRouter()
 	router.HandleFunc("/Dial", DialHandler).Methods("POST", "GET")
 	router.HandleFunc("/Ping", PingHandler).Methods("POST", "GET")
 	router.HandleFunc("/Pinging", PingingHandler).Methods("POST", "GET")
 	router.HandleFunc("/Pause", PauseHandler).Methods("POST", "GET")
 	router.HandleFunc("/Play", PlayHandler).Methods("POST", "GET")
+	router.HandleFunc("/PlayLastRecording", PlayLastRecordingHandler).Methods("POST", "GET")
 	router.HandleFunc("/Say", SayHandler).Methods("POST", "GET")
 	router.HandleFunc("/Reject", RejectHandler).Methods("POST", "GET")
 	router.HandleFunc("/Redirect", RedirectHandler).Methods("POST", "GET")

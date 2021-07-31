@@ -30,28 +30,30 @@ func main() {
 	l.Info.Println("START OF TEST SUITE")
 	logArgs(tests)
 	status := 0
-	for i := 0; i < len(tests); i++ {
-		ft := RegMap[tests[i].Name]
-		opts := godog.Options{
-			Format:    "progress",
-			Paths:     []string{ft.Path},
-			Randomize: time.Now().UTC().UnixNano(),
-		}
-		status = godog.TestSuite{
-			Name:                "zarbat_test",
-			ScenarioInitializer: ft.ScenarioInitializer,
-			Options:             &opts,
-		}.Run()
-		if status != 0 {
-			logResult(tests[i].Name, "Not OK")
-			ft.Tries += 1
-			if ft.Tries < *triesPtr {
-				i--
+	for n := 0; n < 100; n++ {
+		for i := 0; i < len(tests); i++ {
+			ft := RegMap[tests[i].Name]
+			opts := godog.Options{
+				Format:    "progress",
+				Paths:     []string{ft.Path},
+				Randomize: time.Now().UTC().UnixNano(),
 			}
-		} else {
-			logResult(tests[i].Name, "OK")
+			status = godog.TestSuite{
+				Name:                "zarbat_test",
+				ScenarioInitializer: ft.ScenarioInitializer,
+				Options:             &opts,
+			}.Run()
+			if status != 0 {
+				logResult(tests[i].Name, "Not OK")
+				ft.Tries += 1
+				if ft.Tries < *triesPtr {
+					i--
+				}
+			} else {
+				logResult(tests[i].Name, "OK")
+			}
+			time.Sleep(5 * time.Second)
 		}
-		time.Sleep(5 * time.Second)
 	}
 	l.Info.Println("...END OF TEST SUITE")
 	os.RemoveAll(tempDir)

@@ -42,6 +42,7 @@ func ConfiguredToRecordCalls(number string) error {
 	strXML := domains.Header + string(x)
 	println(strXML)
 	services.WriteActionXML("record", strXML)
+	Configuration.VoiceUrl = services.BaseUrl + "/Record"
 	Configuration.To, Configuration.ToSid = Configuration.SelectNumber(number)
 	NumberPrimaryPort.UpdateNumber()
 	return nil
@@ -80,7 +81,6 @@ func MyTestSetupRuns() error {
 	//Configuration.Fallback = services.BaseUrl + "/Fallback"
 	Configuration.StatusCallback = services.BaseUrl + "/Callback"
 	//Configuration.VoiceUrl = services.BaseUrl + "/Gather"
-	Configuration.VoiceUrl = services.BaseUrl + "/Record"
 	CallSecondaryPort = secondary.NewCallsApi(&Configuration)
 	CallPrimaryPort = primary.NewCallsService(CallSecondaryPort)
 	NumberSecondaryPort = secondary.NewNumbersApi(&Configuration)
