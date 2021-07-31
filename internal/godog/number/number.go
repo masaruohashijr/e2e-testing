@@ -35,9 +35,21 @@ func IListAllAvailableNumbers() error {
 }
 
 func IShouldGetToBuyFromList(amount int) error {
+	ok := false
 	for i := 0; i < amount; i++ {
 		NumberSecondaryPort.AddNumber(AvailableNumbers[i])
+		purchased, _ := NumberSecondaryPort.ListNumbers()
+		for _, n := range purchased {
+			if AvailableNumbers[i] == n {
+				ok = true
+				break
+			}
+		}
+		if !ok {
+			return fmt.Errorf("Error %s", "Not able to list available numbers.")
+		}
 	}
+
 	return nil
 }
 

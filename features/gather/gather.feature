@@ -6,7 +6,7 @@ Feature: Gather
   Scenario: Gather something said
 
     Given my test setup runs 
-      And "NumberA" configured to say "We shall fight on the beaches" 
+      And "NumberA" configured to say "we shall fight on the beaches" 
       And "NumberB" configured to gather speech 
       When I make a call from "NumberA" to "NumberB" 
-      Then "NumberB" should get speech "We shall fight on the beaches" 
+      Then "NumberB" should get speech "we shall fight on the beaches" 

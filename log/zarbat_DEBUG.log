@@ -1,0 +1,623 @@
+2021/07/30 10:30:57 DEBUG: ************************************************
+2021/07/30 10:30:57 DEBUG: *** Config: config/config.ini
+2021/07/30 10:30:57 DEBUG: *** Number of Tries: 3
+2021/07/30 10:30:57 DEBUG: *** Log: log/zarbat.log
+2021/07/30 10:30:57 DEBUG: *** Logging Level: info
+2021/07/30 10:30:57 DEBUG: *** Features: [hangup][ping][play][record][redirect][reject][sms][say][gather][number]
+2021/07/30 10:30:57 DEBUG: ************************************************
+2021/07/30 10:30:57 DEBUG: Server running
+2021/07/30 10:31:01 DEBUG: ******************************** Callback START
+2021/07/30 10:31:01 DEBUG: Call Status in-progress.
+
+2021/07/30 10:31:01 DEBUG: ******************************** Callback END
+2021/07/30 10:31:05 DEBUG: ******************************** Callback START
+2021/07/30 10:31:05 DEBUG: Call Status completed.
+
+2021/07/30 10:31:05 DEBUG: ******************************** Callback END
+2021/07/30 10:31:13 DEBUG: PingHandler
+2021/07/30 10:31:13 DEBUG: <?xml version="1.0"?>
+<Response><Ping>http://cpaas.ngrok.io/Pinging</Ping></Response>
+2021/07/30 10:31:13 DEBUG: ******************************** Callback START
+2021/07/30 10:31:13 DEBUG: Call Status in-progress.
+
+2021/07/30 10:31:13 DEBUG: ******************************** Callback END
+2021/07/30 10:31:14 DEBUG: ******************************** Ping
+2021/07/30 10:31:15 DEBUG: ******************************** Callback START
+2021/07/30 10:31:15 DEBUG: Call Status completed.
+
+2021/07/30 10:31:15 DEBUG: ******************************** Callback END
+2021/07/30 10:31:22 DEBUG: RecordHandler
+2021/07/30 10:31:22 DEBUG: <?xml version="1.0"?>
+<Response><Pause length="3"></Pause><Record background="false" action="http://cpaas.ngrok.io/RecordAction" maxLength="10" fileFormat="wav" transcribe="false" transcribeCallback=""></Record><Hangup></Hangup></Response>
+2021/07/30 10:31:23 DEBUG: PlayHandler
+2021/07/30 10:31:23 DEBUG: <?xml version="1.0"?>
+<Response><Play loop="100">tone_stream://%(5000,10,850)</Play><Pause length="0"></Pause></Response>
+2021/07/30 10:31:23 DEBUG: ******************************** Callback START
+2021/07/30 10:31:23 DEBUG: Call Status in-progress.
+
+2021/07/30 10:31:23 DEBUG: ******************************** Callback END
+2021/07/30 10:31:39 DEBUG: ******************************** Callback START
+2021/07/30 10:31:39 DEBUG: Call Status completed.
+
+2021/07/30 10:31:39 DEBUG: ******************************** Callback END
+2021/07/30 10:31:41 DEBUG: ************************************************
+2021/07/30 10:31:41 DEBUG: RecordingUrl
+2021/07/30 10:31:41 DEBUG: http://recordings.telapi.com/RBcb0f449330ab45d384fe71c4621e66b4/RE777c3e323c396b734ecd4dfa8c0eaf5d.wav
+2021/07/30 10:31:41 DEBUG: ******************************** RecordAction END
+2021/07/30 10:31:56 DEBUG: RecordHandler
+2021/07/30 10:31:56 DEBUG: <?xml version="1.0"?>
+<Response><Pause length="3"></Pause><Record background="false" action="" maxLength="10" fileFormat="wav" transcribe="true" transcribeCallback="http://cpaas.ngrok.io/TranscribeCallback"></Record><Hangup></Hangup></Response>
+2021/07/30 10:31:57 DEBUG: SayHandler
+2021/07/30 10:31:57 DEBUG: <?xml version="1.0"?>
+<Response><Pause length="5"></Pause><Say voice="man" language="en-US" loop="1">what we do in life echoes in eternity</Say></Response>
+2021/07/30 10:31:57 DEBUG: ******************************** Callback START
+2021/07/30 10:31:57 DEBUG: Call Status in-progress.
+
+2021/07/30 10:31:57 DEBUG: ******************************** Callback END
+2021/07/30 10:32:07 DEBUG: ******************************** Callback START
+2021/07/30 10:32:07 DEBUG: Call Status completed.
+
+2021/07/30 10:32:07 DEBUG: ******************************** Callback END
+2021/07/30 10:32:08 DEBUG: RecordHandler
+2021/07/30 10:32:08 DEBUG: <?xml version="1.0"?>
+<Response><Pause length="3"></Pause><Record background="false" action="" maxLength="10" fileFormat="wav" transcribe="true" transcribeCallback="http://cpaas.ngrok.io/TranscribeCallback"></Record><Hangup></Hangup></Response>
+2021/07/30 10:32:12 DEBUG: ************************************************
+2021/07/30 10:32:12 DEBUG: Transcribe Callback
+2021/07/30 10:32:12 DEBUG: what we do in life echoes in eternity
+2021/07/30 10:32:12 DEBUG: ******************************** Transcribe END
+2021/07/30 10:32:12 DEBUG: ************************************************
+2021/07/30 10:32:12 DEBUG: Transcribe Callback
+2021/07/30 10:32:12 DEBUG: what we do in life echoes in eternity
+2021/07/30 10:32:13 DEBUG: ************************************************
+2021/07/30 10:32:13 DEBUG: Transcribe Callback
+2021/07/30 10:32:13 DEBUG: what we do in life echoes in eternity
+2021/07/30 10:32:20 DEBUG: Redirect Handler
+2021/07/30 10:32:20 DEBUG: <?xml version="1.0"?>
+<Response><Redirect>http://cpaas.ngrok.io/Pinging</Redirect></Response>
+2021/07/30 10:32:21 DEBUG: ******************************** Ping
+2021/07/30 10:32:21 DEBUG: ******************************** Callback START
+2021/07/30 10:32:21 DEBUG: Call Status in-progress.
+
+2021/07/30 10:32:21 DEBUG: ******************************** Callback END
+2021/07/30 10:32:22 DEBUG: ******************************** Callback START
+2021/07/30 10:32:22 DEBUG: Call Status completed.
+
+2021/07/30 10:32:43 DEBUG: *********** SMS Status Callback
+2021/07/30 10:32:43 DEBUG: AccountSid=AC777c3e3262352901b0e24b7092f6eef0&ApiVersion=v2&Body=what+we+do+in+life+echoes+in+eternity&DlrStatus=&ErrorMessage=&From=%2B12048003030&Price=0.005&SmsSid=SMa341a57267c440efbd4b76f2b9c9d102&SmsStatus=sent&To=%2B12048003021
+2021/07/30 10:32:43 DEBUG: *********** SMS Status Callback
+2021/07/30 10:32:43 DEBUG: AccountSid=12604719&ApiVersion=v2&Body=what+we+do+in+life+echoes+in+eternity&DlrStatus=Generic+Routing+error&ErrorMessage=&From=%2B12048003030&Price=0.005&SmsSid=SMa341a57267c440efbd4b76f2b9c9d102&SmsStatus=failed&To=%2B12048003021
+2021/07/30 10:32:43 DEBUG: *********** SMS Status Callback
+2021/07/30 10:32:43 DEBUG: AccountSid=12604719&ApiVersion=v2&Body=what+we+do+in+life+echoes+in+eternity&DlrStatus=sent&ErrorMessage=&From=%2B12048003030&Price=0.005&SmsSid=SMa341a57267c440efbd4b76f2b9c9d102&SmsStatus=sent&To=%2B12048003021
+2021/07/30 10:32:51 DEBUG: GatherHandler
+2021/07/30 10:32:51 DEBUG: <?xml version="1.0"?>
+<Response><Pause length="5"></Pause><Gather input="speech" language="en-US" action="http://cpaas.ngrok.io/SpeechResult" timeout="15"></Gather></Response>
+2021/07/30 10:32:52 DEBUG: SayHandler
+2021/07/30 10:32:52 DEBUG: <?xml version="1.0"?>
+<Response><Pause length="5"></Pause><Say voice="man" language="en-US" loop="3">what we do in life echoes in eternity</Say></Response>
+2021/07/30 10:32:52 DEBUG: ******************************** Callback START
+2021/07/30 10:32:52 DEBUG: Call Status in-progress.
+
+2021/07/30 10:32:52 DEBUG: ******************************** Callback END
+2021/07/30 10:33:02 DEBUG: ************************************************
+2021/07/30 10:33:02 DEBUG: SpeechResult
+2021/07/30 10:33:02 DEBUG: what we do in life echoes in eternity
+2021/07/30 10:33:03 DEBUG: ******************************** Callback START
+2021/07/30 10:33:03 DEBUG: Call Status completed.
+
+2021/07/30 10:33:03 DEBUG: ******************************** Callback END
+2021/07/30 10:33:04 DEBUG: ************************************************
+2021/07/30 10:33:04 DEBUG: Transcribe Callback
+2021/07/30 10:33:04 DEBUG: what we do in life echoes in eternity
+2021/07/30 10:33:06 DEBUG: ************************************************
+2021/07/30 10:33:06 DEBUG: Transcribe Callback
+2021/07/30 10:33:06 DEBUG: what we do in life echoes in eternity
+2021/07/30 10:33:08 DEBUG: ******************************** Transcribe END
+2021/07/30 10:33:10 DEBUG: GatherHandler
+2021/07/30 10:33:10 DEBUG: <?xml version="1.0"?>
+<Response><Pause length="5"></Pause><Gather input="speech" language="en-US" action="http://cpaas.ngrok.io/SpeechResult" timeout="15"></Gather></Response>
+2021/07/30 10:33:11 DEBUG: SayHandler
+2021/07/30 10:33:11 DEBUG: <?xml version="1.0"?>
+<Response><Pause length="5"></Pause><Say voice="man" language="en-US" loop="3">we shall fight on the beaches</Say></Response>
+2021/07/30 10:33:11 DEBUG: ******************************** Callback START
+2021/07/30 10:33:11 DEBUG: Call Status in-progress.
+
+2021/07/30 10:33:11 DEBUG: ******************************** Callback END
+2021/07/30 10:33:15 DEBUG: ******************************** Transcribe END
+2021/07/30 10:33:17 DEBUG: GatherHandler
+2021/07/30 10:33:17 DEBUG: <?xml version="1.0"?>
+<Response><Pause length="5"></Pause><Gather input="speech" language="en-US" action="http://cpaas.ngrok.io/SpeechResult" timeout="15"></Gather></Response>
+2021/07/30 10:33:18 DEBUG: SayHandler
+2021/07/30 10:33:18 DEBUG: <?xml version="1.0"?>
+<Response><Pause length="5"></Pause><Say voice="man" language="en-US" loop="3">we shall fight on the beaches</Say></Response>
+2021/07/30 10:33:18 DEBUG: ******************************** Callback START
+2021/07/30 10:33:18 DEBUG: Call Status in-progress.
+
+2021/07/30 10:33:18 DEBUG: ******************************** Callback END
+2021/07/30 10:33:21 DEBUG: ************************************************
+2021/07/30 10:33:21 DEBUG: SpeechResult
+2021/07/30 10:33:21 DEBUG: we shall fight on the beaches
+2021/07/30 10:33:23 DEBUG: ******************************** Callback START
+2021/07/30 10:33:23 DEBUG: Call Status completed.
+
+2021/07/30 10:33:23 DEBUG: ******************************** Callback END
+2021/07/30 10:33:23 DEBUG: GatherHandler
+2021/07/30 10:33:23 DEBUG: <?xml version="1.0"?>
+<Response><Pause length="5"></Pause><Gather input="speech" language="en-US" action="http://cpaas.ngrok.io/SpeechResult" timeout="15"></Gather></Response>
+2021/07/30 10:33:24 DEBUG: SayHandler
+2021/07/30 10:33:24 DEBUG: <?xml version="1.0"?>
+<Response><Pause length="5"></Pause><Say voice="man" language="en-US" loop="3">we shall fight on the beaches</Say></Response>
+2021/07/30 10:33:24 DEBUG: ******************************** Callback START
+2021/07/30 10:33:24 DEBUG: Call Status in-progress.
+
+2021/07/30 10:33:24 DEBUG: ******************************** Callback END
+2021/07/30 10:33:27 DEBUG: ************************************************
+2021/07/30 10:33:27 DEBUG: SpeechResult
+2021/07/30 10:33:27 DEBUG: we shall fight on the beaches
+2021/07/30 10:42:20 DEBUG: ************************************************
+2021/07/30 10:42:20 DEBUG: *** Config: config/config.ini
+2021/07/30 10:42:20 DEBUG: *** Number of Tries: 3
+2021/07/30 10:42:20 DEBUG: *** Log: log/zarbat.log
+2021/07/30 10:42:20 DEBUG: *** Logging Level: info
+2021/07/30 10:42:20 DEBUG: *** Features: [number]
+2021/07/30 10:42:20 DEBUG: ************************************************
+2021/07/30 10:43:01 DEBUG: ************************************************
+2021/07/30 10:43:01 DEBUG: *** Config: config/config.ini
+2021/07/30 10:43:01 DEBUG: *** Number of Tries: 3
+2021/07/30 10:43:01 DEBUG: *** Log: log/zarbat.log
+2021/07/30 10:43:01 DEBUG: *** Logging Level: info
+2021/07/30 10:43:01 DEBUG: *** Features: [number]
+2021/07/30 10:43:01 DEBUG: ************************************************
+2021/07/30 10:43:56 DEBUG: ************************************************
+2021/07/30 10:43:56 DEBUG: *** Config: config/config.ini
+2021/07/30 10:43:56 DEBUG: *** Number of Tries: 3
+2021/07/30 10:43:56 DEBUG: *** Log: log/zarbat.log
+2021/07/30 10:43:56 DEBUG: *** Logging Level: info
+2021/07/30 10:43:56 DEBUG: *** Features: [buy]
+2021/07/30 10:43:56 DEBUG: ************************************************
+2021/07/30 10:52:00 DEBUG: ************************************************
+2021/07/30 10:52:00 DEBUG: *** Config: config/config.ini
+2021/07/30 10:52:00 DEBUG: *** Number of Tries: 3
+2021/07/30 10:52:00 DEBUG: *** Log: log/zarbat.log
+2021/07/30 10:52:00 DEBUG: *** Logging Level: info
+2021/07/30 10:52:00 DEBUG: *** Features: [buy]
+2021/07/30 10:52:00 DEBUG: ************************************************
+2021/07/30 10:53:07 DEBUG: ************************************************
+2021/07/30 10:53:07 DEBUG: *** Config: config/config.ini
+2021/07/30 10:53:07 DEBUG: *** Number of Tries: 3
+2021/07/30 10:53:07 DEBUG: *** Log: log/zarbat.log
+2021/07/30 10:53:07 DEBUG: *** Logging Level: info
+2021/07/30 10:53:07 DEBUG: *** Features: [buy]
+2021/07/30 10:53:07 DEBUG: ************************************************
+2021/07/30 10:56:28 DEBUG: ************************************************
+2021/07/30 10:56:28 DEBUG: *** Config: config/config.ini
+2021/07/30 10:56:28 DEBUG: *** Number of Tries: 3
+2021/07/30 10:56:28 DEBUG: *** Log: log/zarbat.log
+2021/07/30 10:56:28 DEBUG: *** Logging Level: info
+2021/07/30 10:56:28 DEBUG: *** Features: [hangup][ping][play][record][redirect][reject][sms][say][gather][buy]
+2021/07/30 10:56:28 DEBUG: ************************************************
+2021/07/30 10:56:28 DEBUG: Server running
+2021/07/30 10:56:32 DEBUG: ******************************** Callback START
+2021/07/30 10:56:32 DEBUG: Call Status in-progress.
+
+2021/07/30 10:56:32 DEBUG: ******************************** Callback END
+2021/07/30 10:56:35 DEBUG: ******************************** Callback START
+2021/07/30 10:56:35 DEBUG: Call Status completed.
+
+2021/07/30 10:56:35 DEBUG: ******************************** Callback END
+2021/07/30 10:56:44 DEBUG: PingHandler
+2021/07/30 10:56:44 DEBUG: <?xml version="1.0"?>
+<Response><Ping>http://cpaas.ngrok.io/Pinging</Ping></Response>
+2021/07/30 10:56:44 DEBUG: ******************************** Callback START
+2021/07/30 10:56:44 DEBUG: Call Status in-progress.
+
+2021/07/30 10:56:44 DEBUG: ******************************** Callback END
+2021/07/30 10:56:44 DEBUG: ******************************** Ping
+2021/07/30 10:56:45 DEBUG: ******************************** Callback START
+2021/07/30 10:56:45 DEBUG: Call Status completed.
+
+2021/07/30 10:56:45 DEBUG: ******************************** Callback END
+2021/07/30 10:56:52 DEBUG: RecordHandler
+2021/07/30 10:56:52 DEBUG: <?xml version="1.0"?>
+<Response><Pause length="3"></Pause><Record background="false" action="http://cpaas.ngrok.io/RecordAction" maxLength="10" fileFormat="wav" transcribe="false" transcribeCallback=""></Record><Hangup></Hangup></Response>
+2021/07/30 10:56:53 DEBUG: PlayHandler
+2021/07/30 10:56:53 DEBUG: <?xml version="1.0"?>
+<Response><Play loop="100">tone_stream://%(5000,10,850)</Play><Pause length="0"></Pause></Response>
+2021/07/30 10:56:53 DEBUG: ******************************** Callback START
+2021/07/30 10:56:53 DEBUG: Call Status in-progress.
+
+2021/07/30 10:56:53 DEBUG: ******************************** Callback END
+2021/07/30 10:57:10 DEBUG: ******************************** Callback START
+2021/07/30 10:57:10 DEBUG: Call Status completed.
+
+2021/07/30 10:57:10 DEBUG: ******************************** Callback END
+2021/07/30 10:57:11 DEBUG: ************************************************
+2021/07/30 10:57:11 DEBUG: RecordingUrl
+2021/07/30 10:57:11 DEBUG: http://recordings.telapi.com/RBcb0f449330ab45d384fe71c4621e66b4/RE777c3e32489773b8b61e4cc7a5c09b0f.wav
+2021/07/30 10:57:11 DEBUG: ******************************** RecordAction END
+2021/07/30 10:57:25 DEBUG: RecordHandler
+2021/07/30 10:57:25 DEBUG: <?xml version="1.0"?>
+<Response><Pause length="3"></Pause><Record background="false" action="" maxLength="10" fileFormat="wav" transcribe="true" transcribeCallback="http://cpaas.ngrok.io/TranscribeCallback"></Record><Hangup></Hangup></Response>
+2021/07/30 10:57:26 DEBUG: SayHandler
+2021/07/30 10:57:26 DEBUG: <?xml version="1.0"?>
+<Response><Pause length="5"></Pause><Say voice="man" language="en-US" loop="1">what we do in life echoes in eternity</Say></Response>
+2021/07/30 10:57:26 DEBUG: ******************************** Callback START
+2021/07/30 10:57:26 DEBUG: Call Status in-progress.
+
+2021/07/30 10:57:26 DEBUG: ******************************** Callback END
+2021/07/30 10:57:36 DEBUG: ******************************** Callback START
+2021/07/30 10:57:36 DEBUG: Call Status completed.
+
+2021/07/30 10:57:36 DEBUG: ******************************** Callback END
+2021/07/30 10:57:37 DEBUG: RecordHandler
+2021/07/30 10:57:37 DEBUG: <?xml version="1.0"?>
+<Response><Pause length="3"></Pause><Record background="false" action="" maxLength="10" fileFormat="wav" transcribe="true" transcribeCallback="http://cpaas.ngrok.io/TranscribeCallback"></Record><Hangup></Hangup></Response>
+2021/07/30 10:57:39 DEBUG: ************************************************
+2021/07/30 10:57:39 DEBUG: Transcribe Callback
+2021/07/30 10:57:39 DEBUG: what we do in life echoes in eternity
+2021/07/30 10:57:39 DEBUG: ******************************** Transcribe END
+2021/07/30 10:57:40 DEBUG: ************************************************
+2021/07/30 10:57:40 DEBUG: Transcribe Callback
+2021/07/30 10:57:40 DEBUG: what we do in life echoes in eternity
+2021/07/30 10:57:41 DEBUG: ************************************************
+2021/07/30 10:57:41 DEBUG: Transcribe Callback
+2021/07/30 10:57:41 DEBUG: what we do in life echoes in eternity
+2021/07/30 10:57:47 DEBUG: Redirect Handler
+2021/07/30 10:57:47 DEBUG: <?xml version="1.0"?>
+<Response><Redirect>http://cpaas.ngrok.io/Pinging</Redirect></Response>
+2021/07/30 10:57:48 DEBUG: ******************************** Ping
+2021/07/30 10:57:48 DEBUG: ******************************** Callback START
+2021/07/30 10:57:48 DEBUG: Call Status in-progress.
+
+2021/07/30 10:57:48 DEBUG: ******************************** Callback END
+2021/07/30 10:57:49 DEBUG: ******************************** Callback START
+2021/07/30 10:57:49 DEBUG: Call Status completed.
+
+2021/07/30 10:58:09 DEBUG: *********** SMS Status Callback
+2021/07/30 10:58:09 DEBUG: AccountSid=AC777c3e3262352901b0e24b7092f6eef0&ApiVersion=v2&Body=what+we+do+in+life+echoes+in+eternity&DlrStatus=&ErrorMessage=&From=%2B12048003030&Price=0.005&SmsSid=SM3ab6a235c4e944ccad4193c51048397d&SmsStatus=sent&To=%2B12048003021
+2021/07/30 10:58:10 DEBUG: *********** SMS Status Callback
+2021/07/30 10:58:10 DEBUG: AccountSid=12604719&ApiVersion=v2&Body=what+we+do+in+life+echoes+in+eternity&DlrStatus=sent&ErrorMessage=&From=%2B12048003030&Price=0.005&SmsSid=SM3ab6a235c4e944ccad4193c51048397d&SmsStatus=sent&To=%2B12048003021
+2021/07/30 10:58:14 DEBUG: *********** SMS Status Callback
+2021/07/30 10:58:14 DEBUG: AccountSid=12604719&ApiVersion=v2&Body=what+we+do+in+life+echoes+in+eternity&DlrStatus=Generic+Routing+error&ErrorMessage=&From=%2B12048003030&Price=0.005&SmsSid=SM3ab6a235c4e944ccad4193c51048397d&SmsStatus=failed&To=%2B12048003021
+2021/07/30 10:58:18 DEBUG: GatherHandler
+2021/07/30 10:58:18 DEBUG: <?xml version="1.0"?>
+<Response><Pause length="5"></Pause><Gather input="speech" language="en-US" action="http://cpaas.ngrok.io/SpeechResult" timeout="15"></Gather></Response>
+2021/07/30 10:58:19 DEBUG: SayHandler
+2021/07/30 10:58:19 DEBUG: <?xml version="1.0"?>
+<Response><Pause length="5"></Pause><Say voice="man" language="en-US" loop="3">what we do in life echoes in eternity</Say></Response>
+2021/07/30 10:58:19 DEBUG: ******************************** Callback START
+2021/07/30 10:58:19 DEBUG: Call Status in-progress.
+
+2021/07/30 10:58:19 DEBUG: ******************************** Callback END
+2021/07/30 10:58:29 DEBUG: ************************************************
+2021/07/30 10:58:29 DEBUG: SpeechResult
+2021/07/30 10:58:29 DEBUG: what we do in life echoes in eternity
+2021/07/30 10:58:30 DEBUG: ******************************** Callback START
+2021/07/30 10:58:30 DEBUG: Call Status completed.
+
+2021/07/30 10:58:30 DEBUG: ******************************** Callback END
+2021/07/30 10:58:32 DEBUG: ************************************************
+2021/07/30 10:58:32 DEBUG: Transcribe Callback
+2021/07/30 10:58:32 DEBUG: what we do in life echoes in eternity
+2021/07/30 10:58:35 DEBUG: ******************************** Transcribe END
+2021/07/30 10:58:35 DEBUG: ************************************************
+2021/07/30 10:58:35 DEBUG: Transcribe Callback
+2021/07/30 10:58:35 DEBUG: what we do in life echoes in eternity
+2021/07/30 10:58:37 DEBUG: GatherHandler
+2021/07/30 10:58:37 DEBUG: <?xml version="1.0"?>
+<Response><Pause length="5"></Pause><Gather input="speech" language="en-US" action="http://cpaas.ngrok.io/SpeechResult" timeout="15"></Gather></Response>
+2021/07/30 10:58:38 DEBUG: SayHandler
+2021/07/30 10:58:38 DEBUG: <?xml version="1.0"?>
+<Response><Pause length="5"></Pause><Say voice="man" language="en-US" loop="3">we shall fight on the beaches</Say></Response>
+2021/07/30 10:58:38 DEBUG: ******************************** Callback START
+2021/07/30 10:58:38 DEBUG: Call Status in-progress.
+
+2021/07/30 10:58:38 DEBUG: ******************************** Callback END
+2021/07/30 10:58:42 DEBUG: ******************************** Transcribe END
+2021/07/30 10:58:43 DEBUG: GatherHandler
+2021/07/30 10:58:43 DEBUG: <?xml version="1.0"?>
+<Response><Pause length="5"></Pause><Gather input="speech" language="en-US" action="http://cpaas.ngrok.io/SpeechResult" timeout="15"></Gather></Response>
+2021/07/30 10:58:44 DEBUG: SayHandler
+2021/07/30 10:58:44 DEBUG: <?xml version="1.0"?>
+<Response><Pause length="5"></Pause><Say voice="man" language="en-US" loop="3">we shall fight on the beaches</Say></Response>
+2021/07/30 10:58:44 DEBUG: ******************************** Callback START
+2021/07/30 10:58:44 DEBUG: Call Status in-progress.
+
+2021/07/30 10:58:44 DEBUG: ******************************** Callback END
+2021/07/30 10:58:46 DEBUG: ************************************************
+2021/07/30 10:58:46 DEBUG: SpeechResult
+2021/07/30 10:58:46 DEBUG: we shall fight on the beaches
+2021/07/30 10:58:49 DEBUG: ******************************** Callback START
+2021/07/30 10:58:49 DEBUG: Call Status completed.
+
+2021/07/30 10:58:49 DEBUG: ******************************** Callback END
+2021/07/30 10:58:50 DEBUG: GatherHandler
+2021/07/30 10:58:50 DEBUG: <?xml version="1.0"?>
+<Response><Pause length="5"></Pause><Gather input="speech" language="en-US" action="http://cpaas.ngrok.io/SpeechResult" timeout="15"></Gather></Response>
+2021/07/30 10:58:51 DEBUG: SayHandler
+2021/07/30 10:58:51 DEBUG: <?xml version="1.0"?>
+<Response><Pause length="5"></Pause><Say voice="man" language="en-US" loop="3">we shall fight on the beaches</Say></Response>
+2021/07/30 10:58:51 DEBUG: ******************************** Callback START
+2021/07/30 10:58:51 DEBUG: Call Status in-progress.
+
+2021/07/30 10:58:51 DEBUG: ******************************** Callback END
+2021/07/30 10:58:58 DEBUG: ******************************** Callback START
+2021/07/30 10:58:58 DEBUG: Call Status completed.
+
+2021/07/30 10:58:58 DEBUG: ******************************** Callback END
+2021/07/30 10:59:00 DEBUG: ************************************************
+2021/07/30 10:59:00 DEBUG: SpeechResult
+2021/07/30 10:59:00 DEBUG: we shall fight on the beaches
+2021/07/30 10:59:04 DEBUG: ******************************** Callback START
+2021/07/30 10:59:04 DEBUG: Call Status completed.
+
+2021/07/30 10:59:04 DEBUG: ******************************** Callback END
+2021/07/30 12:01:30 DEBUG: ************************************************
+2021/07/30 12:01:30 DEBUG: *** Config: config/config.ini
+2021/07/30 12:01:30 DEBUG: *** Number of Tries: 3
+2021/07/30 12:01:30 DEBUG: *** Log: log/zarbat.log
+2021/07/30 12:01:30 DEBUG: *** Logging Level: info
+2021/07/30 12:01:30 DEBUG: *** Features: [buy]
+2021/07/30 12:01:30 DEBUG: ************************************************
+2021/07/30 15:00:07 DEBUG: ************************************************
+2021/07/30 15:00:07 DEBUG: *** Config: config/config.ini
+2021/07/30 15:00:07 DEBUG: *** Number of Tries: 3
+2021/07/30 15:00:07 DEBUG: *** Log: log/zarbat.log
+2021/07/30 15:00:07 DEBUG: *** Logging Level: info
+2021/07/30 15:00:07 DEBUG: *** Features: [hangup][ping][play][record][redirect][reject][sms][say][gather][buy]
+2021/07/30 15:00:07 DEBUG: ************************************************
+2021/07/30 15:00:07 DEBUG: Server running
+2021/07/30 15:00:13 DEBUG: ******************************** Callback START
+2021/07/30 15:00:13 DEBUG: Call Status in-progress.
+
+2021/07/30 15:00:13 DEBUG: ******************************** Callback END
+2021/07/30 15:00:18 DEBUG: ******************************** Callback START
+2021/07/30 15:00:18 DEBUG: Call Status completed.
+
+2021/07/30 15:00:18 DEBUG: ******************************** Callback END
+2021/07/30 15:00:30 DEBUG: PingHandler
+2021/07/30 15:00:30 DEBUG: <?xml version="1.0"?>
+<Response><Ping>http://cpaas.ngrok.io/Pinging</Ping></Response>
+2021/07/30 15:00:30 DEBUG: ******************************** Callback START
+2021/07/30 15:00:30 DEBUG: Call Status in-progress.
+
+2021/07/30 15:00:30 DEBUG: ******************************** Callback END
+2021/07/30 15:00:33 DEBUG: ******************************** Ping
+2021/07/30 15:00:33 DEBUG: ******************************** Callback START
+2021/07/30 15:00:33 DEBUG: Call Status completed.
+
+2021/07/30 15:00:33 DEBUG: ******************************** Callback END
+2021/07/30 15:00:42 DEBUG: RecordHandler
+2021/07/30 15:00:42 DEBUG: <?xml version="1.0"?>
+<Response><Pause length="3"></Pause><Record background="false" action="http://cpaas.ngrok.io/RecordAction" maxLength="10" fileFormat="wav" transcribe="false" transcribeCallback=""></Record><Hangup></Hangup></Response>
+2021/07/30 15:00:44 DEBUG: PlayHandler
+2021/07/30 15:00:44 DEBUG: <?xml version="1.0"?>
+<Response><Play loop="100">tone_stream://%(5000,10,850)</Play><Pause length="0"></Pause></Response>
+2021/07/30 15:00:44 DEBUG: ******************************** Callback START
+2021/07/30 15:00:44 DEBUG: Call Status in-progress.
+
+2021/07/30 15:00:44 DEBUG: ******************************** Callback END
+2021/07/30 15:01:03 DEBUG: ******************************** Callback START
+2021/07/30 15:01:03 DEBUG: Call Status completed.
+
+2021/07/30 15:01:03 DEBUG: ******************************** Callback END
+2021/07/30 15:01:05 DEBUG: ************************************************
+2021/07/30 15:01:05 DEBUG: RecordingUrl
+2021/07/30 15:01:05 DEBUG: http://recordings.telapi.com/RBcb0f449330ab45d384fe71c4621e66b4/RE777c3e32a392aae8fd0945439c8365d9.wav
+2021/07/30 15:01:05 DEBUG: ******************************** RecordAction END
+2021/07/30 15:01:20 DEBUG: RecordHandler
+2021/07/30 15:01:20 DEBUG: <?xml version="1.0"?>
+<Response><Pause length="3"></Pause><Record background="false" action="" maxLength="10" fileFormat="wav" transcribe="true" transcribeCallback="http://cpaas.ngrok.io/TranscribeCallback"></Record><Hangup></Hangup></Response>
+2021/07/30 15:01:23 DEBUG: SayHandler
+2021/07/30 15:01:23 DEBUG: <?xml version="1.0"?>
+<Response><Pause length="5"></Pause><Say voice="man" language="en-US" loop="1">what we do in life echoes in eternity</Say></Response>
+2021/07/30 15:01:23 DEBUG: ******************************** Callback START
+2021/07/30 15:01:23 DEBUG: Call Status in-progress.
+
+2021/07/30 15:01:23 DEBUG: ******************************** Callback END
+2021/07/30 15:01:54 DEBUG: ******************************** Callback START
+2021/07/30 15:01:54 DEBUG: Call Status completed.
+
+2021/07/30 15:01:54 DEBUG: ******************************** Callback END
+2021/07/30 15:02:16 DEBUG: RecordHandler
+2021/07/30 15:02:16 DEBUG: <?xml version="1.0"?>
+<Response><Pause length="3"></Pause><Record background="false" action="" maxLength="10" fileFormat="wav" transcribe="true" transcribeCallback="http://cpaas.ngrok.io/TranscribeCallback"></Record><Hangup></Hangup></Response>
+2021/07/30 15:02:18 DEBUG: SayHandler
+2021/07/30 15:02:18 DEBUG: <?xml version="1.0"?>
+<Response><Pause length="5"></Pause><Say voice="man" language="en-US" loop="1">what we do in life echoes in eternity</Say></Response>
+2021/07/30 15:02:18 DEBUG: ******************************** Callback START
+2021/07/30 15:02:18 DEBUG: Call Status in-progress.
+
+2021/07/30 15:02:18 DEBUG: ******************************** Callback END
+2021/07/30 15:02:23 DEBUG: ******************************** Callback START
+2021/07/30 15:02:23 DEBUG: Call Status canceled.
+
+2021/07/30 15:02:23 DEBUG: ******************************** Callback END
+2021/07/30 15:02:27 DEBUG: ******************************** Callback START
+2021/07/30 15:02:27 DEBUG: Call Status completed.
+
+2021/07/30 15:02:27 DEBUG: ******************************** Callback END
+2021/07/30 15:02:30 DEBUG: RecordHandler
+2021/07/30 15:02:30 DEBUG: <?xml version="1.0"?>
+<Response><Pause length="3"></Pause><Record background="false" action="" maxLength="10" fileFormat="wav" transcribe="true" transcribeCallback="http://cpaas.ngrok.io/TranscribeCallback"></Record><Hangup></Hangup></Response>
+2021/07/30 15:02:35 DEBUG: ************************************************
+2021/07/30 15:02:35 DEBUG: Transcribe Callback
+2021/07/30 15:02:35 DEBUG: what we do in life echoes in eternity
+2021/07/30 15:02:38 DEBUG: ************************************************
+2021/07/30 15:02:38 DEBUG: Transcribe Callback
+2021/07/30 15:02:38 DEBUG: what we do in life echoes in eternity
+2021/07/30 15:02:38 DEBUG: ************************************************
+2021/07/30 15:02:38 DEBUG: Transcribe Callback
+2021/07/30 15:02:38 DEBUG: what we do in life echoes in eternity
+2021/07/30 15:03:13 DEBUG: RecordHandler
+2021/07/30 15:03:13 DEBUG: <?xml version="1.0"?>
+<Response><Pause length="3"></Pause><Record background="false" action="" maxLength="10" fileFormat="wav" transcribe="true" transcribeCallback="http://cpaas.ngrok.io/TranscribeCallback"></Record><Hangup></Hangup></Response>
+2021/07/30 15:03:14 DEBUG: SayHandler
+2021/07/30 15:03:14 DEBUG: <?xml version="1.0"?>
+<Response><Pause length="5"></Pause><Say voice="man" language="en-US" loop="1">what we do in life echoes in eternity</Say></Response>
+2021/07/30 15:03:14 DEBUG: ******************************** Callback START
+2021/07/30 15:03:14 DEBUG: Call Status in-progress.
+
+2021/07/30 15:03:14 DEBUG: ******************************** Callback END
+2021/07/30 15:03:25 DEBUG: RecordHandler
+2021/07/30 15:03:25 DEBUG: <?xml version="1.0"?>
+<Response><Pause length="3"></Pause><Record background="false" action="" maxLength="10" fileFormat="wav" transcribe="true" transcribeCallback="http://cpaas.ngrok.io/TranscribeCallback"></Record><Hangup></Hangup></Response>
+2021/07/30 15:03:28 DEBUG: ************************************************
+2021/07/30 15:03:28 DEBUG: Transcribe Callback
+2021/07/30 15:03:28 DEBUG: what we do in life echoes in eternity
+2021/07/30 15:03:31 DEBUG: ************************************************
+2021/07/30 15:03:31 DEBUG: Transcribe Callback
+2021/07/30 15:03:31 DEBUG: what we do in life echoes in eternity
+2021/07/30 15:03:31 DEBUG: ******************************** Callback START
+2021/07/30 15:03:31 DEBUG: Call Status completed.
+
+2021/07/30 15:03:31 DEBUG: ******************************** Callback END
+2021/07/30 15:03:32 DEBUG: ************************************************
+2021/07/30 15:03:32 DEBUG: Transcribe Callback
+2021/07/30 15:03:32 DEBUG: what we do in life echoes in eternity
+2021/07/30 15:03:33 DEBUG: ************************************************
+2021/07/30 15:03:33 DEBUG: Transcribe Callback
+2021/07/30 15:03:33 DEBUG: what we do in life echoes in eternity
+2021/07/30 15:03:53 DEBUG: ************************************************
+2021/07/30 15:03:53 DEBUG: Transcribe Callback
+2021/07/30 15:03:53 DEBUG: what we do in life echoes in eternity
+2021/07/30 15:03:57 DEBUG: ************************************************
+2021/07/30 15:03:57 DEBUG: Transcribe Callback
+2021/07/30 15:03:57 DEBUG: what we do in life echoes in eternity
+2021/07/30 15:04:11 DEBUG: Redirect Handler
+2021/07/30 15:04:11 DEBUG: <?xml version="1.0"?>
+<Response><Redirect>http://cpaas.ngrok.io/Pinging</Redirect></Response>
+2021/07/30 15:04:11 DEBUG: ******************************** Ping
+2021/07/30 15:04:12 DEBUG: ******************************** Callback START
+2021/07/30 15:04:12 DEBUG: Call Status in-progress.
+
+2021/07/30 15:04:12 DEBUG: ******************************** Callback END
+2021/07/30 15:04:13 DEBUG: ******************************** Callback START
+2021/07/30 15:04:13 DEBUG: Call Status completed.
+
+2021/07/30 15:04:17 DEBUG: ************************************************
+2021/07/30 15:04:17 DEBUG: Transcribe Callback
+2021/07/30 15:04:17 DEBUG: what we do in life echoes in eternity
+2021/07/30 15:04:18 DEBUG: ************************************************
+2021/07/30 15:04:18 DEBUG: Transcribe Callback
+2021/07/30 15:04:18 DEBUG: what we do in life echoes in eternity
+2021/07/30 15:04:18 DEBUG: ******************************** Transcribe END
+2021/07/30 15:04:22 DEBUG: ************************************************
+2021/07/30 15:04:22 DEBUG: Transcribe Callback
+2021/07/30 15:04:22 DEBUG: what we do in life echoes in eternity
+2021/07/30 15:04:23 DEBUG: ************************************************
+2021/07/30 15:04:23 DEBUG: Transcribe Callback
+2021/07/30 15:04:23 DEBUG: what we do in life echoes in eternity
+2021/07/30 15:04:26 DEBUG: *********** SMS Status Callback
+2021/07/30 15:04:26 DEBUG: AccountSid=AC777c3e3262352901b0e24b7092f6eef0&ApiVersion=v2&Body=what+we+do+in+life+echoes+in+eternity&DlrStatus=&ErrorMessage=&From=%2B12048003030&Price=0.005&SmsSid=SM72cded5d8e99410a9685c95c6677df80&SmsStatus=sent&To=%2B12048003021
+2021/07/30 15:04:31 DEBUG: *********** SMS Status Callback
+2021/07/30 15:04:31 DEBUG: AccountSid=12604719&ApiVersion=v2&Body=what+we+do+in+life+echoes+in+eternity&DlrStatus=sent&ErrorMessage=&From=%2B12048003030&Price=0.005&SmsSid=SM72cded5d8e99410a9685c95c6677df80&SmsStatus=sent&To=%2B12048003021
+2021/07/30 15:04:31 DEBUG: *********** SMS Status Callback
+2021/07/30 15:04:31 DEBUG: AccountSid=12604719&ApiVersion=v2&Body=what+we+do+in+life+echoes+in+eternity&DlrStatus=Generic+Routing+error&ErrorMessage=&From=%2B12048003030&Price=0.005&SmsSid=SM72cded5d8e99410a9685c95c6677df80&SmsStatus=failed&To=%2B12048003021
+2021/07/30 15:04:32 DEBUG: *********** SMS Status Callback
+2021/07/30 15:04:32 DEBUG: AccountSid=AC777c3e3262352901b0e24b7092f6eef0&ApiVersion=v2&Body=what+we+do+in+life+echoes+in+eternity&DlrStatus=&ErrorMessage=&From=%2B12048003030&Price=0.005&SmsSid=SMa1f506678cce4e639b326a7e0a2e9e9d&SmsStatus=sent&To=%2B12048003021
+2021/07/30 15:04:32 DEBUG: *********** SMS Status Callback
+2021/07/30 15:04:32 DEBUG: AccountSid=12604719&ApiVersion=v2&Body=what+we+do+in+life+echoes+in+eternity&DlrStatus=Generic+Routing+error&ErrorMessage=&From=%2B12048003030&Price=0.005&SmsSid=SMa1f506678cce4e639b326a7e0a2e9e9d&SmsStatus=failed&To=%2B12048003021
+2021/07/30 15:04:38 DEBUG: *********** SMS Status Callback
+2021/07/30 15:04:38 DEBUG: AccountSid=12604719&ApiVersion=v2&Body=what+we+do+in+life+echoes+in+eternity&DlrStatus=sent&ErrorMessage=&From=%2B12048003030&Price=0.005&SmsSid=SMa1f506678cce4e639b326a7e0a2e9e9d&SmsStatus=sent&To=%2B12048003021
+2021/07/30 15:04:39 DEBUG: GatherHandler
+2021/07/30 15:04:39 DEBUG: <?xml version="1.0"?>
+<Response><Pause length="5"></Pause><Gather input="speech" language="en-US" action="http://cpaas.ngrok.io/SpeechResult" timeout="15"></Gather></Response>
+2021/07/30 15:04:40 DEBUG: SayHandler
+2021/07/30 15:04:40 DEBUG: <?xml version="1.0"?>
+<Response><Pause length="5"></Pause><Say voice="man" language="en-US" loop="3">what we do in life echoes in eternity</Say></Response>
+2021/07/30 15:04:40 DEBUG: ******************************** Callback START
+2021/07/30 15:04:40 DEBUG: Call Status in-progress.
+
+2021/07/30 15:04:40 DEBUG: ******************************** Callback END
+2021/07/30 15:04:43 DEBUG: ************************************************
+2021/07/30 15:04:43 DEBUG: Transcribe Callback
+2021/07/30 15:04:43 DEBUG: what we do in life echoes in eternity
+2021/07/30 15:04:45 DEBUG: ******************************** Transcribe END
+2021/07/30 15:04:47 DEBUG: ************************************************
+2021/07/30 15:04:47 DEBUG: Transcribe Callback
+2021/07/30 15:04:47 DEBUG: what we do in life echoes in eternity
+2021/07/30 15:04:48 DEBUG: GatherHandler
+2021/07/30 15:04:48 DEBUG: <?xml version="1.0"?>
+<Response><Pause length="5"></Pause><Gather input="speech" language="en-US" action="http://cpaas.ngrok.io/SpeechResult" timeout="15"></Gather></Response>
+2021/07/30 15:04:49 DEBUG: SayHandler
+2021/07/30 15:04:49 DEBUG: <?xml version="1.0"?>
+<Response><Pause length="5"></Pause><Say voice="man" language="en-US" loop="3">what we do in life echoes in eternity</Say></Response>
+2021/07/30 15:04:49 DEBUG: ******************************** Callback START
+2021/07/30 15:04:49 DEBUG: Call Status in-progress.
+
+2021/07/30 15:04:49 DEBUG: ******************************** Callback END
+2021/07/30 15:04:50 DEBUG: ************************************************
+2021/07/30 15:04:50 DEBUG: SpeechResult
+2021/07/30 15:04:50 DEBUG: what we do in life echoes in eternity
+2021/07/30 15:04:52 DEBUG: ******************************** Transcribe END
+2021/07/30 15:04:53 DEBUG: GatherHandler
+2021/07/30 15:04:53 DEBUG: <?xml version="1.0"?>
+<Response><Pause length="5"></Pause><Gather input="speech" language="en-US" action="http://cpaas.ngrok.io/SpeechResult" timeout="15"></Gather></Response>
+2021/07/30 15:04:54 DEBUG: SayHandler
+2021/07/30 15:04:54 DEBUG: <?xml version="1.0"?>
+<Response><Pause length="5"></Pause><Say voice="man" language="en-US" loop="3">we shall fight on the beaches</Say></Response>
+2021/07/30 15:04:54 DEBUG: ******************************** Callback START
+2021/07/30 15:04:54 DEBUG: Call Status in-progress.
+
+2021/07/30 15:04:54 DEBUG: ******************************** Callback END
+2021/07/30 15:04:56 DEBUG: ******************************** Callback START
+2021/07/30 15:04:56 DEBUG: Call Status completed.
+
+2021/07/30 15:04:56 DEBUG: ******************************** Callback END
+2021/07/30 15:04:58 DEBUG: ************************************************
+2021/07/30 15:04:58 DEBUG: SpeechResult
+2021/07/30 15:04:58 DEBUG: what we do in life echoes in eternity
+2021/07/30 15:05:00 DEBUG: GatherHandler
+2021/07/30 15:05:00 DEBUG: <?xml version="1.0"?>
+<Response><Pause length="5"></Pause><Gather input="speech" language="en-US" action="http://cpaas.ngrok.io/SpeechResult" timeout="15"></Gather></Response>
+2021/07/30 15:05:01 DEBUG: SayHandler
+2021/07/30 15:05:01 DEBUG: <?xml version="1.0"?>
+<Response><Pause length="5"></Pause><Say voice="man" language="en-US" loop="3">we shall fight on the beaches</Say></Response>
+2021/07/30 15:05:01 DEBUG: ******************************** Callback START
+2021/07/30 15:05:01 DEBUG: Call Status in-progress.
+
+2021/07/30 15:05:01 DEBUG: ******************************** Callback END
+2021/07/30 15:05:03 DEBUG: ************************************************
+2021/07/30 15:05:03 DEBUG: SpeechResult
+2021/07/30 15:05:03 DEBUG: we shall fight on the beaches
+2021/07/30 15:05:04 DEBUG: ******************************** Callback START
+2021/07/30 15:05:04 DEBUG: Call Status completed.
+
+2021/07/30 15:05:04 DEBUG: ******************************** Callback END
+2021/07/30 15:05:07 DEBUG: GatherHandler
+2021/07/30 15:05:07 DEBUG: <?xml version="1.0"?>
+<Response><Pause length="5"></Pause><Gather input="speech" language="en-US" action="http://cpaas.ngrok.io/SpeechResult" timeout="15"></Gather></Response>
+2021/07/30 15:05:07 DEBUG: ******************************** Callback START
+2021/07/30 15:05:07 DEBUG: Call Status completed.
+
+2021/07/30 15:05:07 DEBUG: ******************************** Callback END
+2021/07/30 15:05:08 DEBUG: SayHandler
+2021/07/30 15:05:08 DEBUG: <?xml version="1.0"?>
+<Response><Pause length="5"></Pause><Say voice="man" language="en-US" loop="3">we shall fight on the beaches</Say></Response>
+2021/07/30 15:05:08 DEBUG: ******************************** Callback START
+2021/07/30 15:05:08 DEBUG: Call Status in-progress.
+
+2021/07/30 15:05:08 DEBUG: ******************************** Callback END
+2021/07/30 15:05:10 DEBUG: ************************************************
+2021/07/30 15:05:10 DEBUG: SpeechResult
+2021/07/30 15:05:10 DEBUG: we shall fight on the beaches
+2021/07/30 15:05:12 DEBUG: ************************************************
+2021/07/30 15:05:12 DEBUG: Transcribe Callback
+2021/07/30 15:05:12 DEBUG: what we do in life echoes in eternity
+2021/07/30 15:05:13 DEBUG: ************************************************
+2021/07/30 15:05:13 DEBUG: Transcribe Callback
+2021/07/30 15:05:13 DEBUG: what we do in life echoes in eternity
+2021/07/30 15:05:15 DEBUG: ******************************** Callback START
+2021/07/30 15:05:15 DEBUG: Call Status completed.
+
+2021/07/30 15:05:15 DEBUG: ******************************** Callback END
+2021/07/30 15:05:17 DEBUG: ************************************************
+2021/07/30 15:05:17 DEBUG: SpeechResult
+2021/07/30 15:05:17 DEBUG: we shall fight on the beaches
+2021/07/30 15:05:21 DEBUG: ******************************** Callback START
+2021/07/30 15:05:21 DEBUG: Call Status completed.
+
+2021/07/30 15:05:21 DEBUG: ******************************** Callback END
+2021/07/30 15:05:38 DEBUG: ************************************************
+2021/07/30 15:05:38 DEBUG: Transcribe Callback
+2021/07/30 15:05:38 DEBUG: what we do in life echoes in eternity

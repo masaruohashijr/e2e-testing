@@ -2,15 +2,16 @@ package main
 
 import (
 	"flag"
-	"fmt"
 	"log"
 	"os"
+	"regexp"
 	"strings"
 	"time"
 	"zarbat_test/internal/config"
 	"zarbat_test/internal/files"
 	"zarbat_test/internal/godog/services"
 	"zarbat_test/internal/godog/test"
+	l "zarbat_test/internal/logging"
 
 	"github.com/cucumber/godog"
 )
@@ -25,8 +26,8 @@ func main() {
 	RegMap = test.InitRegister()
 	tests, tempDir := initArgs(RegMap)
 	initLoggers()
-	log.Println("****************************************")
-	log.Println("START OF TEST SUITE")
+	l.Info.Println("****************************************")
+	l.Info.Println("START OF TEST SUITE")
 	logArgs(tests)
 	status := 0
 	for i := 0; i < len(tests); i++ {
@@ -52,7 +53,7 @@ func main() {
 		}
 		time.Sleep(5 * time.Second)
 	}
-	log.Println("...END OF TEST SUITE")
+	l.Info.Println("...END OF TEST SUITE")
 	os.RemoveAll(tempDir)
 	os.Exit(status)
 }
@@ -84,36 +85,48 @@ func initArgs(regMap map[string]*test.FeatureTest) (fts []test.FeatureTest, temp
 	}
 }
 
-func printArgs(tests []string) {
-	fmt.Println("************************************************")
-	fmt.Println("*** Config:", *configPtr)
-	fmt.Println("*** Number of Tries:", *triesPtr)
-	fmt.Println("*** Log:", *logPtr)
-	fmt.Println("*** Logging Level:", *logLevelPtr)
-	fmt.Printf("*** Features: %v\n", tests)
-	fmt.Println("************************************************")
-}
-
 func initLoggers() {
-	file, err := os.OpenFile(*logPtr, os.O_APPEND|os.O_CREATE|os.O_WRONLY, 0666)
+	infoLogFile, err := os.OpenFile(nameLogFile("INFO", *logPtr), os.O_APPEND|os.O_CREATE|os.O_WRONLY, 0666)
 	if err != nil {
 		log.Fatal(err)
 	}
-	log.SetOutput(file)
+	l.Info = log.New(infoLogFile, "INFO: ", log.LstdFlags|log.Lmsgprefix)
+	debugLogFile, err := os.OpenFile(nameLogFile("DEBUG", *logPtr), os.O_APPEND|os.O_CREATE|os.O_WRONLY, 0666)
+	if err != nil {
+		log.Fatal(err)
+	}
+	l.Debug = log.New(debugLogFile, "DEBUG: ", log.LstdFlags|log.Lmsgprefix)
+}
+
+func nameLogFile(level, rootName string) string {
+	re := regexp.MustCompile(`(?P<RootName>(.*))(?P<Extension>\..*)`)
+	matches := re.FindStringSubmatch(rootName)
+	rootIndex := re.SubexpIndex("RootName")
+	namePrefix := strings.TrimSpace(matches[rootIndex])
+	extensionIndex := re.SubexpIndex("Extension")
+	extension := strings.TrimSpace(matches[extensionIndex])
+	return namePrefix + "_" + level + extension
 }
 
 func logArgs(tests []test.FeatureTest) {
-	log.Println("Config:", *configPtr)
-	log.Println("Number of Tries:", *triesPtr)
-	log.Println("Log:", *logPtr)
+	l.Info.Println("Config:", *configPtr)
+	l.Info.Println("Number of Tries:", *triesPtr)
+	l.Info.Println("Log:", *logPtr)
 	var tsts = ""
 	for _, t := range tests {
 		tsts += "[" + t.Name + "]"
 	}
-	log.Println("Tests:", tsts)
-	log.Println(".........................................")
+	l.Info.Println("Tests:", tsts)
+	l.Info.Println(".........................................")
+	l.Debug.Println("************************************************")
+	l.Debug.Println("*** Config:", *configPtr)
+	l.Debug.Println("*** Number of Tries:", *triesPtr)
+	l.Debug.Println("*** Log:", *logPtr)
+	l.Debug.Println("*** Logging Level:", *logLevelPtr)
+	l.Debug.Printf("*** Features: %v\n", tsts)
+	l.Debug.Println("************************************************")
 }
 
 func logResult(test, result string) {
-	log.Printf("* Feature/Scenario: %s - Status: %s\n", strings.ToUpper(test), result)
+	l.Info.Printf("* Feature/Scenario: %s - Status: %s\n", strings.ToUpper(test), result)
 }

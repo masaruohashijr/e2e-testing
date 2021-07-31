@@ -5,10 +5,11 @@ import (
 	"io/ioutil"
 	"net/http"
 	"net/url"
+	l "zarbat_test/internal/logging"
 )
 
 func CallbackHandler(w http.ResponseWriter, r *http.Request) {
-	println("******************************** Callback START")
+	l.Debug.Println("******************************** Callback START")
 	body, err := ioutil.ReadAll(r.Body)
 	if err != nil {
 		println(err.Error())
@@ -17,11 +18,11 @@ func CallbackHandler(w http.ResponseWriter, r *http.Request) {
 	b := string(body)
 	url_parameters, err := url.ParseQuery(b)
 	status := url_parameters["CallStatus"][0]
-	fmt.Printf("Call Status %s.\n", status)
+	l.Debug.Println(fmt.Sprintf("Call Status %s.\n", status))
 	if status == "completed" && CloseChannel {
 		Ch <- b
 	}
-	println("******************************** Callback END")
+	l.Debug.Println("******************************** Callback END")
 }
 
 func FallbackHandler(w http.ResponseWriter, r *http.Request) {

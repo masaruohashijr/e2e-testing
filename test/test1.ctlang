@@ -1,15 +1,32 @@
-Feature: Dial    
-  In order to make a seamless call transfer to another number
+Feature: Number    
+  In order to list available numbers from one area code
   As an end user
-  I want to make an outgoing dial from an already made and current call
+  I want to list at least one number from this area
 
-Background: Setup
-    Given my test setup runs
+  Scenario: List available numbers
 
-Scenario: Dial
-    Given "NumberB" configured to dial "NumberBR1"
-    When I make a call from "NumberA" to "NumberB"
-    Then "NumberBR1" should get the incoming call from "NumberB"
+    Given my test setup runs    
+    When I list all available numbers
+    Then I should get to buy 1 from list 
+
+    # error tests - ran out of balance, I get the number
+
+
+
+
+Feature: Gather    
+  In order to read text to the Number B (called) using a text-to-speech engine   
+  As an end user
+  I want that Number A (caller) listen the speech set to be read on Number B.
+
+  Scenario: Gather something said
+
+    Given my test setup runs 
+      And "NumberA" configured to say "we shall fight on the beaches" 
+      And "NumberB" configured to gather speech 
+      When I make a call from "NumberA" to "NumberB" 
+      Then "NumberB" should get speech "we shall fight on the beaches" 
+
 
 
 Feature: Hangup    
@@ -26,40 +43,7 @@ Background: Setup
     Then "NumberC" should get last call duration greater than or equals to "3"
 
 
-Feature: number    
-  In order to list available numbers from one area code
-  As an end user
-  I want to list at least one number from this area
-
-  Scenario: List available numbers
-
-    Given my test setup runs    
-    When I list all available numbers
-    Then I should get to buy 1 from list 
-
-    # error tests - ran out of balance, I get the number
-
-
-
-
-Feature: pause    
-  In order to pause a call for a certain time
-  As an end user
-  I want to call to a Number and pause some seconds and after hangup.
-
-  Background: setup
-    Given my test setup runs
-
-  Scenario: Pause a sequence of sentences
-    And "NumberB" configured to pause 3 seconds
-    And append To "NumberB" config hangup
-    When I make a call from "NumberA" to "NumberB"
-    Then "NumberA" should get last call duration more than or equals to 3
-
-
-
-
-Feature: ping    
+Feature: Ping    
   In order to send data from a current call to a Webhook
   As an end user
   I want to call to a Number and ping a URL.
@@ -73,7 +57,7 @@ Feature: ping
     Then should get a ping request on the URL
 
 
-Feature: play    
+Feature: Play    
   In order to play a tone with frequencies
   As an end user
   I want to set a tone to play after the call is established
@@ -90,22 +74,36 @@ Feature: play
   
 
 
-Feature: play last recording    
-  In order to listen the last recording of my calls
+Feature: Record    
+  In order to record a call
   As an end user
-  I want to call a number and set to play the last recording.
+  I want to try to make a call and record this call until key "#" is pressed.
 
-  Scenario: Play Last Recording
+  Scenario: Pause a sequence of sentences
 
     Given my test setup runs
-      And "NumberA" configured to say "This is the last recording"
+      And "NumberA" configured to say "what we do in life echoes in eternity"
       And "NumberB" configured to record calls
-      When I make a call from "NumberA" to "NumbeB"
-      And "NumberB" configured to play last recording
-      Then "NumberA" should get transcription "This is the last recording"
+      When I make a call from "NumberA" to "NumberB"
+      Then should get transcription "what we do in life echoes in eternity"      
 
 
-Feature: reject    
+Feature: Redirect    
+  In order to redirect a call
+  As an end user
+  I want to make a call to a Number
+  And through redirect the call will be off immediately.
+
+  Scenario: Redirect to receive a Speech
+
+    Given my test setup runs 
+      And "NumberB" configured to redirect to ping URL
+      When I make a call from "NumberA" to "NumberB"
+      Then should get a ping request on the URL
+
+
+
+Feature: Reject    
   In order to reject a call
   As an end user
   I want to try to make a call to a Number and other number rejects.
@@ -118,7 +116,7 @@ Feature: reject
 
 
 
-Feature: say    
+Feature: Say    
   In order to read text to the Number B (called) using a text-to-speech engine   
   As an end user
   I want that Number A (caller) listen the speech set to be read on Number B.
@@ -133,7 +131,7 @@ Feature: say
 
 
 
-Feature: sms    
+Feature: SMS    
   In order to send an SMS during a call
   As an end user
   I want to make a call and send a text as SMS.

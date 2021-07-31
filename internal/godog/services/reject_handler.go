@@ -5,15 +5,16 @@ import (
 	"net/http"
 	"os"
 	"strings"
+	"zarbat_test/internal/logging"
 )
 
 func RejectHandler(w http.ResponseWriter, r *http.Request) {
-	println("Reject Handler")
+	logging.Debug.Println("Reject Handler")
 	xml, err := os.ReadFile("../../xml/reject.xml")
 	if err != nil {
 		println(err.Error())
 	}
-	println(string(xml))
+	logging.Debug.Println(string(xml))
 	w.Write([]byte(xml))
 }
 

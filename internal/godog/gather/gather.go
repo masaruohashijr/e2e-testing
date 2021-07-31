@@ -3,6 +3,7 @@ package say
 import (
 	"encoding/xml"
 	"fmt"
+	"strings"
 	"time"
 	"zarbat_test/internal/adapters/primary"
 	"zarbat_test/internal/adapters/secondary"
@@ -98,7 +99,7 @@ func ShouldGetSpeech(numberA, speechOriginal string) error {
 		Ch = nil
 		return fmt.Errorf("timeout")
 	}
-	if speechResult != speechOriginal {
+	if strings.ToUpper(speechResult) != strings.ToUpper(speechOriginal) {
 		return fmt.Errorf("Error %s", "The returned speech is different from the one expected by the test.")
 	}
 	return nil

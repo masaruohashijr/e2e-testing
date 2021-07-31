@@ -5,26 +5,27 @@ import (
 	"net/http"
 	"os"
 	"strings"
+	"zarbat_test/internal/logging"
 )
 
 func SmsHandler(w http.ResponseWriter, r *http.Request) {
-	println("GatherHandler")
+	logging.Debug.Println("GatherHandler")
 	xml, err := os.ReadFile("xml/sms.xml")
 	if err != nil {
 		println(err.Error())
 	}
-	println(string(xml))
+	logging.Debug.Println(string(xml))
 	w.Write([]byte(xml))
 }
 
 func SmsStatusHanlder(w http.ResponseWriter, r *http.Request) {
-	println("*********** SMS Status Callback")
+	logging.Debug.Println("*********** SMS Status Callback")
 	body, err := ioutil.ReadAll(r.Body)
 	if err != nil {
 		println(err.Error())
 	}
 	b := string(body)
-	println(b)
+	logging.Debug.Println(b)
 	if strings.Contains(b, "DlrStatus=sent") {
 		Ch <- b
 	}

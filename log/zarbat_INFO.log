@@ -1,0 +1,112 @@
+2021/07/30 10:30:57 INFO: ****************************************
+2021/07/30 10:30:57 INFO: START OF TEST SUITE
+2021/07/30 10:30:57 INFO: Config: config/config.ini
+2021/07/30 10:30:57 INFO: Number of Tries: 3
+2021/07/30 10:30:57 INFO: Log: log/zarbat.log
+2021/07/30 10:30:57 INFO: Tests: [hangup][ping][play][record][redirect][reject][sms][say][gather][number]
+2021/07/30 10:30:57 INFO: .........................................
+2021/07/30 10:31:05 INFO: * Feature/Scenario: HANGUP - Status: OK
+2021/07/30 10:31:14 INFO: * Feature/Scenario: PING - Status: OK
+2021/07/30 10:31:46 INFO: * Feature/Scenario: PLAY - Status: OK
+2021/07/30 10:32:12 INFO: * Feature/Scenario: RECORD - Status: OK
+2021/07/30 10:32:21 INFO: * Feature/Scenario: REDIRECT - Status: OK
+2021/07/30 10:32:35 INFO: * Feature/Scenario: REJECT - Status: OK
+2021/07/30 10:32:43 INFO: * Feature/Scenario: SMS - Status: OK
+2021/07/30 10:33:02 INFO: * Feature/Scenario: SAY - Status: OK
+2021/07/30 10:33:08 INFO: * Feature/Scenario: GATHER - Status: Not OK
+2021/07/30 10:33:15 INFO: * Feature/Scenario: GATHER - Status: Not OK
+2021/07/30 10:33:22 INFO: * Feature/Scenario: GATHER - Status: OK
+2021/07/30 10:42:20 INFO: ****************************************
+2021/07/30 10:42:20 INFO: START OF TEST SUITE
+2021/07/30 10:42:20 INFO: Config: config/config.ini
+2021/07/30 10:42:20 INFO: Number of Tries: 3
+2021/07/30 10:42:20 INFO: Log: log/zarbat.log
+2021/07/30 10:42:20 INFO: Tests: [number]
+2021/07/30 10:42:20 INFO: .........................................
+2021/07/30 10:43:01 INFO: ****************************************
+2021/07/30 10:43:01 INFO: START OF TEST SUITE
+2021/07/30 10:43:01 INFO: Config: config/config.ini
+2021/07/30 10:43:01 INFO: Number of Tries: 3
+2021/07/30 10:43:01 INFO: Log: log/zarbat.log
+2021/07/30 10:43:01 INFO: Tests: [number]
+2021/07/30 10:43:01 INFO: .........................................
+2021/07/30 10:43:56 INFO: ****************************************
+2021/07/30 10:43:56 INFO: START OF TEST SUITE
+2021/07/30 10:43:56 INFO: Config: config/config.ini
+2021/07/30 10:43:56 INFO: Number of Tries: 3
+2021/07/30 10:43:56 INFO: Log: log/zarbat.log
+2021/07/30 10:43:56 INFO: Tests: [buy]
+2021/07/30 10:43:56 INFO: .........................................
+2021/07/30 10:44:15 INFO: * Feature/Scenario: BUY - Status: OK
+2021/07/30 10:44:20 INFO: ...END OF TEST SUITE
+2021/07/30 10:52:00 INFO: ****************************************
+2021/07/30 10:52:00 INFO: START OF TEST SUITE
+2021/07/30 10:52:00 INFO: Config: config/config.ini
+2021/07/30 10:52:00 INFO: Number of Tries: 3
+2021/07/30 10:52:00 INFO: Log: log/zarbat.log
+2021/07/30 10:52:00 INFO: Tests: [buy]
+2021/07/30 10:52:00 INFO: .........................................
+2021/07/30 10:52:27 INFO: * Feature/Scenario: BUY - Status: OK
+2021/07/30 10:52:32 INFO: ...END OF TEST SUITE
+2021/07/30 10:53:06 INFO: ****************************************
+2021/07/30 10:53:07 INFO: START OF TEST SUITE
+2021/07/30 10:53:07 INFO: Config: config/config.ini
+2021/07/30 10:53:07 INFO: Number of Tries: 3
+2021/07/30 10:53:07 INFO: Log: log/zarbat.log
+2021/07/30 10:53:07 INFO: Tests: [buy]
+2021/07/30 10:53:07 INFO: .........................................
+2021/07/30 10:53:32 INFO: * Feature/Scenario: BUY - Status: OK
+2021/07/30 10:53:37 INFO: ...END OF TEST SUITE
+2021/07/30 10:56:28 INFO: ****************************************
+2021/07/30 10:56:28 INFO: START OF TEST SUITE
+2021/07/30 10:56:28 INFO: Config: config/config.ini
+2021/07/30 10:56:28 INFO: Number of Tries: 3
+2021/07/30 10:56:28 INFO: Log: log/zarbat.log
+2021/07/30 10:56:28 INFO: Tests: [hangup][ping][play][record][redirect][reject][sms][say][gather][buy]
+2021/07/30 10:56:28 INFO: .........................................
+2021/07/30 10:56:35 INFO: * Feature/Scenario: HANGUP - Status: OK
+2021/07/30 10:56:44 INFO: * Feature/Scenario: PING - Status: OK
+2021/07/30 10:57:17 INFO: * Feature/Scenario: PLAY - Status: OK
+2021/07/30 10:57:39 INFO: * Feature/Scenario: RECORD - Status: OK
+2021/07/30 10:57:48 INFO: * Feature/Scenario: REDIRECT - Status: OK
+2021/07/30 10:58:02 INFO: * Feature/Scenario: REJECT - Status: OK
+2021/07/30 10:58:10 INFO: * Feature/Scenario: SMS - Status: OK
+2021/07/30 10:58:29 INFO: * Feature/Scenario: SAY - Status: OK
+2021/07/30 10:58:35 INFO: * Feature/Scenario: GATHER - Status: Not OK
+2021/07/30 10:58:42 INFO: * Feature/Scenario: GATHER - Status: Not OK
+2021/07/30 10:58:48 INFO: * Feature/Scenario: GATHER - Status: OK
+2021/07/30 10:59:20 INFO: * Feature/Scenario: BUY - Status: OK
+2021/07/30 10:59:25 INFO: ...END OF TEST SUITE
+2021/07/30 12:01:30 INFO: ****************************************
+2021/07/30 12:01:30 INFO: START OF TEST SUITE
+2021/07/30 12:01:30 INFO: Config: config/config.ini
+2021/07/30 12:01:30 INFO: Number of Tries: 3
+2021/07/30 12:01:30 INFO: Log: log/zarbat.log
+2021/07/30 12:01:30 INFO: Tests: [buy]
+2021/07/30 12:01:30 INFO: .........................................
+2021/07/30 12:02:40 INFO: * Feature/Scenario: BUY - Status: OK
+2021/07/30 12:02:45 INFO: ...END OF TEST SUITE
+2021/07/30 15:00:07 INFO: ****************************************
+2021/07/30 15:00:07 INFO: START OF TEST SUITE
+2021/07/30 15:00:07 INFO: Config: config/config.ini
+2021/07/30 15:00:07 INFO: Number of Tries: 3
+2021/07/30 15:00:07 INFO: Log: log/zarbat.log
+2021/07/30 15:00:07 INFO: Tests: [hangup][ping][play][record][redirect][reject][sms][say][gather][buy]
+2021/07/30 15:00:07 INFO: .........................................
+2021/07/30 15:00:18 INFO: * Feature/Scenario: HANGUP - Status: OK
+2021/07/30 15:00:33 INFO: * Feature/Scenario: PING - Status: OK
+2021/07/30 15:01:10 INFO: * Feature/Scenario: PLAY - Status: OK
+2021/07/30 15:02:07 INFO: * Feature/Scenario: RECORD - Status: Not OK
+2021/07/30 15:03:05 INFO: * Feature/Scenario: RECORD - Status: Not OK
+2021/07/30 15:04:02 INFO: * Feature/Scenario: RECORD - Status: Not OK
+2021/07/30 15:04:11 INFO: * Feature/Scenario: REDIRECT - Status: OK
+2021/07/30 15:04:18 INFO: * Feature/Scenario: REJECT - Status: OK
+2021/07/30 15:04:25 INFO: * Feature/Scenario: SMS - Status: Not OK
+2021/07/30 15:04:31 INFO: * Feature/Scenario: SMS - Status: OK
+2021/07/30 15:04:38 INFO: * Feature/Scenario: SAY - Status: Not OK
+2021/07/30 15:04:45 INFO: * Feature/Scenario: SAY - Status: OK
+2021/07/30 15:04:52 INFO: * Feature/Scenario: GATHER - Status: Not OK
+2021/07/30 15:04:59 INFO: * Feature/Scenario: GATHER - Status: Not OK
+2021/07/30 15:05:05 INFO: * Feature/Scenario: GATHER - Status: Not OK
+2021/07/30 15:05:38 INFO: * Feature/Scenario: BUY - Status: OK
+2021/07/30 15:05:43 INFO: ...END OF TEST SUITE

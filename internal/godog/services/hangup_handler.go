@@ -3,14 +3,15 @@ package services
 import (
 	"net/http"
 	"os"
+	"zarbat_test/internal/logging"
 )
 
 func HangupHandler(w http.ResponseWriter, r *http.Request) {
-	println("HangupHandler")
+	logging.Debug.Println("HangupHandler")
 	xml, err := os.ReadFile("xml/hangup.xml")
 	if err != nil {
-		println(err.Error())
+		logging.Debug.Println(err.Error())
 	}
-	println(string(xml))
+	logging.Debug.Println(string(xml))
 	w.Write([]byte(xml))
 }

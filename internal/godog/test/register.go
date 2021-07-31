@@ -66,14 +66,19 @@ func InitRegister() (RegMap map[string]*FeatureTest) {
 		Path:                "features/say",
 		ScenarioInitializer: say.InitializeScenario,
 	}
+	RegMap["gather"] = &FeatureTest{
+		Name:                "gather",
+		Path:                "features/gather",
+		ScenarioInitializer: say.InitializeScenario,
+	}
 	RegMap["record"] = &FeatureTest{
 		Name:                "record",
 		Path:                "features/record",
 		ScenarioInitializer: record.InitializeScenario,
 	}
 	RegMap["buy"] = &FeatureTest{
-		Name:                "number",
-		Path:                "features/number",
+		Name:                "buy",
+		Path:                "features/buy",
 		ScenarioInitializer: number.InitializeScenario,
 	}
 	RegMap["sms"] = &FeatureTest{

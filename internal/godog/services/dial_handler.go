@@ -3,6 +3,7 @@ package services
 import (
 	"net/http"
 	"os"
+	"zarbat_test/internal/logging"
 )
 
 func DialHandler(w http.ResponseWriter, r *http.Request) {
@@ -12,6 +13,6 @@ func DialHandler(w http.ResponseWriter, r *http.Request) {
 	if err != nil {
 		println(err.Error())
 	}
-	println(string(xml))
+	logging.Debug.Println(string(xml))
 	w.Write([]byte(xml))
 }

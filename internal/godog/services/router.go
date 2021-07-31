@@ -2,6 +2,7 @@ package services
 
 import (
 	"net/http"
+	"zarbat_test/internal/logging"
 
 	"github.com/gorilla/mux"
 )
@@ -28,7 +29,7 @@ func RunServer(c chan string, close bool) {
 	if router != nil {
 		return
 	}
-	println("Server running")
+	logging.Debug.Println("Server running")
 	router = mux.NewRouter()
 	router.HandleFunc("/Dial", DialHandler).Methods("POST", "GET")
 	router.HandleFunc("/Ping", PingHandler).Methods("POST", "GET")

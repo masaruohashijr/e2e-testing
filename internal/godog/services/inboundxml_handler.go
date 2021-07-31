@@ -3,10 +3,11 @@ package services
 import (
 	"net/http"
 	"os"
+	"zarbat_test/internal/logging"
 )
 
 func InboundXmlHandler(w http.ResponseWriter, r *http.Request) {
-	println("InboundXmlHandler")
+	logging.Debug.Println("InboundXmlHandler")
 
 	//xml := "<?xml version=\"1.0\"?><Response><Play loop=\"1\">" + BaseUrl + "/mp3/sample.mp3</Play></Response>"
 	//println(xml)
@@ -14,6 +15,6 @@ func InboundXmlHandler(w http.ResponseWriter, r *http.Request) {
 	if err != nil {
 		println(err.Error())
 	}
-	println(string(xml))
+	logging.Debug.Println(string(xml))
 	w.Write([]byte(xml))
 }
