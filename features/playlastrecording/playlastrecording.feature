@@ -9,7 +9,7 @@ Feature: PlayLastRecording
       And "NumberA" configured to say "This is the last recording"
       And "NumberB" configured to record calls
       When I make a call from "NumberA" to "NumberB"
-      Then should get speech "This is the last recording"
+      Then "NumberB" should get speech "This is the last recording"
 
   Scenario: Play Last Recording
 
@@ -17,4 +17,6 @@ Feature: PlayLastRecording
       And "NumberA" configured to gather speech 
       And "NumberB" configured to play last recording
       And I make a call from "NumberA" to "NumberB"
-      Then should get speech "This is the last recording"
+      Then "NumberA" should get speech "This is the last recording"
+      And "NumberA" should be reset
+      And "NumberB" should be reset

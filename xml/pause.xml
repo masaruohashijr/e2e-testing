@@ -1,2 +1,2 @@
 <?xml version="1.0"?>
-<Response><Pause length="3"></Pause><Hangup></Hangup></Response>
+<Response><Pause length="3"></Pause><Hangup></Hangup><Hangup></Hangup></Response>

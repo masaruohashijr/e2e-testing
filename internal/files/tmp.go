@@ -11,6 +11,7 @@ import (
 
 var finalFileContent bytes.Buffer
 var featuresDir = "./features"
+var TempRootDir = "./temp"
 var testDir = "./test"
 
 func NewTempFiles(testFile string) (tmps []*os.File, tempDir string) {

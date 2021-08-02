@@ -91,7 +91,7 @@ func JaroWinklerDistance(s1, s2 string) float64 {
 }
 
 func CompareTwoSentences(s1, s2 string, percent float64) bool {
-	println("CompareTwoSentences")
+	//println("CompareTwoSentences")
 	d := JaroWinklerDistance(s1, s2)
 	if d*100 > percent {
 		return true

@@ -8,7 +8,23 @@ type ResponseDial struct {
 	Hangup  Hangup   `xml:"Hangup,omitempty"`
 }
 
+type ResponseDialNumber struct {
+	XMLName    xml.Name   `xml:"Response"`
+	DialNumber DialNumber `xml:"Dial,omitempty"`
+	Hangup     Hangup     `xml:"Hangup,omitempty"`
+}
+
 type Dial struct {
 	Value       string `xml:",chardata"`
 	CallBackURL string `xml:"callbackUrl,attr"`
+}
+
+type DialNumber struct {
+	XMLName xml.Name `xml:"Dial"`
+	Number  Number   `xml:"Number,omitempty"`
+}
+
+type Number struct {
+	Value      string `xml:",chardata"`
+	SendDigits string `xml:"sendDigits,attr"`
 }

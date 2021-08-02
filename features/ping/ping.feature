@@ -7,6 +7,6 @@ Feature: Ping
     Given my test setup runs
 
   Scenario: Ping a URL
-    And "NumberD" configured to ping URL
-    When I make a call from "NumberC" to "NumberD"
-    Then should get a ping request on the URL
+    And "NumberB" configured to ping URL
+    When I make a call from "NumberA" to "NumberB"
+    Then "NumberB" should get a ping request on the URL

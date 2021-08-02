@@ -1,11 +1,13 @@
 package services
 
 import (
+	"fmt"
 	"io/ioutil"
 	"net/http"
+	"net/url"
 	"os"
-	"strings"
 	"zarbat_test/internal/logging"
+	l "zarbat_test/internal/logging"
 )
 
 func RejectHandler(w http.ResponseWriter, r *http.Request) {
@@ -19,15 +21,25 @@ func RejectHandler(w http.ResponseWriter, r *http.Request) {
 }
 
 func RejectCallBackHandler(w http.ResponseWriter, r *http.Request) {
-	println("******************************** Reject Callback")
+	l.Debug.Println("******************************** RejectCallback START")
+	fmt.Println("******************************** RejectCallback START")
 	body, err := ioutil.ReadAll(r.Body)
 	if err != nil {
 		println(err.Error())
 	}
-
+	r.ParseForm()
 	b := string(body)
-	println(b)
-	if strings.Contains(b, "CallStatus=canceled") {
+	fmt.Println(b)
+	url_parameters, err := url.ParseQuery(b)
+	status := url_parameters["CallStatus"][0]
+	callSid := url_parameters["CallSid"][0]
+	l.Debug.Println(fmt.Sprintf("Call Status %s.\n", status))
+	fmt.Printf("Call Status %s.\n", status)
+	fmt.Printf("Call Sid %s.\n", callSid)
+	fmt.Printf("Call Sid Context %s.\n", CallSidContext)
+	if status == "canceled" && callSid == CallSidContext {
 		Ch <- "Call Cancelled"
 	}
+	l.Debug.Println("******************************** RejectCallback END")
+	fmt.Println("******************************** RejectCallback END")
 }

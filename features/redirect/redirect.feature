@@ -9,4 +9,4 @@ Feature: Redirect
     Given my test setup runs 
       And "NumberB" configured to redirect to ping URL
       When I make a call from "NumberA" to "NumberB"
-      Then should get a ping request on the URL
+      Then "NumberB" should get a ping request on the URL

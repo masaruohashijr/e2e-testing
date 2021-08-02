@@ -73,7 +73,7 @@ func InitializeScenario(ctx *godog.ScenarioContext) {
 	ctx.Step(`^my test setup runs$`, MyTestSetupRuns)
 	ctx.Step(`^"([^"]*)" configured to redirect to ping URL$`, ConfiguredToRedirectToPingURL)
 	ctx.Step(`^I make a call from "([^"]*)" to "([^"]*)"$`, IMakeACallFromTo)
-	ctx.Step(`^should get a ping request on the URL$`, ShouldGetAPingRequestOnTheURL)
+	ctx.Step(`^Should get a ping request on the URL$`, ShouldGetAPingRequestOnTheURL)
 }
 
 func InitializeTestSuite(ctx *godog.TestSuiteContext) {

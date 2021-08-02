@@ -25,7 +25,7 @@ var ResponseGather domains.ResponseGather
 var ResponseRecord domains.ResponseRecord
 var Ch = make(chan string)
 
-func ConfiguredToGatherSpeech(numberA string) error {
+func ConfiguredToGatherSpeech(number string) error {
 	r := &domains.ResponseGather{
 		Pause: domains.Pause{
 			Length: 5,
@@ -42,13 +42,13 @@ func ConfiguredToGatherSpeech(numberA string) error {
 	strXML := domains.Header + string(x)
 	println(strXML)
 	services.WriteActionXML("gather", strXML)
-	Configuration.To, Configuration.ToSid = Configuration.SelectNumber(numberA)
+	Configuration.To, Configuration.ToSid = Configuration.SelectNumber(number)
 	Configuration.VoiceUrl = services.BaseUrl + "/Gather"
 	NumberPrimaryPort.UpdateNumber()
 	return nil
 }
 
-func ConfiguredToSay(numberA, speech string) error {
+func ConfiguredToSay(number, speech string) error {
 	s := &domains.ResponseSay{
 		Pause: domains.Pause{
 			Length: 5,
@@ -70,7 +70,7 @@ func ConfiguredToSay(numberA, speech string) error {
 
 func IMakeACallFromTo(numberA, numberB string) error {
 	Configuration.From, Configuration.FromSid = Configuration.SelectNumber(numberA)
-	Configuration.To, Configuration.ToSid = Configuration.SelectNumber(numberB) // "NumberBR1"
+	Configuration.To, Configuration.ToSid = Configuration.SelectNumber(numberB)
 	Configuration.Timeout = services.Timeout
 	CallPrimaryPort.MakeCall()
 	return nil
@@ -88,7 +88,7 @@ func MyTestSetupRuns() error {
 	return nil
 }
 
-func ShouldGetSpeech(numberA, speechOriginal string) error {
+func ShouldGetSpeech(speechOriginal string) error {
 	speechResult := ""
 	select {
 	case speechResult = <-Ch:
@@ -109,5 +109,5 @@ func InitializeScenario(ctx *godog.ScenarioContext) {
 	ctx.Step(`^"([^"]*)" configured to say "([^"]*)"$`, ConfiguredToSay)
 	ctx.Step(`^I make a call from "([^"]*)" to "([^"]*)"$`, IMakeACallFromTo)
 	ctx.Step(`^my test setup runs$`, MyTestSetupRuns)
-	ctx.Step(`^"([^"]*)" should get speech "([^"]*)"$`, ShouldGetSpeech)
+	ctx.Step(`^Should get speech "([^"]*)"$`, ShouldGetSpeech)
 }

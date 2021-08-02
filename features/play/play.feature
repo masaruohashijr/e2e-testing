@@ -9,7 +9,9 @@ Feature: Play
     
   Scenario: Play a tone
     And "NumberD" configured to play tone "5000,10,850"
-    And "NumberE" configured to record calls 
+    And "NumberE" configured to record calls for download
     When I make a call from "NumberD" to "NumberE"
     Then "NumberE" should be able to listen to frequencies "850"
+    And "NumberD" should be reset
+    And "NumberE" should be reset
   

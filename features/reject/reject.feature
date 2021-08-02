@@ -7,4 +7,4 @@ Feature: Reject
     Given my test setup runs
     And "NumberB" configured to reject call
     When I make a call from "NumberA" to "NumberB"
-    Then "NumberA" should get call cancel status
+    Then "NumberB" should get call cancel status

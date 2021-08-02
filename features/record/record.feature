@@ -9,4 +9,4 @@ Feature: Record
       And "NumberA" configured to say "what we do in life echoes in eternity"
       And "NumberB" configured to record calls
       When I make a call from "NumberA" to "NumberB"
-      Then should get transcription "what we do in life echoes in eternity"      
+      Then "NumberB" should get transcription "what we do in life echoes in eternity"      

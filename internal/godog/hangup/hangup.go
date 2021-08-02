@@ -1,6 +1,7 @@
 package hangup
 
 import (
+	"encoding/xml"
 	"fmt"
 	"net/url"
 	"strconv"
@@ -16,23 +17,27 @@ import (
 )
 
 var Configuration config.ConfigType
-var CallsSecondaryPort calls.SecondaryPort
-var CallsPrimaryPort calls.PrimaryPort
+var CallSecondaryPort calls.SecondaryPort
+var CallPrimaryPort calls.PrimaryPort
 var ResponseHangup domains.ResponseHangup
-var NumbersSecondaryPort numbers.SecondaryPort
-var NumbersPrimaryPort numbers.PrimaryPort
+var NumberSecondaryPort numbers.SecondaryPort
+var NumberPrimaryPort numbers.PrimaryPort
 var Ch = make(chan string)
 
-func ConfiguredToHangupAfterSeconds(NumberA string, timeInSeconds int) error {
+func ConfiguredToHangupAfterSeconds(Number string, timeInSeconds int) error {
 	p := &domains.Pause{
 		Length: timeInSeconds,
 	}
 	ResponseHangup.Pause = *p
 	h := &domains.Hangup{}
 	ResponseHangup.Hangup = *h
-	Configuration.To, Configuration.ToSid = Configuration.SelectNumber(NumberA)
+	x, _ := xml.MarshalIndent(ResponseHangup, "", "")
+	strXML := domains.Header + string(x)
+	println(strXML)
+	services.WriteActionXML("hangup", strXML)
+	Configuration.To, Configuration.ToSid = Configuration.SelectNumber(Number)
 	Configuration.VoiceUrl = services.BaseUrl + "/Hangup"
-	NumbersSecondaryPort.UpdateNumber()
+	NumberSecondaryPort.UpdateNumber()
 	return nil
 }
 
@@ -40,7 +45,7 @@ func IMakeACallFromTo(NumberA, NumberB string) error {
 	Configuration.From, Configuration.FromSid = Configuration.SelectNumber(NumberA)
 	Configuration.To, Configuration.ToSid = Configuration.SelectNumber(NumberB)
 	Configuration.ActionUrl = "http://zang.io/ivr/welcome/call"
-	CallsPrimaryPort.MakeCall()
+	CallPrimaryPort.MakeCall()
 	return nil
 }
 
@@ -48,15 +53,15 @@ func MyTestSetupRuns() error {
 	Configuration = config.NewConfig()
 	go services.RunServer(Ch, true)
 	Configuration.StatusCallback = services.BaseUrl + "/Callback"
-	CallsSecondaryPort = secondary.NewCallsApi(&Configuration)
-	CallsPrimaryPort = primary.NewCallsService(CallsSecondaryPort)
-	NumbersSecondaryPort = secondary.NewNumbersApi(&Configuration)
-	NumbersPrimaryPort = primary.NewNumbersService(NumbersSecondaryPort)
+	CallSecondaryPort = secondary.NewCallsApi(&Configuration)
+	CallPrimaryPort = primary.NewCallsService(CallSecondaryPort)
+	NumberSecondaryPort = secondary.NewNumbersApi(&Configuration)
+	NumberPrimaryPort = primary.NewNumbersService(NumberSecondaryPort)
 	// instantiate the proper Response
 	return nil
 }
 
-func ShouldGetLastCallDurationGreaterThanOrEqualsTo(number string, timeInSeconds int) error {
+func ShouldGetLastCallDurationMoreThanOrEqualsTo(number string, timeInSeconds int) error {
 	bodyContent := <-Ch
 	url_parameters, e := url.ParseQuery(bodyContent)
 	if len(url_parameters["CallDuration"]) == 0 {
@@ -76,10 +81,10 @@ func ShouldGetLastCallDurationGreaterThanOrEqualsTo(number string, timeInSeconds
 }
 
 func InitializeScenario(ctx *godog.ScenarioContext) {
-	ctx.Step(`^"([^"]*)" configured to hangup after "([^"]*)" seconds$`, ConfiguredToHangupAfterSeconds)
-	ctx.Step(`^"([^"]*)" should get last call duration greater than or equals to "([^"]*)"$`, ShouldGetLastCallDurationGreaterThanOrEqualsTo)
 	ctx.Step(`^I make a call from "([^"]*)" to "([^"]*)"$`, IMakeACallFromTo)
 	ctx.Step(`^my test setup runs$`, MyTestSetupRuns)
+	ctx.Step(`^"([^"]*)" configured to hangup after (\d+) seconds$`, ConfiguredToHangupAfterSeconds)
+	ctx.Step(`^"([^"]*)" should get last call duration more than or equals to (\d+)$`, ShouldGetLastCallDurationMoreThanOrEqualsTo)
 }
 
 func InitializeTestSuite(ctx *godog.TestSuiteContext) {

@@ -10,7 +10,7 @@ import (
 )
 
 func NewSingleFile(tests []string) {
-	tempDir, err := ioutil.TempDir(featuresDir, "~ctlang*")
+	tempDir, err := ioutil.TempDir(TempRootDir, "~ctlang*")
 	if err != nil {
 		log.Fatal(err)
 	}

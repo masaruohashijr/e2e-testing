@@ -2,6 +2,7 @@ package main
 
 import (
 	"flag"
+	"fmt"
 	"log"
 	"os"
 	"regexp"
@@ -12,6 +13,7 @@ import (
 	"zarbat_test/internal/godog/services"
 	"zarbat_test/internal/godog/test"
 	l "zarbat_test/internal/logging"
+	"zarbat_test/internal/steps"
 
 	"github.com/cucumber/godog"
 )
@@ -30,30 +32,34 @@ func main() {
 	l.Info.Println("START OF TEST SUITE")
 	logArgs(tests)
 	status := 0
-	for n := 0; n < 100; n++ {
-		for i := 0; i < len(tests); i++ {
-			ft := RegMap[tests[i].Name]
-			opts := godog.Options{
-				Format:    "progress",
-				Paths:     []string{ft.Path},
-				Randomize: time.Now().UTC().UnixNano(),
-			}
-			status = godog.TestSuite{
-				Name:                "zarbat_test",
-				ScenarioInitializer: ft.ScenarioInitializer,
-				Options:             &opts,
-			}.Run()
-			if status != 0 {
-				logResult(tests[i].Name, "Not OK")
-				ft.Tries += 1
-				if ft.Tries < *triesPtr {
-					i--
-				}
-			} else {
-				logResult(tests[i].Name, "OK")
-			}
-			time.Sleep(5 * time.Second)
+	for i := 0; i < len(tests); i++ {
+		ft := RegMap[tests[i].Name]
+		fmt.Println("******")
+		fmt.Println(" Test: " + tests[i].Name)
+		fmt.Println("******")
+		steps.TestHash = ft.Hash
+		services.TestHash = ft.Hash
+		fmt.Println(ft.Hash)
+		opts := godog.Options{
+			Format:    "progress",
+			Paths:     []string{ft.Path},
+			Randomize: time.Now().UTC().UnixNano(),
 		}
+		status = godog.TestSuite{
+			Name:                "zarbat_test",
+			ScenarioInitializer: ft.ScenarioInitializer,
+			Options:             &opts,
+		}.Run()
+		if status != 0 {
+			logResult(tests[i].Name, "Not OK")
+			ft.Tries += 1
+			if ft.Tries < *triesPtr {
+				i--
+			}
+		} else {
+			logResult(tests[i].Name, "OK")
+		}
+		time.Sleep(5 * time.Second)
 	}
 	l.Info.Println("...END OF TEST SUITE")
 	os.RemoveAll(tempDir)

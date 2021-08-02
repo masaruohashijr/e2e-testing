@@ -39,7 +39,7 @@ func ConfiguredToPlayTone(number, tone string) error {
 	return nil
 }
 
-func ConfiguredToRecordCalls(number string) error {
+func ConfiguredToRecordCallsForDownload(number string) error {
 	// Configuration.To = "+5561984385415"
 	// Configuration.To, Configuration.ToSid = Configuration.SelectNumber(number) //"+5561984385415"
 	Configuration.To, Configuration.ToSid = Configuration.SelectNumber(number) //"+5561984385415"
@@ -47,7 +47,7 @@ func ConfiguredToRecordCalls(number string) error {
 		Background: services.Background,
 		MaxLength:  services.MaxLength,
 		FileFormat: services.FileFormat,
-		Action:     services.BaseUrl + "/RecordAction",
+		Action:     services.BaseUrl + "/RecordAction?hash=3268139107",
 	}
 	p := &domains.Pause{
 		Length: 3,
@@ -93,7 +93,7 @@ func ConfigurationSetup() {
 	Configuration.VoiceUrl = services.BaseUrl + "/Record"
 }
 
-func ShouldBeAbleToListenToFrequencies(number, frequencies string) error {
+func ShouldBeAbleToListenToFrequencies(frequencies string) error {
 	recordUrl := ""
 	select {
 	case recordUrl = <-Ch:
@@ -118,8 +118,8 @@ func ShouldBeAbleToListenToFrequencies(number, frequencies string) error {
 
 func InitializeScenario(ctx *godog.ScenarioContext) {
 	ctx.Step(`^"([^"]*)" configured to play tone "([^"]*)"$`, ConfiguredToPlayTone)
-	ctx.Step(`^"([^"]*)" configured to record calls$`, ConfiguredToRecordCalls)
+	ctx.Step(`^"([^"]*)" configured to record calls for download$`, ConfiguredToRecordCallsForDownload)
 	ctx.Step(`^I make a call from "([^"]*)" to "([^"]*)"$`, IMakeACallFromTo)
 	ctx.Step(`^my test setup runs$`, MyTestSetupRuns)
-	ctx.Step(`^"([^"]*)" should be able to listen to frequencies "([^"]*)"$`, ShouldBeAbleToListenToFrequencies)
+	ctx.Step(`^Should be able to listen to frequencies "([^"]*)"$`, ShouldBeAbleToListenToFrequencies)
 }
