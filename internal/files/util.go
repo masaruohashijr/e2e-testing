@@ -6,6 +6,7 @@ import (
 	"regexp"
 	"strings"
 	"zarbat_test/internal/godog/test"
+	"zarbat_test/internal/steps"
 )
 
 func ReadFileAsLines(testFile string) (lines []string, err error) {
@@ -27,11 +28,18 @@ func ExtractFeature(line string) (feature string) {
 }
 
 func NewFeatureTests(tempFiles []*os.File, regMap map[string]*test.FeatureTest) (fts []test.FeatureTest) {
+	ft := &test.FeatureTest{}
 	for _, t := range tempFiles {
 		key := strings.ToLower(extractFeatureKeyFromFileName(t.Name()))
-		if ft, ok := regMap[key]; ok {
-			ft.Path = t.Name()
+		if _, ok := regMap[key]; !ok {
+			ft = &test.FeatureTest{
+				Name:                key,
+				Path:                t.Name(),
+				Hash:                test.Hash(key),
+				ScenarioInitializer: steps.InitializeScenario,
+			}
 			fts = append(fts, *ft)
+			regMap[key] = ft
 		}
 	}
 	return

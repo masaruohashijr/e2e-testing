@@ -36,6 +36,8 @@ func RunServer(c chan string, close bool) {
 	}
 	router = mux.NewRouter()
 	router.HandleFunc("/Callback", CallbackHandler).Methods("POST", "GET")
+	router.HandleFunc("/Conference", ConferenceHandler).Methods("POST", "GET")
+	router.HandleFunc("/ConferenceCallback", ConferenceCallbackHandler).Methods("POST", "GET")
 	router.HandleFunc("/Dial", DialHandler).Methods("POST", "GET")
 	router.HandleFunc("/DialCallback", DialCallbackHandler).Methods("POST", "GET")
 	router.HandleFunc("/Fallback", FallbackHandler).Methods("POST", "GET")
@@ -53,8 +55,8 @@ func RunServer(c chan string, close bool) {
 	router.HandleFunc("/Reject", RejectHandler).Methods("POST", "GET")
 	router.HandleFunc("/RejectCallBack", RejectCallBackHandler).Methods("POST", "GET")
 	router.HandleFunc("/Say", SayHandler).Methods("POST", "GET")
-	router.HandleFunc("/sms", SmsHandler).Methods("POST", "GET")
-	router.HandleFunc("/SmsStatus", SmsStatusHanlder).Methods("POST", "GET")
+	router.HandleFunc("/Sms", SmsHandler).Methods("POST", "GET")
+	router.HandleFunc("/SmsStatus", SmsStatusHandler).Methods("POST", "GET")
 	router.HandleFunc("/SpeechResult", SpeechResultHandler).Methods("POST", "GET")
 	router.HandleFunc("/TranscribeCallback", TranscribeCallbackHandler).Methods("POST", "GET")
 	http.Handle("/mp3/",

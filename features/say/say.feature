@@ -6,7 +6,7 @@ Feature: Say
   Scenario: Say something
 
     Given my test setup runs 
-      And "NumberA" configured to say "what we do in life echoes in eternity" 
+      And "NumberA" configured to say "Actions speak louder than words" 
       And "NumberB" configured to gather speech 
       When I make a call from "NumberA" to "NumberB" 
-      Then "NumberB" should get speech "what we do in life echoes in eternity" 
+      Then "NumberB" should get speech "Actions speak louder than words" 

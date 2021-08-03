@@ -14,6 +14,13 @@ type ResponseDialNumber struct {
 	Hangup     Hangup     `xml:"Hangup,omitempty"`
 }
 
+type ResponseConference struct {
+	XMLName        xml.Name       `xml:"Response"`
+	DialConference DialConference `xml:"Dial,omitempty"`
+	Pause          Pause          `xml:"Pause,omitempty"`
+	Hangup         Hangup         `xml:"Hangup,omitempty"`
+}
+
 type Dial struct {
 	Value       string `xml:",chardata"`
 	CallBackURL string `xml:"callbackUrl,attr"`
@@ -24,7 +31,20 @@ type DialNumber struct {
 	Number  Number   `xml:"Number,omitempty"`
 }
 
+type DialConference struct {
+	XMLName    xml.Name   `xml:"Dial"`
+	Conference Conference `xml:"Conference,omitempty"`
+}
+
 type Number struct {
 	Value      string `xml:",chardata"`
 	SendDigits string `xml:"sendDigits,attr"`
+}
+
+type Conference struct {
+	Value                  string `xml:",chardata"`
+	StartConferenceOnEnter bool   `xml:"startConferenceOnEnter,attr"`
+	CallbackUrl            string `xml:"callbackUrl,attr"`
+	HangupOnStar           bool   `xml:"hangupOnStar,attr"`
+	MaxParticipants        int    `xml:"maxParticipants,attr"`
 }

@@ -5,5 +5,6 @@ Feature: SMS
 
 Scenario: Sms Message
     Given my test setup runs
-    When "NumberA" sends SMS "what we do in life echoes in eternity" to "NumberB"
-    Then "NumberB" should be able to view the SMS "what we do in life echoes in eternity"
+    And "NumberB" configured to send SMS "Actions speak louder than words" to "NumberC"
+    When I make a call from "NumberA" to "NumberB" 
+    Then "NumberC" should be able to view the SMS "Actions speak louder than words"

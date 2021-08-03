@@ -3,8 +3,8 @@ package services
 import (
 	"io/ioutil"
 	"net/http"
+	"net/url"
 	"os"
-	"strings"
 	"zarbat_test/internal/logging"
 )
 
@@ -18,15 +18,21 @@ func SmsHandler(w http.ResponseWriter, r *http.Request) {
 	w.Write([]byte(xml))
 }
 
-func SmsStatusHanlder(w http.ResponseWriter, r *http.Request) {
+func SmsStatusHandler(w http.ResponseWriter, r *http.Request) {
 	logging.Debug.Println("*********** SMS Status Callback")
 	body, err := ioutil.ReadAll(r.Body)
 	if err != nil {
 		println(err.Error())
 	}
-	b := string(body)
-	logging.Debug.Println(b)
-	if strings.Contains(b, "DlrStatus=sent") {
-		Ch <- b
+	bodyContent := string(body)
+	url_parameters, _ := url.ParseQuery(bodyContent)
+	if url_parameters["DlrStatus"] != nil {
+		status := url_parameters["DlrStatus"][0]
+		if status == "sent" {
+			Ch <- bodyContent
+		}
 	}
+	w.Header().Set("Allow", "GET, HEAD, POST, OPTIONS")
+	w.WriteHeader(http.StatusOK)
+	return
 }

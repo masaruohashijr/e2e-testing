@@ -12,8 +12,15 @@ func IMakeACallFromTo(numberA, numberB string) error {
 	Configuration.To, Configuration.ToSid = Configuration.SelectNumber(numberB)
 	Configuration.Timeout = services.Timeout
 	checkSayGather()
+	checkUrlEmpty()
 	CallPrimaryPort.MakeCall()
 	return nil
+}
+
+func checkUrlEmpty() {
+	if Configuration.ActionUrl == "" {
+		Configuration.ActionUrl = "http://zang.io/ivr/welcome/call"
+	}
 }
 
 func checkSayGather() {

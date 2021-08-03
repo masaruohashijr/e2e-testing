@@ -27,11 +27,17 @@ var triesPtr *int
 func main() {
 	RegMap = test.InitRegister()
 	tests, tempDir := initArgs(RegMap)
+	if checkEmpty(tests) != nil {
+		fmt.Println("Failed to find ctlang file.")
+		os.Exit(2)
+	}
 	initLoggers()
 	l.Info.Println("****************************************")
 	l.Info.Println("START OF TEST SUITE")
 	logArgs(tests)
 	status := 0
+	passed := 0
+	failed := 0
 	for i := 0; i < len(tests); i++ {
 		ft := RegMap[tests[i].Name]
 		fmt.Println("******")
@@ -55,15 +61,27 @@ func main() {
 			ft.Tries += 1
 			if ft.Tries < *triesPtr {
 				i--
+			} else {
+				failed++
 			}
 		} else {
 			logResult(tests[i].Name, "OK")
+			passed++
 		}
 		time.Sleep(5 * time.Second)
 	}
+	l.Info.Println("Passed ", passed)
+	l.Info.Println("Failed ", failed)
 	l.Info.Println("...END OF TEST SUITE")
 	os.RemoveAll(tempDir)
 	os.Exit(status)
+}
+
+func checkEmpty(tests []test.FeatureTest) error {
+	if len(tests) == 0 {
+		return fmt.Errorf("File not found exception.")
+	}
+	return nil
 }
 
 func initArgs(regMap map[string]*test.FeatureTest) (fts []test.FeatureTest, tempDir string) {

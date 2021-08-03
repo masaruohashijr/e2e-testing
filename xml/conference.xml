@@ -1,0 +1,2 @@
+<?xml version="1.0"?>
+<Response><Dial><Conference startConferenceOnEnter="true" callbackUrl="http://mohashi.ngrok.io/ConferenceCallback" hangupOnStar="true" maxParticipants="3">Zarbat</Conference></Dial><Pause length="5"></Pause><Hangup></Hangup></Response>

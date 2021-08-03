@@ -2,7 +2,9 @@ package steps
 
 import (
 	"encoding/xml"
+	"fmt"
 	"zarbat_test/internal/godog/services"
+	"zarbat_test/internal/logging"
 	"zarbat_test/pkg/domains"
 )
 
@@ -33,5 +35,38 @@ func ShouldBeReset(number string) error {
 	Configuration.To, Configuration.ToSid = Configuration.SelectNumber(number)
 	Configuration.VoiceUrl = ""
 	NumberPrimaryPort.UpdateNumber()
+	return nil
+}
+
+func IListAllAvailableNumbers() error {
+	anumbers, err := NumberSecondaryPort.ListAvailableNumbers()
+	AvailableNumbers = anumbers
+	if err != nil {
+		return fmt.Errorf("Error %s", "Not able to list available numbers.")
+	}
+	for _, a := range AvailableNumbers {
+		logging.Debug.Println(a)
+		println(a)
+	}
+	return nil
+}
+
+func IShouldGetToBuyFromList(amount int) error {
+	ok := false
+	for i := 0; i < amount; i++ {
+		logging.Debug.Println("Buying number is: ", AvailableNumbers[i])
+		NumberSecondaryPort.AddNumber(AvailableNumbers[i])
+		purchased, _ := NumberSecondaryPort.ListNumbers()
+		for _, n := range purchased {
+			if AvailableNumbers[i] == n {
+				logging.Debug.Println("Purchased number is: ", AvailableNumbers[i])
+				ok = true
+				break
+			}
+		}
+		if !ok {
+			return fmt.Errorf("Error %s", "Not able to list available numbers.")
+		}
+	}
 	return nil
 }

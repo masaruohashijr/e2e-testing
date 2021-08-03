@@ -35,7 +35,7 @@ func NewTempDir() string {
 	test := ""
 	println(test)
 
-	tempDir, err := ioutil.TempDir(testDir, "~ctlang")
+	tempDir, err := ioutil.TempDir(TempRootDir, "~ctlang")
 	if err != nil {
 		log.Fatal(err)
 	}
