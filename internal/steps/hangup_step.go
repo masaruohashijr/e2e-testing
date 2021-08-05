@@ -9,7 +9,7 @@ import (
 	"zarbat_test/pkg/domains"
 )
 
-func ConfiguredToHangupAfterSeconds(Number string, timeInSeconds int) error {
+func ConfiguredToHangUpAfterSeconds(Number string, timeInSeconds int) error {
 	services.CloseChannel = true
 	p := &domains.Pause{
 		Length: timeInSeconds,

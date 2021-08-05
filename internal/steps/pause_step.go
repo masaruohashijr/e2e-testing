@@ -6,7 +6,7 @@ import (
 	"zarbat_test/pkg/domains"
 )
 
-func AppendToConfigHangup(numberA string) error {
+func AppendToConfigHangUp(numberA string) error {
 	h := &domains.Hangup{}
 	x, _ := xml.MarshalIndent(*h, "", "")
 	strXML := string(x)

@@ -36,7 +36,7 @@ func ConfiguredAsConferenceWithSize(conferenceNumber string, conferenceName stri
 	return nil
 }
 
-func ShouldBeEnterConference(number, conferenceName string) error {
+func ShouldHadEnteredConference(number, conferenceName string) error {
 	bodyContent := ""
 	select {
 	case bodyContent = <-Ch:

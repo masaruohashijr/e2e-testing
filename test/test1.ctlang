@@ -9,7 +9,7 @@ Feature: conference
       And "NumberC" configured as conference "Zarbat" with size 3
       When I make a call from "NumberB" to "NumberC"
       And  I make a call from "NumberA" to "NumberC"
-      Then "NumberB" should be enter conference "Zarbat" 
+      Then "NumberB" should had entered conference "Zarbat" 
 
 
 Feature: Gather    
@@ -28,7 +28,7 @@ Feature: Gather
 
 
 Feature: Hangup    
-  In order to hangup a call after a certain time in seconds
+  In order to hang up a call after a certain time in seconds
   As an end user
   I want to have my call automatically off
 
@@ -36,7 +36,7 @@ Background: Setup
     Given my test setup runs
 
   Scenario: Hangup a call
-    And "NumberB" configured to hangup after 3 seconds
+    And "NumberB" configured to hang up after 3 seconds
     When I make a call from "NumberA" to "NumberB"
     Then "NumberB" should get last call duration more than or equals to 3
 
@@ -60,14 +60,14 @@ Scenario: Number
 Feature: Pause    
   In order to pause a call for a certain time
   As an end user
-  I want to call to a Number and pause some seconds and after hangup.
+  I want to call to a Number and pause some seconds and after hang up.
 
   Background: setup
     Given my test setup runs
 
   Scenario: Pause a sequence of sentences
     And "NumberD" configured to pause 3 seconds
-    And Append To "NumberD" config hangup
+    And Append To "NumberD" config hang up
     When I make a call from "NumberC" to "NumberD"
     Then "NumberD" should get last call duration more than or equals to 3
 
@@ -200,6 +200,18 @@ Scenario: Sms Message
     When I make a call from "NumberA" to "NumberB" 
     Then "NumberC" should be able to view the SMS "Actions speak louder than words"
 
+Feature: Dial    
+  In order to make a seamless call transfer to another number
+  As an end user
+  I want to make an outgoing dial from an already made and current call
+
+Background: Setup
+    Given my test setup runs
+
+Scenario: Dial
+    Given "NumberD" configured to dial "NumberBR1"
+    When I make a call from "NumberC" to "NumberD"
+    Then "NumberBR1" should get the incoming call from "NumberD"
 
 #Feature: Purchase a Number    
 #  In order to list available numbers from one area code

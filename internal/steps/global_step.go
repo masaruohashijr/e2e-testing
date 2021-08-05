@@ -54,7 +54,7 @@ func MyTestSetupRuns() error {
 }
 
 func InitializeScenario(ctx *godog.ScenarioContext) {
-	ctx.Step(`^Append To "([^"]*)" config hangup$`, AppendToConfigHangup)
+	ctx.Step(`^Append To "([^"]*)" config hang up$`, AppendToConfigHangUp)
 	ctx.Step(`^"([^"]*)" configured as conference "([^"]*)" with size (\d+)$`, ConfiguredAsConferenceWithSize)
 	ctx.Step(`^"([^"]*)" configured to dial "([^"]*)"$`, ConfiguredToDial)
 	ctx.Step(`^"([^"]*)" configured to dial and send digits "([^"]*)" to "([^"]*)"$`, ConfiguredToDialAndSendDigitsTo)
@@ -71,12 +71,12 @@ func InitializeScenario(ctx *godog.ScenarioContext) {
 	ctx.Step(`^"([^"]*)" should get last call duration more than or equals to (\d+)$`, ShouldGetLastCallDurationMoreThanOrEqualsTo)
 	ctx.Step(`^"([^"]*)" configured to redirect to ping URL$`, ConfiguredToRedirectToPingURL)
 	ctx.Step(`^"([^"]*)" configured to reject call$`, ConfiguredToRejectCall)
-	ctx.Step(`^"([^"]*)" configured to hangup after (\d+) seconds$`, ConfiguredToHangupAfterSeconds)
+	ctx.Step(`^"([^"]*)" configured to hang up after (\d+) seconds$`, ConfiguredToHangUpAfterSeconds)
 	ctx.Step(`^I list all available numbers$`, IListAllAvailableNumbers)
 	ctx.Step(`^I should get to buy (\d+) from list$`, IShouldGetToBuyFromList)
 	ctx.Step(`^I make a call from "([^"]*)" to "([^"]*)"$`, IMakeACallFromTo)
 	ctx.Step(`^my test setup runs$`, MyTestSetupRuns)
-	ctx.Step(`^"([^"]*)" should be enter conference "([^"]*)"$`, ShouldBeEnterConference)
+	ctx.Step(`^"([^"]*)" should had entered conference "([^"]*)"$`, ShouldHadEnteredConference)
 	ctx.Step(`^"([^"]*)" should be able to listen to frequencies "([^"]*)"$`, ShouldBeAlaybleToListenToFrequencies)
 	ctx.Step(`^"([^"]*)" should be able to view the SMS "([^"]*)"$`, ShouldBeAbleToViewTheSMS)
 	ctx.Step(`^"([^"]*)" should be reset$`, ShouldBeReset)
