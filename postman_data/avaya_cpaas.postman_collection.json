@@ -1,0 +1,439 @@
+{
+	"info": {
+		"_postman_id": "9dce0cf3-0070-4b35-a2d0-aae1a62a687a",
+		"name": "avaya_cpaas",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "AddNewNumber-Local",
+			"item": [
+				{
+					"name": "AvailableNumbers-Local",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Available Numbers\", function () {",
+									"    var jsonData = pm.response.json();",
+									"    pm.expect(jsonData.available_phone_numbers).to.not.eql(null);",
+									"    pm.collectionVariables.set(\"number_to_add\", jsonData.available_phone_numbers[0].phone_number);",
+									"});",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "username",
+									"value": "{{AccountSid}}",
+									"type": "string"
+								},
+								{
+									"key": "password",
+									"value": "{{Token}}",
+									"type": "string"
+								},
+								{
+									"key": "showPassword",
+									"value": false,
+									"type": "boolean"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseURL}}/Accounts/{{AccountSid}}/AvailablePhoneNumbers/:Country/Local.json?PageSize={{page_size}}&Contains={{number_contains}}",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"Accounts",
+								"{{AccountSid}}",
+								"AvailablePhoneNumbers",
+								":Country",
+								"Local.json"
+							],
+							"query": [
+								{
+									"key": "PageSize",
+									"value": "{{page_size}}"
+								},
+								{
+									"key": "Contains",
+									"value": "{{number_contains}}"
+								}
+							],
+							"variable": [
+								{
+									"key": "Country",
+									"value": "CA"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "AddAvailableNumber-Local",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Add New Number\", function () {",
+									"    var jsonData = pm.response.json();",
+									"    var number = pm.collectionVariables.get(\"number_to_add\")",
+									"    pm.expect(jsonData.phone_number).to.eql(number);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "{{Token}}",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "{{AccountSid}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "",
+									"value": "",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "PhoneNumber",
+									"value": "{{number_to_add}}",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{baseURL}}/Accounts/{{AccountSid}}/IncomingPhoneNumbers.json",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"Accounts",
+								"{{AccountSid}}",
+								"IncomingPhoneNumbers.json"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "ListAddedNumber-Local",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Verify Added Number\", function () {",
+									"    var jsonData = pm.response.json();",
+									"    pm.expect(jsonData.incoming_phone_numbers[0].phone_number).to.eql(pm.collectionVariables.get(\"number_to_add\"));",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "{{Token}}",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "{{AccountSid}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseURL}}/Accounts/{{AccountSid}}/IncomingPhoneNumbers.json?Contains={{number_to_add}}",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"Accounts",
+								"{{AccountSid}}",
+								"IncomingPhoneNumbers.json"
+							],
+							"query": [
+								{
+									"key": "Contains",
+									"value": "{{number_to_add}}"
+								},
+								{
+									"key": "PageSize",
+									"value": "2",
+									"disabled": true
+								},
+								{
+									"key": "12048003021",
+									"value": null,
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "DeleteNumber-Local",
+			"item": [
+				{
+					"name": "ListNumbers-Local",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"List Numbers\", function () {",
+									"    var jsonData = pm.response.json();",
+									"    pm.expect(jsonData.incoming_phone_numbers).to.not.eql(null);",
+									"    pm.collectionVariables.set(\"number_sid_to_delete\", jsonData.incoming_phone_numbers[0].sid);",
+									"    pm.collectionVariables.set(\"number_to_delete\", jsonData.incoming_phone_numbers[0].phone_number);",
+									"});",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "{{Token}}",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "{{AccountSid}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseURL}}/Accounts/{{AccountSid}}/IncomingPhoneNumbers.json?Contains=2",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"Accounts",
+								"{{AccountSid}}",
+								"IncomingPhoneNumbers.json"
+							],
+							"query": [
+								{
+									"key": "Contains",
+									"value": "2"
+								},
+								{
+									"key": "PageSize",
+									"value": "2",
+									"disabled": true
+								},
+								{
+									"key": "12048003021",
+									"value": "",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "DeleteNumber-Local",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Delete Number\", function () {",
+									"    var jsonData = pm.response.json();",
+									"    var number = pm.collectionVariables.get(\"number_to_delete\")",
+									"    var number_sid = pm.collectionVariables.get(\"number_sid_to_delete\")",
+									"    pm.expect(jsonData.phone_number).to.eql(number);",
+									"    pm.expect(jsonData.sid).to.eql(number_sid);",
+									"",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "{{Token}}",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "{{AccountSid}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{baseURL}}/Accounts/{{AccountSid}}/IncomingPhoneNumbers/{{number_sid_to_delete}}.json",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"Accounts",
+								"{{AccountSid}}",
+								"IncomingPhoneNumbers",
+								"{{number_sid_to_delete}}.json"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "ListNumber-Local",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Verify Deletion\", function () {",
+									"    var jsonData = pm.response.json();",
+									"    pm.expect(jsonData.incoming_phone_numbers).to.eql([]);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "{{Token}}",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "{{AccountSid}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseURL}}/Accounts/{{AccountSid}}/IncomingPhoneNumbers.json?Contains={{number_to_delete}}",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"Accounts",
+								"{{AccountSid}}",
+								"IncomingPhoneNumbers.json"
+							],
+							"query": [
+								{
+									"key": "Contains",
+									"value": "{{number_to_delete}}"
+								},
+								{
+									"key": "PageSize",
+									"value": "2",
+									"disabled": true
+								},
+								{
+									"key": "12048003021",
+									"value": "",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "number_to_add",
+			"value": ""
+		},
+		{
+			"key": "number_to_delete",
+			"value": ""
+		},
+		{
+			"key": "number_sid_to_delete",
+			"value": ""
+		}
+	]
+}
