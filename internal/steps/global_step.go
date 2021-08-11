@@ -33,6 +33,7 @@ var ResponseHangup domains.ResponseHangup
 var ResponseDial domains.ResponseDial
 var ResponseDialNumber domains.ResponseDialNumber
 var ResponseSMS domains.ResponseSMS
+var ResponseMMS domains.ResponseMMS
 var ResponseConference domains.ResponseConference
 var AvailableNumbers []string
 var IncomingNumbers []string
@@ -68,7 +69,6 @@ func InitializeScenario(ctx *godog.ScenarioContext) {
 	ctx.Step(`^"([^"]*)" configured to record calls for download$`, ConfiguredToRecordCallsForDownload)
 	ctx.Step(`^"([^"]*)" configured to say "([^"]*)"$`, ConfiguredToSay)
 	ctx.Step(`^"([^"]*)" configured to send SMS "([^"]*)" to "([^"]*)"$`, ConfiguredToSendSMSTo)
-	ctx.Step(`^"([^"]*)" should get last call duration more than or equals to (\d+)$`, ShouldGetLastCallDurationMoreThanOrEqualsTo)
 	ctx.Step(`^"([^"]*)" configured to redirect to ping URL$`, ConfiguredToRedirectToPingURL)
 	ctx.Step(`^"([^"]*)" configured to reject call$`, ConfiguredToRejectCall)
 	ctx.Step(`^"([^"]*)" configured to hang up after (\d+) seconds$`, ConfiguredToHangUpAfterSeconds)
@@ -79,10 +79,13 @@ func InitializeScenario(ctx *godog.ScenarioContext) {
 	ctx.Step(`^"([^"]*)" should had entered conference "([^"]*)"$`, ShouldHadEnteredConference)
 	ctx.Step(`^"([^"]*)" should be able to listen to frequencies "([^"]*)"$`, ShouldBeAlaybleToListenToFrequencies)
 	ctx.Step(`^"([^"]*)" should be able to view the SMS "([^"]*)"$`, ShouldBeAbleToViewTheSMS)
+	ctx.Step(`^"([^"]*)" configured to send MMS "([^"]*)" and media "([^"]*)" to "([^"]*)"$`, ConfiguredToSendMMSAndMediaTo)
+	ctx.Step(`^"([^"]*)" should be able to view the MMS "([^"]*)" with media "([^"]*)"$`, ShouldBeAbleToViewTheMMSWithMedia)
 	ctx.Step(`^"([^"]*)" should be reset$`, ShouldBeReset)
 	ctx.Step(`^"([^"]*)" should get a ping request on the URL$`, ShouldGetAPingRequestOnTheURL)
 	ctx.Step(`^"([^"]*)" should get call cancel status$`, ShouldGetCallCancelStatus)
 	ctx.Step(`^"([^"]*)" should get digits "([^"]*)" from "([^"]*)"$`, ShouldGetDigitsFrom)
+	ctx.Step(`^"([^"]*)" should get last call duration more than or equals to (\d+)$`, ShouldGetLastCallDurationMoreThanOrEqualsTo)
 	ctx.Step(`^"([^"]*)" should get speech "([^"]*)"$`, ShouldGetSpeech)
 	ctx.Step(`^"([^"]*)" should get the incoming call from "([^"]*)"$`, ShouldGetTheIncomingCallFrom)
 	ctx.Step(`^"([^"]*)" should get transcription "([^"]*)"$`, ShouldGetTranscription)

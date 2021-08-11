@@ -9,7 +9,7 @@ import (
 )
 
 func SmsHandler(w http.ResponseWriter, r *http.Request) {
-	logging.Debug.Println("GatherHandler")
+	logging.Debug.Println("SmsHandler")
 	xml, err := os.ReadFile("xml/sms.xml")
 	if err != nil {
 		println(err.Error())
