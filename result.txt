@@ -1,0 +1,175 @@
+[32m.[0m[32m.[0mThe date is Using htmlextra version 1.21.0
+newman
+
+avaya_cpaas
+
+Iteration 1/2
+
+❏ DeleteNumber-Local
+↳ ListNumbers-Local
+  GET https://api.zang.io/v2//Accounts/AC777c3e3262352901b0e24b7092f6eef0/IncomingPhoneNumbers.json?Contains=2 [200 OK, 57KB, 6.4s]
+
+  prepare   wait   dns-lookup   tcp-handshake   ssl-handshake   transfer-start   download   process   total 
+  21ms      1ms    500µs        24ms            32ms            6.3s             19ms       1ms       6.4s  
+
+  ✓  List Numbers
+
+↳ DeleteNumber-Local
+  DELETE https://api.zang.io/v2//Accounts/AC777c3e3262352901b0e24b7092f6eef0/IncomingPhoneNumbers/DI777c3e32413abfda13f84129af9b95d9.json [200 OK, 1.6KB, 1604ms]
+
+  prepare   wait    dns-lookup   tcp-handshake   ssl-handshake   transfer-start   download   process   total  
+  1ms       509µs   (cache)      (cache)         (cache)         1598ms           4ms        824µs     1605ms 
+
+  ✓  Delete Number
+
+↳ ListNumber-Local
+  GET https://api.zang.io/v2//Accounts/AC777c3e3262352901b0e24b7092f6eef0/IncomingPhoneNumbers.json?Contains=+13027755769 [200 OK, 1014B, 379ms]
+
+  prepare   wait    dns-lookup   tcp-handshake   ssl-handshake   transfer-start   download   process   total 
+  1ms       326µs   (cache)      (cache)         (cache)         375ms            2ms        334µs     380ms 
+
+  ✓  Verify Deletion
+
+Iteration 2/2
+
+↳ ListNumbers-Local
+  GET https://api.zang.io/v2//Accounts/AC777c3e3262352901b0e24b7092f6eef0/IncomingPhoneNumbers.json?Contains=2 [200 OK, 57KB, 6.9s]
+
+  prepare   wait    dns-lookup   tcp-handshake   ssl-handshake   transfer-start   download   process   total 
+  1ms       276µs   (cache)      (cache)         (cache)         6.8s             25ms       1ms       6.9s  
+
+  ✓  List Numbers
+
+↳ DeleteNumber-Local
+  DELETE https://api.zang.io/v2//Accounts/AC777c3e3262352901b0e24b7092f6eef0/IncomingPhoneNumbers/DI777c3e3203f6f5bd8ef547a8b26a4e92.json [200 OK, 1.6KB, 1483ms]
+
+  prepare   wait    dns-lookup   tcp-handshake   ssl-handshake   transfer-start   download   process   total  
+  1ms       283µs   (cache)      (cache)         (cache)         1476ms           5ms        635µs     1484ms 
+
+  ✓  Delete Number
+
+↳ ListNumber-Local
+  GET https://api.zang.io/v2//Accounts/AC777c3e3262352901b0e24b7092f6eef0/IncomingPhoneNumbers.json?Contains=+12026186954 [200 OK, 1014B, 402ms]
+
+  prepare   wait    dns-lookup   tcp-handshake   ssl-handshake   transfer-start   download   process   total 
+  1ms       336µs   (cache)      (cache)         (cache)         396ms            4ms        365µs     403ms 
+
+  ✓  Verify Deletion
+
+┌─────────────────────────┬─────────────────────┬────────────────────┐
+│                         │            executed │             failed │
+├─────────────────────────┼─────────────────────┼────────────────────┤
+│              iterations │                   2 │                  0 │
+├─────────────────────────┼─────────────────────┼────────────────────┤
+│                requests │                   6 │                  0 │
+├─────────────────────────┼─────────────────────┼────────────────────┤
+│            test-scripts │                  12 │                  0 │
+├─────────────────────────┼─────────────────────┼────────────────────┤
+│      prerequest-scripts │                   6 │                  0 │
+├─────────────────────────┼─────────────────────┼────────────────────┤
+│              assertions │                   6 │                  0 │
+├─────────────────────────┴─────────────────────┴────────────────────┤
+│ total run duration: 17.6s                                          │
+├────────────────────────────────────────────────────────────────────┤
+│ total data received: 115.99KB (approx)                             │
+├────────────────────────────────────────────────────────────────────┤
+│ average response time: 2.8s [min: 379ms, max: 6.9s, s.d.: 2.7s]    │
+├────────────────────────────────────────────────────────────────────┤
+│ average DNS lookup time: 500µs [min: 500µs, max: 500µs, s.d.: 0µs] │
+├────────────────────────────────────────────────────────────────────┤
+│ average first byte time: 2.8s [min: 375ms, max: 6.8s, s.d.: 2.7s]  │
+└────────────────────────────────────────────────────────────────────┘
+
+[32m.[0m[32m.[0m[32m.[0m[32m.[0mThe date is Using htmlextra version 1.21.0
+newman
+
+avaya_cpaas
+
+Iteration 1/2
+
+❏ AddNewNumber-Local
+↳ AvailableNumbers-Local
+  GET https://api.zang.io/v2//Accounts/AC777c3e3262352901b0e24b7092f6eef0/AvailablePhoneNumbers/CA/Local.json?PageSize=2&Contains=2 [200 OK, 1.83KB, 2.7s]
+
+  prepare   wait   dns-lookup   tcp-handshake   ssl-handshake   transfer-start   download   process   total 
+  20ms      1ms    560µs        25ms            33ms            2.6s             6ms        4ms       2.7s  
+
+  ✓  Available Numbers
+
+↳ AddAvailableNumber-Local
+  POST https://api.zang.io/v2//Accounts/AC777c3e3262352901b0e24b7092f6eef0/IncomingPhoneNumbers.json [200 OK, 1.65KB, 5.6s]
+
+  prepare   wait   dns-lookup   tcp-handshake   ssl-handshake   transfer-start   download   process   total 
+  3ms       1ms    (cache)      (cache)         (cache)         5.6s             4ms        449µs     5.6s  
+
+  ✓  Add New Number
+
+↳ ListAddedNumber-Local
+  GET https://api.zang.io/v2//Accounts/AC777c3e3262352901b0e24b7092f6eef0/IncomingPhoneNumbers.json?Contains=+12026404261 [200 OK, 2.11KB, 614ms]
+
+  prepare   wait    dns-lookup   tcp-handshake   ssl-handshake   transfer-start   download   process   total 
+  4ms       490µs   (cache)      (cache)         (cache)         611ms            1ms        2ms       620ms 
+
+  ✓  Verify Added Number
+
+Iteration 2/2
+
+↳ AvailableNumbers-Local
+  GET https://api.zang.io/v2//Accounts/AC777c3e3262352901b0e24b7092f6eef0/AvailablePhoneNumbers/CA/Local.json?PageSize=2&Contains=3 [200 OK, 1.82KB, 5.3s]
+
+  prepare   wait    dns-lookup   tcp-handshake   ssl-handshake   transfer-start   download   process   total 
+  1ms       211µs   (cache)      (cache)         (cache)         5.3s             1ms        291µs     5.3s  
+
+  ✓  Available Numbers
+
+↳ AddAvailableNumber-Local
+  POST https://api.zang.io/v2//Accounts/AC777c3e3262352901b0e24b7092f6eef0/IncomingPhoneNumbers.json [200 OK, 1.65KB, 5.9s]
+
+  prepare   wait    dns-lookup   tcp-handshake   ssl-handshake   transfer-start   download   process   total 
+  2ms       555µs   (cache)      (cache)         (cache)         5.9s             4ms        3ms       5.9s  
+
+  ✓  Add New Number
+
+↳ ListAddedNumber-Local
+  GET https://api.zang.io/v2//Accounts/AC777c3e3262352901b0e24b7092f6eef0/IncomingPhoneNumbers.json?Contains=+13043627184 [200 OK, 2.11KB, 602ms]
+
+  prepare   wait    dns-lookup   tcp-handshake   ssl-handshake   transfer-start   download   process   total 
+  1ms       298µs   (cache)      (cache)         (cache)         597ms            3ms        370µs     603ms 
+
+  ✓  Verify Added Number
+
+┌─────────────────────────┬─────────────────────┬────────────────────┐
+│                         │            executed │             failed │
+├─────────────────────────┼─────────────────────┼────────────────────┤
+│              iterations │                   2 │                  0 │
+├─────────────────────────┼─────────────────────┼────────────────────┤
+│                requests │                   6 │                  0 │
+├─────────────────────────┼─────────────────────┼────────────────────┤
+│            test-scripts │                  12 │                  0 │
+├─────────────────────────┼─────────────────────┼────────────────────┤
+│      prerequest-scripts │                   6 │                  0 │
+├─────────────────────────┼─────────────────────┼────────────────────┤
+│              assertions │                   6 │                  0 │
+├─────────────────────────┴─────────────────────┴────────────────────┤
+│ total run duration: 21.1s                                          │
+├────────────────────────────────────────────────────────────────────┤
+│ total data received: 7.98KB (approx)                               │
+├────────────────────────────────────────────────────────────────────┤
+│ average response time: 3.4s [min: 602ms, max: 5.9s, s.d.: 2.2s]    │
+├────────────────────────────────────────────────────────────────────┤
+│ average DNS lookup time: 560µs [min: 560µs, max: 560µs, s.d.: 0µs] │
+├────────────────────────────────────────────────────────────────────┤
+│ average first byte time: 3.4s [min: 597ms, max: 5.9s, s.d.: 2.2s]  │
+└────────────────────────────────────────────────────────────────────┘
+
+[32m.[0m[32m.[0m 8
+
+
+2 scenarios ([32m2 passed[0m)
+8 steps ([32m8 passed[0m)
+43.473811253s
+
+Randomized with seed: [33m1628263576609199000[0m
+testing: warning: no tests to run
+PASS
+ok  	zarbat_test/godog/postman_newman	43.861s [no tests to run]
