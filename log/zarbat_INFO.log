@@ -902,3 +902,120 @@
 2021/08/04 12:52:39 INFO: Passed  1
 2021/08/04 12:52:39 INFO: Failed  0
 2021/08/04 12:52:39 INFO: ...END OF TEST SUITE
+2021/08/10 20:16:39 INFO: ****************************************
+2021/08/10 20:16:39 INFO: START OF TEST SUITE
+2021/08/10 20:16:39 INFO: Config: config/config.ini
+2021/08/10 20:16:39 INFO: Number of Tries: 3
+2021/08/10 20:16:39 INFO: Log: log/zarbat.log
+2021/08/10 20:16:39 INFO: Tests: [mms]
+2021/08/10 20:16:39 INFO: .........................................
+2021/08/10 20:16:39 INFO: * Feature/Scenario: MMS - Status: OK
+2021/08/10 20:16:44 INFO: Passed  1
+2021/08/10 20:16:44 INFO: Failed  0
+2021/08/10 20:16:44 INFO: ...END OF TEST SUITE
+2021/08/10 20:34:50 INFO: ****************************************
+2021/08/10 20:34:50 INFO: START OF TEST SUITE
+2021/08/10 20:34:50 INFO: Config: config/config.ini
+2021/08/10 20:34:50 INFO: Number of Tries: 3
+2021/08/10 20:34:50 INFO: Log: log/zarbat.log
+2021/08/10 20:34:50 INFO: Tests: [mms]
+2021/08/10 20:34:50 INFO: .........................................
+2021/08/10 20:34:50 INFO: * Feature/Scenario: MMS - Status: OK
+2021/08/10 20:34:55 INFO: Passed  1
+2021/08/10 20:34:55 INFO: Failed  0
+2021/08/10 20:34:55 INFO: ...END OF TEST SUITE
+2021/08/10 20:35:51 INFO: ****************************************
+2021/08/10 20:35:51 INFO: START OF TEST SUITE
+2021/08/10 20:35:51 INFO: Config: config/config.ini
+2021/08/10 20:35:51 INFO: Number of Tries: 3
+2021/08/10 20:35:51 INFO: Log: log/zarbat.log
+2021/08/10 20:35:51 INFO: Tests: [mms]
+2021/08/10 20:35:51 INFO: .........................................
+2021/08/10 20:35:51 INFO: * Feature/Scenario: MMS - Status: OK
+2021/08/10 20:35:56 INFO: Passed  1
+2021/08/10 20:35:56 INFO: Failed  0
+2021/08/10 20:35:56 INFO: ...END OF TEST SUITE
+2021/08/10 20:36:53 INFO: ****************************************
+2021/08/10 20:36:53 INFO: START OF TEST SUITE
+2021/08/10 20:36:53 INFO: Config: config/config.ini
+2021/08/10 20:36:53 INFO: Number of Tries: 3
+2021/08/10 20:36:53 INFO: Log: log/zarbat.log
+2021/08/10 20:36:53 INFO: Tests: [mms]
+2021/08/10 20:36:53 INFO: .........................................
+2021/08/10 20:36:53 INFO: * Feature/Scenario: MMS - Status: OK
+2021/08/10 20:36:58 INFO: Passed  1
+2021/08/10 20:36:58 INFO: Failed  0
+2021/08/10 20:36:58 INFO: ...END OF TEST SUITE
+2021/08/10 20:37:08 INFO: ****************************************
+2021/08/10 20:37:08 INFO: START OF TEST SUITE
+2021/08/10 20:37:08 INFO: Config: config/config.ini
+2021/08/10 20:37:08 INFO: Number of Tries: 3
+2021/08/10 20:37:08 INFO: Log: log/zarbat.log
+2021/08/10 20:37:08 INFO: Tests: [mms]
+2021/08/10 20:37:08 INFO: .........................................
+2021/08/10 20:37:08 INFO: * Feature/Scenario: MMS - Status: OK
+2021/08/10 20:37:13 INFO: Passed  1
+2021/08/10 20:37:13 INFO: Failed  0
+2021/08/10 20:37:13 INFO: ...END OF TEST SUITE
+2021/08/10 20:38:46 INFO: ****************************************
+2021/08/10 20:38:46 INFO: START OF TEST SUITE
+2021/08/10 20:38:46 INFO: Config: config/config.ini
+2021/08/10 20:38:46 INFO: Number of Tries: 3
+2021/08/10 20:38:46 INFO: Log: log/zarbat.log
+2021/08/10 20:38:46 INFO: Tests: [mms]
+2021/08/10 20:38:46 INFO: .........................................
+2021/08/10 20:39:49 INFO: * Feature/Scenario: MMS - Status: Not OK
+2021/08/10 20:40:16 INFO: ****************************************
+2021/08/10 20:40:16 INFO: START OF TEST SUITE
+2021/08/10 20:40:16 INFO: Config: config/config.ini
+2021/08/10 20:40:16 INFO: Number of Tries: 3
+2021/08/10 20:40:16 INFO: Log: log/zarbat.log
+2021/08/10 20:40:16 INFO: Tests: [mms]
+2021/08/10 20:40:16 INFO: .........................................
+2021/08/10 20:41:17 INFO: * Feature/Scenario: MMS - Status: Not OK
+2021/08/10 20:42:24 INFO: * Feature/Scenario: MMS - Status: Not OK
+2021/08/10 20:43:31 INFO: * Feature/Scenario: MMS - Status: Not OK
+2021/08/10 20:43:36 INFO: Passed  0
+2021/08/10 20:43:36 INFO: Failed  1
+2021/08/10 20:43:36 INFO: ...END OF TEST SUITE
+2021/08/10 20:48:19 INFO: ****************************************
+2021/08/10 20:48:19 INFO: START OF TEST SUITE
+2021/08/10 20:48:19 INFO: Config: config/config.ini
+2021/08/10 20:48:19 INFO: Number of Tries: 3
+2021/08/10 20:48:19 INFO: Log: log/zarbat.log
+2021/08/10 20:48:19 INFO: Tests: [sms]
+2021/08/10 20:48:19 INFO: .........................................
+2021/08/10 20:48:30 INFO: * Feature/Scenario: SMS - Status: OK
+2021/08/10 20:48:35 INFO: Passed  1
+2021/08/10 20:48:35 INFO: Failed  0
+2021/08/10 20:48:35 INFO: ...END OF TEST SUITE
+2021/08/10 20:50:06 INFO: ****************************************
+2021/08/10 20:50:06 INFO: START OF TEST SUITE
+2021/08/10 20:50:06 INFO: Config: config/config.ini
+2021/08/10 20:50:06 INFO: Number of Tries: 3
+2021/08/10 20:50:06 INFO: Log: log/zarbat.log
+2021/08/10 20:50:06 INFO: Tests: [mms]
+2021/08/10 20:50:06 INFO: .........................................
+2021/08/10 20:51:08 INFO: * Feature/Scenario: MMS - Status: Not OK
+2021/08/10 20:54:09 INFO: ****************************************
+2021/08/10 20:54:09 INFO: START OF TEST SUITE
+2021/08/10 20:54:09 INFO: Config: config/config.ini
+2021/08/10 20:54:09 INFO: Number of Tries: 3
+2021/08/10 20:54:09 INFO: Log: log/zarbat.log
+2021/08/10 20:54:09 INFO: Tests: [sms]
+2021/08/10 20:54:09 INFO: .........................................
+2021/08/10 20:54:26 INFO: * Feature/Scenario: SMS - Status: OK
+2021/08/10 20:54:31 INFO: Passed  1
+2021/08/10 20:54:31 INFO: Failed  0
+2021/08/10 20:54:31 INFO: ...END OF TEST SUITE
+2021/08/10 20:55:28 INFO: ****************************************
+2021/08/10 20:55:28 INFO: START OF TEST SUITE
+2021/08/10 20:55:28 INFO: Config: config/config.ini
+2021/08/10 20:55:28 INFO: Number of Tries: 3
+2021/08/10 20:55:28 INFO: Log: log/zarbat.log
+2021/08/10 20:55:28 INFO: Tests: [sms]
+2021/08/10 20:55:28 INFO: .........................................
+2021/08/10 20:55:48 INFO: * Feature/Scenario: SMS - Status: OK
+2021/08/10 20:55:53 INFO: Passed  1
+2021/08/10 20:55:53 INFO: Failed  0
+2021/08/10 20:55:53 INFO: ...END OF TEST SUITE

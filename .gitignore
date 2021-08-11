@@ -1,2 +1,4 @@
-.\xml\inbound.xml
+.\xml\*
+.\temp\*
+.\log\*
 server.go

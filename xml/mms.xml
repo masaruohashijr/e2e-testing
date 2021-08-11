@@ -1,0 +1,2 @@
+<?xml version="1.0"?>
+<Response><Mms from="+12048003021" to="+12048003029" mediaUrl="http://mohashi.ngrok.io/Media" statusCallback="http://mohashi.ngrok.io/MmsStatus">Actions speak louder than words</Mms></Response>
