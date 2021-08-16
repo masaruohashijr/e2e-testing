@@ -21,14 +21,16 @@ func CallbackHandler(w http.ResponseWriter, r *http.Request) {
 	b := string(body)
 	fmt.Println(b)
 	url_parameters, err := url.ParseQuery(b)
-	status := url_parameters["CallStatus"][0]
-	callSid := url_parameters["CallSid"][0]
-	l.Debug.Println(fmt.Sprintf("Call Status %s.\n", status))
-	fmt.Printf("Call Status %s.\n", status)
-	fmt.Printf("Call Sid %s.\n", callSid)
-	fmt.Printf("Call Sid Context %s.\n", CallSidContext)
-	if status == "completed" && CloseChannel && callSid == CallSidContext {
-		Ch <- b
+	if len(url_parameters["CallStatus"]) > 0 {
+		status := url_parameters["CallStatus"][0]
+		callSid := url_parameters["CallSid"][0]
+		l.Debug.Println(fmt.Sprintf("Call Status %s.\n", status))
+		fmt.Printf("Call Status %s.\n", status)
+		fmt.Printf("Call Sid %s.\n", callSid)
+		fmt.Printf("Call Sid Context %s.\n", CallSidContext)
+		if status == "completed" && CloseChannel && callSid == CallSidContext {
+			Ch <- b
+		}
 	}
 	l.Debug.Println("******************************** Callback END")
 	fmt.Println("******************************** Callback END")
