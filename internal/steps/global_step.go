@@ -89,6 +89,9 @@ func InitializeScenario(ctx *godog.ScenarioContext) {
 	ctx.Step(`^"([^"]*)" should get speech "([^"]*)"$`, ShouldGetSpeech)
 	ctx.Step(`^"([^"]*)" should get the incoming call from "([^"]*)"$`, ShouldGetTheIncomingCallFrom)
 	ctx.Step(`^"([^"]*)" should get transcription "([^"]*)"$`, ShouldGetTranscription)
+	ctx.Step(`^I list my numbers$`, IListMyNumbers)
+	ctx.Step(`^I release all my numbers except "([^"]*)"$`, IReleaseAllMyNumbersExcept)
+	ctx.Step(`^I should get (\d+) numbers from my list$`, IShouldGetNumbersFromMyList)
 }
 
 func InitializeTestSuite(ctx *godog.TestSuiteContext) {

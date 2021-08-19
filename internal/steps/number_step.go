@@ -40,6 +40,52 @@ func ShouldBeReset(number string) error {
 
 func IListAllAvailableNumbers() error {
 	anumbers, err := NumberSecondaryPort.ListAvailableNumbers()
+	IncomingNumbers = anumbers
+	if err != nil {
+		return fmt.Errorf("Error %s", "Not able to list my numbers.")
+	}
+	for _, inumbers := range IncomingNumbers {
+		logging.Debug.Println(inumbers)
+		println(inumbers)
+	}
+	return nil
+}
+
+func IShouldGetToBuyFromList(amount int) error {
+	ok := false
+	for i := 0; i < amount; i++ {
+		logging.Debug.Println("Buying number is: ", AvailableNumbers[i])
+		NumberSecondaryPort.AddNumber(AvailableNumbers[i])
+		purchased, _ := NumberSecondaryPort.ListNumbers()
+		for _, n := range purchased {
+			if AvailableNumbers[i] == n {
+				logging.Debug.Println("Purchased number is: ", AvailableNumbers[i])
+				ok = true
+				break
+			}
+		}
+		if !ok {
+			return fmt.Errorf("Error %s", "Not able to list available numbers.")
+		}
+	}
+	return nil
+}
+
+func IListMyNumbers() error {
+	mynumbers, err := NumberSecondaryPort.ListNumbers()
+	IncomingNumbers = mynumbers
+	if err != nil {
+		return fmt.Errorf("Error %s", "Not able to list available numbers.")
+	}
+	for _, in := range IncomingNumbers {
+		logging.Debug.Println(in)
+		println(in)
+	}
+	return nil
+}
+
+func IReleaseAllMyNumbersExcept(exceptionList string) error {
+	anumbers, err := NumberSecondaryPort.ListAvailableNumbers()
 	AvailableNumbers = anumbers
 	if err != nil {
 		return fmt.Errorf("Error %s", "Not able to list available numbers.")
@@ -51,7 +97,7 @@ func IListAllAvailableNumbers() error {
 	return nil
 }
 
-func IShouldGetToBuyFromList(amount int) error {
+func IShouldGetNumbersFromMyList(amount int) error {
 	ok := false
 	for i := 0; i < amount; i++ {
 		logging.Debug.Println("Buying number is: ", AvailableNumbers[i])

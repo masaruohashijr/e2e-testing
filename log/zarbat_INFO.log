@@ -1055,3 +1055,32 @@
 2021/08/16 12:16:13 INFO: Passed  1
 2021/08/16 12:16:13 INFO: Failed  0
 2021/08/16 12:16:13 INFO: ...END OF TEST SUITE
+2021/08/18 09:18:10 INFO: ****************************************
+2021/08/18 09:18:10 INFO: START OF TEST SUITE
+2021/08/18 09:18:10 INFO: Config: config/config.ini
+2021/08/18 09:18:10 INFO: Number of Tries: 3
+2021/08/18 09:18:10 INFO: Log: log/zarbat.log
+2021/08/18 09:18:10 INFO: Tests: [view a number]
+2021/08/18 09:18:10 INFO: .........................................
+2021/08/18 09:18:10 INFO: * Feature/Scenario: VIEW A NUMBER - Status: OK
+2021/08/18 09:18:15 INFO: Passed  1
+2021/08/18 09:18:15 INFO: Failed  0
+2021/08/18 09:18:15 INFO: ...END OF TEST SUITE
+2021/08/18 09:34:46 INFO: ****************************************
+2021/08/18 09:34:46 INFO: START OF TEST SUITE
+2021/08/18 09:34:46 INFO: Config: config/config.ini
+2021/08/18 09:34:46 INFO: Number of Tries: 3
+2021/08/18 09:34:46 INFO: Log: log/zarbat.log
+2021/08/18 09:34:46 INFO: Tests: [view a number]
+2021/08/18 09:34:46 INFO: .........................................
+2021/08/18 09:35:44 INFO: ****************************************
+2021/08/18 09:35:44 INFO: START OF TEST SUITE
+2021/08/18 09:35:44 INFO: Config: config/config.ini
+2021/08/18 09:35:44 INFO: Number of Tries: 3
+2021/08/18 09:35:44 INFO: Log: log/zarbat.log
+2021/08/18 09:35:44 INFO: Tests: [release number]
+2021/08/18 09:35:44 INFO: .........................................
+2021/08/18 09:36:21 INFO: * Feature/Scenario: RELEASE NUMBER - Status: OK
+2021/08/18 09:36:26 INFO: Passed  1
+2021/08/18 09:36:26 INFO: Failed  0
+2021/08/18 09:36:26 INFO: ...END OF TEST SUITE

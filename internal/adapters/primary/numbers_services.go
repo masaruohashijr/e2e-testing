@@ -1,6 +1,7 @@
 package primary
 
 import (
+	"zarbat_test/pkg/domains"
 	"zarbat_test/pkg/ports/numbers"
 )
 
@@ -14,8 +15,18 @@ func NewNumbersService(driven numbers.SecondaryPort) numbers.PrimaryPort {
 	}
 }
 
+func (p *port_number) ViewNumber(n string) (*domains.IncomingPhoneNumber, error) {
+	vn, err := p.driven.ViewNumber(n)
+	return vn, err
+}
+
 func (p *port_number) AddNumber(n string) error {
 	err := p.driven.AddNumber(n)
+	return err
+}
+
+func (p *port_number) DeleteNumber(n string) error {
+	err := p.driven.DeleteNumber(n)
 	return err
 }
 
