@@ -6,7 +6,7 @@ require (
 	github.com/BurntSushi/toml v0.3.1
 	github.com/cucumber/godog v0.11.0
 	github.com/gorilla/mux v1.8.0
-	github.com/tidwall/gjson v1.8.1 // indirect
+	github.com/tidwall/gjson v1.8.1
 	github.com/tidwall/pretty v1.2.0 // indirect
 	github.com/xigh/go-wavreader v0.0.0-20210516212152-f49019aa7352
 )

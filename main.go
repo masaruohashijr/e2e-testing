@@ -6,6 +6,7 @@ import (
 	"log"
 	"os"
 	"regexp"
+	"strconv"
 	"strings"
 	"time"
 	"zarbat_test/internal/config"
@@ -23,8 +24,16 @@ var logPtr *string
 var logLevelPtr *string
 var configPtr *string
 var triesPtr *int
+var callbackPtr *string
 
 func main() {
+	// 18-08-2021 Masoud
+	// the user should know his public ip and also needs a port
+	// that forwarded directly from his router to his machine
+	// and our platform should get those parameters as input to pass it
+	// as a callback to cpaas.
+	// 1 - can you add those public ip and port to zarbat-tester?
+	// 2 - and create URL based on those values?
 	RegMap = test.InitRegister()
 	tests, tempDir := initArgs(RegMap)
 	if checkEmpty(tests) != nil {
@@ -88,13 +97,27 @@ func initArgs(regMap map[string]*test.FeatureTest) (fts []test.FeatureTest, temp
 
 	configPtr = flag.String("config", "config/config.ini", "A configuration file")
 	config.ConfigPath = *configPtr
-	services.BaseUrl = config.NewConfig().BaseUrl
 	triesPtr = flag.Int("n", 5, "number of tries")
 	logPtr = flag.String("l", "log/.log", "log location")
-	logLevelPtr = flag.String("level", "summary", "options: info, debug")
-	testPtr := flag.String("test", "buy", "ctlang")
+	logLevelPtr = flag.String("level", "info", "options: info, debug")
+	testPtr := flag.String("test", "", "ctlang")
+	callbackPtr := flag.String("url", "http://your_username.ngrok.io", "Public IP and Port")
+	if *callbackPtr != "0.0.0.0:0" {
+		s := strings.Split(*callbackPtr, ":")
+		services.BaseUrl = s[0]
+		if len(s) > 1 {
+			configPort, _ := strconv.Atoi(s[1])
+			services.BasePort = configPort
+		}
+	} else {
+		services.BaseUrl = config.NewConfig().BaseUrl
+	}
 
 	flag.Parse()
+
+	if !isParametersValid(testPtr) {
+		return fts, ""
+	}
 
 	if strings.HasSuffix(*testPtr, ".ctlang") {
 		tempFiles, tempDir := files.NewTempFiles(*testPtr)
@@ -109,6 +132,13 @@ func initArgs(regMap map[string]*test.FeatureTest) (fts []test.FeatureTest, temp
 		files.NewSingleFile(tests)
 		return files.GetFeatureTestsFromMap(tests, regMap), ""
 	}
+}
+
+func isParametersValid(testPtr *string) bool {
+	if *testPtr == "" {
+		return false
+	}
+	return true
 }
 
 func initLoggers() {
