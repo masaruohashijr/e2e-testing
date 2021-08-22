@@ -5559,3 +5559,344 @@
 2021/08/10 20:55:52 DEBUG: SmsHandler
 2021/08/10 20:55:52 DEBUG: <?xml version="1.0"?>
 <Response><Sms from="+12048003021" to="+12048003029" statusCallback="http://mohashi.ngrok.io/SmsStatus">Actions speak louder than words</Sms></Response>
+2021/08/16 23:48:50 DEBUG: ************************************************
+2021/08/16 23:48:50 DEBUG: *** Config: config/config.ini
+2021/08/16 23:48:50 DEBUG: *** Number of Tries: 3
+2021/08/16 23:48:50 DEBUG: *** Log: log/zarbat.log
+2021/08/16 23:48:50 DEBUG: *** Logging Level: info
+2021/08/16 23:48:50 DEBUG: *** Features: [mms][conference][gather][hangup][number][pause][ping][play][playlastrecording][record][redirect][reject][say][sms][dial]
+2021/08/16 23:48:50 DEBUG: ************************************************
+2021/08/16 23:48:50 DEBUG: Server running
+2021/08/16 23:48:59 DEBUG: <?xml version="1.0"?>
+<Response><Dial><Conference startConferenceOnEnter="true" callbackUrl="http://mohashi.ngrok.io/ConferenceCallback" hangupOnStar="true" maxParticipants="3">Zarbat</Conference></Dial><Pause length="5"></Pause><Hangup></Hangup></Response>
+2021/08/16 23:48:59 DEBUG: <?xml version="1.0"?>
+<Response><Dial><Conference startConferenceOnEnter="true" callbackUrl="http://mohashi.ngrok.io/ConferenceCallback" hangupOnStar="true" maxParticipants="3">Zarbat</Conference></Dial><Pause length="5"></Pause><Hangup></Hangup></Response>
+2021/08/16 23:49:01 DEBUG: ******************************** Callback START
+2021/08/16 23:49:01 DEBUG: Call Status in-progress.
+
+2021/08/16 23:49:01 DEBUG: ******************************** Callback END
+2021/08/16 23:49:01 DEBUG: ******************************** Callback START
+2021/08/16 23:49:01 DEBUG: Call Status in-progress.
+
+2021/08/16 23:49:01 DEBUG: ******************************** Callback END
+2021/08/16 23:49:01 DEBUG: ******************************** Callback START
+2021/08/16 23:49:01 DEBUG: Call Status in-progress.
+
+2021/08/16 23:49:01 DEBUG: ******************************** Callback END
+2021/08/16 23:49:01 DEBUG: ******************************** Callback START
+2021/08/16 23:49:01 DEBUG: Call Status in-progress.
+
+2021/08/16 23:49:01 DEBUG: ******************************** Callback END
+2021/08/16 23:49:01 DEBUG: ******************************** Callback START
+2021/08/16 23:49:01 DEBUG: Call Status in-progress.
+
+2021/08/16 23:49:01 DEBUG: ******************************** Callback END
+2021/08/16 23:49:03 DEBUG: ******************************** Callback START
+2021/08/16 23:49:03 DEBUG: Call Status completed.
+
+2021/08/16 23:49:03 DEBUG: ******************************** Callback END
+2021/08/16 23:49:09 DEBUG: ******************************** Callback START
+2021/08/16 23:49:09 DEBUG: Call Status completed.
+
+2021/08/16 23:49:09 DEBUG: ******************************** Callback END
+2021/08/16 23:49:09 DEBUG: ******************************** Callback START
+2021/08/16 23:49:09 DEBUG: Call Status completed.
+
+2021/08/16 23:49:09 DEBUG: ******************************** Callback END
+2021/08/16 23:49:10 DEBUG: ******************************** Callback START
+2021/08/16 23:49:10 DEBUG: ******************************** Callback START
+2021/08/16 23:49:10 DEBUG: Call Status completed.
+
+2021/08/16 23:49:10 DEBUG: ******************************** Callback END
+2021/08/16 23:49:10 DEBUG: Call Status completed.
+
+2021/08/16 23:49:20 DEBUG: SayHandler
+2021/08/16 23:49:20 DEBUG: <?xml version="1.0"?>
+<Response><Pause length="1"></Pause><Say voice="man" language="en-US" loop="2">we shall fight on the beaches</Say><Hangup></Hangup></Response>
+2021/08/16 23:49:21 DEBUG: ******************************** Callback START
+2021/08/16 23:49:21 DEBUG: Call Status in-progress.
+
+2021/08/16 23:49:21 DEBUG: ******************************** Callback END
+2021/08/16 23:49:25 DEBUG: ************************************************
+2021/08/16 23:49:25 DEBUG: SpeechResult
+2021/08/16 23:49:25 DEBUG: we shall fight on the beaches
+2021/08/16 23:49:25 DEBUG: original speech:  we shall fight on the beaches
+2021/08/16 23:49:25 DEBUG: speech result:  we shall fight on the beaches
+2021/08/16 23:49:26 DEBUG: ******************************** Callback START
+2021/08/16 23:49:26 DEBUG: Call Status completed.
+
+2021/08/16 23:49:26 DEBUG: ******************************** Callback END
+2021/08/16 23:49:31 DEBUG: ******************************** Callback START
+2021/08/16 23:49:31 DEBUG: Call Status in-progress.
+
+2021/08/16 23:49:31 DEBUG: ******************************** Callback END
+2021/08/20 09:10:56 DEBUG: ************************************************
+2021/08/20 09:10:56 DEBUG: *** Config: config/config.ini
+2021/08/20 09:10:56 DEBUG: *** Number of Tries: 5
+2021/08/20 09:10:56 DEBUG: *** Log: log/zarbat.log
+2021/08/20 09:10:56 DEBUG: *** Logging Level: info
+2021/08/20 09:10:56 DEBUG: *** Features: [sms]
+2021/08/20 09:10:56 DEBUG: ************************************************
+2021/08/20 09:18:42 DEBUG: ************************************************
+2021/08/20 09:18:42 DEBUG: *** Config: config/config.ini
+2021/08/20 09:18:42 DEBUG: *** Number of Tries: 5
+2021/08/20 09:18:42 DEBUG: *** Log: log/zarbat.log
+2021/08/20 09:18:42 DEBUG: *** Logging Level: info
+2021/08/20 09:18:42 DEBUG: *** Features: [sms]
+2021/08/20 09:18:42 DEBUG: ************************************************
+2021/08/20 09:18:42 DEBUG: Server running
+2021/08/20 09:24:16 DEBUG: ************************************************
+2021/08/20 09:24:16 DEBUG: *** Config: config/config.ini
+2021/08/20 09:24:16 DEBUG: *** Number of Tries: 5
+2021/08/20 09:24:16 DEBUG: *** Log: log/zarbat.log
+2021/08/20 09:24:16 DEBUG: *** Logging Level: info
+2021/08/20 09:24:16 DEBUG: *** Features: [sms]
+2021/08/20 09:24:16 DEBUG: ************************************************
+2021/08/20 09:24:16 DEBUG: Server running
+2021/08/20 09:49:10 DEBUG: ************************************************
+2021/08/20 09:49:10 DEBUG: *** Config: config/config.ini
+2021/08/20 09:49:10 DEBUG: *** Number of Tries: 3
+2021/08/20 09:49:10 DEBUG: *** Log: log/zarbat.log
+2021/08/20 09:49:10 DEBUG: *** Logging Level: info
+2021/08/20 09:49:10 DEBUG: *** Features: [release numbers]
+2021/08/20 09:49:10 DEBUG: ************************************************
+2021/08/20 09:49:10 DEBUG: Server running
+2021/08/20 09:49:29 DEBUG: ************************************************
+2021/08/20 09:49:29 DEBUG: *** Config: config/config.ini
+2021/08/20 09:49:29 DEBUG: *** Number of Tries: 3
+2021/08/20 09:49:29 DEBUG: *** Log: log/zarbat.log
+2021/08/20 09:49:29 DEBUG: *** Logging Level: info
+2021/08/20 09:49:29 DEBUG: *** Features: [sms]
+2021/08/20 09:49:29 DEBUG: ************************************************
+2021/08/20 09:49:29 DEBUG: Server running
+2021/08/20 09:51:05 DEBUG: ************************************************
+2021/08/20 09:51:05 DEBUG: *** Config: config/config.ini
+2021/08/20 09:51:05 DEBUG: *** Number of Tries: 3
+2021/08/20 09:51:05 DEBUG: *** Log: log/zarbat.log
+2021/08/20 09:51:05 DEBUG: *** Logging Level: info
+2021/08/20 09:51:05 DEBUG: *** Features: [sms]
+2021/08/20 09:51:05 DEBUG: ************************************************
+2021/08/20 09:51:05 DEBUG: Server running
+2021/08/20 09:56:11 DEBUG: ************************************************
+2021/08/20 09:56:11 DEBUG: *** Config: config/config.ini
+2021/08/20 09:56:11 DEBUG: *** Number of Tries: 3
+2021/08/20 09:56:11 DEBUG: *** Log: log/zarbat.log
+2021/08/20 09:56:11 DEBUG: *** Logging Level: info
+2021/08/20 09:56:11 DEBUG: *** Features: [mms][conference][gather][hangup][number][pause][ping][play][playlastrecording][record][redirect][reject][say][sms][dial]
+2021/08/20 09:56:11 DEBUG: ************************************************
+2021/08/20 09:56:11 DEBUG: Server running
+2021/08/20 10:26:20 DEBUG: ************************************************
+2021/08/20 10:26:20 DEBUG: *** Config: config/config.ini
+2021/08/20 10:26:20 DEBUG: *** Number of Tries: 3
+2021/08/20 10:26:20 DEBUG: *** Log: log/zarbat.log
+2021/08/20 10:26:20 DEBUG: *** Logging Level: info
+2021/08/20 10:26:20 DEBUG: *** Features: [sms]
+2021/08/20 10:26:20 DEBUG: ************************************************
+2021/08/20 10:26:20 DEBUG: Server running
+2021/08/22 16:16:01 DEBUG: ************************************************
+2021/08/22 16:16:01 DEBUG: *** Config: config/config.ini
+2021/08/22 16:16:01 DEBUG: *** Number of Tries: 3
+2021/08/22 16:16:01 DEBUG: *** Log: log/zarbat.log
+2021/08/22 16:16:01 DEBUG: *** Logging Level: info
+2021/08/22 16:16:01 DEBUG: *** Features: [sms]
+2021/08/22 16:16:01 DEBUG: ************************************************
+2021/08/22 16:17:03 DEBUG: Server running
+2021/08/22 16:19:35 DEBUG: ************************************************
+2021/08/22 16:19:35 DEBUG: *** Config: config/config.ini
+2021/08/22 16:19:35 DEBUG: *** Number of Tries: 3
+2021/08/22 16:19:35 DEBUG: *** Log: log/zarbat.log
+2021/08/22 16:19:35 DEBUG: *** Logging Level: info
+2021/08/22 16:19:35 DEBUG: *** Features: [sms]
+2021/08/22 16:19:35 DEBUG: ************************************************
+2021/08/22 16:19:35 DEBUG: Server running
+2021/08/22 16:19:35 DEBUG: ******************************** Callback START
+2021/08/22 16:19:35 DEBUG: Call Status in-progress.
+
+2021/08/22 16:19:35 DEBUG: ******************************** Callback END
+2021/08/22 16:19:35 DEBUG: ******************************** Callback START
+2021/08/22 16:19:35 DEBUG: Call Status completed.
+
+2021/08/22 16:19:35 DEBUG: ******************************** Callback END
+2021/08/22 16:19:36 DEBUG: ******************************** Callback START
+2021/08/22 16:19:36 DEBUG: Call Status completed.
+
+2021/08/22 16:19:36 DEBUG: ******************************** Callback END
+2021/08/22 16:19:36 DEBUG: ******************************** Callback START
+2021/08/22 16:19:36 DEBUG: Call Status in-progress.
+
+2021/08/22 16:19:36 DEBUG: ******************************** Callback END
+2021/08/22 16:20:52 DEBUG: ************************************************
+2021/08/22 16:20:52 DEBUG: *** Config: config/config.ini
+2021/08/22 16:20:52 DEBUG: *** Number of Tries: 3
+2021/08/22 16:20:52 DEBUG: *** Log: log/zarbat.log
+2021/08/22 16:20:52 DEBUG: *** Logging Level: info
+2021/08/22 16:20:52 DEBUG: *** Features: [sms]
+2021/08/22 16:20:52 DEBUG: ************************************************
+2021/08/22 16:20:52 DEBUG: Server running
+2021/08/22 16:27:23 DEBUG: ************************************************
+2021/08/22 16:27:23 DEBUG: *** Config: config/config.ini
+2021/08/22 16:27:23 DEBUG: *** Number of Tries: 3
+2021/08/22 16:27:23 DEBUG: *** Log: log/zarbat.log
+2021/08/22 16:27:23 DEBUG: *** Logging Level: info
+2021/08/22 16:27:23 DEBUG: *** Features: [sms]
+2021/08/22 16:27:23 DEBUG: ************************************************
+2021/08/22 16:27:23 DEBUG: Server running
+2021/08/22 16:27:31 DEBUG: SmsHandler
+2021/08/22 16:27:31 DEBUG: <?xml version="1.0"?>
+<Response><Sms from="+12048003021" to="+12048003029" statusCallback="http://mohashi.ngrok.io/SmsStatus">Actions speak louder than words</Sms></Response>
+2021/08/22 16:27:33 DEBUG: SmsHandler
+2021/08/22 16:27:33 DEBUG: <?xml version="1.0"?>
+<Response><Sms from="+12048003021" to="+12048003029" statusCallback="http://mohashi.ngrok.io/SmsStatus">Actions speak louder than words</Sms></Response>
+2021/08/22 16:27:34 DEBUG: *********** SMS Status Callback
+2021/08/22 16:27:34 DEBUG: SmsHandler
+2021/08/22 16:27:34 DEBUG: <?xml version="1.0"?>
+<Response><Sms from="+12048003021" to="+12048003029" statusCallback="http://mohashi.ngrok.io/SmsStatus">Actions speak louder than words</Sms></Response>
+2021/08/22 16:27:34 DEBUG: *********** SMS Status Callback
+2021/08/22 16:27:35 DEBUG: *********** SMS Status Callback
+2021/08/22 16:27:36 DEBUG: SmsHandler
+2021/08/22 16:27:36 DEBUG: <?xml version="1.0"?>
+<Response><Sms from="+12048003021" to="+12048003029" statusCallback="http://mohashi.ngrok.io/SmsStatus">Actions speak louder than words</Sms></Response>
+2021/08/22 16:27:36 DEBUG: ******************************** Callback START
+2021/08/22 16:27:36 DEBUG: Call Status in-progress.
+
+2021/08/22 16:27:36 DEBUG: ******************************** Callback END
+2021/08/22 16:27:36 DEBUG: *********** SMS Status Callback
+2021/08/22 16:27:37 DEBUG: SmsHandler
+2021/08/22 16:27:37 DEBUG: <?xml version="1.0"?>
+<Response><Sms from="+12048003021" to="+12048003029" statusCallback="http://mohashi.ngrok.io/SmsStatus">Actions speak louder than words</Sms></Response>
+2021/08/22 16:27:37 DEBUG: *********** SMS Status Callback
+2021/08/22 16:27:37 DEBUG: *********** SMS Status Callback
+2021/08/22 16:27:38 DEBUG: SmsHandler
+2021/08/22 16:27:38 DEBUG: <?xml version="1.0"?>
+<Response><Sms from="+12048003021" to="+12048003029" statusCallback="http://mohashi.ngrok.io/SmsStatus">Actions speak louder than words</Sms></Response>
+2021/08/22 16:27:39 DEBUG: *********** SMS Status Callback
+2021/08/22 16:27:39 DEBUG: *********** SMS Status Callback
+2021/08/22 16:27:39 DEBUG: *********** SMS Status Callback
+2021/08/22 16:27:40 DEBUG: *********** SMS Status Callback
+2021/08/22 16:27:40 DEBUG: SmsHandler
+2021/08/22 16:27:40 DEBUG: <?xml version="1.0"?>
+<Response><Sms from="+12048003021" to="+12048003029" statusCallback="http://mohashi.ngrok.io/SmsStatus">Actions speak louder than words</Sms></Response>
+2021/08/22 16:27:40 DEBUG: *********** SMS Status Callback
+2021/08/22 16:27:40 DEBUG: *********** SMS Status Callback
+2021/08/22 16:27:41 DEBUG: *********** SMS Status Callback
+2021/08/22 16:27:41 DEBUG: *********** SMS Status Callback
+2021/08/22 16:27:41 DEBUG: *********** SMS Status Callback
+2021/08/22 16:27:41 DEBUG: *********** SMS Status Callback
+2021/08/22 16:27:41 DEBUG: SmsHandler
+2021/08/22 16:27:41 DEBUG: <?xml version="1.0"?>
+<Response><Sms from="+12048003021" to="+12048003029" statusCallback="http://mohashi.ngrok.io/SmsStatus">Actions speak louder than words</Sms></Response>
+2021/08/22 16:27:42 DEBUG: *********** SMS Status Callback
+2021/08/22 16:27:42 DEBUG: *********** SMS Status Callback
+2021/08/22 16:27:43 DEBUG: ******************************** Callback START
+2021/08/22 16:27:43 DEBUG: Call Status canceled.
+
+2021/08/22 16:27:43 DEBUG: ******************************** Callback END
+2021/08/22 16:28:16 DEBUG: ************************************************
+2021/08/22 16:28:16 DEBUG: *** Config: config/config.ini
+2021/08/22 16:28:16 DEBUG: *** Number of Tries: 3
+2021/08/22 16:28:16 DEBUG: *** Log: log/zarbat.log
+2021/08/22 16:28:16 DEBUG: *** Logging Level: info
+2021/08/22 16:28:16 DEBUG: *** Features: [sms]
+2021/08/22 16:28:16 DEBUG: ************************************************
+2021/08/22 16:28:16 DEBUG: Server running
+2021/08/22 16:28:19 DEBUG: ******************************** Callback START
+2021/08/22 16:28:19 DEBUG: Call Status completed.
+
+2021/08/22 16:28:19 DEBUG: ******************************** Callback END
+2021/08/22 16:29:03 DEBUG: ************************************************
+2021/08/22 16:29:03 DEBUG: *** Config: config/config.ini
+2021/08/22 16:29:03 DEBUG: *** Number of Tries: 3
+2021/08/22 16:29:03 DEBUG: *** Log: log/zarbat.log
+2021/08/22 16:29:03 DEBUG: *** Logging Level: info
+2021/08/22 16:29:03 DEBUG: *** Features: [sms]
+2021/08/22 16:29:03 DEBUG: ************************************************
+2021/08/22 16:29:03 DEBUG: Server running
+2021/08/22 16:29:03 DEBUG: SmsHandler
+2021/08/22 16:29:03 DEBUG: <?xml version="1.0"?>
+<Response><Sms from="+12048003021" to="+12048003029" statusCallback="http://mohashi.ngrok.io/SmsStatus">Actions speak louder than words</Sms></Response>
+2021/08/22 16:29:04 DEBUG: SmsHandler
+2021/08/22 16:29:04 DEBUG: <?xml version="1.0"?>
+<Response><Sms from="+12048003021" to="+12048003029" statusCallback="http://mohashi.ngrok.io/SmsStatus">Actions speak louder than words</Sms></Response>
+2021/08/22 16:29:05 DEBUG: *********** SMS Status Callback
+2021/08/22 16:29:06 DEBUG: SmsHandler
+2021/08/22 16:29:06 DEBUG: <?xml version="1.0"?>
+<Response><Sms from="+12048003021" to="+12048003029" statusCallback="http://mohashi.ngrok.io/SmsStatus">Actions speak louder than words</Sms></Response>
+2021/08/22 16:29:06 DEBUG: SmsHandler
+2021/08/22 16:29:06 DEBUG: <?xml version="1.0"?>
+<Response><Sms from="+12048003021" to="+12048003029" statusCallback="http://mohashi.ngrok.io/SmsStatus">Actions speak louder than words</Sms></Response>
+2021/08/22 16:29:06 DEBUG: *********** SMS Status Callback
+2021/08/22 16:29:07 DEBUG: *********** SMS Status Callback
+2021/08/22 16:29:07 DEBUG: *********** SMS Status Callback
+2021/08/22 16:29:07 DEBUG: SmsHandler
+2021/08/22 16:29:07 DEBUG: <?xml version="1.0"?>
+<Response><Sms from="+12048003021" to="+12048003029" statusCallback="http://mohashi.ngrok.io/SmsStatus">Actions speak louder than words</Sms></Response>
+2021/08/22 16:29:07 DEBUG: *********** SMS Status Callback
+2021/08/22 16:29:07 DEBUG: SmsHandler
+2021/08/22 16:29:07 DEBUG: <?xml version="1.0"?>
+<Response><Sms from="+12048003021" to="+12048003029" statusCallback="http://mohashi.ngrok.io/SmsStatus">Actions speak louder than words</Sms></Response>
+2021/08/22 16:29:07 DEBUG: *********** SMS Status Callback
+2021/08/22 16:29:08 DEBUG: *********** SMS Status Callback
+2021/08/22 16:29:08 DEBUG: *********** SMS Status Callback
+2021/08/22 16:29:08 DEBUG: SmsHandler
+2021/08/22 16:29:08 DEBUG: <?xml version="1.0"?>
+<Response><Sms from="+12048003021" to="+12048003029" statusCallback="http://mohashi.ngrok.io/SmsStatus">Actions speak louder than words</Sms></Response>
+2021/08/22 16:29:08 DEBUG: SmsHandler
+2021/08/22 16:29:08 DEBUG: <?xml version="1.0"?>
+<Response><Sms from="+12048003021" to="+12048003029" statusCallback="http://mohashi.ngrok.io/SmsStatus">Actions speak louder than words</Sms></Response>
+2021/08/22 16:29:09 DEBUG: *********** SMS Status Callback
+2021/08/22 16:29:09 DEBUG: *********** SMS Status Callback
+2021/08/22 16:29:09 DEBUG: *********** SMS Status Callback
+2021/08/22 16:29:10 DEBUG: SmsHandler
+2021/08/22 16:29:10 DEBUG: <?xml version="1.0"?>
+<Response><Sms from="+12048003021" to="+12048003029" statusCallback="http://mohashi.ngrok.io/SmsStatus">Actions speak louder than words</Sms></Response>
+2021/08/22 16:29:10 DEBUG: *********** SMS Status Callback
+2021/08/22 16:29:10 DEBUG: *********** SMS Status Callback
+2021/08/22 16:29:10 DEBUG: SmsHandler
+2021/08/22 16:29:10 DEBUG: <?xml version="1.0"?>
+<Response><Sms from="+12048003021" to="+12048003029" statusCallback="http://mohashi.ngrok.io/SmsStatus">Actions speak louder than words</Sms></Response>
+2021/08/22 16:29:10 DEBUG: *********** SMS Status Callback
+2021/08/22 16:29:10 DEBUG: *********** SMS Status Callback
+2021/08/22 16:29:10 DEBUG: *********** SMS Status Callback
+2021/08/22 16:29:10 DEBUG: *********** SMS Status Callback
+2021/08/22 16:29:11 DEBUG: *********** SMS Status Callback
+2021/08/22 16:29:11 DEBUG: *********** SMS Status Callback
+2021/08/22 16:29:11 DEBUG: SmsHandler
+2021/08/22 16:29:11 DEBUG: <?xml version="1.0"?>
+<Response><Sms from="+12048003021" to="+12048003029" statusCallback="http://mohashi.ngrok.io/SmsStatus">Actions speak louder than words</Sms></Response>
+2021/08/22 16:29:11 DEBUG: SmsHandler
+2021/08/22 16:29:11 DEBUG: <?xml version="1.0"?>
+<Response><Sms from="+12048003021" to="+12048003029" statusCallback="http://mohashi.ngrok.io/SmsStatus">Actions speak louder than words</Sms></Response>
+2021/08/22 16:29:11 DEBUG: *********** SMS Status Callback
+2021/08/22 16:29:11 DEBUG: *********** SMS Status Callback
+2021/08/22 16:29:12 DEBUG: *********** SMS Status Callback
+2021/08/22 16:29:13 DEBUG: SmsHandler
+2021/08/22 16:29:13 DEBUG: <?xml version="1.0"?>
+<Response><Sms from="+12048003021" to="+12048003029" statusCallback="http://mohashi.ngrok.io/SmsStatus">Actions speak louder than words</Sms></Response>
+2021/08/22 16:38:16 DEBUG: ************************************************
+2021/08/22 16:38:16 DEBUG: *** Config: config/config.ini
+2021/08/22 16:38:16 DEBUG: *** Number of Tries: 3
+2021/08/22 16:38:16 DEBUG: *** Log: log/zarbat.log
+2021/08/22 16:38:16 DEBUG: *** Logging Level: info
+2021/08/22 16:38:16 DEBUG: *** Features: [sms]
+2021/08/22 16:38:16 DEBUG: ************************************************
+2021/08/22 16:38:16 DEBUG: Server running
+2021/08/22 16:38:23 DEBUG: ******************************** Callback START
+2021/08/22 16:38:23 DEBUG: Call Status canceled.
+
+2021/08/22 16:38:23 DEBUG: ******************************** Callback END
+2021/08/22 16:38:35 DEBUG: ******************************** Callback START
+2021/08/22 16:38:35 DEBUG: Call Status completed.
+
+2021/08/22 16:38:35 DEBUG: ******************************** Callback END
+2021/08/22 16:38:40 DEBUG: ******************************** Callback START
+2021/08/22 16:38:40 DEBUG: Call Status in-progress.
+
+2021/08/22 16:38:40 DEBUG: ******************************** Callback END
+2021/08/22 16:39:11 DEBUG: ************************************************
+2021/08/22 16:39:11 DEBUG: *** Config: config/config.ini
+2021/08/22 16:39:11 DEBUG: *** Number of Tries: 3
+2021/08/22 16:39:11 DEBUG: *** Log: log/zarbat.log
+2021/08/22 16:39:11 DEBUG: *** Logging Level: info
+2021/08/22 16:39:11 DEBUG: *** Features: [sms]
+2021/08/22 16:39:11 DEBUG: ************************************************
+2021/08/22 16:39:11 DEBUG: Server running

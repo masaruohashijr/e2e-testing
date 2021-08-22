@@ -1,2 +1,2 @@
 <?xml version="1.0"?>
-<Response><Sms from="+12048003021" to="+12048003029" statusCallback="http://mohashi.ngrok.io/SmsStatus">Actions speak louder than words</Sms></Response>
+<Response><Sms from="+12048003021" to="+12048003029" statusCallback="http://mohashi2.ngrok.io/SmsStatus">Actions speak louder than words</Sms></Response>

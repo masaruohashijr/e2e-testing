@@ -1,0 +1,50 @@
+2021/08/16 23:38:48 DEBUG: ************************************************
+2021/08/16 23:38:48 DEBUG: *** Config: config/config.ini
+2021/08/16 23:38:48 DEBUG: *** Number of Tries: 5
+2021/08/16 23:38:48 DEBUG: *** Log: log/.log
+2021/08/16 23:38:48 DEBUG: *** Logging Level: summary
+2021/08/16 23:38:48 DEBUG: *** Features: [sms]
+2021/08/16 23:38:48 DEBUG: ************************************************
+2021/08/16 23:38:48 DEBUG: Server running
+2021/08/16 23:47:18 DEBUG: ************************************************
+2021/08/16 23:47:18 DEBUG: *** Config: config/config.ini
+2021/08/16 23:47:18 DEBUG: *** Number of Tries: 3
+2021/08/16 23:47:18 DEBUG: *** Log: log/.log
+2021/08/16 23:47:18 DEBUG: *** Logging Level: summary
+2021/08/16 23:47:18 DEBUG: *** Features: [sms]
+2021/08/16 23:47:18 DEBUG: ************************************************
+2021/08/16 23:47:18 DEBUG: Server running
+2021/08/16 23:47:21 DEBUG: ******************************** Callback START
+2021/08/16 23:47:21 DEBUG: Call Status completed.
+
+2021/08/16 23:47:21 DEBUG: ******************************** Callback END
+2021/08/16 23:47:22 DEBUG: SmsHandler
+2021/08/16 23:47:22 DEBUG: <?xml version="1.0"?>
+<Response><Sms from="+12048003021" to="+12048003029" statusCallback="http://mohashi.ngrok.io/SmsStatus">Actions speak louder than words</Sms></Response>
+2021/08/16 23:47:24 DEBUG: SmsHandler
+2021/08/16 23:47:24 DEBUG: <?xml version="1.0"?>
+<Response><Sms from="+12048003021" to="+12048003029" statusCallback="http://mohashi.ngrok.io/SmsStatus">Actions speak louder than words</Sms></Response>
+2021/08/16 23:47:24 DEBUG: *********** SMS Status Callback
+2021/08/16 23:47:25 DEBUG: *********** SMS Status Callback
+2021/08/16 23:47:25 DEBUG: SmsHandler
+2021/08/16 23:47:25 DEBUG: <?xml version="1.0"?>
+<Response><Sms from="+12048003021" to="+12048003029" statusCallback="http://mohashi.ngrok.io/SmsStatus">Actions speak louder than words</Sms></Response>
+2021/08/16 23:47:25 DEBUG: *********** SMS Status Callback
+2021/08/16 23:47:25 DEBUG: *********** SMS Status Callback
+2021/08/16 23:47:26 DEBUG: SmsHandler
+2021/08/16 23:47:26 DEBUG: <?xml version="1.0"?>
+<Response><Sms from="+12048003021" to="+12048003029" statusCallback="http://mohashi.ngrok.io/SmsStatus">Actions speak louder than words</Sms></Response>
+2021/08/16 23:47:27 DEBUG: *********** SMS Status Callback
+2021/08/16 23:47:27 DEBUG: *********** SMS Status Callback
+2021/08/16 23:47:27 DEBUG: *********** SMS Status Callback
+2021/08/16 23:47:28 DEBUG: SmsHandler
+2021/08/16 23:47:28 DEBUG: <?xml version="1.0"?>
+<Response><Sms from="+12048003021" to="+12048003029" statusCallback="http://mohashi.ngrok.io/SmsStatus">Actions speak louder than words</Sms></Response>
+2021/08/16 23:47:28 DEBUG: *********** SMS Status Callback
+2021/08/16 23:47:30 DEBUG: *********** SMS Status Callback
+2021/08/16 23:47:30 DEBUG: SmsHandler
+2021/08/16 23:47:30 DEBUG: <?xml version="1.0"?>
+<Response><Sms from="+12048003021" to="+12048003029" statusCallback="http://mohashi.ngrok.io/SmsStatus">Actions speak louder than words</Sms></Response>
+2021/08/16 23:47:31 DEBUG: *********** SMS Status Callback
+2021/08/16 23:47:31 DEBUG: *********** SMS Status Callback
+2021/08/16 23:47:31 DEBUG: *********** SMS Status Callback

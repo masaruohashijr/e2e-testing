@@ -1019,3 +1019,151 @@
 2021/08/10 20:55:53 INFO: Passed  1
 2021/08/10 20:55:53 INFO: Failed  0
 2021/08/10 20:55:53 INFO: ...END OF TEST SUITE
+2021/08/16 23:48:50 INFO: ****************************************
+2021/08/16 23:48:50 INFO: START OF TEST SUITE
+2021/08/16 23:48:50 INFO: Config: config/config.ini
+2021/08/16 23:48:50 INFO: Number of Tries: 3
+2021/08/16 23:48:50 INFO: Log: log/zarbat.log
+2021/08/16 23:48:50 INFO: Tests: [mms][conference][gather][hangup][number][pause][ping][play][playlastrecording][record][redirect][reject][say][sms][dial]
+2021/08/16 23:48:50 INFO: .........................................
+2021/08/16 23:48:50 INFO: * Feature/Scenario: MMS - Status: OK
+2021/08/16 23:49:11 INFO: * Feature/Scenario: CONFERENCE - Status: OK
+2021/08/16 23:49:26 INFO: * Feature/Scenario: GATHER - Status: OK
+2021/08/20 09:10:56 INFO: ****************************************
+2021/08/20 09:10:56 INFO: START OF TEST SUITE
+2021/08/20 09:10:56 INFO: Config: config/config.ini
+2021/08/20 09:10:56 INFO: Number of Tries: 5
+2021/08/20 09:10:56 INFO: Log: log/zarbat.log
+2021/08/20 09:10:56 INFO: Tests: [sms]
+2021/08/20 09:10:56 INFO: .........................................
+2021/08/20 09:18:42 INFO: ****************************************
+2021/08/20 09:18:42 INFO: START OF TEST SUITE
+2021/08/20 09:18:42 INFO: Config: config/config.ini
+2021/08/20 09:18:42 INFO: Number of Tries: 5
+2021/08/20 09:18:42 INFO: Log: log/zarbat.log
+2021/08/20 09:18:42 INFO: Tests: [sms]
+2021/08/20 09:18:42 INFO: .........................................
+2021/08/20 09:19:44 INFO: * Feature/Scenario: SMS - Status: Not OK
+2021/08/20 09:20:51 INFO: * Feature/Scenario: SMS - Status: Not OK
+2021/08/20 09:21:58 INFO: * Feature/Scenario: SMS - Status: Not OK
+2021/08/20 09:23:04 INFO: * Feature/Scenario: SMS - Status: Not OK
+2021/08/20 09:24:12 INFO: * Feature/Scenario: SMS - Status: Not OK
+2021/08/20 09:24:16 INFO: ****************************************
+2021/08/20 09:24:16 INFO: START OF TEST SUITE
+2021/08/20 09:24:16 INFO: Config: config/config.ini
+2021/08/20 09:24:16 INFO: Number of Tries: 5
+2021/08/20 09:24:16 INFO: Log: log/zarbat.log
+2021/08/20 09:24:16 INFO: Tests: [sms]
+2021/08/20 09:24:16 INFO: .........................................
+2021/08/20 09:49:10 INFO: ****************************************
+2021/08/20 09:49:10 INFO: START OF TEST SUITE
+2021/08/20 09:49:10 INFO: Config: config/config.ini
+2021/08/20 09:49:10 INFO: Number of Tries: 3
+2021/08/20 09:49:10 INFO: Log: log/zarbat.log
+2021/08/20 09:49:10 INFO: Tests: [release numbers]
+2021/08/20 09:49:10 INFO: .........................................
+2021/08/20 09:49:10 INFO: * Feature/Scenario: RELEASE NUMBERS - Status: OK
+2021/08/20 09:49:15 INFO: Passed  1
+2021/08/20 09:49:15 INFO: Failed  0
+2021/08/20 09:49:15 INFO: ...END OF TEST SUITE
+2021/08/20 09:49:29 INFO: ****************************************
+2021/08/20 09:49:29 INFO: START OF TEST SUITE
+2021/08/20 09:49:29 INFO: Config: config/config.ini
+2021/08/20 09:49:29 INFO: Number of Tries: 3
+2021/08/20 09:49:29 INFO: Log: log/zarbat.log
+2021/08/20 09:49:29 INFO: Tests: [sms]
+2021/08/20 09:49:29 INFO: .........................................
+2021/08/20 09:50:32 INFO: * Feature/Scenario: SMS - Status: Not OK
+2021/08/20 09:51:05 INFO: ****************************************
+2021/08/20 09:51:05 INFO: START OF TEST SUITE
+2021/08/20 09:51:05 INFO: Config: config/config.ini
+2021/08/20 09:51:05 INFO: Number of Tries: 3
+2021/08/20 09:51:05 INFO: Log: log/zarbat.log
+2021/08/20 09:51:05 INFO: Tests: [sms]
+2021/08/20 09:51:05 INFO: .........................................
+2021/08/20 09:56:11 INFO: ****************************************
+2021/08/20 09:56:11 INFO: START OF TEST SUITE
+2021/08/20 09:56:11 INFO: Config: config/config.ini
+2021/08/20 09:56:11 INFO: Number of Tries: 3
+2021/08/20 09:56:11 INFO: Log: log/zarbat.log
+2021/08/20 09:56:11 INFO: Tests: [mms][conference][gather][hangup][number][pause][ping][play][playlastrecording][record][redirect][reject][say][sms][dial]
+2021/08/20 09:56:11 INFO: .........................................
+2021/08/20 09:56:11 INFO: * Feature/Scenario: MMS - Status: OK
+2021/08/20 09:57:19 INFO: * Feature/Scenario: CONFERENCE - Status: Not OK
+2021/08/20 09:58:27 INFO: * Feature/Scenario: CONFERENCE - Status: Not OK
+2021/08/20 09:59:34 INFO: * Feature/Scenario: CONFERENCE - Status: Not OK
+2021/08/20 10:00:41 INFO: * Feature/Scenario: GATHER - Status: Not OK
+2021/08/20 10:01:47 INFO: * Feature/Scenario: GATHER - Status: Not OK
+2021/08/20 10:02:53 INFO: * Feature/Scenario: GATHER - Status: Not OK
+2021/08/20 10:26:20 INFO: ****************************************
+2021/08/20 10:26:20 INFO: START OF TEST SUITE
+2021/08/20 10:26:20 INFO: Config: config/config.ini
+2021/08/20 10:26:20 INFO: Number of Tries: 3
+2021/08/20 10:26:20 INFO: Log: log/zarbat.log
+2021/08/20 10:26:20 INFO: Tests: [sms]
+2021/08/20 10:26:20 INFO: .........................................
+2021/08/22 16:16:01 INFO: ****************************************
+2021/08/22 16:16:01 INFO: START OF TEST SUITE
+2021/08/22 16:16:01 INFO: Config: config/config.ini
+2021/08/22 16:16:01 INFO: Number of Tries: 3
+2021/08/22 16:16:01 INFO: Log: log/zarbat.log
+2021/08/22 16:16:01 INFO: Tests: [sms]
+2021/08/22 16:16:01 INFO: .........................................
+2021/08/22 16:18:09 INFO: * Feature/Scenario: SMS - Status: Not OK
+2021/08/22 16:19:35 INFO: ****************************************
+2021/08/22 16:19:35 INFO: START OF TEST SUITE
+2021/08/22 16:19:35 INFO: Config: config/config.ini
+2021/08/22 16:19:35 INFO: Number of Tries: 3
+2021/08/22 16:19:35 INFO: Log: log/zarbat.log
+2021/08/22 16:19:35 INFO: Tests: [sms]
+2021/08/22 16:19:35 INFO: .........................................
+2021/08/22 16:20:52 INFO: ****************************************
+2021/08/22 16:20:52 INFO: START OF TEST SUITE
+2021/08/22 16:20:52 INFO: Config: config/config.ini
+2021/08/22 16:20:52 INFO: Number of Tries: 3
+2021/08/22 16:20:52 INFO: Log: log/zarbat.log
+2021/08/22 16:20:52 INFO: Tests: [sms]
+2021/08/22 16:20:52 INFO: .........................................
+2021/08/22 16:27:23 INFO: ****************************************
+2021/08/22 16:27:23 INFO: START OF TEST SUITE
+2021/08/22 16:27:23 INFO: Config: config/config.ini
+2021/08/22 16:27:23 INFO: Number of Tries: 3
+2021/08/22 16:27:23 INFO: Log: log/zarbat.log
+2021/08/22 16:27:23 INFO: Tests: [sms]
+2021/08/22 16:27:23 INFO: .........................................
+2021/08/22 16:27:38 INFO: * Feature/Scenario: SMS - Status: OK
+2021/08/22 16:27:43 INFO: Passed  1
+2021/08/22 16:27:43 INFO: Failed  0
+2021/08/22 16:27:43 INFO: ...END OF TEST SUITE
+2021/08/22 16:28:16 INFO: ****************************************
+2021/08/22 16:28:16 INFO: START OF TEST SUITE
+2021/08/22 16:28:16 INFO: Config: config/config.ini
+2021/08/22 16:28:16 INFO: Number of Tries: 3
+2021/08/22 16:28:16 INFO: Log: log/zarbat.log
+2021/08/22 16:28:16 INFO: Tests: [sms]
+2021/08/22 16:28:16 INFO: .........................................
+2021/08/22 16:29:03 INFO: ****************************************
+2021/08/22 16:29:03 INFO: START OF TEST SUITE
+2021/08/22 16:29:03 INFO: Config: config/config.ini
+2021/08/22 16:29:03 INFO: Number of Tries: 3
+2021/08/22 16:29:03 INFO: Log: log/zarbat.log
+2021/08/22 16:29:03 INFO: Tests: [sms]
+2021/08/22 16:29:03 INFO: .........................................
+2021/08/22 16:29:08 INFO: * Feature/Scenario: SMS - Status: OK
+2021/08/22 16:29:13 INFO: Passed  1
+2021/08/22 16:29:13 INFO: Failed  0
+2021/08/22 16:29:13 INFO: ...END OF TEST SUITE
+2021/08/22 16:38:16 INFO: ****************************************
+2021/08/22 16:38:16 INFO: START OF TEST SUITE
+2021/08/22 16:38:16 INFO: Config: config/config.ini
+2021/08/22 16:38:16 INFO: Number of Tries: 3
+2021/08/22 16:38:16 INFO: Log: log/zarbat.log
+2021/08/22 16:38:16 INFO: Tests: [sms]
+2021/08/22 16:38:16 INFO: .........................................
+2021/08/22 16:39:11 INFO: ****************************************
+2021/08/22 16:39:11 INFO: START OF TEST SUITE
+2021/08/22 16:39:11 INFO: Config: config/config.ini
+2021/08/22 16:39:11 INFO: Number of Tries: 3
+2021/08/22 16:39:11 INFO: Log: log/zarbat.log
+2021/08/22 16:39:11 INFO: Tests: [sms]
+2021/08/22 16:39:11 INFO: .........................................
