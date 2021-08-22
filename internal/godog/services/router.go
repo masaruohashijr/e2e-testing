@@ -68,5 +68,6 @@ func RunServer(c chan string, close bool) {
 		http.StripPrefix("/mp3/", http.FileServer(http.Dir("../../media"))),
 	)
 	http.Handle("/", router)
-	http.ListenAndServe(":"+strconv.Itoa(BasePort), nil)
+	routerPort := ":" + strconv.Itoa(BasePort)
+	http.ListenAndServe(routerPort, nil)
 }

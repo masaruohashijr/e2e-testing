@@ -101,19 +101,18 @@ func initArgs(regMap map[string]*test.FeatureTest) (fts []test.FeatureTest, temp
 	logPtr = flag.String("l", "log/.log", "log location")
 	logLevelPtr = flag.String("level", "info", "options: info, debug")
 	testPtr := flag.String("test", "", "ctlang")
-	callbackPtr := flag.String("url", "http://your_username.ngrok.io", "Public IP and Port")
-	if *callbackPtr != "0.0.0.0:0" {
-		s := strings.Split(*callbackPtr, ":")
-		services.BaseUrl = s[0]
-		if len(s) > 1 {
-			configPort, _ := strconv.Atoi(s[1])
+	callbackUrlPtr := flag.String("url", "", "Public IP")
+	callbackPortPtr := flag.String("port", "", "Public Port")
+	flag.Parse()
+	if *callbackUrlPtr != "" {
+		services.BaseUrl = *callbackUrlPtr
+		if *callbackPortPtr != "" {
+			configPort, _ := strconv.Atoi(*callbackPortPtr)
 			services.BasePort = configPort
 		}
 	} else {
 		services.BaseUrl = config.NewConfig().BaseUrl
 	}
-
-	flag.Parse()
 
 	if !isParametersValid(testPtr) {
 		return fts, ""

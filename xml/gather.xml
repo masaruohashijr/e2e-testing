@@ -1,2 +1,2 @@
 <?xml version="1.0"?>
-<Response><Pause length="0"></Pause><Gather input="speech" language="en-US" action="http://mohashi.ngrok.io/SpeechResult?hash=3716503946" timeout="15"></Gather></Response>
+<Response><Pause length="0"></Pause><Gather input="speech" language="en-US" action="http://your_username.ngrok.io/SpeechResult?hash=3716503946" timeout="15"></Gather></Response>

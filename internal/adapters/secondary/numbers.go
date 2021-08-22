@@ -8,6 +8,7 @@ import (
 	"net/http"
 	"net/url"
 	"zarbat_test/internal/config"
+	"zarbat_test/pkg/domains"
 	"zarbat_test/pkg/ports/numbers"
 )
 
@@ -102,7 +103,7 @@ func (a *numbersAPI) ListNumbers() ([]string, error) {
 	if err != nil {
 		return nil, err
 	}
-	var ipnpr IncomingPhoneNumbersPageResponse
+	var ipnpr domains.IncomingPhoneNumbersPageResponse
 	json.Unmarshal(body, &ipnpr)
 	var list []string
 	for _, i := range ipnpr.IncomingPhoneNumbers {
@@ -139,7 +140,7 @@ func (a *numbersAPI) ListAvailableNumbers() ([]string, error) {
 	if err != nil {
 		return nil, err
 	}
-	var apnpr AvailablePhoneNumbersPageResponse
+	var apnpr domains.AvailablePhoneNumbersPageResponse
 	json.Unmarshal(body, &apnpr)
 	var list []string
 	for _, a := range apnpr.AvailablePhoneNumbers {
@@ -148,52 +149,4 @@ func (a *numbersAPI) ListAvailableNumbers() ([]string, error) {
 		}
 	}
 	return list, nil
-}
-
-type AvailablePhoneNumbersPageResponse struct {
-	AvailablePhoneNumbers []PageAvailablePhoneNumberResponse `json:"available_phone_numbers"`
-	URI                   string                             `json:"uri"`
-}
-
-type IncomingPhoneNumbersPageResponse struct {
-	IncomingPhoneNumbers []PageIncomingPhoneNumberResponse `json:"incoming_phone_numbers"`
-	URI                  string                            `json:"uri"`
-}
-
-type PageAvailablePhoneNumberResponse struct {
-	AddressRequirements string                                       `json:"address_requirements"`
-	Beta                bool                                         `json:"beta"`
-	Capabilities        PageAvailablePhoneNumberCapabilitiesResponse `json:"capabilities"`
-	FriendlyName        string                                       `json:"friendly_name"`
-	IsoCountry          string                                       `json:"iso_country"`
-	Lata                *string                                      `json:"lata,omitempty"`
-	Latitude            string                                       `json:"latitude"`
-	Locality            *string                                      `json:"locality,omitempty"`
-	Longitude           string                                       `json:"longitude"`
-	PhoneNumber         string                                       `json:"phone_number"`
-	PostalCode          *string                                      `json:"postal_code,omitempty"`
-	RateCenter          *string                                      `json:"rate_center,omitempty"`
-	Region              *string                                      `json:"region,omitempty"`
-}
-
-type PageAvailablePhoneNumberCapabilitiesResponse struct {
-	Fax   *bool `json:"fax,omitempty"`
-	Mms   bool  `json:"MMS"`
-	Sms   bool  `json:"SMS"`
-	Voice bool  `json:"voice"`
-}
-
-type PageIncomingPhoneNumberResponse struct {
-	AddressRequirements string  `json:"address_requirements"`
-	Beta                bool    `json:"beta"`
-	FriendlyName        string  `json:"friendly_name"`
-	IsoCountry          string  `json:"iso_country"`
-	Lata                *string `json:"lata,omitempty"`
-	Latitude            string  `json:"latitude"`
-	Locality            *string `json:"locality,omitempty"`
-	Longitude           string  `json:"longitude"`
-	PhoneNumber         string  `json:"phone_number"`
-	PostalCode          *string `json:"postal_code,omitempty"`
-	RateCenter          *string `json:"rate_center,omitempty"`
-	Region              *string `json:"region,omitempty"`
 }
