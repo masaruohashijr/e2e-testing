@@ -1153,3 +1153,17 @@
 2021/08/22 16:29:13 INFO: Passed  1
 2021/08/22 16:29:13 INFO: Failed  0
 2021/08/22 16:29:13 INFO: ...END OF TEST SUITE
+2021/08/22 16:38:16 INFO: ****************************************
+2021/08/22 16:38:16 INFO: START OF TEST SUITE
+2021/08/22 16:38:16 INFO: Config: config/config.ini
+2021/08/22 16:38:16 INFO: Number of Tries: 3
+2021/08/22 16:38:16 INFO: Log: log/zarbat.log
+2021/08/22 16:38:16 INFO: Tests: [sms]
+2021/08/22 16:38:16 INFO: .........................................
+2021/08/22 16:39:11 INFO: ****************************************
+2021/08/22 16:39:11 INFO: START OF TEST SUITE
+2021/08/22 16:39:11 INFO: Config: config/config.ini
+2021/08/22 16:39:11 INFO: Number of Tries: 3
+2021/08/22 16:39:11 INFO: Log: log/zarbat.log
+2021/08/22 16:39:11 INFO: Tests: [sms]
+2021/08/22 16:39:11 INFO: .........................................

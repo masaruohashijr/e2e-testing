@@ -5872,3 +5872,31 @@
 2021/08/22 16:29:13 DEBUG: SmsHandler
 2021/08/22 16:29:13 DEBUG: <?xml version="1.0"?>
 <Response><Sms from="+12048003021" to="+12048003029" statusCallback="http://mohashi.ngrok.io/SmsStatus">Actions speak louder than words</Sms></Response>
+2021/08/22 16:38:16 DEBUG: ************************************************
+2021/08/22 16:38:16 DEBUG: *** Config: config/config.ini
+2021/08/22 16:38:16 DEBUG: *** Number of Tries: 3
+2021/08/22 16:38:16 DEBUG: *** Log: log/zarbat.log
+2021/08/22 16:38:16 DEBUG: *** Logging Level: info
+2021/08/22 16:38:16 DEBUG: *** Features: [sms]
+2021/08/22 16:38:16 DEBUG: ************************************************
+2021/08/22 16:38:16 DEBUG: Server running
+2021/08/22 16:38:23 DEBUG: ******************************** Callback START
+2021/08/22 16:38:23 DEBUG: Call Status canceled.
+
+2021/08/22 16:38:23 DEBUG: ******************************** Callback END
+2021/08/22 16:38:35 DEBUG: ******************************** Callback START
+2021/08/22 16:38:35 DEBUG: Call Status completed.
+
+2021/08/22 16:38:35 DEBUG: ******************************** Callback END
+2021/08/22 16:38:40 DEBUG: ******************************** Callback START
+2021/08/22 16:38:40 DEBUG: Call Status in-progress.
+
+2021/08/22 16:38:40 DEBUG: ******************************** Callback END
+2021/08/22 16:39:11 DEBUG: ************************************************
+2021/08/22 16:39:11 DEBUG: *** Config: config/config.ini
+2021/08/22 16:39:11 DEBUG: *** Number of Tries: 3
+2021/08/22 16:39:11 DEBUG: *** Log: log/zarbat.log
+2021/08/22 16:39:11 DEBUG: *** Logging Level: info
+2021/08/22 16:39:11 DEBUG: *** Features: [sms]
+2021/08/22 16:39:11 DEBUG: ************************************************
+2021/08/22 16:39:11 DEBUG: Server running
