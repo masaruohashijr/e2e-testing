@@ -1,4 +1,5 @@
 .\xml\*
 .\temp\*
+.\temp\*\*
 .\log\*
 server.go
