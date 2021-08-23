@@ -92,6 +92,9 @@ func InitializeScenario(ctx *godog.ScenarioContext) {
 	ctx.Step(`^I list my numbers$`, IListMyNumbers)
 	ctx.Step(`^I release all my numbers except "([^"]*)"$`, IReleaseAllMyNumbersExcept)
 	ctx.Step(`^I should get (\d+) numbers from my list$`, IShouldGetNumbersFromMyList)
+	ctx.Step(`^"([^"]*)" configured with friendly name as "([^"]*)"$`, ConfiguredWithFriendlyNameAs)
+	ctx.Step(`^I should get friendly name "([^"]*)" on "([^"]*)"$`, IShouldGetFriendlyNameOn)
+	ctx.Step(`^I view "([^"]*)" info$`, IViewInfo)
 }
 
 func InitializeTestSuite(ctx *godog.TestSuiteContext) {

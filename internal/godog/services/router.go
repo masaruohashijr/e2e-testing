@@ -2,6 +2,7 @@ package services
 
 import (
 	"net/http"
+	"strconv"
 	"zarbat_test/internal/logging"
 
 	"github.com/gorilla/mux"
@@ -12,6 +13,7 @@ var CloseChannel bool
 var ChComplete chan string
 
 var BaseUrl string
+var BasePort int = 5000
 var TestTimeout int64 = 60
 var GatherTimeOut = 60
 var GatherPause = 0
@@ -66,5 +68,6 @@ func RunServer(c chan string, close bool) {
 		http.StripPrefix("/mp3/", http.FileServer(http.Dir("../../media"))),
 	)
 	http.Handle("/", router)
-	http.ListenAndServe(":5000", nil)
+	routerPort := ":" + strconv.Itoa(BasePort)
+	http.ListenAndServe(routerPort, nil)
 }

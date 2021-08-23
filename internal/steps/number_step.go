@@ -116,3 +116,19 @@ func IShouldGetNumbersFromMyList(amount int) error {
 	}
 	return nil
 }
+
+func ConfiguredWithFriendlyNameAs(number, friendlyName string) error {
+	services.CloseChannel = true
+	Configuration.To, Configuration.ToSid = Configuration.SelectNumber(number)
+	Configuration.FriendlyName = friendlyName
+	Configuration.VoiceUrl = ""
+	NumberPrimaryPort.UpdateNumber()
+	return nil
+	// return fmt.Errorf("Error %s", "Not able to configure friendly name on number.")
+}
+func IShouldGetFriendlyNameOn(friendlyName, number string) error {
+	return fmt.Errorf("Error %s", "Not able to get friendly name on number.")
+}
+func IViewInfo(number string) error {
+	return fmt.Errorf("Error %s", "Not able to view number info.")
+}

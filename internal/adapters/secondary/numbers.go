@@ -31,6 +31,7 @@ func (a *numbersAPI) UpdateNumber() error {
 
 	values := &url.Values{}
 	values.Add("VoiceUrl", a.config.VoiceUrl)
+	values.Add("FriendlyName", a.config.FriendlyName)
 
 	var buffer *bytes.Buffer = bytes.NewBufferString(values.Encode())
 	req, err := http.NewRequest("POST", apiEndpoint, buffer)

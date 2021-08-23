@@ -48,6 +48,7 @@ type ConfigType struct {
 	ActionUrl      string
 	ApiUrl         string
 	VoiceUrl       string
+	FriendlyName   string
 	ApiVersion     string
 	StatusCallback string
 	Fallback       string
