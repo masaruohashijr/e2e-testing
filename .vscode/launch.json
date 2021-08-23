@@ -10,7 +10,7 @@
             "request": "launch",
             "mode": "auto",
             "program": "${workspaceRoot}/main.go",
-            "args": ["-config","config/config.ini","-l","log/zarbat.log","-level","info","-n","3","-test", "test/test1.ctlang"]
+            "args": ["-config","config/config.ini","-l","log/zarbat.log","-level","info","-n","3","-test", "test/view_number.feature"]
         }
     ]    
 }

@@ -1,5 +1,7 @@
 package domains
 
+import "encoding/xml"
+
 type AvailablePhoneNumbersPageResponse struct {
 	AvailablePhoneNumbers []PageAvailablePhoneNumberResponse `json:"available_phone_numbers"`
 	URI                   string                             `json:"uri"`
@@ -48,31 +50,36 @@ type PageIncomingPhoneNumberResponse struct {
 	Region              *string `json:"region,omitempty"`
 }
 
+type ResponseIncomingPhoneNumber struct {
+	XMLName             xml.Name `xml:"Response"`
+	IncomingPhoneNumber IncomingPhoneNumber
+}
+
 type IncomingPhoneNumber struct {
-	DateUpdated          string       `json:"date_updated"`
-	VoiceURL             string       `json:"voice_url"`
-	VoiceFallbackMethod  string       `json:"voice_fallback_method"`
-	Capabilities         Capabilities `json:"capabilities"`
-	Sid                  string       `json:"sid"`
-	HeartbeatMethod      string       `json:"heartbeat_method"`
-	Type                 string       `json:"type"`
-	StatusCallbackMethod string       `json:"status_callback_method"`
-	VoiceFallbackURL     string       `json:"voice_fallback_url"`
-	PhoneNumber          string       `json:"phone_number"`
-	HangupCallback       string       `json:"hangup_callback"`
-	HangupCallbackMethod string       `json:"hangup_callback_method"`
-	HeartbeatURL         string       `json:"heartbeat_url"`
-	SmsURL               string       `json:"sms_url"`
-	VoiceMethod          string       `json:"voice_method"`
-	VoiceCallerIDLookup  bool         `json:"voice_caller_id_lookup"`
-	FriendlyName         string       `json:"friendly_name"`
-	URI                  string       `json:"uri"`
-	SmsFallbackURL       string       `json:"sms_fallback_url"`
-	AccountSid           string       `json:"account_sid"`
-	SmsMethod            string       `json:"sms_method"`
-	NextRenewalDate      string       `json:"next_renewal_date"`
-	DateCreated          string       `json:"date_created"`
-	StatusCallback       string       `json:"status_callback"`
+	DateUpdated          string       `json:"date_updated" xml:"DateUpdated"`
+	VoiceURL             string       `json:"voice_url" xml:"VoiceUrl"`
+	VoiceFallbackMethod  string       `json:"voice_fallback_method" xml:"VoiceFallbackMethod"`
+	Capabilities         Capabilities `json:"capabilities" xml:"Capabilities"`
+	Sid                  string       `json:"sid" xml:"Sid"`
+	HeartbeatMethod      string       `json:"heartbeat_method" xml:"HeartbeatMethod"`
+	Type                 string       `json:"type" xml:"Type"`
+	StatusCallbackMethod string       `json:"status_callback_method" xml:"StatusCallbackMethod"`
+	VoiceFallbackURL     string       `json:"voice_fallback_url" xml:"VoiceFallbackURL"`
+	PhoneNumber          string       `json:"phone_number" xml:"PhoneNumber"`
+	HangupCallback       string       `json:"hangup_callback" xml:"HangupCallback"`
+	HangupCallbackMethod string       `json:"hangup_callback_method" xml:"HangupCallbackMethod"`
+	HeartbeatURL         string       `json:"heartbeat_url" xml:"HeartbeatURL"`
+	MmsURL               string       `json:"sms_url" xml:"MmsURL"`
+	VoiceMethod          string       `json:"voice_method" xml:"VoiceMethod"`
+	VoiceCallerIDLookup  bool         `json:"voice_caller_id_lookup" xml:"VoiceCallerIDLookup"`
+	FriendlyName         string       `json:"friendly_name" xml:"FriendlyName"`
+	URI                  string       `json:"uri" xml:"URI"`
+	SmsFallbackURL       string       `json:"sms_fallback_url" xml:"SmsFallbackURL"`
+	AccountSid           string       `json:"account_sid" xml:"AccountSid"`
+	SmsMethod            string       `json:"sms_method" xml:"SmsMethod"`
+	NextRenewalDate      string       `json:"next_renewal_date" xml:"NextRenewalDate"`
+	DateCreated          string       `json:"date_created" xml:"DateCreated"`
+	StatusCallback       string       `json:"status_callback" xml:"StatusCallback"`
 }
 
 type Capabilities struct {

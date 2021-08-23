@@ -1,0 +1,112 @@
+2021/08/23 06:24:55 INFO: ****************************************
+2021/08/23 06:24:55 INFO: START OF TEST SUITE
+2021/08/23 06:24:55 INFO: Config: config/config.ini
+2021/08/23 06:24:55 INFO: Number of Tries: 3
+2021/08/23 06:24:55 INFO: Log: log/zarbat.log
+2021/08/23 06:24:55 INFO: Tests: [viewnumber]
+2021/08/23 06:24:55 INFO: .........................................
+2021/08/23 06:24:56 INFO: * Feature/Scenario: VIEWNUMBER - Status: Not OK
+2021/08/23 06:25:02 INFO: * Feature/Scenario: VIEWNUMBER - Status: Not OK
+2021/08/23 06:25:08 INFO: * Feature/Scenario: VIEWNUMBER - Status: Not OK
+2021/08/23 06:25:13 INFO: Passed  0
+2021/08/23 06:25:13 INFO: Failed  1
+2021/08/23 06:25:13 INFO: ...END OF TEST SUITE
+2021/08/23 07:00:35 INFO: ****************************************
+2021/08/23 07:00:35 INFO: START OF TEST SUITE
+2021/08/23 07:00:35 INFO: Config: config/config.ini
+2021/08/23 07:00:35 INFO: Number of Tries: 3
+2021/08/23 07:00:35 INFO: Log: log/zarbat.log
+2021/08/23 07:00:35 INFO: Tests: [viewnumber]
+2021/08/23 07:00:35 INFO: .........................................
+2021/08/23 07:00:36 INFO: * Feature/Scenario: VIEWNUMBER - Status: Not OK
+2021/08/23 07:00:42 INFO: * Feature/Scenario: VIEWNUMBER - Status: Not OK
+2021/08/23 07:00:48 INFO: * Feature/Scenario: VIEWNUMBER - Status: Not OK
+2021/08/23 07:00:53 INFO: Passed  0
+2021/08/23 07:00:53 INFO: Failed  1
+2021/08/23 07:00:53 INFO: ...END OF TEST SUITE
+2021/08/23 07:02:22 INFO: ****************************************
+2021/08/23 07:02:22 INFO: START OF TEST SUITE
+2021/08/23 07:02:22 INFO: Config: config/config.ini
+2021/08/23 07:02:22 INFO: Number of Tries: 3
+2021/08/23 07:02:22 INFO: Log: log/zarbat.log
+2021/08/23 07:02:22 INFO: Tests: [viewnumber]
+2021/08/23 07:02:22 INFO: .........................................
+2021/08/23 07:04:49 INFO: ****************************************
+2021/08/23 07:04:49 INFO: START OF TEST SUITE
+2021/08/23 07:04:49 INFO: Config: config/config.ini
+2021/08/23 07:04:49 INFO: Number of Tries: 3
+2021/08/23 07:04:49 INFO: Log: log/zarbat.log
+2021/08/23 07:04:49 INFO: Tests: [viewnumber]
+2021/08/23 07:04:49 INFO: .........................................
+2021/08/23 07:05:41 INFO: * Feature/Scenario: VIEWNUMBER - Status: Not OK
+2021/08/23 07:06:15 INFO: ****************************************
+2021/08/23 07:06:15 INFO: START OF TEST SUITE
+2021/08/23 07:06:15 INFO: Config: config/config.ini
+2021/08/23 07:06:15 INFO: Number of Tries: 3
+2021/08/23 07:06:15 INFO: Log: log/zarbat.log
+2021/08/23 07:06:15 INFO: Tests: [viewnumber]
+2021/08/23 07:06:15 INFO: .........................................
+2021/08/23 08:59:08 INFO: ****************************************
+2021/08/23 08:59:08 INFO: START OF TEST SUITE
+2021/08/23 08:59:08 INFO: Config: config/config.ini
+2021/08/23 08:59:08 INFO: Number of Tries: 3
+2021/08/23 08:59:08 INFO: Log: log/zarbat.log
+2021/08/23 08:59:08 INFO: Tests: [viewnumber]
+2021/08/23 08:59:08 INFO: .........................................
+2021/08/23 08:59:10 INFO: * Feature/Scenario: VIEWNUMBER - Status: Not OK
+2021/08/23 08:59:56 INFO: ****************************************
+2021/08/23 08:59:56 INFO: START OF TEST SUITE
+2021/08/23 08:59:56 INFO: Config: config/config.ini
+2021/08/23 08:59:56 INFO: Number of Tries: 3
+2021/08/23 08:59:56 INFO: Log: log/zarbat.log
+2021/08/23 08:59:56 INFO: Tests: [viewnumber]
+2021/08/23 08:59:56 INFO: .........................................
+2021/08/23 08:59:58 INFO: * Feature/Scenario: VIEWNUMBER - Status: Not OK
+2021/08/23 09:00:22 INFO: ****************************************
+2021/08/23 09:00:22 INFO: START OF TEST SUITE
+2021/08/23 09:00:22 INFO: Config: config/config.ini
+2021/08/23 09:00:22 INFO: Number of Tries: 3
+2021/08/23 09:00:22 INFO: Log: log/zarbat.log
+2021/08/23 09:00:22 INFO: Tests: [viewnumber]
+2021/08/23 09:00:22 INFO: .........................................
+2021/08/23 09:01:08 INFO: * Feature/Scenario: VIEWNUMBER - Status: Not OK
+2021/08/23 09:06:34 INFO: ****************************************
+2021/08/23 09:06:34 INFO: START OF TEST SUITE
+2021/08/23 09:06:34 INFO: Config: config/config.ini
+2021/08/23 09:06:34 INFO: Number of Tries: 3
+2021/08/23 09:06:34 INFO: Log: log/zarbat.log
+2021/08/23 09:06:34 INFO: Tests: [viewnumber]
+2021/08/23 09:06:34 INFO: .........................................
+2021/08/23 09:06:45 INFO: * Feature/Scenario: VIEWNUMBER - Status: Not OK
+2021/08/23 09:06:56 INFO: * Feature/Scenario: VIEWNUMBER - Status: Not OK
+2021/08/23 09:07:03 INFO: * Feature/Scenario: VIEWNUMBER - Status: Not OK
+2021/08/23 09:07:08 INFO: Passed  0
+2021/08/23 09:07:08 INFO: Failed  1
+2021/08/23 09:07:08 INFO: ...END OF TEST SUITE
+2021/08/23 09:07:57 INFO: ****************************************
+2021/08/23 09:07:57 INFO: START OF TEST SUITE
+2021/08/23 09:07:57 INFO: Config: config/config.ini
+2021/08/23 09:07:57 INFO: Number of Tries: 3
+2021/08/23 09:07:57 INFO: Log: log/zarbat.log
+2021/08/23 09:07:57 INFO: Tests: [viewnumber]
+2021/08/23 09:07:57 INFO: .........................................
+2021/08/23 09:07:59 INFO: * Feature/Scenario: VIEWNUMBER - Status: Not OK
+2021/08/23 09:08:19 INFO: ****************************************
+2021/08/23 09:08:19 INFO: START OF TEST SUITE
+2021/08/23 09:08:19 INFO: Config: config/config.ini
+2021/08/23 09:08:19 INFO: Number of Tries: 3
+2021/08/23 09:08:19 INFO: Log: log/zarbat.log
+2021/08/23 09:08:19 INFO: Tests: [viewnumber]
+2021/08/23 09:08:19 INFO: .........................................
+2021/08/23 09:08:51 INFO: * Feature/Scenario: VIEWNUMBER - Status: Not OK
+2021/08/23 09:09:26 INFO: ****************************************
+2021/08/23 09:09:26 INFO: START OF TEST SUITE
+2021/08/23 09:09:26 INFO: Config: config/config.ini
+2021/08/23 09:09:26 INFO: Number of Tries: 3
+2021/08/23 09:09:26 INFO: Log: log/zarbat.log
+2021/08/23 09:09:26 INFO: Tests: [viewnumber]
+2021/08/23 09:09:26 INFO: .........................................
+2021/08/23 09:09:43 INFO: * Feature/Scenario: VIEWNUMBER - Status: OK
+2021/08/23 09:09:48 INFO: Passed  1
+2021/08/23 09:09:48 INFO: Failed  0
+2021/08/23 09:09:48 INFO: ...END OF TEST SUITE

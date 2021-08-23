@@ -20,6 +20,7 @@ var NumberSecondaryPort numbers.SecondaryPort
 var NumberPrimaryPort numbers.PrimaryPort
 var SmsSecondaryPort sms.SecondaryPort
 var SmsPrimaryPort sms.PrimaryPort
+var IncomingPhoneNumber *domains.IncomingPhoneNumber
 var ResponsePlayLastRecording domains.ResponsePlayLastRecording
 var ResponseGather domains.ResponseGather
 var ResponseSay domains.ResponseSay

@@ -124,11 +124,29 @@ func ConfiguredWithFriendlyNameAs(number, friendlyName string) error {
 	Configuration.VoiceUrl = ""
 	NumberPrimaryPort.UpdateNumber()
 	return nil
-	// return fmt.Errorf("Error %s", "Not able to configure friendly name on number.")
 }
 func IShouldGetFriendlyNameOn(friendlyName, number string) error {
+
+	selectedNumber, _ := Configuration.SelectNumber(number)
+
+	if IncomingPhoneNumber != nil {
+		if IncomingPhoneNumber.PhoneNumber == selectedNumber {
+			if IncomingPhoneNumber.FriendlyName == friendlyName {
+				return nil
+			}
+		}
+	}
 	return fmt.Errorf("Error %s", "Not able to get friendly name on number.")
+
 }
 func IViewInfo(number string) error {
-	return fmt.Errorf("Error %s", "Not able to view number info.")
+	_, sid := Configuration.SelectNumber(number)
+	ipn, err := NumberPrimaryPort.ViewNumber(sid)
+	IncomingPhoneNumber = ipn
+	if err != nil {
+		return fmt.Errorf("Error %s", "Not able to view number info.")
+	}
+	println(IncomingPhoneNumber.FriendlyName)
+	return nil
+
 }

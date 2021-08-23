@@ -118,7 +118,7 @@ func initArgs(regMap map[string]*test.FeatureTest) (fts []test.FeatureTest, temp
 		return fts, ""
 	}
 
-	if strings.HasSuffix(*testPtr, ".ctlang") {
+	if strings.HasSuffix(*testPtr, ".ctlang") || strings.HasSuffix(*testPtr, ".feature") {
 		tempFiles, tempDir := files.NewTempFiles(*testPtr)
 		return files.NewFeatureTests(tempFiles, regMap), tempDir
 	} else {

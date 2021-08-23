@@ -3,6 +3,7 @@ package secondary
 import (
 	"bytes"
 	"encoding/json"
+	"encoding/xml"
 	"fmt"
 	"io/ioutil"
 	"net/http"
@@ -22,6 +23,42 @@ func NewNumbersApi(config *config.ConfigType) numbers.SecondaryPort {
 		VoiceUrl: "",
 		config:   config,
 	}
+}
+
+func (a *numbersAPI) ViewNumber(numberSid string) (*domains.IncomingPhoneNumber, error) {
+	apiEndpoint := fmt.Sprintf(a.config.GetApiURL()+
+		"/Accounts/%s/IncomingPhoneNumbers/%s",
+		a.config.AccountSid, numberSid)
+
+	req, err := http.NewRequest("GET", apiEndpoint, nil)
+
+	if err != nil {
+		return nil, err
+	}
+
+	req.Header.Set("Content-Type", "application/json")
+	req.Header.Add("Authorization", "Basic "+EncodeToBasicAuth(a.config.AccountSid, a.config.AuthToken))
+	client := &http.Client{}
+	resp, err := client.Do(req)
+	if err != nil {
+		return nil, err
+	}
+	defer resp.Body.Close()
+	fmt.Println("response Status:", resp.Status)
+	body, err := ioutil.ReadAll(resp.Body)
+	if err != nil {
+		return nil, err
+	}
+	var r domains.ResponseIncomingPhoneNumber
+	err = xml.Unmarshal(body, &r)
+	if err != nil {
+		return nil, err
+	}
+	return &r.IncomingPhoneNumber, nil
+}
+
+func (a *numbersAPI) DeleteNumber(number string) error {
+	return nil
 }
 
 func (a *numbersAPI) UpdateNumber() error {
@@ -150,38 +187,4 @@ func (a *numbersAPI) ListAvailableNumbers() ([]string, error) {
 		}
 	}
 	return list, nil
-}
-
-func (a *numbersAPI) ViewNumber(numberSid string) (*domains.IncomingPhoneNumber, error) {
-	apiEndpoint := fmt.Sprintf(a.config.GetApiURL()+
-		"/Accounts/%s/IncomingPhoneNumbers/%s",
-		a.config.AccountSid, numberSid)
-	values := &url.Values{}
-
-	var buffer *bytes.Buffer = bytes.NewBufferString(values.Encode())
-	req, err := http.NewRequest("GET", apiEndpoint, buffer)
-
-	if err != nil {
-		return nil, err
-	}
-
-	req.Header.Set("Content-Type", "application/json")
-	req.Header.Add("Authorization", "Basic "+EncodeToBasicAuth(a.config.AccountSid, a.config.AuthToken))
-	client := &http.Client{}
-	resp, err := client.Do(req)
-	if err != nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-	fmt.Println("response Status:", resp.Status)
-	body, err := ioutil.ReadAll(resp.Body)
-	if err != nil {
-		return nil, err
-	}
-	var ipn *domains.IncomingPhoneNumber
-	json.Unmarshal(body, &ipn)
-	return ipn, nil
-}
-func (a *numbersAPI) DeleteNumber(n string) error {
-	return nil
 }
