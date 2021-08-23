@@ -140,9 +140,13 @@ func ConfiguredWithFriendlyNameAs(number, friendlyName string) error {
 	return nil
 }
 func IShouldGetFriendlyNameOn(friendlyName, number string) error {
-
-	selectedNumber, _ := Configuration.SelectNumber(number)
-
+	selectedNumber, sid := Configuration.SelectNumber(number)
+	ipn, err := NumberPrimaryPort.ViewNumber(sid)
+	IncomingPhoneNumber = ipn
+	if err != nil {
+		return fmt.Errorf("Error %s", "Not able to view number info.")
+	}
+	println(IncomingPhoneNumber.FriendlyName)
 	if IncomingPhoneNumber != nil {
 		if IncomingPhoneNumber.PhoneNumber == selectedNumber {
 			if IncomingPhoneNumber.FriendlyName == friendlyName {

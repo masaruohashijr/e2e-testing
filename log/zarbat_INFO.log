@@ -220,3 +220,52 @@
 2021/08/23 10:52:23 INFO: Passed  0
 2021/08/23 10:52:23 INFO: Failed  1
 2021/08/23 10:52:23 INFO: ...END OF TEST SUITE
+2021/08/23 18:54:00 INFO: ****************************************
+2021/08/23 18:54:00 INFO: START OF TEST SUITE
+2021/08/23 18:54:00 INFO: Config: config/config.ini
+2021/08/23 18:54:00 INFO: Number of Tries: 3
+2021/08/23 18:54:00 INFO: Log: log/zarbat.log
+2021/08/23 18:54:00 INFO: Tests: [update a number]
+2021/08/23 18:54:00 INFO: .........................................
+2021/08/23 18:54:08 INFO: * Feature/Scenario: UPDATE A NUMBER - Status: OK
+2021/08/23 18:54:13 INFO: Passed  1
+2021/08/23 18:54:13 INFO: Failed  0
+2021/08/23 18:54:13 INFO: ...END OF TEST SUITE
+2021/08/23 18:57:09 INFO: ****************************************
+2021/08/23 18:57:09 INFO: START OF TEST SUITE
+2021/08/23 18:57:09 INFO: Config: config/config.ini
+2021/08/23 18:57:09 INFO: Number of Tries: 3
+2021/08/23 18:57:09 INFO: Log: log/zarbat.log
+2021/08/23 18:57:09 INFO: Tests: [update a number]
+2021/08/23 18:57:09 INFO: .........................................
+2021/08/23 18:57:11 INFO: * Feature/Scenario: UPDATE A NUMBER - Status: Not OK
+2021/08/23 18:57:18 INFO: * Feature/Scenario: UPDATE A NUMBER - Status: Not OK
+2021/08/23 18:57:25 INFO: * Feature/Scenario: UPDATE A NUMBER - Status: Not OK
+2021/08/23 18:57:30 INFO: Passed  0
+2021/08/23 18:57:30 INFO: Failed  1
+2021/08/23 18:57:30 INFO: ...END OF TEST SUITE
+2021/08/23 19:21:22 INFO: ****************************************
+2021/08/23 19:21:22 INFO: START OF TEST SUITE
+2021/08/23 19:21:22 INFO: Config: config/config.ini
+2021/08/23 19:21:22 INFO: Number of Tries: 3
+2021/08/23 19:21:22 INFO: Log: log/zarbat.log
+2021/08/23 19:21:22 INFO: Tests: [update a number]
+2021/08/23 19:21:22 INFO: .........................................
+2021/08/23 19:22:53 INFO: ****************************************
+2021/08/23 19:22:53 INFO: START OF TEST SUITE
+2021/08/23 19:22:53 INFO: Config: config/config.ini
+2021/08/23 19:22:53 INFO: Number of Tries: 3
+2021/08/23 19:22:53 INFO: Log: log/zarbat.log
+2021/08/23 19:22:53 INFO: Tests: [update a number]
+2021/08/23 19:22:53 INFO: .........................................
+2021/08/23 19:23:39 INFO: ****************************************
+2021/08/23 19:23:39 INFO: START OF TEST SUITE
+2021/08/23 19:23:39 INFO: Config: config/config.ini
+2021/08/23 19:23:39 INFO: Number of Tries: 3
+2021/08/23 19:23:39 INFO: Log: log/zarbat.log
+2021/08/23 19:23:39 INFO: Tests: [update a number]
+2021/08/23 19:23:39 INFO: .........................................
+2021/08/23 19:24:03 INFO: * Feature/Scenario: UPDATE A NUMBER - Status: OK
+2021/08/23 19:24:08 INFO: Passed  1
+2021/08/23 19:24:08 INFO: Failed  0
+2021/08/23 19:24:08 INFO: ...END OF TEST SUITE

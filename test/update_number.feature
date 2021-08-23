@@ -6,6 +6,6 @@ Feature: Update a Number
   Scenario: Update a friendly name number and view friendly name
 
     Given my test setup runs    
-    When I list all available numbers
-    And "NumberA" friendly name configured as "Zarbat"
-    Then "NumberA" should have friendly name "Zarbat"
+    When I list my numbers
+    And "NumberA" configured with friendly name as "Zarbat"
+    Then I should get friendly name "Zarbat" on "NumberA"
