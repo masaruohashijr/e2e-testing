@@ -1,3 +1,7 @@
-temp/*
+xml/*
+temp/*/*
 log/*
 server.go
+log/zarbat_INFO.log
+log/zarbat_DEBUG.log
+zarbat_*

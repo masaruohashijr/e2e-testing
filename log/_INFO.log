@@ -1,0 +1,18 @@
+2021/08/16 23:38:48 INFO: ****************************************
+2021/08/16 23:38:48 INFO: START OF TEST SUITE
+2021/08/16 23:38:48 INFO: Config: config/config.ini
+2021/08/16 23:38:48 INFO: Number of Tries: 5
+2021/08/16 23:38:48 INFO: Log: log/.log
+2021/08/16 23:38:48 INFO: Tests: [sms]
+2021/08/16 23:38:48 INFO: .........................................
+2021/08/16 23:47:18 INFO: ****************************************
+2021/08/16 23:47:18 INFO: START OF TEST SUITE
+2021/08/16 23:47:18 INFO: Config: config/config.ini
+2021/08/16 23:47:18 INFO: Number of Tries: 3
+2021/08/16 23:47:18 INFO: Log: log/.log
+2021/08/16 23:47:18 INFO: Tests: [sms]
+2021/08/16 23:47:18 INFO: .........................................
+2021/08/16 23:47:26 INFO: * Feature/Scenario: SMS - Status: OK
+2021/08/16 23:47:31 INFO: Passed  1
+2021/08/16 23:47:31 INFO: Failed  0
+2021/08/16 23:47:31 INFO: ...END OF TEST SUITE
