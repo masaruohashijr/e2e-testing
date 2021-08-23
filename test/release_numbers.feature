@@ -6,5 +6,5 @@ Feature: Release Numbers
   Scenario: Release Numbers
 
     Given my test setup runs
-      When I want to release all my numbers except a list "NumberA,NumberB,NumberC,NumberD,NumberE"
+      When I release all my numbers except "NumberA,NumberB,NumberC,NumberD,NumberE"
       Then I should list my numbers as "NumberA,NumberB,NumberC,NumberD,NumberE"

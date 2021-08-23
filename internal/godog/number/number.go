@@ -39,8 +39,8 @@ func IShouldGetToBuyFromList(amount int) error {
 	for i := 0; i < amount; i++ {
 		NumberSecondaryPort.AddNumber(AvailableNumbers[i])
 		purchased, _ := NumberSecondaryPort.ListNumbers()
-		for _, n := range purchased {
-			if AvailableNumbers[i] == n {
+		for _, n := range *purchased {
+			if AvailableNumbers[i] == n.PhoneNumber {
 				ok = true
 				break
 			}

@@ -3,6 +3,7 @@ package steps
 import (
 	"encoding/xml"
 	"fmt"
+	"strings"
 	"zarbat_test/internal/godog/services"
 	"zarbat_test/internal/logging"
 	"zarbat_test/pkg/domains"
@@ -40,13 +41,13 @@ func ShouldBeReset(number string) error {
 
 func IListAllAvailableNumbers() error {
 	anumbers, err := NumberSecondaryPort.ListAvailableNumbers()
-	IncomingNumbers = anumbers
+	AvailableNumbers = anumbers
 	if err != nil {
-		return fmt.Errorf("Error %s", "Not able to list my numbers.")
+		return fmt.Errorf("Error %s", "Not able to list all available numbers.")
 	}
-	for _, inumbers := range IncomingNumbers {
-		logging.Debug.Println(inumbers)
-		println(inumbers)
+	for _, a := range AvailableNumbers {
+		logging.Debug.Println(a)
+		println(a)
 	}
 	return nil
 }
@@ -57,8 +58,8 @@ func IShouldGetToBuyFromList(amount int) error {
 		logging.Debug.Println("Buying number is: ", AvailableNumbers[i])
 		NumberSecondaryPort.AddNumber(AvailableNumbers[i])
 		purchased, _ := NumberSecondaryPort.ListNumbers()
-		for _, n := range purchased {
-			if AvailableNumbers[i] == n {
+		for _, n := range *purchased {
+			if AvailableNumbers[i] == n.PhoneNumber {
 				logging.Debug.Println("Purchased number is: ", AvailableNumbers[i])
 				ok = true
 				break
@@ -72,46 +73,59 @@ func IShouldGetToBuyFromList(amount int) error {
 }
 
 func IListMyNumbers() error {
-	mynumbers, err := NumberSecondaryPort.ListNumbers()
-	IncomingNumbers = mynumbers
+	myNumbers, err := NumberSecondaryPort.ListNumbers()
 	if err != nil {
 		return fmt.Errorf("Error %s", "Not able to list available numbers.")
 	}
-	for _, in := range IncomingNumbers {
-		logging.Debug.Println(in)
-		println(in)
+	for _, in := range *myNumbers {
+		logging.Debug.Println(in.PhoneNumber)
+		println(in.PhoneNumber)
 	}
 	return nil
 }
 
 func IReleaseAllMyNumbersExcept(exceptionList string) error {
-	anumbers, err := NumberSecondaryPort.ListAvailableNumbers()
-	AvailableNumbers = anumbers
+	myNumbers, err := NumberPrimaryPort.ListNumbers()
 	if err != nil {
-		return fmt.Errorf("Error %s", "Not able to list available numbers.")
+		return fmt.Errorf("Error %s", "Not able to list my numbers.")
 	}
-	for _, a := range AvailableNumbers {
-		logging.Debug.Println(a)
-		println(a)
+	exList := strings.Split(exceptionList, ",")
+	for _, a := range *myNumbers {
+		exceptionNumberFound := false
+		for _, e := range exList {
+			pn, _ := Configuration.SelectNumber(e)
+			if pn == a.PhoneNumber {
+				exceptionNumberFound = true
+				break
+			}
+		}
+		if !exceptionNumberFound {
+			println("Releasing " + a.PhoneNumber)
+			NumberPrimaryPort.DeleteNumber(a.Sid)
+		}
 	}
 	return nil
 }
 
 func IShouldGetNumbersFromMyList(amount int) error {
 	ok := false
+	myNumbers, err := NumberSecondaryPort.ListAvailableNumbers()
+	if err != nil {
+		return fmt.Errorf("Error %s", "Not able to list my numbers.")
+	}
 	for i := 0; i < amount; i++ {
 		logging.Debug.Println("Buying number is: ", AvailableNumbers[i])
 		NumberSecondaryPort.AddNumber(AvailableNumbers[i])
 		purchased, _ := NumberSecondaryPort.ListNumbers()
-		for _, n := range purchased {
-			if AvailableNumbers[i] == n {
-				logging.Debug.Println("Purchased number is: ", AvailableNumbers[i])
+		for _, n := range *purchased {
+			if myNumbers[i] == n.PhoneNumber {
+				logging.Debug.Println("Purchased number is: ", IncomingNumbers[i])
 				ok = true
 				break
 			}
 		}
 		if !ok {
-			return fmt.Errorf("Error %s", "Not able to list available numbers.")
+			return fmt.Errorf("Error %s", "Not able to list my numbers.")
 		}
 	}
 	return nil
@@ -149,4 +163,24 @@ func IViewInfo(number string) error {
 	println(IncomingPhoneNumber.FriendlyName)
 	return nil
 
+}
+
+func IShouldListMyNumbersAs(list string) error {
+	myNumbers, err := NumberSecondaryPort.ListNumbers()
+	if err != nil {
+		return fmt.Errorf("Error %s", "Not able to list my numbers.")
+	}
+	arr := strings.Split(list, ",")
+	for _, n := range *myNumbers {
+		found := false
+		for j := 0; j < len(arr); j++ {
+			if n.PhoneNumber == arr[j] {
+				found = true
+			}
+		}
+		if !found {
+			return fmt.Errorf("Error %s", "List is different than expected.")
+		}
+	}
+	return nil
 }

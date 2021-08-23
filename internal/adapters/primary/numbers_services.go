@@ -40,7 +40,7 @@ func (p *port_number) ListAvailableNumbers() ([]string, error) {
 	return list, err
 }
 
-func (p *port_number) ListNumbers() ([]string, error) {
+func (p *port_number) ListNumbers() (*[]domains.IncomingPhoneNumber, error) {
 	list, err := p.driven.ListNumbers()
 	return list, err
 }

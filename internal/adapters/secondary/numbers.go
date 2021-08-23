@@ -57,8 +57,27 @@ func (a *numbersAPI) ViewNumber(numberSid string) (*domains.IncomingPhoneNumber,
 	return &r.IncomingPhoneNumber, nil
 }
 
-func (a *numbersAPI) DeleteNumber(number string) error {
+func (a *numbersAPI) DeleteNumber(numberSid string) error {
+	apiEndpoint := fmt.Sprintf(a.config.GetApiURL()+
+		"/Accounts/%s/IncomingPhoneNumbers/%s.json",
+		a.config.AccountSid, numberSid)
+
+	req, err := http.NewRequest("DELETE", apiEndpoint, nil)
+
+	if err != nil {
+		return err
+	}
+
+	req.Header.Set("Content-Type", "application/json")
+	req.Header.Add("Authorization", "Basic "+EncodeToBasicAuth(a.config.AccountSid, a.config.AuthToken))
+	client := &http.Client{}
+	resp, err := client.Do(req)
+	if err != nil {
+		return err
+	}
+	defer resp.Body.Close()
 	return nil
+
 }
 
 func (a *numbersAPI) UpdateNumber() error {
@@ -115,7 +134,7 @@ func (a *numbersAPI) AddNumber(n string) error {
 	return nil
 }
 
-func (a *numbersAPI) ListNumbers() ([]string, error) {
+func (a *numbersAPI) ListNumbers() (*[]domains.IncomingPhoneNumber, error) {
 	apiEndpoint := fmt.Sprintf(a.config.GetApiURL()+
 		"/Accounts/%s/IncomingPhoneNumbers.json",
 		a.config.AccountSid)
@@ -143,13 +162,7 @@ func (a *numbersAPI) ListNumbers() ([]string, error) {
 	}
 	var ipnpr domains.IncomingPhoneNumbersPageResponse
 	json.Unmarshal(body, &ipnpr)
-	var list []string
-	for _, i := range ipnpr.IncomingPhoneNumbers {
-		if i.PhoneNumber != "" {
-			list = append(list, i.PhoneNumber)
-		}
-	}
-	return list, nil
+	return &ipnpr.IncomingPhoneNumbers, nil
 }
 
 func (a *numbersAPI) ListAvailableNumbers() ([]string, error) {

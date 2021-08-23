@@ -8,8 +8,8 @@ type AvailablePhoneNumbersPageResponse struct {
 }
 
 type IncomingPhoneNumbersPageResponse struct {
-	IncomingPhoneNumbers []PageIncomingPhoneNumberResponse `json:"incoming_phone_numbers"`
-	URI                  string                            `json:"uri"`
+	IncomingPhoneNumbers []IncomingPhoneNumber `json:"incoming_phone_numbers"`
+	URI                  string                `json:"uri"`
 }
 
 type PageAvailablePhoneNumberResponse struct {

@@ -8,7 +8,7 @@ type PrimaryPort interface {
 	ViewNumber(string) (*domains.IncomingPhoneNumber, error)
 	DeleteNumber(string) error
 	ListAvailableNumbers() ([]string, error)
-	ListNumbers() ([]string, error)
+	ListNumbers() (*[]domains.IncomingPhoneNumber, error)
 }
 
 type SecondaryPort interface {
@@ -17,5 +17,5 @@ type SecondaryPort interface {
 	ViewNumber(string) (*domains.IncomingPhoneNumber, error)
 	DeleteNumber(string) error
 	ListAvailableNumbers() ([]string, error)
-	ListNumbers() ([]string, error)
+	ListNumbers() (*[]domains.IncomingPhoneNumber, error)
 }

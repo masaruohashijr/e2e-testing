@@ -94,3 +94,100 @@
 2021/08/23 09:09:26 DEBUG: *** Features: [viewnumber]
 2021/08/23 09:09:26 DEBUG: ************************************************
 2021/08/23 09:09:26 DEBUG: Server running
+2021/08/23 09:14:28 DEBUG: ************************************************
+2021/08/23 09:14:28 DEBUG: *** Config: config/config.ini
+2021/08/23 09:14:28 DEBUG: *** Number of Tries: 3
+2021/08/23 09:14:28 DEBUG: *** Log: log/zarbat.log
+2021/08/23 09:14:28 DEBUG: *** Logging Level: info
+2021/08/23 09:14:28 DEBUG: *** Features: [viewnumber]
+2021/08/23 09:14:28 DEBUG: ************************************************
+2021/08/23 09:14:28 DEBUG: Server running
+2021/08/23 09:38:31 DEBUG: ************************************************
+2021/08/23 09:38:31 DEBUG: *** Config: config/config.ini
+2021/08/23 09:38:31 DEBUG: *** Number of Tries: 3
+2021/08/23 09:38:31 DEBUG: *** Log: log/zarbat.log
+2021/08/23 09:38:31 DEBUG: *** Logging Level: info
+2021/08/23 09:38:31 DEBUG: *** Features: [release numbers]
+2021/08/23 09:38:31 DEBUG: ************************************************
+2021/08/23 09:38:31 DEBUG: Server running
+2021/08/23 09:40:12 DEBUG: ************************************************
+2021/08/23 09:40:12 DEBUG: *** Config: config/config.ini
+2021/08/23 09:40:12 DEBUG: *** Number of Tries: 3
+2021/08/23 09:40:12 DEBUG: *** Log: log/zarbat.log
+2021/08/23 09:40:12 DEBUG: *** Logging Level: info
+2021/08/23 09:40:12 DEBUG: *** Features: [release numbers]
+2021/08/23 09:40:12 DEBUG: ************************************************
+2021/08/23 09:40:12 DEBUG: Server running
+2021/08/23 10:15:26 DEBUG: ************************************************
+2021/08/23 10:15:26 DEBUG: *** Config: config/config.ini
+2021/08/23 10:15:26 DEBUG: *** Number of Tries: 3
+2021/08/23 10:15:26 DEBUG: *** Log: log/zarbat.log
+2021/08/23 10:15:26 DEBUG: *** Logging Level: info
+2021/08/23 10:15:26 DEBUG: *** Features: [release numbers]
+2021/08/23 10:15:26 DEBUG: ************************************************
+2021/08/23 10:15:26 DEBUG: Server running
+2021/08/23 10:17:19 DEBUG: ************************************************
+2021/08/23 10:17:19 DEBUG: *** Config: config/config.ini
+2021/08/23 10:17:19 DEBUG: *** Number of Tries: 3
+2021/08/23 10:17:19 DEBUG: *** Log: log/zarbat.log
+2021/08/23 10:17:19 DEBUG: *** Logging Level: info
+2021/08/23 10:17:19 DEBUG: *** Features: [release numbers]
+2021/08/23 10:17:19 DEBUG: ************************************************
+2021/08/23 10:17:19 DEBUG: Server running
+2021/08/23 10:17:30 DEBUG: ************************************************
+2021/08/23 10:17:30 DEBUG: *** Config: config/config.ini
+2021/08/23 10:17:30 DEBUG: *** Number of Tries: 3
+2021/08/23 10:17:30 DEBUG: *** Log: log/zarbat.log
+2021/08/23 10:17:30 DEBUG: *** Logging Level: info
+2021/08/23 10:17:30 DEBUG: *** Features: [release numbers]
+2021/08/23 10:17:30 DEBUG: ************************************************
+2021/08/23 10:17:30 DEBUG: Server running
+2021/08/23 10:20:35 DEBUG: ************************************************
+2021/08/23 10:20:35 DEBUG: *** Config: config/config.ini
+2021/08/23 10:20:35 DEBUG: *** Number of Tries: 3
+2021/08/23 10:20:35 DEBUG: *** Log: log/zarbat.log
+2021/08/23 10:20:35 DEBUG: *** Logging Level: info
+2021/08/23 10:20:35 DEBUG: *** Features: [release numbers]
+2021/08/23 10:20:35 DEBUG: ************************************************
+2021/08/23 10:20:35 DEBUG: Server running
+2021/08/23 10:21:06 DEBUG: NumberA
+2021/08/23 10:22:18 DEBUG: ************************************************
+2021/08/23 10:22:18 DEBUG: *** Config: config/config.ini
+2021/08/23 10:22:18 DEBUG: *** Number of Tries: 3
+2021/08/23 10:22:18 DEBUG: *** Log: log/zarbat.log
+2021/08/23 10:22:18 DEBUG: *** Logging Level: info
+2021/08/23 10:22:18 DEBUG: *** Features: [release numbers]
+2021/08/23 10:22:18 DEBUG: ************************************************
+2021/08/23 10:22:18 DEBUG: Server running
+2021/08/23 10:23:17 DEBUG: ************************************************
+2021/08/23 10:23:17 DEBUG: *** Config: config/config.ini
+2021/08/23 10:23:17 DEBUG: *** Number of Tries: 3
+2021/08/23 10:23:17 DEBUG: *** Log: log/zarbat.log
+2021/08/23 10:23:17 DEBUG: *** Logging Level: info
+2021/08/23 10:23:17 DEBUG: *** Features: [release numbers]
+2021/08/23 10:23:17 DEBUG: ************************************************
+2021/08/23 10:23:17 DEBUG: Server running
+2021/08/23 10:30:36 DEBUG: ************************************************
+2021/08/23 10:30:36 DEBUG: *** Config: config/config.ini
+2021/08/23 10:30:36 DEBUG: *** Number of Tries: 3
+2021/08/23 10:30:36 DEBUG: *** Log: log/zarbat.log
+2021/08/23 10:30:36 DEBUG: *** Logging Level: info
+2021/08/23 10:30:36 DEBUG: *** Features: [release numbers]
+2021/08/23 10:30:36 DEBUG: ************************************************
+2021/08/23 10:30:36 DEBUG: Server running
+2021/08/23 10:31:27 DEBUG: ************************************************
+2021/08/23 10:31:27 DEBUG: *** Config: config/config.ini
+2021/08/23 10:31:27 DEBUG: *** Number of Tries: 3
+2021/08/23 10:31:27 DEBUG: *** Log: log/zarbat.log
+2021/08/23 10:31:27 DEBUG: *** Logging Level: info
+2021/08/23 10:31:27 DEBUG: *** Features: [release numbers]
+2021/08/23 10:31:27 DEBUG: ************************************************
+2021/08/23 10:31:27 DEBUG: Server running
+2021/08/23 10:49:19 DEBUG: ************************************************
+2021/08/23 10:49:19 DEBUG: *** Config: config/config.ini
+2021/08/23 10:49:19 DEBUG: *** Number of Tries: 3
+2021/08/23 10:49:19 DEBUG: *** Log: log/zarbat.log
+2021/08/23 10:49:19 DEBUG: *** Logging Level: info
+2021/08/23 10:49:19 DEBUG: *** Features: [release numbers]
+2021/08/23 10:49:19 DEBUG: ************************************************
+2021/08/23 10:49:19 DEBUG: Server running
