@@ -269,3 +269,36 @@
 2021/08/23 19:24:08 INFO: Passed  1
 2021/08/23 19:24:08 INFO: Failed  0
 2021/08/23 19:24:08 INFO: ...END OF TEST SUITE
+2021/08/24 08:53:43 INFO: ****************************************
+2021/08/24 08:53:43 INFO: START OF TEST SUITE
+2021/08/24 08:53:43 INFO: Config: config/config.ini
+2021/08/24 08:53:43 INFO: Number of Tries: 3
+2021/08/24 08:53:43 INFO: Log: log/zarbat.log
+2021/08/24 08:53:43 INFO: Tests: [list number]
+2021/08/24 08:53:43 INFO: .........................................
+2021/08/24 08:53:44 INFO: * Feature/Scenario: LIST NUMBER - Status: OK
+2021/08/24 08:53:49 INFO: Passed  1
+2021/08/24 08:53:49 INFO: Failed  0
+2021/08/24 08:53:49 INFO: ...END OF TEST SUITE
+2021/08/24 12:24:46 INFO: ****************************************
+2021/08/24 12:24:46 INFO: START OF TEST SUITE
+2021/08/24 12:24:46 INFO: Config: config/config.ini
+2021/08/24 12:24:46 INFO: Number of Tries: 3
+2021/08/24 12:24:46 INFO: Log: log/zarbat.log
+2021/08/24 12:24:46 INFO: Tests: [list number]
+2021/08/24 12:24:46 INFO: .........................................
+2021/08/24 12:24:49 INFO: * Feature/Scenario: LIST NUMBER - Status: OK
+2021/08/24 12:24:54 INFO: Passed  1
+2021/08/24 12:24:54 INFO: Failed  0
+2021/08/24 12:24:54 INFO: ...END OF TEST SUITE
+2021/08/24 12:25:24 INFO: ****************************************
+2021/08/24 12:25:24 INFO: START OF TEST SUITE
+2021/08/24 12:25:24 INFO: Config: config/config.ini
+2021/08/24 12:25:24 INFO: Number of Tries: 3
+2021/08/24 12:25:24 INFO: Log: log/zarbat.log
+2021/08/24 12:25:24 INFO: Tests: [list number]
+2021/08/24 12:25:24 INFO: .........................................
+2021/08/24 12:25:25 INFO: * Feature/Scenario: LIST NUMBER - Status: OK
+2021/08/24 12:25:30 INFO: Passed  1
+2021/08/24 12:25:30 INFO: Failed  0
+2021/08/24 12:25:30 INFO: ...END OF TEST SUITE

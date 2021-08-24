@@ -98,6 +98,7 @@ func InitializeScenario(ctx *godog.ScenarioContext) {
 	ctx.Step(`^I view "([^"]*)" info$`, IViewInfo)
 	ctx.Step(`^I should list my numbers as "([^"]*)"$`, IShouldListMyNumbersAs)
 	ctx.Step(`^I release all my numbers except "([^"]*)"$`, IReleaseAllMyNumbersExcept)
+	ctx.Step(`^I should list my (\d+) numbers$`, IShouldListMyNumbers)
 }
 
 func InitializeTestSuite(ctx *godog.TestSuiteContext) {

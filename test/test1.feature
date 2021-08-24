@@ -1,31 +1,3 @@
-Feature: MMS    
-  In order to my sent MMS messages can be seem by my destination numbers
-  And getting a receiving confirmation from them
-  As an end user
-  I want to send an MMS message
-
-  Scenario: Send an MMS
-
-    Given my test setup runs
-      And created MMS with text "I think to myself" and media "Avaya.jpg"
-      When I send MMS from "NumberA" to "NumberB"
-      Then "NumberB" should get MMS with text "I think to myself" and media "Avaya.jpg"
-
-
-Feature: conference    
-  In order to make a conference call
-  As an end user
-  I want to dial to a number, create and set a conference room
-  
-  Scenario: Make a Conference
-
-    Given my test setup runs
-      And "NumberC" configured as conference "Zarbat" with size 3
-      When I make a call from "NumberB" to "NumberC"
-      And  I make a call from "NumberA" to "NumberC"
-      Then "NumberB" should had entered conference "Zarbat" 
-
-
 Feature: Gather    
   In order to read text to the Number B (called) using a text-to-speech engine   
   As an end user

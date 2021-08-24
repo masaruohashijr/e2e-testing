@@ -84,6 +84,14 @@ func IListMyNumbers() error {
 	return nil
 }
 
+func IShouldListMyNumbers(amount int) error {
+	myNumbers, _ := NumberSecondaryPort.ListNumbers()
+	if len(*myNumbers) != amount {
+		return fmt.Errorf("Error %s", "The list has more numbers than expected")
+	}
+	return nil
+}
+
 func IReleaseAllMyNumbersExcept(exceptionList string) error {
 	myNumbers, err := NumberPrimaryPort.ListNumbers()
 	if err != nil {
