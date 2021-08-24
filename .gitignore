@@ -6,3 +6,5 @@
 ./log/zarbat_DEBUG.log
 ./log/zarbat_INFO.log
 ./server.go
+./zarbat_test.exe
+./zarbat_test
