@@ -302,3 +302,14 @@
 2021/08/24 12:25:30 INFO: Passed  1
 2021/08/24 12:25:30 INFO: Failed  0
 2021/08/24 12:25:30 INFO: ...END OF TEST SUITE
+2021/08/24 13:00:05 INFO: ****************************************
+2021/08/24 13:00:05 INFO: START OF TEST SUITE
+2021/08/24 13:00:05 INFO: Config: config/config.ini
+2021/08/24 13:00:05 INFO: Number of Tries: 3
+2021/08/24 13:00:05 INFO: Log: log/zarbat.log
+2021/08/24 13:00:05 INFO: Tests: [list number]
+2021/08/24 13:00:05 INFO: .........................................
+2021/08/24 13:00:09 INFO: * Feature/Scenario: LIST NUMBER - Status: OK
+2021/08/24 13:00:14 INFO: Passed  1
+2021/08/24 13:00:14 INFO: Failed  0
+2021/08/24 13:00:14 INFO: ...END OF TEST SUITE
