@@ -1,5 +1,8 @@
+./temp/*/*
 ./temp/*
+./temp
 ./log/*
+./log
 ./log/zarbat_DEBUG.log
 ./log/zarbat_INFO.log
 ./server.go
