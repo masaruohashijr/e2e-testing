@@ -12,9 +12,8 @@
                 "-url","http://mohashi.ngrok.io",
                 "-port","5000",
                 "-l","log/zarbat.log",
-                "-level","info",
                 "-n","3",
-                "-test", "test/sms.ctlang"
+                "-test", "test/sms.feature"
             ]
         }
     ]    
