@@ -26,7 +26,7 @@ var configPtr *string
 var triesPtr *int
 var callbackPtr *string
 
-func main() {
+func main2() {
 	// 18-08-2021 Masoud
 	// the user should know his public ip and also needs a port
 	// that forwarded directly from his router to his machine
