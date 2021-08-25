@@ -1,0 +1,1203 @@
+2021/08/24 13:33:10 DEBUG: ************************************************
+2021/08/24 13:33:10 DEBUG: *** Config: config/config.ini
+2021/08/24 13:33:10 DEBUG: *** Number of Tries: 3
+2021/08/24 13:33:10 DEBUG: *** Log: log/zarbat.log
+2021/08/24 13:33:10 DEBUG: *** Logging Level: info
+2021/08/24 13:33:10 DEBUG: *** Features: [hangup][number][pause][ping][play][playlastrecording][record][redirect][reject][say][sms][dial][gather]
+2021/08/24 13:33:10 DEBUG: ************************************************
+2021/08/24 13:33:10 DEBUG: Server running
+2021/08/24 13:33:13 DEBUG: HangupHandler
+2021/08/24 13:33:13 DEBUG: <?xml version="1.0"?>
+<Response><Pause length="3"></Pause><Hangup></Hangup></Response>
+2021/08/24 13:33:14 DEBUG: ******************************** Callback START
+2021/08/24 13:33:14 DEBUG: Call Status in-progress.
+
+2021/08/24 13:33:14 DEBUG: ******************************** Callback END
+2021/08/24 13:33:18 DEBUG: ******************************** Callback START
+2021/08/24 13:33:18 DEBUG: Call Status completed.
+
+2021/08/24 13:33:18 DEBUG: ******************************** Callback END
+2021/08/24 13:33:26 DEBUG: <?xml version="1.0"?>
+<Response><Dial><Number sendDigits="wwww1234#">+12048003029</Number></Dial><Hangup></Hangup></Response>
+2021/08/24 13:33:29 DEBUG: ******************************** Callback START
+2021/08/24 13:33:29 DEBUG: Call Status in-progress.
+
+2021/08/24 13:33:29 DEBUG: ******************************** Callback END
+2021/08/24 13:33:33 DEBUG: ************************************************
+2021/08/24 13:33:33 DEBUG: SpeechResult
+2021/08/24 13:33:33 DEBUG: 
+2021/08/24 13:33:33 DEBUG: original speech:  1234
+2021/08/24 13:33:33 DEBUG: speech result:  
+2021/08/24 13:33:35 DEBUG: ******************************** Callback START
+2021/08/24 13:33:35 DEBUG: Call Status completed.
+
+2021/08/24 13:33:35 DEBUG: ******************************** Callback END
+2021/08/24 13:33:41 DEBUG: PauseHandler
+2021/08/24 13:33:41 DEBUG: <?xml version="1.0"?>
+<Response><Pause length="3"></Pause><Hangup></Hangup><Hangup></Hangup></Response>
+2021/08/24 13:33:42 DEBUG: ******************************** Callback START
+2021/08/24 13:33:42 DEBUG: Call Status in-progress.
+
+2021/08/24 13:33:42 DEBUG: ******************************** Callback END
+2021/08/24 13:33:46 DEBUG: ******************************** Callback START
+2021/08/24 13:33:46 DEBUG: Call Status completed.
+
+2021/08/24 13:33:46 DEBUG: ******************************** Callback END
+2021/08/24 13:33:53 DEBUG: <?xml version="1.0"?>
+<Response><Dial><Number sendDigits="wwww1234#">+12048003029</Number></Dial><Hangup></Hangup></Response>
+2021/08/24 13:34:00 DEBUG: <?xml version="1.0"?>
+<Response><Dial><Number sendDigits="wwww1234#">+12048003029</Number></Dial><Hangup></Hangup></Response>
+2021/08/24 13:34:06 DEBUG: PingHandler
+2021/08/24 13:34:06 DEBUG: <?xml version="1.0"?>
+<Response><Ping>http://mohashi.ngrok.io/Pinging?hash=375255177</Ping></Response>
+2021/08/24 13:34:06 DEBUG: ******************************** Pinging
+2021/08/24 13:34:06 DEBUG: PingingHandler
+2021/08/24 13:34:07 DEBUG: PingHandler
+2021/08/24 13:34:07 DEBUG: <?xml version="1.0"?>
+<Response><Ping>http://mohashi.ngrok.io/Pinging?hash=375255177</Ping></Response>
+2021/08/24 13:34:08 DEBUG: ******************************** Pinging
+2021/08/24 13:34:08 DEBUG: PingingHandler
+2021/08/24 13:34:14 DEBUG: RecordHandler
+2021/08/24 13:34:14 DEBUG: <?xml version="1.0"?>
+<Response><Pause length="0"></Pause><Record background="false" action="http://mohashi.ngrok.io/RecordAction?hash=3268139107" maxLength="10" fileFormat="wav" transcribe="false" transcribeCallback=""></Record><Hangup></Hangup></Response>
+2021/08/24 13:34:15 DEBUG: PlayHandler
+2021/08/24 13:34:15 DEBUG: <?xml version="1.0"?>
+<Response><Play loop="100">tone_stream://%(5000,10,850)</Play><Pause length="0"></Pause></Response>
+2021/08/24 13:34:15 DEBUG: ******************************** Callback START
+2021/08/24 13:34:15 DEBUG: Call Status in-progress.
+
+2021/08/24 13:34:15 DEBUG: ******************************** Callback END
+2021/08/24 13:34:30 DEBUG: ******************************** Callback START
+2021/08/24 13:34:30 DEBUG: Call Status completed.
+
+2021/08/24 13:34:30 DEBUG: ******************************** Callback END
+2021/08/24 13:34:31 DEBUG: ************************************************
+2021/08/24 13:34:31 DEBUG: RecordingUrl
+2021/08/24 13:34:31 DEBUG: http://recordings.telapi.com/RBcb0f449330ab45d384fe71c4621e66b4/RE777c3e32c68893ea33bd429ab32d397e.wav
+2021/08/24 13:34:31 DEBUG: ******************************** RecordAction END
+2021/08/24 13:34:47 DEBUG: RecordHandler
+2021/08/24 13:34:47 DEBUG: <?xml version="1.0"?>
+<Response><Pause length="0"></Pause><Record background="false" action="" maxLength="10" fileFormat="wav" transcribe="true" transcribeCallback="http://mohashi.ngrok.io/TranscribeCallback?hash=4201094638"></Record><Hangup></Hangup></Response>
+2021/08/24 13:34:48 DEBUG: SayHandler
+2021/08/24 13:34:48 DEBUG: <?xml version="1.0"?>
+<Response><Pause length="1"></Pause><Say voice="man" language="en-US" loop="1">This is the last recording</Say><Hangup></Hangup></Response>
+2021/08/24 13:34:48 DEBUG: ******************************** Callback START
+2021/08/24 13:34:48 DEBUG: Call Status in-progress.
+
+2021/08/24 13:34:48 DEBUG: ******************************** Callback END
+2021/08/24 13:34:52 DEBUG: ******************************** Callback START
+2021/08/24 13:34:52 DEBUG: Call Status canceled.
+
+2021/08/24 13:34:52 DEBUG: ******************************** Callback END
+2021/08/24 13:34:53 DEBUG: ******************************** Callback START
+2021/08/24 13:34:53 DEBUG: Call Status completed.
+
+2021/08/24 13:34:53 DEBUG: ******************************** Callback END
+2021/08/24 13:34:55 DEBUG: RecordHandler
+2021/08/24 13:34:55 DEBUG: <?xml version="1.0"?>
+<Response><Pause length="0"></Pause><Record background="false" action="" maxLength="10" fileFormat="wav" transcribe="true" transcribeCallback="http://mohashi.ngrok.io/TranscribeCallback?hash=4201094638"></Record><Hangup></Hangup></Response>
+2021/08/24 13:35:03 DEBUG: ************************************************
+2021/08/24 13:35:03 DEBUG: Transcribe Callback
+2021/08/24 13:35:03 DEBUG: transcribed text:  this is the last recording
+2021/08/24 13:35:03 DEBUG: original speech:  this is the last recording
+2021/08/24 13:35:03 DEBUG: speech result:  this is the last recording
+2021/08/24 13:35:03 DEBUG: ************************************************
+2021/08/24 13:35:03 DEBUG: Transcribe Callback
+2021/08/24 13:35:03 DEBUG: transcribed text:  this is the last recording
+2021/08/24 13:35:05 DEBUG: original speech:  this is the last recording
+2021/08/24 13:35:05 DEBUG: speech result:  this is the last recording
+2021/08/24 13:35:06 DEBUG: RecordHandler
+2021/08/24 13:35:06 DEBUG: <?xml version="1.0"?>
+<Response><Pause length="0"></Pause><Record background="false" action="" maxLength="10" fileFormat="wav" transcribe="true" transcribeCallback="http://mohashi.ngrok.io/TranscribeCallback?hash=4201094638"></Record><Hangup></Hangup></Response>
+2021/08/24 13:35:07 DEBUG: ******************************** Callback START
+2021/08/24 13:35:07 DEBUG: Call Status in-progress.
+
+2021/08/24 13:35:07 DEBUG: ******************************** Callback END
+2021/08/24 13:35:14 DEBUG: RecordHandler
+2021/08/24 13:35:14 DEBUG: <?xml version="1.0"?>
+<Response><Pause length="0"></Pause><Record background="false" action="" maxLength="10" fileFormat="wav" transcribe="true" transcribeCallback="http://mohashi.ngrok.io/TranscribeCallback?hash=1496340684"></Record><Hangup></Hangup></Response>
+2021/08/24 13:35:16 DEBUG: SayHandler
+2021/08/24 13:35:16 DEBUG: <?xml version="1.0"?>
+<Response><Pause length="1"></Pause><Say voice="man" language="en-US" loop="1">what we do in life echoes in eternity</Say><Hangup></Hangup></Response>
+2021/08/24 13:35:16 DEBUG: ******************************** Callback START
+2021/08/24 13:35:16 DEBUG: Call Status in-progress.
+
+2021/08/24 13:35:16 DEBUG: ******************************** Callback END
+2021/08/24 13:35:16 DEBUG: ******************************** Callback START
+2021/08/24 13:35:16 DEBUG: Call Status completed.
+
+2021/08/24 13:35:16 DEBUG: ******************************** Callback END
+2021/08/24 13:35:18 DEBUG: RecordHandler
+2021/08/24 13:35:18 DEBUG: <?xml version="1.0"?>
+<Response><Pause length="0"></Pause><Record background="false" action="" maxLength="10" fileFormat="wav" transcribe="true" transcribeCallback="http://mohashi.ngrok.io/TranscribeCallback?hash=1496340684"></Record><Hangup></Hangup></Response>
+2021/08/24 13:35:20 DEBUG: ************************************************
+2021/08/24 13:35:20 DEBUG: Transcribe Callback
+2021/08/24 13:35:20 DEBUG: transcribed text:  welcome to your new thing account let us know if we can help you in any way during your development
+2021/08/24 13:35:20 DEBUG: ******************************** Transcribe END
+2021/08/24 13:35:21 DEBUG: ************************************************
+2021/08/24 13:35:21 DEBUG: Transcribe Callback
+2021/08/24 13:35:21 DEBUG: transcribed text:  welcome to your new thing account let us know if we can help you in any way during your development
+2021/08/24 13:35:21 DEBUG: ******************************** Transcribe END
+2021/08/24 13:35:21 DEBUG: ******************************** Callback START
+2021/08/24 13:35:21 DEBUG: Call Status completed.
+
+2021/08/24 13:35:21 DEBUG: ******************************** Callback END
+2021/08/24 13:35:21 DEBUG: ************************************************
+2021/08/24 13:35:21 DEBUG: Transcribe Callback
+2021/08/24 13:35:21 DEBUG: transcribed text:  welcome to your new thing account let us know if we can help you in any way during your development
+2021/08/24 13:35:21 DEBUG: ******************************** Transcribe END
+2021/08/24 13:35:24 DEBUG: RecordHandler
+2021/08/24 13:35:24 DEBUG: <?xml version="1.0"?>
+<Response><Pause length="0"></Pause><Record background="false" action="" maxLength="10" fileFormat="wav" transcribe="true" transcribeCallback="http://mohashi.ngrok.io/TranscribeCallback?hash=1496340684"></Record><Hangup></Hangup></Response>
+2021/08/24 13:35:26 DEBUG: ************************************************
+2021/08/24 13:35:26 DEBUG: Transcribe Callback
+2021/08/24 13:35:26 DEBUG: transcribed text:  what we do in life echoes in eternity
+2021/08/24 13:35:26 DEBUG: original speech:  what we do in life echoes in eternity
+2021/08/24 13:35:26 DEBUG: speech result:  what we do in life echoes in eternity
+2021/08/24 13:35:27 DEBUG: ************************************************
+2021/08/24 13:35:27 DEBUG: Transcribe Callback
+2021/08/24 13:35:27 DEBUG: transcribed text:  what we do in life echoes in eternity
+2021/08/24 13:35:28 DEBUG: ************************************************
+2021/08/24 13:35:28 DEBUG: Transcribe Callback
+2021/08/24 13:35:28 DEBUG: transcribed text:  what we do in life echoes in eternity
+2021/08/24 13:35:47 DEBUG: Redirect Handler
+2021/08/24 13:35:47 DEBUG: <?xml version="1.0"?>
+<Response><Redirect>http://mohashi.ngrok.io/Pinging</Redirect></Response>
+2021/08/24 13:35:52 DEBUG: ************************************************
+2021/08/24 13:35:52 DEBUG: Transcribe Callback
+2021/08/24 13:35:52 DEBUG: transcribed text:  
+2021/08/24 13:35:52 DEBUG: ******************************** Transcribe END
+2021/08/24 13:35:53 DEBUG: Redirect Handler
+2021/08/24 13:35:53 DEBUG: <?xml version="1.0"?>
+<Response><Redirect>http://mohashi.ngrok.io/Pinging</Redirect></Response>
+2021/08/24 13:35:53 DEBUG: ******************************** Pinging
+2021/08/24 13:35:53 DEBUG: PingingHandler
+2021/08/24 13:35:54 DEBUG: ******************************** Callback START
+2021/08/24 13:35:54 DEBUG: Call Status in-progress.
+
+2021/08/24 13:35:54 DEBUG: ******************************** Callback END
+2021/08/24 13:35:54 DEBUG: ******************************** Pinging
+2021/08/24 13:35:54 DEBUG: PingingHandler
+2021/08/24 13:35:54 DEBUG: ******************************** Callback START
+2021/08/24 13:35:54 DEBUG: Call Status completed.
+
+2021/08/24 13:35:54 DEBUG: ******************************** Callback END
+2021/08/24 13:36:02 DEBUG: Redirect Handler
+2021/08/24 13:36:02 DEBUG: <?xml version="1.0"?>
+<Response><Redirect>http://mohashi.ngrok.io/Pinging</Redirect></Response>
+2021/08/24 13:36:02 DEBUG: ******************************** Pinging
+2021/08/24 13:36:02 DEBUG: PingingHandler
+2021/08/24 13:36:03 DEBUG: ******************************** RejectCallback START
+2021/08/24 13:36:03 DEBUG: Call Status in-progress.
+
+2021/08/24 13:36:03 DEBUG: ******************************** RejectCallback END
+2021/08/24 13:36:04 DEBUG: ******************************** RejectCallback START
+2021/08/24 13:36:04 DEBUG: Call Status completed.
+
+2021/08/24 13:36:04 DEBUG: ******************************** RejectCallback END
+2021/08/24 13:36:17 DEBUG: ************************************************
+2021/08/24 13:36:17 DEBUG: Transcribe Callback
+2021/08/24 13:36:17 DEBUG: transcribed text:  what we do in life echoes in eternity
+2021/08/24 13:36:17 DEBUG: ******************************** Transcribe END
+2021/08/24 13:36:18 DEBUG: ************************************************
+2021/08/24 13:36:18 DEBUG: Transcribe Callback
+2021/08/24 13:36:18 DEBUG: transcribed text:  what we do in life echoes in eternity
+2021/08/24 13:36:18 DEBUG: ******************************** Transcribe END
+2021/08/24 13:37:14 DEBUG: ******************************** RejectCallback START
+2021/08/24 13:37:14 DEBUG: Call Status canceled.
+
+2021/08/24 13:37:14 DEBUG: ******************************** RejectCallback END
+2021/08/24 13:37:26 DEBUG: SayHandler
+2021/08/24 13:37:26 DEBUG: <?xml version="1.0"?>
+<Response><Pause length="1"></Pause><Say voice="man" language="en-US" loop="2">what we do in life echoes in eternity</Say><Hangup></Hangup></Response>
+2021/08/24 13:37:26 DEBUG: ******************************** Callback START
+2021/08/24 13:37:26 DEBUG: Call Status in-progress.
+
+2021/08/24 13:37:26 DEBUG: ******************************** Callback END
+2021/08/24 13:37:32 DEBUG: ************************************************
+2021/08/24 13:37:32 DEBUG: SpeechResult
+2021/08/24 13:37:32 DEBUG: what we do in life echoes in eternity
+2021/08/24 13:37:32 DEBUG: original speech:  what we do in life echoes in eternity
+2021/08/24 13:37:32 DEBUG: speech result:  what we do in life echoes in eternity
+2021/08/24 13:37:34 DEBUG: ******************************** Callback START
+2021/08/24 13:37:34 DEBUG: Call Status completed.
+
+2021/08/24 13:37:34 DEBUG: ******************************** Callback END
+2021/08/24 13:37:41 DEBUG: SmsHandler
+2021/08/24 13:37:41 DEBUG: <?xml version="1.0"?>
+<Response><Sms from="+12048003021" to="+12048003029" statusCallback="http://mohashi.ngrok.io/SmsStatus">Actions speak louder than words</Sms></Response>
+2021/08/24 13:37:42 DEBUG: SmsHandler
+2021/08/24 13:37:42 DEBUG: <?xml version="1.0"?>
+<Response><Sms from="+12048003021" to="+12048003029" statusCallback="http://mohashi.ngrok.io/SmsStatus">Actions speak louder than words</Sms></Response>
+2021/08/24 13:37:44 DEBUG: *********** SMS Status Callback
+2021/08/24 13:37:44 DEBUG: SmsHandler
+2021/08/24 13:37:44 DEBUG: <?xml version="1.0"?>
+<Response><Sms from="+12048003021" to="+12048003029" statusCallback="http://mohashi.ngrok.io/SmsStatus">Actions speak louder than words</Sms></Response>
+2021/08/24 13:37:45 DEBUG: *********** SMS Status Callback
+2021/08/24 13:37:45 DEBUG: SmsHandler
+2021/08/24 13:37:45 DEBUG: <?xml version="1.0"?>
+<Response><Sms from="+12048003021" to="+12048003029" statusCallback="http://mohashi.ngrok.io/SmsStatus">Actions speak louder than words</Sms></Response>
+2021/08/24 13:37:46 DEBUG: *********** SMS Status Callback
+2021/08/24 13:37:47 DEBUG: SmsHandler
+2021/08/24 13:37:47 DEBUG: <?xml version="1.0"?>
+<Response><Sms from="+12048003021" to="+12048003029" statusCallback="http://mohashi.ngrok.io/SmsStatus">Actions speak louder than words</Sms></Response>
+2021/08/24 13:37:47 DEBUG: *********** SMS Status Callback
+2021/08/24 13:37:47 DEBUG: *********** SMS Status Callback
+2021/08/24 13:37:49 DEBUG: *********** SMS Status Callback
+2021/08/24 13:37:49 DEBUG: SmsHandler
+2021/08/24 13:37:49 DEBUG: <?xml version="1.0"?>
+<Response><Sms from="+12048003021" to="+12048003029" statusCallback="http://mohashi.ngrok.io/SmsStatus">Actions speak louder than words</Sms></Response>
+2021/08/24 13:37:49 DEBUG: *********** SMS Status Callback
+2021/08/24 13:37:49 DEBUG: *********** SMS Status Callback
+2021/08/24 13:37:49 DEBUG: *********** SMS Status Callback
+2021/08/24 13:37:50 DEBUG: *********** SMS Status Callback
+2021/08/24 13:37:50 DEBUG: SmsHandler
+2021/08/24 13:37:50 DEBUG: <?xml version="1.0"?>
+<Response><Sms from="+12048003021" to="+12048003029" statusCallback="http://mohashi.ngrok.io/SmsStatus">Actions speak louder than words</Sms></Response>
+2021/08/24 13:37:50 DEBUG: *********** SMS Status Callback
+2021/08/24 13:37:51 DEBUG: *********** SMS Status Callback
+2021/08/24 13:37:51 DEBUG: *********** SMS Status Callback
+2021/08/24 13:37:51 DEBUG: *********** SMS Status Callback
+2021/08/24 13:37:51 DEBUG: *********** SMS Status Callback
+2021/08/24 13:37:51 DEBUG: SmsHandler
+2021/08/24 13:37:51 DEBUG: <?xml version="1.0"?>
+<Response><Sms from="+12048003021" to="+12048003029" statusCallback="http://mohashi.ngrok.io/SmsStatus">Actions speak louder than words</Sms></Response>
+2021/08/24 13:37:52 DEBUG: *********** SMS Status Callback
+2021/08/24 13:37:52 DEBUG: *********** SMS Status Callback
+2021/08/24 13:37:53 DEBUG: ******************************** Callback START
+2021/08/24 13:37:53 DEBUG: Call Status canceled.
+
+2021/08/24 13:37:53 DEBUG: ******************************** Callback END
+2021/08/24 13:37:53 DEBUG: *********** SMS Status Callback
+2021/08/24 13:37:55 DEBUG: *********** SMS Status Callback
+2021/08/24 13:37:56 DEBUG: *********** SMS Status Callback
+2021/08/24 13:37:57 DEBUG: *********** SMS Status Callback
+2021/08/24 13:37:57 DEBUG: <?xml version="1.0"?>
+<Response><Dial callbackUrl="http://mohashi.ngrok.io/DialCallback">+5561984385415</Dial><Hangup></Hangup></Response>
+2021/08/24 13:37:58 DEBUG: *********** SMS Status Callback
+2021/08/24 13:37:58 DEBUG: *********** SMS Status Callback
+2021/08/24 13:38:01 DEBUG: *********** SMS Status Callback
+2021/08/24 13:38:05 DEBUG: <?xml version="1.0"?>
+<Response><Dial callbackUrl="http://mohashi.ngrok.io/DialCallback">+5561984385415</Dial><Hangup></Hangup></Response>
+2021/08/24 13:38:22 DEBUG: ******************************** Callback START
+2021/08/24 13:38:22 DEBUG: Call Status in-progress.
+
+2021/08/24 13:38:22 DEBUG: ******************************** Callback END
+2021/08/24 13:38:22 DEBUG: *********** SMS Status Callback
+2021/08/24 13:38:22 DEBUG: ******************************** Dial Callback START
+2021/08/24 13:38:22 DEBUG: Call Status in-progress.
+
+2021/08/24 13:38:22 DEBUG: ******************************** Dial Callback END
+2021/08/24 13:38:22 DEBUG: *********** SMS Status Callback
+2021/08/24 13:38:23 DEBUG: *********** SMS Status Callback
+2021/08/24 13:38:23 DEBUG: *********** SMS Status Callback
+2021/08/24 13:38:29 DEBUG: *********** SMS Status Callback
+2021/08/24 13:38:29 DEBUG: *********** SMS Status Callback
+2021/08/24 13:38:30 DEBUG: <?xml version="1.0"?>
+<Response><Dial callbackUrl="http://mohashi.ngrok.io/DialCallback">+5561984385415</Dial><Hangup></Hangup></Response>
+2021/08/24 13:38:30 DEBUG: ******************************** Callback START
+2021/08/24 13:38:30 DEBUG: Call Status completed.
+
+2021/08/24 13:38:30 DEBUG: ******************************** Callback END
+2021/08/24 13:38:30 DEBUG: ******************************** Dial Callback START
+2021/08/24 13:38:30 DEBUG: Call Status completed.
+
+2021/08/24 13:38:38 DEBUG: SayHandler
+2021/08/24 13:38:38 DEBUG: <?xml version="1.0"?>
+<Response><Pause length="1"></Pause><Say voice="man" language="en-US" loop="2">we shall fight on the beaches</Say><Hangup></Hangup></Response>
+2021/08/24 13:38:38 DEBUG: ******************************** Callback START
+2021/08/24 13:38:38 DEBUG: Call Status in-progress.
+
+2021/08/24 13:38:38 DEBUG: ******************************** Callback END
+2021/08/24 13:38:40 DEBUG: ******************************** Callback START
+2021/08/24 13:38:40 DEBUG: Call Status in-progress.
+
+2021/08/24 13:38:40 DEBUG: ******************************** Callback END
+2021/08/24 13:38:41 DEBUG: ******************************** Dial Callback START
+2021/08/24 13:38:41 DEBUG: Call Status in-progress.
+
+2021/08/24 13:38:41 DEBUG: ******************************** Dial Callback END
+2021/08/24 13:38:43 DEBUG: ************************************************
+2021/08/24 13:38:43 DEBUG: SpeechResult
+2021/08/24 13:38:43 DEBUG: we shall fight on the beaches
+2021/08/24 13:38:43 DEBUG: original speech:  we shall fight on the beaches
+2021/08/24 13:38:43 DEBUG: speech result:  we shall fight on the beaches
+2021/08/24 13:38:44 DEBUG: ******************************** Callback START
+2021/08/24 13:38:44 DEBUG: Call Status completed.
+
+2021/08/24 13:38:44 DEBUG: ******************************** Callback END
+2021/08/24 13:43:13 DEBUG: ************************************************
+2021/08/24 13:43:13 DEBUG: *** Config: config/config.ini
+2021/08/24 13:43:13 DEBUG: *** Number of Tries: 3
+2021/08/24 13:43:13 DEBUG: *** Log: log/zarbat.log
+2021/08/24 13:43:13 DEBUG: *** Logging Level: info
+2021/08/24 13:43:13 DEBUG: *** Features: [hangup][number][pause][ping][play][playlastrecording][record][redirect][reject][say][sms][dial][gather]
+2021/08/24 13:43:13 DEBUG: ************************************************
+2021/08/24 13:43:13 DEBUG: Server running
+2021/08/24 13:43:13 DEBUG: ******************************** Callback START
+2021/08/24 13:43:13 DEBUG: Call Status in-progress.
+
+2021/08/24 13:43:13 DEBUG: ******************************** Callback END
+2021/08/24 13:43:13 DEBUG: ******************************** Callback START
+2021/08/24 13:43:13 DEBUG: Call Status completed.
+
+2021/08/24 13:43:13 DEBUG: ******************************** Callback END
+2021/08/24 13:43:13 DEBUG: ******************************** Dial Callback START
+2021/08/24 13:43:13 DEBUG: Call Status completed.
+
+2021/08/24 13:43:13 DEBUG: ******************************** Dial Callback START
+2021/08/24 13:43:13 DEBUG: Call Status completed.
+
+2021/08/24 13:43:13 DEBUG: ******************************** Callback START
+2021/08/24 13:43:13 DEBUG: Call Status completed.
+
+2021/08/24 13:43:13 DEBUG: ******************************** Callback END
+2021/08/24 13:43:16 DEBUG: ******************************** Dial Callback END
+2021/08/24 13:43:18 DEBUG: HangupHandler
+2021/08/24 13:43:18 DEBUG: <?xml version="1.0"?>
+<Response><Pause length="3"></Pause><Hangup></Hangup></Response>
+2021/08/24 13:43:19 DEBUG: ******************************** Callback START
+2021/08/24 13:43:19 DEBUG: Call Status in-progress.
+
+2021/08/24 13:43:19 DEBUG: ******************************** Callback END
+2021/08/24 13:43:22 DEBUG: ******************************** Callback START
+2021/08/24 13:43:22 DEBUG: Call Status completed.
+
+2021/08/24 13:43:22 DEBUG: ******************************** Callback END
+2021/08/24 13:43:24 DEBUG: <?xml version="1.0"?>
+<Response><Dial><Number sendDigits="wwww1234#">+12048003029</Number></Dial><Hangup></Hangup></Response>
+2021/08/24 13:43:28 DEBUG: ******************************** Callback START
+2021/08/24 13:43:28 DEBUG: Call Status in-progress.
+
+2021/08/24 13:43:28 DEBUG: ******************************** Callback END
+2021/08/24 13:43:31 DEBUG: ************************************************
+2021/08/24 13:43:31 DEBUG: SpeechResult
+2021/08/24 13:43:31 DEBUG: 
+2021/08/24 13:43:31 DEBUG: original speech:  1234
+2021/08/24 13:43:31 DEBUG: speech result:  
+2021/08/24 13:43:32 DEBUG: ******************************** Callback START
+2021/08/24 13:43:32 DEBUG: Call Status completed.
+
+2021/08/24 13:43:32 DEBUG: ******************************** Callback END
+2021/08/24 13:43:41 DEBUG: <?xml version="1.0"?>
+<Response><Dial callbackUrl="http://mohashi.ngrok.io/DialCallback">+5561984385415</Dial><Hangup></Hangup></Response>
+2021/08/24 13:44:09 DEBUG: ******************************** Dial Callback START
+2021/08/24 13:44:09 DEBUG: Call Status completed.
+
+2021/08/24 13:44:09 DEBUG: ******************************** Dial Callback END
+2021/08/24 13:44:11 DEBUG: ******************************** Dial Callback START
+2021/08/24 13:44:11 DEBUG: Call Status in-progress.
+
+2021/08/24 13:44:11 DEBUG: ******************************** Dial Callback END
+2021/08/24 13:44:17 DEBUG: PingHandler
+2021/08/24 13:44:17 DEBUG: <?xml version="1.0"?>
+<Response><Ping>http://mohashi.ngrok.io/Pinging?hash=375255177</Ping></Response>
+2021/08/24 13:44:18 DEBUG: ******************************** Pinging
+2021/08/24 13:44:18 DEBUG: PingingHandler
+2021/08/24 13:44:19 DEBUG: PingHandler
+2021/08/24 13:44:19 DEBUG: <?xml version="1.0"?>
+<Response><Ping>http://mohashi.ngrok.io/Pinging?hash=375255177</Ping></Response>
+2021/08/24 13:44:19 DEBUG: ******************************** Pinging
+2021/08/24 13:44:19 DEBUG: PingingHandler
+2021/08/24 13:44:26 DEBUG: RecordHandler
+2021/08/24 13:44:26 DEBUG: <?xml version="1.0"?>
+<Response><Pause length="0"></Pause><Record background="false" action="http://mohashi.ngrok.io/RecordAction?hash=3268139107" maxLength="10" fileFormat="wav" transcribe="false" transcribeCallback=""></Record><Hangup></Hangup></Response>
+2021/08/24 13:44:27 DEBUG: PlayHandler
+2021/08/24 13:44:27 DEBUG: <?xml version="1.0"?>
+<Response><Play loop="100">tone_stream://%(5000,10,850)</Play><Pause length="0"></Pause></Response>
+2021/08/24 13:44:27 DEBUG: ******************************** Callback START
+2021/08/24 13:44:27 DEBUG: Call Status in-progress.
+
+2021/08/24 13:44:27 DEBUG: ******************************** Callback END
+2021/08/24 13:44:27 DEBUG: ******************************** Callback START
+2021/08/24 13:44:27 DEBUG: Call Status in-progress.
+
+2021/08/24 13:44:27 DEBUG: ******************************** Callback END
+2021/08/24 13:44:27 DEBUG: ******************************** Dial Callback START
+2021/08/24 13:44:27 DEBUG: Call Status in-progress.
+
+2021/08/24 13:44:27 DEBUG: ******************************** Dial Callback END
+2021/08/24 13:44:36 DEBUG: ******************************** Callback START
+2021/08/24 13:44:36 DEBUG: Call Status completed.
+
+2021/08/24 13:44:36 DEBUG: ******************************** Callback END
+2021/08/24 13:44:36 DEBUG: ******************************** Dial Callback START
+2021/08/24 13:44:36 DEBUG: Call Status completed.
+
+2021/08/24 13:44:36 DEBUG: ******************************** Dial Callback END
+2021/08/24 13:44:42 DEBUG: ******************************** Callback START
+2021/08/24 13:44:42 DEBUG: Call Status completed.
+
+2021/08/24 13:44:42 DEBUG: ******************************** Callback END
+2021/08/24 13:44:43 DEBUG: ************************************************
+2021/08/24 13:44:43 DEBUG: RecordingUrl
+2021/08/24 13:44:43 DEBUG: http://recordings.telapi.com/RBcb0f449330ab45d384fe71c4621e66b4/RE777c3e32786977c43573493688bb0c17.wav
+2021/08/24 13:44:43 DEBUG: ******************************** RecordAction END
+2021/08/24 13:45:01 DEBUG: ******************************** Callback START
+2021/08/24 13:45:01 DEBUG: Call Status in-progress.
+
+2021/08/24 13:45:01 DEBUG: ******************************** Callback END
+2021/08/24 13:45:05 DEBUG: ************************************************
+2021/08/24 13:45:05 DEBUG: SpeechResult
+2021/08/24 13:45:05 DEBUG: welcome to your new Zhang account
+2021/08/24 13:45:06 DEBUG: ******************************** Callback START
+2021/08/24 13:45:06 DEBUG: Call Status completed.
+
+2021/08/24 13:45:06 DEBUG: ******************************** Callback END
+2021/08/24 13:45:33 DEBUG: ******************************** Dial Callback START
+2021/08/24 13:45:33 DEBUG: ******************************** Callback START
+2021/08/24 13:45:33 DEBUG: Call Status canceled.
+
+2021/08/24 13:45:33 DEBUG: ******************************** Callback END
+2021/08/24 13:45:34 DEBUG: ******************************** Pinging
+2021/08/24 13:45:34 DEBUG: PingingHandler
+2021/08/24 13:46:01 DEBUG: RecordHandler
+2021/08/24 13:46:01 DEBUG: <?xml version="1.0"?>
+<Response><Pause length="0"></Pause><Record background="false" action="" maxLength="10" fileFormat="wav" transcribe="true" transcribeCallback="http://mohashi.ngrok.io/TranscribeCallback?hash=4201094638"></Record><Hangup></Hangup></Response>
+2021/08/24 13:46:03 DEBUG: SayHandler
+2021/08/24 13:46:03 DEBUG: <?xml version="1.0"?>
+<Response><Pause length="1"></Pause><Say voice="man" language="en-US" loop="1">This is the last recording</Say><Hangup></Hangup></Response>
+2021/08/24 13:46:03 DEBUG: ******************************** Callback START
+2021/08/24 13:46:03 DEBUG: Call Status in-progress.
+
+2021/08/24 13:46:03 DEBUG: ******************************** Callback END
+2021/08/24 13:46:07 DEBUG: ******************************** Callback START
+2021/08/24 13:46:07 DEBUG: Call Status completed.
+
+2021/08/24 13:46:07 DEBUG: ******************************** Callback END
+2021/08/24 13:46:09 DEBUG: RecordHandler
+2021/08/24 13:46:09 DEBUG: <?xml version="1.0"?>
+<Response><Pause length="0"></Pause><Record background="false" action="" maxLength="10" fileFormat="wav" transcribe="true" transcribeCallback="http://mohashi.ngrok.io/TranscribeCallback?hash=4201094638"></Record><Hangup></Hangup></Response>
+2021/08/24 13:46:16 DEBUG: ************************************************
+2021/08/24 13:46:16 DEBUG: Transcribe Callback
+2021/08/24 13:46:16 DEBUG: transcribed text:  this is the last recording
+2021/08/24 13:46:16 DEBUG: original speech:  this is the last recording
+2021/08/24 13:46:16 DEBUG: speech result:  this is the last recording
+2021/08/24 13:46:17 DEBUG: ************************************************
+2021/08/24 13:46:17 DEBUG: Transcribe Callback
+2021/08/24 13:46:17 DEBUG: transcribed text:  this is the last recording
+2021/08/24 13:46:26 DEBUG: ******************************** Callback START
+2021/08/24 13:46:26 DEBUG: Call Status in-progress.
+
+2021/08/24 13:46:26 DEBUG: ******************************** Callback END
+2021/08/24 13:46:30 DEBUG: ************************************************
+2021/08/24 13:46:30 DEBUG: SpeechResult
+2021/08/24 13:46:30 DEBUG: welcome to your new Zhang account
+2021/08/24 13:46:31 DEBUG: ******************************** Callback START
+2021/08/24 13:46:31 DEBUG: Call Status completed.
+
+2021/08/24 13:46:31 DEBUG: ******************************** Callback END
+2021/08/24 13:46:35 DEBUG: ******************************** Dial Callback START
+2021/08/24 13:46:35 DEBUG: Call Status completed.
+
+2021/08/24 13:46:35 DEBUG: ******************************** Dial Callback END
+2021/08/24 13:46:52 DEBUG: ************************************************
+2021/08/24 13:46:52 DEBUG: Transcribe Callback
+2021/08/24 13:46:52 DEBUG: transcribed text:  
+2021/08/24 13:46:52 DEBUG: ******************************** Transcribe END
+2021/08/24 13:47:09 DEBUG: ************************************************
+2021/08/24 13:47:09 DEBUG: Transcribe Callback
+2021/08/24 13:47:09 DEBUG: transcribed text:  this is the last recording
+2021/08/24 13:47:09 DEBUG: original speech:  this is the last recording
+2021/08/24 13:47:09 DEBUG: speech result:  this is the last recording
+2021/08/24 13:47:14 DEBUG: SayHandler
+2021/08/24 13:47:14 DEBUG: <?xml version="1.0"?>
+<Response><Pause length="1"></Pause><Say voice="man" language="en-US" loop="1">This is the last recording</Say><Hangup></Hangup></Response>
+2021/08/24 13:47:14 DEBUG: ******************************** Callback START
+2021/08/24 13:47:14 DEBUG: Call Status in-progress.
+
+2021/08/24 13:47:14 DEBUG: ******************************** Callback END
+2021/08/24 13:47:19 DEBUG: ******************************** Callback START
+2021/08/24 13:47:19 DEBUG: Call Status completed.
+
+2021/08/24 13:47:19 DEBUG: ******************************** Callback END
+2021/08/24 13:48:19 DEBUG: RecordHandler
+2021/08/24 13:48:19 DEBUG: <?xml version="1.0"?>
+<Response><Pause length="0"></Pause><Record background="false" action="" maxLength="10" fileFormat="wav" transcribe="true" transcribeCallback="http://mohashi.ngrok.io/TranscribeCallback?hash=4201094638"></Record><Hangup></Hangup></Response>
+2021/08/24 13:48:20 DEBUG: SayHandler
+2021/08/24 13:48:20 DEBUG: <?xml version="1.0"?>
+<Response><Pause length="1"></Pause><Say voice="man" language="en-US" loop="1">This is the last recording</Say><Hangup></Hangup></Response>
+2021/08/24 13:48:20 DEBUG: ******************************** Callback START
+2021/08/24 13:48:20 DEBUG: Call Status in-progress.
+
+2021/08/24 13:48:20 DEBUG: ******************************** Callback END
+2021/08/24 13:48:25 DEBUG: ******************************** Callback START
+2021/08/24 13:48:25 DEBUG: Call Status completed.
+
+2021/08/24 13:48:25 DEBUG: ******************************** Callback END
+2021/08/24 13:48:26 DEBUG: RecordHandler
+2021/08/24 13:48:26 DEBUG: <?xml version="1.0"?>
+<Response><Pause length="0"></Pause><Record background="false" action="" maxLength="10" fileFormat="wav" transcribe="true" transcribeCallback="http://mohashi.ngrok.io/TranscribeCallback?hash=4201094638"></Record><Hangup></Hangup></Response>
+2021/08/24 13:48:33 DEBUG: ************************************************
+2021/08/24 13:48:33 DEBUG: Transcribe Callback
+2021/08/24 13:48:33 DEBUG: transcribed text:  this is the last recording
+2021/08/24 13:48:33 DEBUG: original speech:  this is the last recording
+2021/08/24 13:48:33 DEBUG: speech result:  this is the last recording
+2021/08/24 13:48:34 DEBUG: ************************************************
+2021/08/24 13:48:34 DEBUG: Transcribe Callback
+2021/08/24 13:48:34 DEBUG: transcribed text:  this is the last recording
+2021/08/24 13:48:34 DEBUG: ************************************************
+2021/08/24 13:48:34 DEBUG: Transcribe Callback
+2021/08/24 13:48:34 DEBUG: transcribed text:  this is the last recording
+2021/08/24 13:48:35 DEBUG: original speech:  this is the last recording
+2021/08/24 13:48:35 DEBUG: speech result:  this is the last recording
+2021/08/24 13:48:38 DEBUG: ******************************** Callback START
+2021/08/24 13:48:38 DEBUG: Call Status in-progress.
+
+2021/08/24 13:48:38 DEBUG: ******************************** Callback END
+2021/08/24 13:48:44 DEBUG: ************************************************
+2021/08/24 13:48:44 DEBUG: SpeechResult
+2021/08/24 13:48:44 DEBUG: welcome to your new Zhang account
+2021/08/24 13:48:45 DEBUG: RecordHandler
+2021/08/24 13:48:45 DEBUG: <?xml version="1.0"?>
+<Response><Pause length="0"></Pause><Record background="false" action="" maxLength="10" fileFormat="wav" transcribe="true" transcribeCallback="http://mohashi.ngrok.io/TranscribeCallback?hash=1496340684"></Record><Hangup></Hangup></Response>
+2021/08/24 13:48:45 DEBUG: ******************************** Callback START
+2021/08/24 13:48:45 DEBUG: Call Status completed.
+
+2021/08/24 13:48:45 DEBUG: ******************************** Callback END
+2021/08/24 13:48:46 DEBUG: SayHandler
+2021/08/24 13:48:46 DEBUG: <?xml version="1.0"?>
+<Response><Pause length="1"></Pause><Say voice="man" language="en-US" loop="1">what we do in life echoes in eternity</Say><Hangup></Hangup></Response>
+2021/08/24 13:48:46 DEBUG: ******************************** Callback START
+2021/08/24 13:48:46 DEBUG: Call Status in-progress.
+
+2021/08/24 13:48:46 DEBUG: ******************************** Callback END
+2021/08/24 13:48:51 DEBUG: ******************************** Callback START
+2021/08/24 13:48:51 DEBUG: Call Status completed.
+
+2021/08/24 13:48:51 DEBUG: ******************************** Callback END
+2021/08/24 13:48:53 DEBUG: RecordHandler
+2021/08/24 13:48:53 DEBUG: <?xml version="1.0"?>
+<Response><Pause length="0"></Pause><Record background="false" action="" maxLength="10" fileFormat="wav" transcribe="true" transcribeCallback="http://mohashi.ngrok.io/TranscribeCallback?hash=1496340684"></Record><Hangup></Hangup></Response>
+2021/08/24 13:49:00 DEBUG: ************************************************
+2021/08/24 13:49:00 DEBUG: Transcribe Callback
+2021/08/24 13:49:00 DEBUG: transcribed text:  what we do in life echoes in eternity
+2021/08/24 13:49:00 DEBUG: original speech:  what we do in life echoes in eternity
+2021/08/24 13:49:00 DEBUG: speech result:  what we do in life echoes in eternity
+2021/08/24 13:49:01 DEBUG: ************************************************
+2021/08/24 13:49:01 DEBUG: Transcribe Callback
+2021/08/24 13:49:01 DEBUG: transcribed text:  what we do in life echoes in eternity
+2021/08/24 13:49:04 DEBUG: ************************************************
+2021/08/24 13:49:04 DEBUG: Transcribe Callback
+2021/08/24 13:49:04 DEBUG: transcribed text:  what we do in life echoes in eternity
+2021/08/24 13:49:09 DEBUG: Redirect Handler
+2021/08/24 13:49:09 DEBUG: <?xml version="1.0"?>
+<Response><Redirect>http://mohashi.ngrok.io/Pinging</Redirect></Response>
+2021/08/24 13:49:09 DEBUG: ******************************** Pinging
+2021/08/24 13:49:09 DEBUG: PingingHandler
+2021/08/24 13:49:10 DEBUG: ******************************** Callback START
+2021/08/24 13:49:10 DEBUG: Call Status in-progress.
+
+2021/08/24 13:49:10 DEBUG: ******************************** Callback END
+2021/08/24 13:49:10 DEBUG: ******************************** Callback START
+2021/08/24 13:49:10 DEBUG: Call Status completed.
+
+2021/08/24 13:49:10 DEBUG: ******************************** Callback END
+2021/08/24 13:49:18 DEBUG: Redirect Handler
+2021/08/24 13:49:18 DEBUG: <?xml version="1.0"?>
+<Response><Redirect>http://mohashi.ngrok.io/Pinging</Redirect></Response>
+2021/08/24 13:49:18 DEBUG: ******************************** Pinging
+2021/08/24 13:49:18 DEBUG: PingingHandler
+2021/08/24 13:49:19 DEBUG: ******************************** RejectCallback START
+2021/08/24 13:49:19 DEBUG: Call Status in-progress.
+
+2021/08/24 13:49:19 DEBUG: ******************************** RejectCallback END
+2021/08/24 13:49:19 DEBUG: ******************************** RejectCallback START
+2021/08/24 13:49:19 DEBUG: Call Status completed.
+
+2021/08/24 13:49:19 DEBUG: ******************************** RejectCallback END
+2021/08/24 13:49:24 DEBUG: ************************************************
+2021/08/24 13:49:24 DEBUG: Transcribe Callback
+2021/08/24 13:49:24 DEBUG: transcribed text:  this is the last recording
+2021/08/24 13:49:24 DEBUG: ******************************** Transcribe END
+2021/08/24 13:49:52 DEBUG: ************************************************
+2021/08/24 13:49:52 DEBUG: Transcribe Callback
+2021/08/24 13:49:52 DEBUG: transcribed text:  what we do in life echoes in eternity
+2021/08/24 13:49:52 DEBUG: ******************************** Transcribe END
+2021/08/24 13:49:54 DEBUG: ************************************************
+2021/08/24 13:49:54 DEBUG: Transcribe Callback
+2021/08/24 13:49:54 DEBUG: transcribed text:  what we do in life echoes in eternity
+2021/08/24 13:49:54 DEBUG: ******************************** Transcribe END
+2021/08/24 13:50:27 DEBUG: ******************************** RejectCallback START
+2021/08/24 13:50:27 DEBUG: Call Status canceled.
+
+2021/08/24 13:50:27 DEBUG: ******************************** RejectCallback END
+2021/08/24 13:50:37 DEBUG: SayHandler
+2021/08/24 13:50:37 DEBUG: <?xml version="1.0"?>
+<Response><Pause length="1"></Pause><Say voice="man" language="en-US" loop="2">what we do in life echoes in eternity</Say><Hangup></Hangup></Response>
+2021/08/24 13:50:37 DEBUG: ******************************** Callback START
+2021/08/24 13:50:37 DEBUG: Call Status in-progress.
+
+2021/08/24 13:50:37 DEBUG: ******************************** Callback END
+2021/08/24 13:50:43 DEBUG: ************************************************
+2021/08/24 13:50:43 DEBUG: SpeechResult
+2021/08/24 13:50:43 DEBUG: what we do in life echoes in eternity
+2021/08/24 13:50:43 DEBUG: original speech:  what we do in life echoes in eternity
+2021/08/24 13:50:43 DEBUG: speech result:  what we do in life echoes in eternity
+2021/08/24 13:50:44 DEBUG: ******************************** Callback START
+2021/08/24 13:50:44 DEBUG: Call Status completed.
+
+2021/08/24 13:50:44 DEBUG: ******************************** Callback END
+2021/08/24 13:50:52 DEBUG: SmsHandler
+2021/08/24 13:50:52 DEBUG: <?xml version="1.0"?>
+<Response><Sms from="+12048003021" to="+12048003029" statusCallback="http://mohashi.ngrok.io/SmsStatus">Actions speak louder than words</Sms></Response>
+2021/08/24 13:50:54 DEBUG: SmsHandler
+2021/08/24 13:50:54 DEBUG: <?xml version="1.0"?>
+<Response><Sms from="+12048003021" to="+12048003029" statusCallback="http://mohashi.ngrok.io/SmsStatus">Actions speak louder than words</Sms></Response>
+2021/08/24 13:50:55 DEBUG: SmsHandler
+2021/08/24 13:50:55 DEBUG: <?xml version="1.0"?>
+<Response><Sms from="+12048003021" to="+12048003029" statusCallback="http://mohashi.ngrok.io/SmsStatus">Actions speak louder than words</Sms></Response>
+2021/08/24 13:50:56 DEBUG: *********** SMS Status Callback
+2021/08/24 13:50:56 DEBUG: *********** SMS Status Callback
+2021/08/24 13:50:56 DEBUG: *********** SMS Status Callback
+2021/08/24 13:50:56 DEBUG: *********** SMS Status Callback
+2021/08/24 13:50:56 DEBUG: ******************************** Callback START
+2021/08/24 13:50:56 DEBUG: Call Status canceled.
+
+2021/08/24 13:50:56 DEBUG: ******************************** Callback END
+2021/08/24 13:50:57 DEBUG: *********** SMS Status Callback
+2021/08/24 13:50:58 DEBUG: *********** SMS Status Callback
+2021/08/24 13:50:58 DEBUG: *********** SMS Status Callback
+2021/08/24 13:51:04 DEBUG: *********** SMS Status Callback
+2021/08/24 13:51:04 DEBUG: *********** SMS Status Callback
+2021/08/24 13:51:04 DEBUG: <?xml version="1.0"?>
+<Response><Dial callbackUrl="http://mohashi.ngrok.io/DialCallback">+5561984385415</Dial><Hangup></Hangup></Response>
+2021/08/24 13:51:12 DEBUG: <?xml version="1.0"?>
+<Response><Dial callbackUrl="http://mohashi.ngrok.io/DialCallback">+5561984385415</Dial><Hangup></Hangup></Response>
+2021/08/24 13:51:22 DEBUG: ******************************** Dial Callback START
+2021/08/24 13:51:22 DEBUG: Call Status in-progress.
+
+2021/08/24 13:51:22 DEBUG: ******************************** Dial Callback END
+2021/08/24 13:51:22 DEBUG: ******************************** Callback START
+2021/08/24 13:51:22 DEBUG: Call Status in-progress.
+
+2021/08/24 13:51:22 DEBUG: ******************************** Callback END
+2021/08/24 13:51:29 DEBUG: *********** SMS Status Callback
+2021/08/24 13:51:30 DEBUG: ******************************** Callback START
+2021/08/24 13:51:30 DEBUG: Call Status completed.
+
+2021/08/24 13:51:31 DEBUG: ******************************** Dial Callback START
+2021/08/24 13:51:31 DEBUG: Call Status completed.
+
+2021/08/24 13:51:38 DEBUG: <?xml version="1.0"?>
+<Response><Dial callbackUrl="http://mohashi.ngrok.io/DialCallback">+5561984385415</Dial><Hangup></Hangup></Response>
+2021/08/24 13:51:46 DEBUG: ******************************** Callback START
+2021/08/24 13:51:46 DEBUG: Call Status in-progress.
+
+2021/08/24 13:51:46 DEBUG: ******************************** Callback END
+2021/08/24 13:51:46 DEBUG: ******************************** Dial Callback START
+2021/08/24 13:51:46 DEBUG: Call Status in-progress.
+
+2021/08/24 13:51:46 DEBUG: ******************************** Dial Callback END
+2021/08/24 13:51:51 DEBUG: ******************************** Callback START
+2021/08/24 13:51:51 DEBUG: Call Status in-progress.
+
+2021/08/24 13:51:51 DEBUG: ******************************** Callback END
+2021/08/24 13:51:51 DEBUG: ******************************** Dial Callback START
+2021/08/24 13:51:51 DEBUG: Call Status in-progress.
+
+2021/08/24 13:51:51 DEBUG: ******************************** Dial Callback END
+2021/08/24 13:51:55 DEBUG: ******************************** Callback START
+2021/08/24 13:51:55 DEBUG: Call Status completed.
+
+2021/08/24 13:51:55 DEBUG: ******************************** Callback END
+2021/08/24 13:51:55 DEBUG: ******************************** Dial Callback START
+2021/08/24 13:51:55 DEBUG: Call Status completed.
+
+2021/08/24 13:52:00 DEBUG: ******************************** Callback START
+2021/08/24 13:52:00 DEBUG: Call Status completed.
+
+2021/08/24 13:52:00 DEBUG: ******************************** Callback END
+2021/08/24 13:52:00 DEBUG: ******************************** Dial Callback START
+2021/08/24 13:52:00 DEBUG: Call Status completed.
+
+2021/08/24 13:52:00 DEBUG: ******************************** Dial Callback END
+2021/08/24 13:52:02 DEBUG: SmsHandler
+2021/08/24 13:52:02 DEBUG: <?xml version="1.0"?>
+<Response><Sms from="+12048003021" to="+12048003029" statusCallback="http://mohashi.ngrok.io/SmsStatus">Actions speak louder than words</Sms></Response>
+2021/08/24 13:52:03 DEBUG: SmsHandler
+2021/08/24 13:52:03 DEBUG: <?xml version="1.0"?>
+<Response><Sms from="+12048003021" to="+12048003029" statusCallback="http://mohashi.ngrok.io/SmsStatus">Actions speak louder than words</Sms></Response>
+2021/08/24 13:52:04 DEBUG: *********** SMS Status Callback
+2021/08/24 13:52:05 DEBUG: *********** SMS Status Callback
+2021/08/24 13:52:06 DEBUG: SayHandler
+2021/08/24 13:52:06 DEBUG: <?xml version="1.0"?>
+<Response><Pause length="1"></Pause><Say voice="man" language="en-US" loop="2">we shall fight on the beaches</Say><Hangup></Hangup></Response>
+2021/08/24 13:52:06 DEBUG: ******************************** Callback START
+2021/08/24 13:52:06 DEBUG: Call Status in-progress.
+
+2021/08/24 13:52:06 DEBUG: ******************************** Callback END
+2021/08/24 13:52:06 DEBUG: *********** SMS Status Callback
+2021/08/24 13:52:07 DEBUG: *********** SMS Status Callback
+2021/08/24 13:52:07 DEBUG: original speech:  we shall fight on the beaches
+2021/08/24 13:52:07 DEBUG: speech result:  accountsid=12604719&apiversion=v2&body=actions+speak+louder+than+words&dlrstatus=sent&errormessage=&from=%2b12048003021&price=0.005&smssid=sm558fa2c1f6eb4c80a04337dd514f4b6d&smsstatus=sent&to=%2b12048003029
+2021/08/24 13:52:11 DEBUG: ************************************************
+2021/08/24 13:52:11 DEBUG: SpeechResult
+2021/08/24 13:52:11 DEBUG: we shall fight on the beaches
+2021/08/24 13:52:11 DEBUG: *********** SMS Status Callback
+2021/08/24 13:52:11 DEBUG: *********** SMS Status Callback
+2021/08/24 13:52:13 DEBUG: ******************************** Callback START
+2021/08/24 13:52:13 DEBUG: Call Status completed.
+
+2021/08/24 13:52:13 DEBUG: ******************************** Callback END
+2021/08/24 13:52:15 DEBUG: SayHandler
+2021/08/24 13:52:15 DEBUG: <?xml version="1.0"?>
+<Response><Pause length="1"></Pause><Say voice="man" language="en-US" loop="2">we shall fight on the beaches</Say><Hangup></Hangup></Response>
+2021/08/24 13:52:15 DEBUG: ******************************** Callback START
+2021/08/24 13:52:15 DEBUG: Call Status in-progress.
+
+2021/08/24 13:52:15 DEBUG: ******************************** Callback END
+2021/08/24 13:52:20 DEBUG: ************************************************
+2021/08/24 13:52:20 DEBUG: SpeechResult
+2021/08/24 13:52:20 DEBUG: we shall fight on the beaches
+2021/08/24 13:52:20 DEBUG: original speech:  we shall fight on the beaches
+2021/08/24 13:52:20 DEBUG: speech result:  we shall fight on the beaches
+2021/08/24 13:52:21 DEBUG: ******************************** Callback START
+2021/08/24 13:52:21 DEBUG: Call Status completed.
+
+2021/08/24 13:52:21 DEBUG: ******************************** Callback END
+2021/08/24 16:19:09 DEBUG: ************************************************
+2021/08/24 16:19:09 DEBUG: *** Config: config/config.ini
+2021/08/24 16:19:09 DEBUG: *** Number of Tries: 3
+2021/08/24 16:19:09 DEBUG: *** Log: log/zarbat.log
+2021/08/24 16:19:09 DEBUG: *** Logging Level: info
+2021/08/24 16:19:09 DEBUG: *** Features: [hangup][number][pause][ping][play][playlastrecording][record][redirect][reject][say][sms][dial][gather]
+2021/08/24 16:19:09 DEBUG: ************************************************
+2021/08/24 16:19:09 DEBUG: Server running
+2021/08/24 16:19:13 DEBUG: HangupHandler
+2021/08/24 16:19:13 DEBUG: <?xml version="1.0"?>
+<Response><Pause length="3"></Pause><Hangup></Hangup></Response>
+2021/08/24 16:19:15 DEBUG: ******************************** Callback START
+2021/08/24 16:19:15 DEBUG: Call Status in-progress.
+
+2021/08/24 16:19:15 DEBUG: ******************************** Callback END
+2021/08/24 16:19:18 DEBUG: ******************************** Callback START
+2021/08/24 16:19:18 DEBUG: Call Status completed.
+
+2021/08/24 16:19:18 DEBUG: ******************************** Callback END
+2021/08/24 16:19:27 DEBUG: <?xml version="1.0"?>
+<Response><Dial><Number sendDigits="wwww1234#">+12048003029</Number></Dial><Hangup></Hangup></Response>
+2021/08/24 16:19:32 DEBUG: ******************************** Callback START
+2021/08/24 16:19:32 DEBUG: Call Status in-progress.
+
+2021/08/24 16:19:32 DEBUG: ******************************** Callback END
+2021/08/24 16:19:35 DEBUG: ************************************************
+2021/08/24 16:19:35 DEBUG: SpeechResult
+2021/08/24 16:19:35 DEBUG: 
+2021/08/24 16:19:35 DEBUG: original speech:  1234
+2021/08/24 16:19:35 DEBUG: speech result:  
+2021/08/24 16:19:36 DEBUG: ******************************** Callback START
+2021/08/24 16:19:36 DEBUG: Call Status completed.
+
+2021/08/24 16:19:36 DEBUG: ******************************** Callback END
+2021/08/24 16:19:44 DEBUG: PauseHandler
+2021/08/24 16:19:44 DEBUG: <?xml version="1.0"?>
+<Response><Pause length="3"></Pause><Hangup></Hangup><Hangup></Hangup></Response>
+2021/08/24 16:19:45 DEBUG: ******************************** Callback START
+2021/08/24 16:19:45 DEBUG: Call Status in-progress.
+
+2021/08/24 16:19:45 DEBUG: ******************************** Callback END
+2021/08/24 16:19:49 DEBUG: ******************************** Callback START
+2021/08/24 16:19:49 DEBUG: Call Status completed.
+
+2021/08/24 16:19:49 DEBUG: ******************************** Callback END
+2021/08/24 16:19:57 DEBUG: PingHandler
+2021/08/24 16:19:57 DEBUG: <?xml version="1.0"?>
+<Response><Ping>http://mohashi.ngrok.io/Pinging?hash=375255177</Ping></Response>
+2021/08/24 16:19:57 DEBUG: ******************************** Pinging
+2021/08/24 16:19:57 DEBUG: PingingHandler
+2021/08/24 16:19:59 DEBUG: PingHandler
+2021/08/24 16:19:59 DEBUG: <?xml version="1.0"?>
+<Response><Ping>http://mohashi.ngrok.io/Pinging?hash=375255177</Ping></Response>
+2021/08/24 16:19:59 DEBUG: ******************************** Pinging
+2021/08/24 16:19:59 DEBUG: PingingHandler
+2021/08/24 16:20:06 DEBUG: RecordHandler
+2021/08/24 16:20:06 DEBUG: <?xml version="1.0"?>
+<Response><Pause length="0"></Pause><Record background="false" action="http://mohashi.ngrok.io/RecordAction?hash=3268139107" maxLength="10" fileFormat="wav" transcribe="false" transcribeCallback=""></Record><Hangup></Hangup></Response>
+2021/08/24 16:20:07 DEBUG: PlayHandler
+2021/08/24 16:20:07 DEBUG: <?xml version="1.0"?>
+<Response><Play loop="100">tone_stream://%(5000,10,850)</Play><Pause length="0"></Pause></Response>
+2021/08/24 16:20:07 DEBUG: ******************************** Callback START
+2021/08/24 16:20:07 DEBUG: Call Status in-progress.
+
+2021/08/24 16:20:07 DEBUG: ******************************** Callback END
+2021/08/24 16:20:22 DEBUG: ******************************** Callback START
+2021/08/24 16:20:22 DEBUG: Call Status completed.
+
+2021/08/24 16:20:22 DEBUG: ******************************** Callback END
+2021/08/24 16:20:23 DEBUG: ************************************************
+2021/08/24 16:20:23 DEBUG: RecordingUrl
+2021/08/24 16:20:23 DEBUG: http://recordings.telapi.com/RBcb0f449330ab45d384fe71c4621e66b4/RE777c3e3269f4f17347d04ef9b1034dac.wav
+2021/08/24 16:20:23 DEBUG: ******************************** RecordAction END
+2021/08/24 16:20:40 DEBUG: ******************************** Callback START
+2021/08/24 16:20:40 DEBUG: Call Status in-progress.
+
+2021/08/24 16:20:40 DEBUG: ******************************** Callback END
+2021/08/24 16:20:44 DEBUG: ************************************************
+2021/08/24 16:20:44 DEBUG: SpeechResult
+2021/08/24 16:20:44 DEBUG: welcome to your new Zhang account
+2021/08/24 16:20:45 DEBUG: ******************************** Callback START
+2021/08/24 16:20:45 DEBUG: Call Status completed.
+
+2021/08/24 16:20:45 DEBUG: ******************************** Callback END
+2021/08/24 16:20:55 DEBUG: ******************************** Callback START
+2021/08/24 16:20:55 DEBUG: Call Status canceled.
+
+2021/08/24 16:20:55 DEBUG: ******************************** Callback END
+2021/08/24 16:21:41 DEBUG: RecordHandler
+2021/08/24 16:21:41 DEBUG: <?xml version="1.0"?>
+<Response><Pause length="0"></Pause><Record background="false" action="" maxLength="10" fileFormat="wav" transcribe="true" transcribeCallback="http://mohashi.ngrok.io/TranscribeCallback?hash=4201094638"></Record><Hangup></Hangup></Response>
+2021/08/24 16:21:42 DEBUG: SayHandler
+2021/08/24 16:21:42 DEBUG: <?xml version="1.0"?>
+<Response><Pause length="1"></Pause><Say voice="man" language="en-US" loop="1">This is the last recording</Say><Hangup></Hangup></Response>
+2021/08/24 16:21:43 DEBUG: ******************************** Callback START
+2021/08/24 16:21:43 DEBUG: Call Status in-progress.
+
+2021/08/24 16:21:43 DEBUG: ******************************** Callback END
+2021/08/24 16:21:47 DEBUG: ******************************** Callback START
+2021/08/24 16:21:47 DEBUG: Call Status completed.
+
+2021/08/24 16:21:47 DEBUG: ******************************** Callback END
+2021/08/24 16:21:49 DEBUG: RecordHandler
+2021/08/24 16:21:49 DEBUG: <?xml version="1.0"?>
+<Response><Pause length="0"></Pause><Record background="false" action="" maxLength="10" fileFormat="wav" transcribe="true" transcribeCallback="http://mohashi.ngrok.io/TranscribeCallback?hash=4201094638"></Record><Hangup></Hangup></Response>
+2021/08/24 16:21:53 DEBUG: ************************************************
+2021/08/24 16:21:53 DEBUG: Transcribe Callback
+2021/08/24 16:21:53 DEBUG: transcribed text:  this is the last recording
+2021/08/24 16:21:53 DEBUG: original speech:  this is the last recording
+2021/08/24 16:21:53 DEBUG: speech result:  this is the last recording
+2021/08/24 16:21:54 DEBUG: ************************************************
+2021/08/24 16:21:54 DEBUG: Transcribe Callback
+2021/08/24 16:21:54 DEBUG: transcribed text:  this is the last recording
+2021/08/24 16:22:02 DEBUG: RecordHandler
+2021/08/24 16:22:02 DEBUG: <?xml version="1.0"?>
+<Response><Pause length="0"></Pause><Record background="false" action="" maxLength="10" fileFormat="wav" transcribe="true" transcribeCallback="http://mohashi.ngrok.io/TranscribeCallback?hash=4201094638"></Record><Hangup></Hangup></Response>
+2021/08/24 16:22:03 DEBUG: SayHandler
+2021/08/24 16:22:03 DEBUG: <?xml version="1.0"?>
+<Response><Pause length="1"></Pause><Say voice="man" language="en-US" loop="1">This is the last recording</Say><Hangup></Hangup></Response>
+2021/08/24 16:22:03 DEBUG: ******************************** Callback START
+2021/08/24 16:22:03 DEBUG: Call Status in-progress.
+
+2021/08/24 16:22:03 DEBUG: ******************************** Callback END
+2021/08/24 16:22:08 DEBUG: ******************************** Callback START
+2021/08/24 16:22:08 DEBUG: Call Status completed.
+
+2021/08/24 16:22:08 DEBUG: ******************************** Callback END
+2021/08/24 16:22:09 DEBUG: RecordHandler
+2021/08/24 16:22:09 DEBUG: <?xml version="1.0"?>
+<Response><Pause length="0"></Pause><Record background="false" action="" maxLength="10" fileFormat="wav" transcribe="true" transcribeCallback="http://mohashi.ngrok.io/TranscribeCallback?hash=4201094638"></Record><Hangup></Hangup></Response>
+2021/08/24 16:22:11 DEBUG: ************************************************
+2021/08/24 16:22:11 DEBUG: Transcribe Callback
+2021/08/24 16:22:11 DEBUG: transcribed text:  this is the last recording
+2021/08/24 16:22:11 DEBUG: original speech:  this is the last recording
+2021/08/24 16:22:11 DEBUG: speech result:  this is the last recording
+2021/08/24 16:22:12 DEBUG: ************************************************
+2021/08/24 16:22:12 DEBUG: Transcribe Callback
+2021/08/24 16:22:12 DEBUG: transcribed text:  this is the last recording
+2021/08/24 16:22:13 DEBUG: ************************************************
+2021/08/24 16:22:13 DEBUG: Transcribe Callback
+2021/08/24 16:22:13 DEBUG: transcribed text:  this is the last recording
+2021/08/24 16:22:14 DEBUG: original speech:  this is the last recording
+2021/08/24 16:22:14 DEBUG: speech result:  this is the last recording
+2021/08/24 16:22:17 DEBUG: ******************************** Callback START
+2021/08/24 16:22:17 DEBUG: Call Status in-progress.
+
+2021/08/24 16:22:17 DEBUG: ******************************** Callback END
+2021/08/24 16:22:20 DEBUG: ************************************************
+2021/08/24 16:22:20 DEBUG: SpeechResult
+2021/08/24 16:22:20 DEBUG: welcome to your new Zhang account
+2021/08/24 16:22:22 DEBUG: ******************************** Callback START
+2021/08/24 16:22:22 DEBUG: Call Status completed.
+
+2021/08/24 16:22:22 DEBUG: ******************************** Callback END
+2021/08/24 16:22:24 DEBUG: RecordHandler
+2021/08/24 16:22:24 DEBUG: <?xml version="1.0"?>
+<Response><Pause length="0"></Pause><Record background="false" action="" maxLength="10" fileFormat="wav" transcribe="true" transcribeCallback="http://mohashi.ngrok.io/TranscribeCallback?hash=1496340684"></Record><Hangup></Hangup></Response>
+2021/08/24 16:22:25 DEBUG: SayHandler
+2021/08/24 16:22:25 DEBUG: <?xml version="1.0"?>
+<Response><Pause length="1"></Pause><Say voice="man" language="en-US" loop="1">what we do in life echoes in eternity</Say><Hangup></Hangup></Response>
+2021/08/24 16:22:26 DEBUG: ******************************** Callback START
+2021/08/24 16:22:26 DEBUG: Call Status in-progress.
+
+2021/08/24 16:22:26 DEBUG: ******************************** Callback END
+2021/08/24 16:22:31 DEBUG: ******************************** Callback START
+2021/08/24 16:22:31 DEBUG: Call Status completed.
+
+2021/08/24 16:22:31 DEBUG: ******************************** Callback END
+2021/08/24 16:22:32 DEBUG: ************************************************
+2021/08/24 16:22:32 DEBUG: Transcribe Callback
+2021/08/24 16:22:32 DEBUG: transcribed text:  
+2021/08/24 16:22:32 DEBUG: ******************************** Transcribe END
+2021/08/24 16:22:33 DEBUG: RecordHandler
+2021/08/24 16:22:33 DEBUG: <?xml version="1.0"?>
+<Response><Pause length="0"></Pause><Record background="false" action="" maxLength="10" fileFormat="wav" transcribe="true" transcribeCallback="http://mohashi.ngrok.io/TranscribeCallback?hash=1496340684"></Record><Hangup></Hangup></Response>
+2021/08/24 16:22:37 DEBUG: ************************************************
+2021/08/24 16:22:37 DEBUG: Transcribe Callback
+2021/08/24 16:22:37 DEBUG: transcribed text:  what we do in life echoes in eternity
+2021/08/24 16:22:37 DEBUG: original speech:  what we do in life echoes in eternity
+2021/08/24 16:22:37 DEBUG: speech result:  what we do in life echoes in eternity
+2021/08/24 16:22:38 DEBUG: ************************************************
+2021/08/24 16:22:38 DEBUG: Transcribe Callback
+2021/08/24 16:22:38 DEBUG: transcribed text:  what we do in life echoes in eternity
+2021/08/24 16:22:44 DEBUG: ************************************************
+2021/08/24 16:22:44 DEBUG: Transcribe Callback
+2021/08/24 16:22:44 DEBUG: transcribed text:  this is the last recording
+2021/08/24 16:22:44 DEBUG: ******************************** Transcribe END
+2021/08/24 16:22:46 DEBUG: Redirect Handler
+2021/08/24 16:22:46 DEBUG: <?xml version="1.0"?>
+<Response><Redirect>http://mohashi.ngrok.io/Pinging</Redirect></Response>
+2021/08/24 16:22:47 DEBUG: ******************************** Pinging
+2021/08/24 16:22:47 DEBUG: PingingHandler
+2021/08/24 16:22:47 DEBUG: ******************************** Callback START
+2021/08/24 16:22:47 DEBUG: Call Status in-progress.
+
+2021/08/24 16:22:47 DEBUG: ******************************** Callback END
+2021/08/24 16:22:48 DEBUG: ******************************** Callback START
+2021/08/24 16:22:48 DEBUG: Call Status completed.
+
+2021/08/24 16:22:48 DEBUG: ******************************** Callback END
+2021/08/24 16:23:01 DEBUG: ******************************** RejectCallback START
+2021/08/24 16:23:01 DEBUG: Call Status canceled.
+
+2021/08/24 16:23:01 DEBUG: ******************************** RejectCallback END
+2021/08/24 16:23:04 DEBUG: ************************************************
+2021/08/24 16:23:04 DEBUG: Transcribe Callback
+2021/08/24 16:23:04 DEBUG: transcribed text:  this is the last recording
+2021/08/24 16:23:04 DEBUG: ******************************** Transcribe END
+2021/08/24 16:23:11 DEBUG: SayHandler
+2021/08/24 16:23:11 DEBUG: <?xml version="1.0"?>
+<Response><Pause length="1"></Pause><Say voice="man" language="en-US" loop="2">what we do in life echoes in eternity</Say><Hangup></Hangup></Response>
+2021/08/24 16:23:11 DEBUG: ******************************** Callback START
+2021/08/24 16:23:11 DEBUG: Call Status in-progress.
+
+2021/08/24 16:23:11 DEBUG: ******************************** Callback END
+2021/08/24 16:23:16 DEBUG: ************************************************
+2021/08/24 16:23:16 DEBUG: Transcribe Callback
+2021/08/24 16:23:16 DEBUG: transcribed text:  
+2021/08/24 16:23:16 DEBUG: ******************************** Transcribe END
+2021/08/24 16:23:17 DEBUG: ************************************************
+2021/08/24 16:23:17 DEBUG: SpeechResult
+2021/08/24 16:23:17 DEBUG: what we do in life echoes in eternity
+2021/08/24 16:23:17 DEBUG: original speech:  what we do in life echoes in eternity
+2021/08/24 16:23:17 DEBUG: speech result:  what we do in life echoes in eternity
+2021/08/24 16:23:18 DEBUG: ******************************** Callback START
+2021/08/24 16:23:18 DEBUG: Call Status completed.
+
+2021/08/24 16:23:18 DEBUG: ******************************** Callback END
+2021/08/24 16:23:27 DEBUG: SmsHandler
+2021/08/24 16:23:27 DEBUG: <?xml version="1.0"?>
+<Response><Sms from="+12048003021" to="+12048003029" statusCallback="http://mohashi.ngrok.io/SmsStatus">Actions speak louder than words</Sms></Response>
+2021/08/24 16:23:29 DEBUG: SmsHandler
+2021/08/24 16:23:29 DEBUG: <?xml version="1.0"?>
+<Response><Sms from="+12048003021" to="+12048003029" statusCallback="http://mohashi.ngrok.io/SmsStatus">Actions speak louder than words</Sms></Response>
+2021/08/24 16:23:29 DEBUG: ************************************************
+2021/08/24 16:23:29 DEBUG: Transcribe Callback
+2021/08/24 16:23:29 DEBUG: transcribed text:  what we do in life echoes in eternity
+2021/08/24 16:23:29 DEBUG: ******************************** Transcribe END
+2021/08/24 16:23:30 DEBUG: *********** SMS Status Callback
+2021/08/24 16:23:30 DEBUG: SmsHandler
+2021/08/24 16:23:30 DEBUG: <?xml version="1.0"?>
+<Response><Sms from="+12048003021" to="+12048003029" statusCallback="http://mohashi.ngrok.io/SmsStatus">Actions speak louder than words</Sms></Response>
+2021/08/24 16:23:31 DEBUG: *********** SMS Status Callback
+2021/08/24 16:23:31 DEBUG: *********** SMS Status Callback
+2021/08/24 16:23:32 DEBUG: SmsHandler
+2021/08/24 16:23:32 DEBUG: <?xml version="1.0"?>
+<Response><Sms from="+12048003021" to="+12048003029" statusCallback="http://mohashi.ngrok.io/SmsStatus">Actions speak louder than words</Sms></Response>
+2021/08/24 16:23:32 DEBUG: *********** SMS Status Callback
+2021/08/24 16:23:32 DEBUG: *********** SMS Status Callback
+2021/08/24 16:23:32 DEBUG: *********** SMS Status Callback
+2021/08/24 16:23:33 DEBUG: *********** SMS Status Callback
+2021/08/24 16:23:33 DEBUG: SmsHandler
+2021/08/24 16:23:33 DEBUG: <?xml version="1.0"?>
+<Response><Sms from="+12048003021" to="+12048003029" statusCallback="http://mohashi.ngrok.io/SmsStatus">Actions speak louder than words</Sms></Response>
+2021/08/24 16:23:34 DEBUG: *********** SMS Status Callback
+2021/08/24 16:23:35 DEBUG: SmsHandler
+2021/08/24 16:23:35 DEBUG: <?xml version="1.0"?>
+<Response><Sms from="+12048003021" to="+12048003029" statusCallback="http://mohashi.ngrok.io/SmsStatus">Actions speak louder than words</Sms></Response>
+2021/08/24 16:23:35 DEBUG: *********** SMS Status Callback
+2021/08/24 16:23:36 DEBUG: *********** SMS Status Callback
+2021/08/24 16:23:36 DEBUG: *********** SMS Status Callback
+2021/08/24 16:23:36 DEBUG: *********** SMS Status Callback
+2021/08/24 16:23:36 DEBUG: *********** SMS Status Callback
+2021/08/24 16:23:37 DEBUG: SmsHandler
+2021/08/24 16:23:37 DEBUG: <?xml version="1.0"?>
+<Response><Sms from="+12048003021" to="+12048003029" statusCallback="http://mohashi.ngrok.io/SmsStatus">Actions speak louder than words</Sms></Response>
+2021/08/24 16:23:37 DEBUG: *********** SMS Status Callback
+2021/08/24 16:23:38 DEBUG: ******************************** Callback START
+2021/08/24 16:23:38 DEBUG: Call Status canceled.
+
+2021/08/24 16:23:38 DEBUG: ******************************** Callback END
+2021/08/24 16:23:38 DEBUG: *********** SMS Status Callback
+2021/08/24 16:23:39 DEBUG: *********** SMS Status Callback
+2021/08/24 16:23:40 DEBUG: *********** SMS Status Callback
+2021/08/24 16:23:41 DEBUG: *********** SMS Status Callback
+2021/08/24 16:23:41 DEBUG: *********** SMS Status Callback
+2021/08/24 16:23:41 DEBUG: <?xml version="1.0"?>
+<Response><Dial callbackUrl="http://mohashi.ngrok.io/DialCallback">+5561984385415</Dial><Hangup></Hangup></Response>
+2021/08/24 16:23:43 DEBUG: *********** SMS Status Callback
+2021/08/24 16:23:44 DEBUG: *********** SMS Status Callback
+2021/08/24 16:23:49 DEBUG: <?xml version="1.0"?>
+<Response><Dial callbackUrl="http://mohashi.ngrok.io/DialCallback">+5561984385415</Dial><Hangup></Hangup></Response>
+2021/08/24 16:23:58 DEBUG: ******************************** Callback START
+2021/08/24 16:23:58 DEBUG: Call Status in-progress.
+
+2021/08/24 16:23:58 DEBUG: ******************************** Callback END
+2021/08/24 16:23:59 DEBUG: ******************************** Dial Callback START
+2021/08/24 16:23:59 DEBUG: Call Status in-progress.
+
+2021/08/24 16:23:59 DEBUG: ******************************** Dial Callback END
+2021/08/24 16:24:05 DEBUG: *********** SMS Status Callback
+2021/08/24 16:24:05 DEBUG: ******************************** Callback START
+2021/08/24 16:24:05 DEBUG: Call Status in-progress.
+
+2021/08/24 16:24:05 DEBUG: ******************************** Callback END
+2021/08/24 16:24:05 DEBUG: ******************************** Dial Callback START
+2021/08/24 16:24:05 DEBUG: Call Status in-progress.
+
+2021/08/24 16:24:05 DEBUG: ******************************** Dial Callback END
+2021/08/24 16:24:07 DEBUG: ******************************** Callback START
+2021/08/24 16:24:07 DEBUG: Call Status completed.
+
+2021/08/24 16:24:07 DEBUG: ******************************** Callback END
+2021/08/24 16:24:07 DEBUG: ******************************** Dial Callback START
+2021/08/24 16:24:07 DEBUG: Call Status completed.
+
+2021/08/24 16:24:08 DEBUG: *********** SMS Status Callback
+2021/08/24 16:24:08 DEBUG: *********** SMS Status Callback
+2021/08/24 16:24:08 DEBUG: *********** SMS Status Callback
+2021/08/24 16:24:12 DEBUG: *********** SMS Status Callback
+2021/08/24 16:24:13 DEBUG: ******************************** Callback START
+2021/08/24 16:24:13 DEBUG: Call Status completed.
+
+2021/08/24 16:24:13 DEBUG: ******************************** Callback END
+2021/08/24 16:24:14 DEBUG: <?xml version="1.0"?>
+<Response><Dial callbackUrl="http://mohashi.ngrok.io/DialCallback">+5561984385415</Dial><Hangup></Hangup></Response>
+2021/08/24 16:24:14 DEBUG: ******************************** Dial Callback START
+2021/08/24 16:24:14 DEBUG: Call Status completed.
+
+2021/08/24 16:24:21 DEBUG: SayHandler
+2021/08/24 16:24:21 DEBUG: <?xml version="1.0"?>
+<Response><Pause length="1"></Pause><Say voice="man" language="en-US" loop="2">we shall fight on the beaches</Say><Hangup></Hangup></Response>
+2021/08/24 16:24:21 DEBUG: ******************************** Callback START
+2021/08/24 16:24:21 DEBUG: Call Status in-progress.
+
+2021/08/24 16:24:21 DEBUG: ******************************** Callback END
+2021/08/24 16:24:26 DEBUG: ************************************************
+2021/08/24 16:24:26 DEBUG: SpeechResult
+2021/08/24 16:24:26 DEBUG: we shall fight on the beaches
+2021/08/24 16:24:26 DEBUG: original speech:  we shall fight on the beaches
+2021/08/24 16:24:26 DEBUG: speech result:  we shall fight on the beaches
+2021/08/24 16:24:27 DEBUG: ******************************** Callback START
+2021/08/24 16:24:27 DEBUG: Call Status completed.
+
+2021/08/24 16:24:27 DEBUG: ******************************** Callback END
+2021/08/24 16:24:28 DEBUG: ******************************** Callback START
+2021/08/24 16:24:28 DEBUG: Call Status in-progress.
+
+2021/08/24 16:24:28 DEBUG: ******************************** Callback END
+2021/08/24 16:24:28 DEBUG: ******************************** Dial Callback START
+2021/08/24 16:24:28 DEBUG: Call Status in-progress.
+
+2021/08/24 16:24:28 DEBUG: ******************************** Dial Callback END
+2021/08/24 16:25:28 DEBUG: ************************************************
+2021/08/24 16:25:28 DEBUG: *** Config: config/config.ini
+2021/08/24 16:25:28 DEBUG: *** Number of Tries: 3
+2021/08/24 16:25:28 DEBUG: *** Log: log/zarbat.log
+2021/08/24 16:25:28 DEBUG: *** Logging Level: info
+2021/08/24 16:25:28 DEBUG: *** Features: [dial]
+2021/08/24 16:25:28 DEBUG: ************************************************
+2021/08/24 16:25:28 DEBUG: Server running
+2021/08/24 16:25:32 DEBUG: <?xml version="1.0"?>
+<Response><Dial callbackUrl="http://mohashi.ngrok.io/DialCallback">+5561984385415</Dial><Hangup></Hangup></Response>
+2021/08/24 16:25:45 DEBUG: ******************************** Callback START
+2021/08/24 16:25:45 DEBUG: Call Status in-progress.
+
+2021/08/24 16:25:45 DEBUG: ******************************** Callback END
+2021/08/24 16:25:45 DEBUG: ******************************** Dial Callback START
+2021/08/24 16:25:45 DEBUG: Call Status in-progress.
+
+2021/08/24 16:25:46 DEBUG: ******************************** Dial Callback END
+2021/08/24 16:25:54 DEBUG: ******************************** Callback START
+2021/08/24 16:25:54 DEBUG: Call Status completed.
+
+2021/08/24 16:25:54 DEBUG: ******************************** Callback END
+2021/08/24 16:25:54 DEBUG: ******************************** Dial Callback START
+2021/08/24 16:25:54 DEBUG: Call Status completed.
+
+2021/08/24 16:26:02 DEBUG: <?xml version="1.0"?>
+<Response><Dial callbackUrl="http://mohashi.ngrok.io/DialCallback">+5561984385415</Dial><Hangup></Hangup></Response>
+2021/08/24 16:35:58 DEBUG: ************************************************
+2021/08/24 16:35:58 DEBUG: *** Config: config/config.ini
+2021/08/24 16:35:58 DEBUG: *** Number of Tries: 3
+2021/08/24 16:35:58 DEBUG: *** Log: log/zarbat.log
+2021/08/24 16:35:58 DEBUG: *** Logging Level: info
+2021/08/24 16:35:58 DEBUG: *** Features: [writemyname]
+2021/08/24 16:35:58 DEBUG: ************************************************
+2021/08/24 16:35:58 DEBUG: Server running
+2021/08/24 16:35:59 DEBUG: ******************************** Dial Callback START
+2021/08/24 16:35:59 DEBUG: Call Status completed.
+
+2021/08/24 16:35:59 DEBUG: ******************************** Dial Callback END
+2021/08/24 16:35:59 DEBUG: ******************************** Callback START
+2021/08/24 16:35:59 DEBUG: ******************************** Dial Callback START
+2021/08/24 16:35:59 DEBUG: Call Status in-progress.
+
+2021/08/24 16:35:59 DEBUG: Call Status completed.
+
+2021/08/24 16:35:59 DEBUG: ******************************** Callback END
+2021/08/24 16:35:59 DEBUG: ******************************** Dial Callback END
+2021/08/24 16:35:59 DEBUG: ******************************** Callback START
+2021/08/24 16:35:59 DEBUG: Call Status completed.
+
+2021/08/24 16:35:59 DEBUG: ******************************** Callback END
+2021/08/24 16:35:59 DEBUG: ******************************** Callback START
+2021/08/24 16:35:59 DEBUG: Call Status completed.
+
+2021/08/24 16:35:59 DEBUG: ******************************** Callback END
+2021/08/24 16:35:59 DEBUG: ******************************** Dial Callback START
+2021/08/24 16:35:59 DEBUG: Call Status completed.
+
+2021/08/24 16:35:59 DEBUG: ******************************** Dial Callback END
+2021/08/24 16:36:00 DEBUG: ******************************** Dial Callback START
+2021/08/24 16:36:00 DEBUG: Call Status completed.
+
+2021/08/24 16:36:00 DEBUG: ******************************** Dial Callback END
+2021/08/24 16:36:47 DEBUG: ************************************************
+2021/08/24 16:36:47 DEBUG: *** Config: config/config.ini
+2021/08/24 16:36:47 DEBUG: *** Number of Tries: 3
+2021/08/24 16:36:47 DEBUG: *** Log: log/zarbat.log
+2021/08/24 16:36:47 DEBUG: *** Logging Level: info
+2021/08/24 16:36:47 DEBUG: *** Features: [writemyname]
+2021/08/24 16:36:47 DEBUG: ************************************************
+2021/08/24 16:36:47 DEBUG: Server running
+2021/08/24 16:44:28 DEBUG: ************************************************
+2021/08/24 16:44:28 DEBUG: *** Config: config/config.ini
+2021/08/24 16:44:28 DEBUG: *** Number of Tries: 3
+2021/08/24 16:44:28 DEBUG: *** Log: log/zarbat.log
+2021/08/24 16:44:28 DEBUG: *** Logging Level: info
+2021/08/24 16:44:28 DEBUG: *** Features: [writemyname]
+2021/08/24 16:44:28 DEBUG: ************************************************
+2021/08/24 16:44:28 DEBUG: Server running
+2021/08/24 16:44:52 DEBUG: ************************************************
+2021/08/24 16:44:52 DEBUG: *** Config: config/config.ini
+2021/08/24 16:44:52 DEBUG: *** Number of Tries: 3
+2021/08/24 16:44:52 DEBUG: *** Log: log/zarbat.log
+2021/08/24 16:44:52 DEBUG: *** Logging Level: info
+2021/08/24 16:44:52 DEBUG: *** Features: [writemyname]
+2021/08/24 16:44:52 DEBUG: ************************************************
+2021/08/24 16:44:52 DEBUG: Server running
+2021/08/24 16:44:52 DEBUG: My name is Aron
+2021/08/24 16:45:09 DEBUG: ************************************************
+2021/08/24 16:45:09 DEBUG: *** Config: config/config.ini
+2021/08/24 16:45:09 DEBUG: *** Number of Tries: 3
+2021/08/24 16:45:09 DEBUG: *** Log: log/zarbat.log
+2021/08/24 16:45:09 DEBUG: *** Logging Level: info
+2021/08/24 16:45:09 DEBUG: *** Features: [writemyname]
+2021/08/24 16:45:09 DEBUG: ************************************************
+2021/08/24 16:45:09 DEBUG: Server running
+2021/08/24 16:45:09 DEBUG: My name is Masaru
+2021/08/24 16:45:09 DEBUG: Error Expected name Aron, but received Masaru
+2021/08/24 16:45:14 DEBUG: My name is Masaru
+2021/08/24 16:45:14 DEBUG: Error Expected name Aron, but received Masaru
+2021/08/24 16:45:19 DEBUG: My name is Masaru
+2021/08/24 16:45:19 DEBUG: Error Expected name Aron, but received Masaru

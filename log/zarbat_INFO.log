@@ -1,0 +1,143 @@
+2021/08/24 13:33:10 INFO: ****************************************
+2021/08/24 13:33:10 INFO: START OF TEST SUITE
+2021/08/24 13:33:10 INFO: Config: config/config.ini
+2021/08/24 13:33:10 INFO: Number of Tries: 3
+2021/08/24 13:33:10 INFO: Log: log/zarbat.log
+2021/08/24 13:33:10 INFO: Tests: [hangup][number][pause][ping][play][playlastrecording][record][redirect][reject][say][sms][dial][gather]
+2021/08/24 13:33:10 INFO: .........................................
+2021/08/24 13:33:18 INFO: * Feature/Scenario: HANGUP - Status: OK
+2021/08/24 13:33:33 INFO: * Feature/Scenario: NUMBER - Status: OK
+2021/08/24 13:33:46 INFO: * Feature/Scenario: PAUSE - Status: OK
+2021/08/24 13:34:06 INFO: * Feature/Scenario: PING - Status: OK
+2021/08/24 13:34:39 INFO: * Feature/Scenario: PLAY - Status: OK
+2021/08/24 13:35:07 INFO: * Feature/Scenario: PLAYLASTRECORDING - Status: OK
+2021/08/24 13:35:26 INFO: * Feature/Scenario: RECORD - Status: OK
+2021/08/24 13:35:54 INFO: * Feature/Scenario: REDIRECT - Status: OK
+2021/08/24 13:37:01 INFO: * Feature/Scenario: REJECT - Status: Not OK
+2021/08/24 13:37:14 INFO: * Feature/Scenario: REJECT - Status: OK
+2021/08/24 13:37:32 INFO: * Feature/Scenario: SAY - Status: OK
+2021/08/24 13:37:49 INFO: * Feature/Scenario: SMS - Status: OK
+2021/08/24 13:37:56 INFO: * Feature/Scenario: DIAL - Status: Not OK
+2021/08/24 13:38:22 INFO: * Feature/Scenario: DIAL - Status: Not OK
+2021/08/24 13:38:29 INFO: * Feature/Scenario: DIAL - Status: Not OK
+2021/08/24 13:38:43 INFO: * Feature/Scenario: GATHER - Status: OK
+2021/08/24 13:38:48 INFO: Passed  12
+2021/08/24 13:38:48 INFO: Failed  1
+2021/08/24 13:38:48 INFO: ...END OF TEST SUITE
+2021/08/24 13:43:13 INFO: ****************************************
+2021/08/24 13:43:13 INFO: START OF TEST SUITE
+2021/08/24 13:43:13 INFO: Config: config/config.ini
+2021/08/24 13:43:13 INFO: Number of Tries: 3
+2021/08/24 13:43:13 INFO: Log: log/zarbat.log
+2021/08/24 13:43:13 INFO: Tests: [hangup][number][pause][ping][play][playlastrecording][record][redirect][reject][say][sms][dial][gather]
+2021/08/24 13:43:13 INFO: .........................................
+2021/08/24 13:43:16 INFO: * Feature/Scenario: HANGUP - Status: OK
+2021/08/24 13:43:32 INFO: * Feature/Scenario: NUMBER - Status: OK
+2021/08/24 13:44:09 INFO: * Feature/Scenario: PAUSE - Status: OK
+2021/08/24 13:44:18 INFO: * Feature/Scenario: PING - Status: OK
+2021/08/24 13:44:51 INFO: * Feature/Scenario: PLAY - Status: OK
+2021/08/24 13:46:16 INFO: * Feature/Scenario: PLAYLASTRECORDING - Status: Not OK
+2021/08/24 13:48:12 INFO: * Feature/Scenario: PLAYLASTRECORDING - Status: Not OK
+2021/08/24 13:48:37 INFO: * Feature/Scenario: PLAYLASTRECORDING - Status: OK
+2021/08/24 13:49:01 INFO: * Feature/Scenario: RECORD - Status: OK
+2021/08/24 13:49:10 INFO: * Feature/Scenario: REDIRECT - Status: OK
+2021/08/24 13:50:16 INFO: * Feature/Scenario: REJECT - Status: Not OK
+2021/08/24 13:50:28 INFO: * Feature/Scenario: REJECT - Status: OK
+2021/08/24 13:50:44 INFO: * Feature/Scenario: SAY - Status: OK
+2021/08/24 13:50:56 INFO: * Feature/Scenario: SMS - Status: OK
+2021/08/24 13:51:04 INFO: * Feature/Scenario: DIAL - Status: Not OK
+2021/08/24 13:51:29 INFO: * Feature/Scenario: DIAL - Status: Not OK
+2021/08/24 13:51:55 INFO: * Feature/Scenario: DIAL - Status: Not OK
+2021/08/24 13:52:07 INFO: * Feature/Scenario: GATHER - Status: Not OK
+2021/08/24 13:52:20 INFO: * Feature/Scenario: GATHER - Status: OK
+2021/08/24 13:52:25 INFO: Passed  12
+2021/08/24 13:52:25 INFO: Failed  1
+2021/08/24 13:52:25 INFO: ...END OF TEST SUITE
+2021/08/24 16:19:09 INFO: ****************************************
+2021/08/24 16:19:09 INFO: START OF TEST SUITE
+2021/08/24 16:19:09 INFO: Config: config/config.ini
+2021/08/24 16:19:09 INFO: Number of Tries: 3
+2021/08/24 16:19:09 INFO: Log: log/zarbat.log
+2021/08/24 16:19:09 INFO: Tests: [hangup][number][pause][ping][play][playlastrecording][record][redirect][reject][say][sms][dial][gather]
+2021/08/24 16:19:09 INFO: .........................................
+2021/08/24 16:19:18 INFO: * Feature/Scenario: HANGUP - Status: OK
+2021/08/24 16:19:36 INFO: * Feature/Scenario: NUMBER - Status: OK
+2021/08/24 16:19:49 INFO: * Feature/Scenario: PAUSE - Status: OK
+2021/08/24 16:19:57 INFO: * Feature/Scenario: PING - Status: OK
+2021/08/24 16:20:30 INFO: * Feature/Scenario: PLAY - Status: OK
+2021/08/24 16:21:54 INFO: * Feature/Scenario: PLAYLASTRECORDING - Status: Not OK
+2021/08/24 16:22:16 INFO: * Feature/Scenario: PLAYLASTRECORDING - Status: OK
+2021/08/24 16:22:38 INFO: * Feature/Scenario: RECORD - Status: OK
+2021/08/24 16:22:48 INFO: * Feature/Scenario: REDIRECT - Status: OK
+2021/08/24 16:23:02 INFO: * Feature/Scenario: REJECT - Status: OK
+2021/08/24 16:23:18 INFO: * Feature/Scenario: SAY - Status: OK
+2021/08/24 16:23:33 INFO: * Feature/Scenario: SMS - Status: OK
+2021/08/24 16:23:40 INFO: * Feature/Scenario: DIAL - Status: Not OK
+2021/08/24 16:24:05 INFO: * Feature/Scenario: DIAL - Status: Not OK
+2021/08/24 16:24:12 INFO: * Feature/Scenario: DIAL - Status: Not OK
+2021/08/24 16:24:27 INFO: * Feature/Scenario: GATHER - Status: OK
+2021/08/24 16:24:32 INFO: Passed  12
+2021/08/24 16:24:32 INFO: Failed  1
+2021/08/24 16:24:32 INFO: ...END OF TEST SUITE
+2021/08/24 16:25:28 INFO: ****************************************
+2021/08/24 16:25:28 INFO: START OF TEST SUITE
+2021/08/24 16:25:28 INFO: Config: config/config.ini
+2021/08/24 16:25:28 INFO: Number of Tries: 3
+2021/08/24 16:25:28 INFO: Log: log/zarbat.log
+2021/08/24 16:25:28 INFO: Tests: [dial]
+2021/08/24 16:25:28 INFO: .........................................
+2021/08/24 16:25:54 INFO: * Feature/Scenario: DIAL - Status: Not OK
+2021/08/24 16:35:58 INFO: ****************************************
+2021/08/24 16:35:58 INFO: START OF TEST SUITE
+2021/08/24 16:35:58 INFO: Config: config/config.ini
+2021/08/24 16:35:58 INFO: Number of Tries: 3
+2021/08/24 16:35:58 INFO: Log: log/zarbat.log
+2021/08/24 16:35:58 INFO: Tests: [writemyname]
+2021/08/24 16:35:58 INFO: .........................................
+2021/08/24 16:35:59 INFO: * Feature/Scenario: WRITEMYNAME - Status: OK
+2021/08/24 16:36:04 INFO: Passed  1
+2021/08/24 16:36:04 INFO: Failed  0
+2021/08/24 16:36:04 INFO: ...END OF TEST SUITE
+2021/08/24 16:36:47 INFO: ****************************************
+2021/08/24 16:36:47 INFO: START OF TEST SUITE
+2021/08/24 16:36:47 INFO: Config: config/config.ini
+2021/08/24 16:36:47 INFO: Number of Tries: 3
+2021/08/24 16:36:47 INFO: Log: log/zarbat.log
+2021/08/24 16:36:47 INFO: Tests: [writemyname]
+2021/08/24 16:36:47 INFO: .........................................
+2021/08/24 16:36:47 INFO: * Feature/Scenario: WRITEMYNAME - Status: OK
+2021/08/24 16:36:52 INFO: Passed  1
+2021/08/24 16:36:52 INFO: Failed  0
+2021/08/24 16:36:52 INFO: ...END OF TEST SUITE
+2021/08/24 16:44:28 INFO: ****************************************
+2021/08/24 16:44:28 INFO: START OF TEST SUITE
+2021/08/24 16:44:28 INFO: Config: config/config.ini
+2021/08/24 16:44:28 INFO: Number of Tries: 3
+2021/08/24 16:44:28 INFO: Log: log/zarbat.log
+2021/08/24 16:44:28 INFO: Tests: [writemyname]
+2021/08/24 16:44:28 INFO: .........................................
+2021/08/24 16:44:28 INFO: * Feature/Scenario: WRITEMYNAME - Status: OK
+2021/08/24 16:44:52 INFO: ****************************************
+2021/08/24 16:44:52 INFO: START OF TEST SUITE
+2021/08/24 16:44:52 INFO: Config: config/config.ini
+2021/08/24 16:44:52 INFO: Number of Tries: 3
+2021/08/24 16:44:52 INFO: Log: log/zarbat.log
+2021/08/24 16:44:52 INFO: Tests: [writemyname]
+2021/08/24 16:44:52 INFO: .........................................
+2021/08/24 16:44:52 INFO: * Feature/Scenario: WRITEMYNAME - Status: OK
+2021/08/24 16:44:57 INFO: Passed  1
+2021/08/24 16:44:57 INFO: Failed  0
+2021/08/24 16:44:57 INFO: ...END OF TEST SUITE
+2021/08/24 16:45:09 INFO: ****************************************
+2021/08/24 16:45:09 INFO: START OF TEST SUITE
+2021/08/24 16:45:09 INFO: Config: config/config.ini
+2021/08/24 16:45:09 INFO: Number of Tries: 3
+2021/08/24 16:45:09 INFO: Log: log/zarbat.log
+2021/08/24 16:45:09 INFO: Tests: [writemyname]
+2021/08/24 16:45:09 INFO: .........................................
+2021/08/24 16:45:09 INFO: * Feature/Scenario: WRITEMYNAME - Status: Not OK
+2021/08/24 16:45:14 INFO: * Feature/Scenario: WRITEMYNAME - Status: Not OK
+2021/08/24 16:45:19 INFO: * Feature/Scenario: WRITEMYNAME - Status: Not OK
+2021/08/24 16:45:24 INFO: Passed  0
+2021/08/24 16:45:24 INFO: Failed  1
+2021/08/24 16:45:24 INFO: ...END OF TEST SUITE
