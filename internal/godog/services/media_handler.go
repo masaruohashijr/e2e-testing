@@ -2,10 +2,10 @@ package services
 
 import (
 	"net/http"
-	"zarbat_test/internal/logging"
+	l "zarbat_test/internal/logging"
 )
 
 func MediaHandler(w http.ResponseWriter, r *http.Request) {
-	logging.Debug.Println("MediaHandler")
+	l.Debug.Println("MediaHandler")
 	http.ServeFile(w, r, "media/Avaya.jpg")
 }

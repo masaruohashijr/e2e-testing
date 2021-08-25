@@ -5,15 +5,16 @@ import (
 	"net/http"
 	"os"
 	"zarbat_test/internal/logging"
+	l "zarbat_test/internal/logging"
 )
 
 func GatherHandler(w http.ResponseWriter, r *http.Request) {
-	//logging.Debug.Println("GatherHandler")
+	l.Debug.Println("GatherHandler")
 	xml, err := os.ReadFile("xml/gather.xml")
 	if err != nil {
 		println(err.Error())
 	}
-	//logging.Debug.Println(string(xml))
+	l.Debug.Println(string(xml))
 	w.Write([]byte(xml))
 }
 

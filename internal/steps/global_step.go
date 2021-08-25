@@ -98,6 +98,13 @@ func InitializeScenario(ctx *godog.ScenarioContext) {
 	ctx.Step(`^I view "([^"]*)" info$`, IViewInfo)
 	ctx.Step(`^I should list my numbers as "([^"]*)"$`, IShouldListMyNumbersAs)
 	ctx.Step(`^I release all my numbers except "([^"]*)"$`, IReleaseAllMyNumbersExcept)
+<<<<<<< Updated upstream
+=======
+	ctx.Step(`^I should list my (\d+) numbers$`, IShouldListMyNumbers)
+	ctx.Step(`^I list my numbers$`, IListMyNumbers)
+	ctx.Step(`^I want to write my name "([^"]*)"$`, IWantToWriteMyName)
+	ctx.Step(`^I should see "([^"]*)" on console$`, IShouldSeeOnConsole)
+>>>>>>> Stashed changes
 }
 
 func InitializeTestSuite(ctx *godog.TestSuiteContext) {

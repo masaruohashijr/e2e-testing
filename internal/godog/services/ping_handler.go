@@ -4,17 +4,19 @@ import (
 	"fmt"
 	"net/http"
 	"os"
-	"zarbat_test/internal/logging"
+	l "zarbat_test/internal/logging"
 )
 
 func PingingHandler(w http.ResponseWriter, r *http.Request) {
 	r.ParseForm()
-	logging.Debug.Println("******************************** Pinging")
-	logging.Debug.Println("PingingHandler")
+	l.Debug.Println("******************************** Pinging")
+	l.Debug.Println("PingingHandler")
 	hash := r.FormValue("hash")
 	sTestHash := fmt.Sprint(TestHash)
 	fmt.Println("SpeechResultHandler Hash: ", hash)
+	l.Debug.Println("SpeechResultHandler Hash: ", hash)
 	fmt.Println("SpeechResultHandler TestHash: ", sTestHash)
+	l.Debug.Println("SpeechResultHandler TestHash: ", sTestHash)
 	if hash == sTestHash {
 		Ch <- "Pinged"
 	}
@@ -23,11 +25,11 @@ func PingingHandler(w http.ResponseWriter, r *http.Request) {
 }
 
 func PingHandler(w http.ResponseWriter, r *http.Request) {
-	logging.Debug.Println("PingHandler")
+	l.Debug.Println("PingHandler")
 	xml, err := os.ReadFile("xml/ping.xml")
 	if err != nil {
-		println(err.Error())
+		l.Debug.Println(err.Error())
 	}
-	logging.Debug.Println(string(xml))
+	l.Debug.Println(string(xml))
 	w.Write([]byte(xml))
 }

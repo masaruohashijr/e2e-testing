@@ -6,6 +6,7 @@ import (
 	"net/url"
 	"time"
 	"zarbat_test/internal/godog/services"
+	"zarbat_test/internal/logging"
 	"zarbat_test/pkg/domains"
 )
 
@@ -35,8 +36,10 @@ func ShouldBeAbleToViewTheMMSWithMedia(number, message string, mediaName string)
 	select {
 	case bodyContent = <-Ch:
 		fmt.Printf("Result: %s\n", bodyContent)
+		logging.Debug.Printf("Result: %s\n", bodyContent)
 	case <-time.After(time.Duration(services.TestTimeout) * time.Second):
 		fmt.Println("timeout")
+		logging.Debug.Println("timeout")
 		Ch = nil
 		return fmt.Errorf("timeout")
 	}

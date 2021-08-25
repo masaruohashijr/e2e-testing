@@ -5,6 +5,7 @@ import (
 	"io/ioutil"
 	"log"
 	"strings"
+	l "zarbat_test/internal/logging"
 )
 
 func WriteActionXML(xmlName, strXML string) {
@@ -25,5 +26,6 @@ func AppendActionXML(actionUrl, appendix string) {
 	index := strings.Index(strXML, "</Response>")
 	strXML = strXML[:index] + appendix + strXML[index:]
 	fmt.Println(strXML)
+	l.Debug.Println("AppendActionXML:\n", strXML)
 	WriteActionXML(xmlName, strXML)
 }

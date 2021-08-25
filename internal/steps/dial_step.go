@@ -7,6 +7,7 @@ import (
 	"strconv"
 	"time"
 	"zarbat_test/internal/godog/services"
+	"zarbat_test/internal/logging"
 	"zarbat_test/pkg/domains"
 )
 
@@ -26,7 +27,7 @@ func ConfiguredToDial(dialerNumber, dialedNumber string) error {
 	Configuration.To, Configuration.ToSid = Configuration.SelectNumber(dialerNumber)
 	Configuration.VoiceUrl = services.BaseUrl + "/Dial"
 	NumberPrimaryPort.UpdateNumber()
-	println(string(x))
+	logging.Debug.Println(string(x))
 	return nil
 }
 

@@ -4,6 +4,7 @@ import (
 	"encoding/xml"
 	"strings"
 	"zarbat_test/internal/godog/services"
+	"zarbat_test/internal/logging"
 	"zarbat_test/pkg/domains"
 )
 
@@ -28,7 +29,7 @@ func checkSayGather() {
 		ResponseSay.Say.Loop = 2
 		x, _ := xml.MarshalIndent(ResponseSay, "", "")
 		strXML := domains.Header + string(x)
-		println(strXML)
+		logging.Debug.Println(strXML)
 		services.WriteActionXML("say", strXML)
 		Configuration.ActionUrl = services.BaseUrl + "/Say"
 	}

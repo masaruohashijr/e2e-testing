@@ -26,7 +26,9 @@ func CallbackHandler(w http.ResponseWriter, r *http.Request) {
 		callSid := url_parameters["CallSid"][0]
 		l.Debug.Println(fmt.Sprintf("Call Status %s.\n", status))
 		fmt.Printf("Call Status %s.\n", status)
+		l.Debug.Println(fmt.Sprintf("Call Sid %s.\n", callSid))
 		fmt.Printf("Call Sid %s.\n", callSid)
+		l.Debug.Println(fmt.Sprintf("Call Sid Context %s.\n", CallSidContext))
 		fmt.Printf("Call Sid Context %s.\n", CallSidContext)
 		if status == "completed" && CloseChannel && callSid == CallSidContext {
 			Ch <- b
@@ -51,7 +53,9 @@ func DialCallbackHandler(w http.ResponseWriter, r *http.Request) {
 	callSid := url_parameters["CallSid"][0]
 	l.Debug.Println(fmt.Sprintf("Call Status %s.\n", status))
 	fmt.Printf("Call Status %s.\n", status)
+	l.Debug.Println(fmt.Sprintf("Call Sid %s.\n", callSid))
 	fmt.Printf("Call Sid %s.\n", callSid)
+	l.Debug.Println(fmt.Sprintf("Call Sid Context %s.\n", CallSidContext))
 	fmt.Printf("Call Sid Context %s.\n", CallSidContext)
 	if status == "completed" && CloseChannel {
 		Ch <- b

@@ -3,16 +3,16 @@ package services
 import (
 	"net/http"
 	"os"
-	"zarbat_test/internal/logging"
+	l "zarbat_test/internal/logging"
 )
 
 func PauseHandler(w http.ResponseWriter, r *http.Request) {
-	logging.Debug.Println("PauseHandler")
+	l.Debug.Println("PauseHandler")
 
 	xml, err := os.ReadFile("xml/pause.xml")
 	if err != nil {
-		println(err.Error())
+		l.Debug.Println(err.Error())
 	}
-	logging.Debug.Println(string(xml))
+	l.Debug.Println(string(xml))
 	w.Write([]byte(xml))
 }

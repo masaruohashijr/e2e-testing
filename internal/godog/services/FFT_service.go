@@ -6,6 +6,7 @@ import (
 	"math"
 	"math/cmplx"
 	"os"
+	l "zarbat_test/internal/logging"
 
 	"github.com/xigh/go-wavreader"
 )
@@ -49,6 +50,7 @@ func GetFrequencies(filePath string, expectedFrequency int, similarity int) (err
 		}
 	}
 	fmt.Printf("Maximum: %f", max)
+	l.Debug.Printf("Maximum: %f", max)
 	var fq []int
 	for i := range freqs {
 		m := cmplx.Abs(freqs[i])
@@ -58,6 +60,7 @@ func GetFrequencies(filePath string, expectedFrequency int, similarity int) (err
 		}
 	}
 	fmt.Printf("The maximum index is %d\n", maxi)
+	l.Debug.Printf("The maximum index is %d\n", maxi)
 	for j := range fq {
 		if float64(fq[j]) < float64(expectedFrequency)*float64(1.10) && float64(fq[j]) > float64(expectedFrequency)*float64(0.9) {
 			return nil

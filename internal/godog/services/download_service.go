@@ -5,10 +5,11 @@ import (
 	"io"
 	"net/http"
 	"os"
+	l "zarbat_test/internal/logging"
 )
 
 func DownloadFile(filepath string, url string) (err error) {
-
+	l.Debug.Println("******************************** DownloadFile")
 	// Create the file
 	out, err := os.Create(filepath)
 	if err != nil {

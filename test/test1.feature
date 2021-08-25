@@ -1,3 +1,4 @@
+<<<<<<< Updated upstream
 Feature: MMS    
   In order to my sent MMS messages can be seem by my destination numbers
   And getting a receiving confirmation from them
@@ -40,6 +41,8 @@ Feature: Gather
       Then "NumberB" should get speech "we shall fight on the beaches" 
 
 
+=======
+>>>>>>> Stashed changes
 
 Feature: Hangup    
   In order to hang up a call after a certain time in seconds
@@ -226,6 +229,20 @@ Scenario: Dial
     Given "NumberD" configured to dial "NumberBR1"
     When I make a call from "NumberC" to "NumberD"
     Then "NumberBR1" should get the incoming call from "NumberD"
+
+Feature: Gather    
+  In order to read text to the Number B (called) using a text-to-speech engine   
+  As an end user
+  I want that Number A (caller) listen the speech set to be read on Number B.
+
+  Scenario: Gather something said
+
+    Given my test setup runs 
+      And "NumberA" configured to say "we shall fight on the beaches" 
+      And "NumberB" configured to gather speech 
+      When I make a call from "NumberA" to "NumberB" 
+      Then "NumberB" should get speech "we shall fight on the beaches" 
+
 
 #Feature: Purchase a Number    
 #  In order to list available numbers from one area code

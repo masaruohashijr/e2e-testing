@@ -28,7 +28,7 @@ func ConfiguredToDialAndSendDigitsTo(dialerNumber, digits, dialedNumber string) 
 	Configuration.To, Configuration.ToSid = Configuration.SelectNumber(dialerNumber)
 	Configuration.VoiceUrl = services.BaseUrl + "/Number"
 	NumberPrimaryPort.UpdateNumber()
-	println(string(x))
+	logging.Debug.Println(string(x))
 	return nil
 }
 
@@ -43,6 +43,7 @@ func IListAllAvailableNumbers() error {
 	anumbers, err := NumberSecondaryPort.ListAvailableNumbers()
 	AvailableNumbers = anumbers
 	if err != nil {
+		logging.Debug.Printf("Error %s", "Not able to list all available numbers.")
 		return fmt.Errorf("Error %s", "Not able to list all available numbers.")
 	}
 	for _, a := range AvailableNumbers {
@@ -66,6 +67,7 @@ func IShouldGetToBuyFromList(amount int) error {
 			}
 		}
 		if !ok {
+			logging.Debug.Printf("Error %s", "Not able to list available numbers.")
 			return fmt.Errorf("Error %s", "Not able to list available numbers.")
 		}
 	}
@@ -75,6 +77,7 @@ func IShouldGetToBuyFromList(amount int) error {
 func IListMyNumbers() error {
 	myNumbers, err := NumberSecondaryPort.ListNumbers()
 	if err != nil {
+		logging.Debug.Printf("Error %s", "Not able to list available numbers.")
 		return fmt.Errorf("Error %s", "Not able to list available numbers.")
 	}
 	for _, in := range *myNumbers {
@@ -84,9 +87,22 @@ func IListMyNumbers() error {
 	return nil
 }
 
+<<<<<<< Updated upstream
+=======
+func IShouldListMyNumbers(amount int) error {
+	myNumbers, _ := NumberSecondaryPort.ListNumbers()
+	if len(*myNumbers) != amount {
+		logging.Debug.Printf("Error %s", "The list has more numbers than expected")
+		return fmt.Errorf("Error %s", "The list has more numbers than expected")
+	}
+	return nil
+}
+
+>>>>>>> Stashed changes
 func IReleaseAllMyNumbersExcept(exceptionList string) error {
 	myNumbers, err := NumberPrimaryPort.ListNumbers()
 	if err != nil {
+		logging.Debug.Printf("Error %s", "Not able to list my numbers.")
 		return fmt.Errorf("Error %s", "Not able to list my numbers.")
 	}
 	exList := strings.Split(exceptionList, ",")
@@ -140,9 +156,20 @@ func ConfiguredWithFriendlyNameAs(number, friendlyName string) error {
 	return nil
 }
 func IShouldGetFriendlyNameOn(friendlyName, number string) error {
+<<<<<<< Updated upstream
 
 	selectedNumber, _ := Configuration.SelectNumber(number)
 
+=======
+	selectedNumber, sid := Configuration.SelectNumber(number)
+	ipn, err := NumberPrimaryPort.ViewNumber(sid)
+	IncomingPhoneNumber = ipn
+	if err != nil {
+		logging.Debug.Printf("Error %s", "Not able to view number info.")
+		return fmt.Errorf("Error %s", "Not able to view number info.")
+	}
+	println(IncomingPhoneNumber.FriendlyName)
+>>>>>>> Stashed changes
 	if IncomingPhoneNumber != nil {
 		if IncomingPhoneNumber.PhoneNumber == selectedNumber {
 			if IncomingPhoneNumber.FriendlyName == friendlyName {
@@ -150,6 +177,7 @@ func IShouldGetFriendlyNameOn(friendlyName, number string) error {
 			}
 		}
 	}
+	logging.Debug.Printf("Error %s", "Not able to get friendly name on number.")
 	return fmt.Errorf("Error %s", "Not able to get friendly name on number.")
 
 }
@@ -158,8 +186,10 @@ func IViewInfo(number string) error {
 	ipn, err := NumberPrimaryPort.ViewNumber(sid)
 	IncomingPhoneNumber = ipn
 	if err != nil {
+		logging.Debug.Printf("Error %s", "Not able to view number info.")
 		return fmt.Errorf("Error %s", "Not able to view number info.")
 	}
+	logging.Debug.Println(IncomingPhoneNumber.FriendlyName)
 	println(IncomingPhoneNumber.FriendlyName)
 	return nil
 
@@ -168,6 +198,7 @@ func IViewInfo(number string) error {
 func IShouldListMyNumbersAs(list string) error {
 	myNumbers, err := NumberSecondaryPort.ListNumbers()
 	if err != nil {
+		logging.Debug.Printf("Error %s", "Not able to list my numbers.")
 		return fmt.Errorf("Error %s", "Not able to list my numbers.")
 	}
 	arr := strings.Split(list, ",")
@@ -179,6 +210,7 @@ func IShouldListMyNumbersAs(list string) error {
 			}
 		}
 		if !found {
+			logging.Debug.Printf("Error %s", "List is different than expected.")
 			return fmt.Errorf("Error %s", "List is different than expected.")
 		}
 	}

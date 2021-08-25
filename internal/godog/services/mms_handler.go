@@ -5,26 +5,27 @@ import (
 	"net/http"
 	"net/url"
 	"os"
-	"zarbat_test/internal/logging"
+	l "zarbat_test/internal/logging"
 )
 
 func MmsHandler(w http.ResponseWriter, r *http.Request) {
-	logging.Debug.Println("MmsHandler")
+	l.Debug.Println("MmsHandler")
 	xml, err := os.ReadFile("xml/mms.xml")
 	if err != nil {
-		println(err.Error())
+		l.Debug.Println(err.Error())
 	}
-	logging.Debug.Println(string(xml))
+	l.Debug.Println(string(xml))
 	w.Write([]byte(xml))
 }
 
 func MmsStatusHandler(w http.ResponseWriter, r *http.Request) {
-	logging.Debug.Println("*********** MMS Status Callback")
+	l.Debug.Println("*********** MMS Status Callback")
 	body, err := ioutil.ReadAll(r.Body)
 	if err != nil {
 		println(err.Error())
 	}
 	bodyContent := string(body)
+	l.Debug.Println(bodyContent)
 	url_parameters, _ := url.ParseQuery(bodyContent)
 	if url_parameters["DlrStatus"] != nil {
 		status := url_parameters["DlrStatus"][0]

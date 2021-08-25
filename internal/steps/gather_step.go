@@ -27,7 +27,7 @@ func ConfiguredToGatherSpeech(number string) error {
 	ResponseGather = *r
 	x, _ := xml.MarshalIndent(ResponseGather, "", "")
 	strXML := domains.Header + string(x)
-	println(strXML)
+	logging.Debug.Println(strXML)
 	services.WriteActionXML("gather", strXML)
 	Configuration.To, Configuration.ToSid = Configuration.SelectNumber(number)
 	Configuration.VoiceUrl = services.BaseUrl + "/Gather"
@@ -68,8 +68,10 @@ func ShouldGetDigitsFrom(number, expectedDigits string) error {
 	select {
 	case digitsResult = <-Ch:
 		fmt.Printf("Result: %s\n", digitsResult)
+		logging.Debug.Printf("Result: %s\n", digitsResult)
 	case <-time.After(time.Duration(services.TestTimeout) * time.Second):
 		fmt.Println("timeout")
+		logging.Debug.Println("timeout")
 		Ch = nil
 		return fmt.Errorf("timeout")
 	}
@@ -103,7 +105,7 @@ func ConfiguredToGatherDigitsUntil(number, finishOnKey string) error {
 	ResponseGather = *r
 	x, _ := xml.MarshalIndent(ResponseGather, "", "")
 	strXML := domains.Header + string(x)
-	println(strXML)
+	logging.Debug.Println(strXML)
 	services.WriteActionXML("gather", strXML)
 	Configuration.To, Configuration.ToSid = Configuration.SelectNumber(number)
 	Configuration.VoiceUrl = services.BaseUrl + "/Gather"

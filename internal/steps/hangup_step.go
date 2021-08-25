@@ -6,6 +6,7 @@ import (
 	"net/url"
 	"strconv"
 	"zarbat_test/internal/godog/services"
+	"zarbat_test/internal/logging"
 	"zarbat_test/pkg/domains"
 )
 
@@ -19,7 +20,7 @@ func ConfiguredToHangUpAfterSeconds(Number string, timeInSeconds int) error {
 	ResponseHangup.Hangup = *h
 	x, _ := xml.MarshalIndent(ResponseHangup, "", "")
 	strXML := domains.Header + string(x)
-	println(strXML)
+	logging.Debug.Println(strXML)
 	services.WriteActionXML("hangup", strXML)
 	Configuration.To, Configuration.ToSid = Configuration.SelectNumber(Number)
 	Configuration.VoiceUrl = services.BaseUrl + "/Hangup"
