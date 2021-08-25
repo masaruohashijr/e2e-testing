@@ -6,5 +6,5 @@ Feature: List Number
   Scenario: List available numbers and view friendly name of one
 
     Given my test setup runs
-    When I list my numbers
-    Then I should get 5 numbers
+    When I release all my numbers except "NumberA,NumberB,NumberC,NumberD,NumberE"
+    Then I should list my 5 numbers

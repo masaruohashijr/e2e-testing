@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <<<<<<< Updated upstream
 Feature: MMS    
   In order to my sent MMS messages can be seem by my destination numbers
@@ -27,6 +28,8 @@ Feature: conference
       Then "NumberB" should had entered conference "Zarbat" 
 
 
+=======
+>>>>>>> enrich_logs
 Feature: Gather    
   In order to read text to the Number B (called) using a text-to-speech engine   
   As an end user

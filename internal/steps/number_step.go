@@ -87,8 +87,6 @@ func IListMyNumbers() error {
 	return nil
 }
 
-<<<<<<< Updated upstream
-=======
 func IShouldListMyNumbers(amount int) error {
 	myNumbers, _ := NumberSecondaryPort.ListNumbers()
 	if len(*myNumbers) != amount {
@@ -98,7 +96,6 @@ func IShouldListMyNumbers(amount int) error {
 	return nil
 }
 
->>>>>>> Stashed changes
 func IReleaseAllMyNumbersExcept(exceptionList string) error {
 	myNumbers, err := NumberPrimaryPort.ListNumbers()
 	if err != nil {
@@ -156,11 +153,6 @@ func ConfiguredWithFriendlyNameAs(number, friendlyName string) error {
 	return nil
 }
 func IShouldGetFriendlyNameOn(friendlyName, number string) error {
-<<<<<<< Updated upstream
-
-	selectedNumber, _ := Configuration.SelectNumber(number)
-
-=======
 	selectedNumber, sid := Configuration.SelectNumber(number)
 	ipn, err := NumberPrimaryPort.ViewNumber(sid)
 	IncomingPhoneNumber = ipn
@@ -169,7 +161,6 @@ func IShouldGetFriendlyNameOn(friendlyName, number string) error {
 		return fmt.Errorf("Error %s", "Not able to view number info.")
 	}
 	println(IncomingPhoneNumber.FriendlyName)
->>>>>>> Stashed changes
 	if IncomingPhoneNumber != nil {
 		if IncomingPhoneNumber.PhoneNumber == selectedNumber {
 			if IncomingPhoneNumber.FriendlyName == friendlyName {
