@@ -1,5 +1,3 @@
-<<<<<<< HEAD
-<<<<<<< Updated upstream
 Feature: MMS    
   In order to my sent MMS messages can be seem by my destination numbers
   And getting a receiving confirmation from them
@@ -28,8 +26,6 @@ Feature: conference
       Then "NumberB" should had entered conference "Zarbat" 
 
 
-=======
->>>>>>> enrich_logs
 Feature: Gather    
   In order to read text to the Number B (called) using a text-to-speech engine   
   As an end user
@@ -43,9 +39,6 @@ Feature: Gather
       When I make a call from "NumberA" to "NumberB" 
       Then "NumberB" should get speech "we shall fight on the beaches" 
 
-
-=======
->>>>>>> Stashed changes
 
 Feature: Hangup    
   In order to hang up a call after a certain time in seconds
