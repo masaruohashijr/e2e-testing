@@ -6,6 +6,7 @@ import (
 	"zarbat_test/internal/config"
 	"zarbat_test/internal/godog/services"
 	"zarbat_test/pkg/domains"
+	"zarbat_test/pkg/ports/account"
 	"zarbat_test/pkg/ports/calls"
 	"zarbat_test/pkg/ports/numbers"
 	"zarbat_test/pkg/ports/sms"
@@ -18,9 +19,12 @@ var CallSecondaryPort calls.SecondaryPort
 var CallPrimaryPort calls.PrimaryPort
 var NumberSecondaryPort numbers.SecondaryPort
 var NumberPrimaryPort numbers.PrimaryPort
+var AccountSecondaryPort account.SecondaryPort
+var AccountPrimaryPort account.PrimaryPort
 var SmsSecondaryPort sms.SecondaryPort
 var SmsPrimaryPort sms.PrimaryPort
 var IncomingPhoneNumber *domains.IncomingPhoneNumber
+var AccountInfo *domains.Account
 var ResponsePlayLastRecording domains.ResponsePlayLastRecording
 var ResponseGather domains.ResponseGather
 var ResponseSay domains.ResponseSay
@@ -50,6 +54,8 @@ func MyTestSetupRuns() error {
 	CallPrimaryPort = primary.NewCallsService(CallSecondaryPort)
 	NumberSecondaryPort = secondary.NewNumbersApi(&Configuration)
 	NumberPrimaryPort = primary.NewNumbersService(NumberSecondaryPort)
+	AccountSecondaryPort = secondary.NewAccountApi(&Configuration)
+	AccountPrimaryPort = primary.NewAccountsService(AccountSecondaryPort)
 	Configuration.ActionUrl = "http://zang.io/ivr/welcome/call"
 	Configuration.StatusCallback = services.BaseUrl + "/Callback"
 	return nil
@@ -102,6 +108,11 @@ func InitializeScenario(ctx *godog.ScenarioContext) {
 	ctx.Step(`^I list my numbers$`, IListMyNumbers)
 	ctx.Step(`^I want to write my name "([^"]*)"$`, IWantToWriteMyName)
 	ctx.Step(`^I should see "([^"]*)" on console$`, IShouldSeeOnConsole)
+	ctx.Step(`^"([^"]*)" list calls$`, ListCalls)
+	ctx.Step(`^"([^"]*)" should get call duration with more than (\d+) seconds$`, ShouldGetCallDurationWithMoreThanSeconds)
+	ctx.Step(`^I should get to see "([^"]*)" as the friendly name for my account$`, IShouldGetToSeeAsTheFriendlyNameForMyAccount)
+	ctx.Step(`^I update the friendly name for my account to "([^"]*)"$`, IUpdateTheFriendlyNameForMyAccountTo)
+	ctx.Step(`^I view my account information$`, IViewMyAccountInformation)
 }
 
 func InitializeTestSuite(ctx *godog.TestSuiteContext) {

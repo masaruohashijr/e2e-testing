@@ -26,7 +26,7 @@ var configPtr *string
 var triesPtr *int
 var callbackPtr *string
 
-func main2() {
+func main() {
 	// 18-08-2021 Masoud
 	// the user should know his public ip and also needs a port
 	// that forwarded directly from his router to his machine
@@ -114,7 +114,7 @@ func initArgs(regMap map[string]*test.FeatureTest) (fts []test.FeatureTest, temp
 		services.BaseUrl = config.NewConfig().BaseUrl
 	}
 
-	if !isParametersValid(testPtr) {
+	if !isParametersValid(testPtr) || !isParametersValid(configPtr) {
 		return fts, ""
 	}
 

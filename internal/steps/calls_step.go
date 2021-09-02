@@ -34,3 +34,11 @@ func checkSayGather() {
 		Configuration.ActionUrl = services.BaseUrl + "/Say"
 	}
 }
+
+func ListCalls(number string) error {
+	return nil
+}
+
+func ShouldGetCallDurationWithMoreThanSeconds(number string, duration int) error {
+	return nil
+}

@@ -1,0 +1,174 @@
+2021/08/27 08:45:02 INFO: ****************************************
+2021/08/27 08:45:02 INFO: START OF TEST SUITE
+2021/08/27 08:45:02 INFO: Config: config/config.ini
+2021/08/27 08:45:02 INFO: Number of Tries: 3
+2021/08/27 08:45:02 INFO: Log: log/zarbat.log
+2021/08/27 08:45:02 INFO: Tests: [sms]
+2021/08/27 08:45:02 INFO: .........................................
+2021/08/27 08:45:59 INFO: ****************************************
+2021/08/27 08:45:59 INFO: START OF TEST SUITE
+2021/08/27 08:45:59 INFO: Config: config/config.ini
+2021/08/27 08:45:59 INFO: Number of Tries: 3
+2021/08/27 08:45:59 INFO: Log: log/zarbat.log
+2021/08/27 08:45:59 INFO: Tests: [listcalls]
+2021/08/27 08:45:59 INFO: .........................................
+2021/08/27 08:46:00 INFO: * Feature/Scenario: LISTCALLS - Status: OK
+2021/08/27 08:46:05 INFO: Passed  1
+2021/08/27 08:46:05 INFO: Failed  0
+2021/08/27 08:46:05 INFO: ...END OF TEST SUITE
+2021/08/27 08:53:14 INFO: ****************************************
+2021/08/27 08:53:14 INFO: START OF TEST SUITE
+2021/08/27 08:53:14 INFO: Config: config/config.ini
+2021/08/27 08:53:14 INFO: Number of Tries: 3
+2021/08/27 08:53:14 INFO: Log: log/zarbat.log
+2021/08/27 08:53:14 INFO: Tests: [listcalls]
+2021/08/27 08:53:14 INFO: .........................................
+2021/08/27 08:53:16 INFO: * Feature/Scenario: LISTCALLS - Status: OK
+2021/08/27 08:53:21 INFO: Passed  1
+2021/08/27 08:53:21 INFO: Failed  0
+2021/08/27 08:53:21 INFO: ...END OF TEST SUITE
+2021/08/27 09:25:31 INFO: ****************************************
+2021/08/27 09:25:31 INFO: START OF TEST SUITE
+2021/08/27 09:25:31 INFO: Config: config/config.ini
+2021/08/27 09:25:31 INFO: Number of Tries: 3
+2021/08/27 09:25:31 INFO: Log: log/zarbat.log
+2021/08/27 09:25:31 INFO: Tests: [listcalls]
+2021/08/27 09:25:31 INFO: .........................................
+2021/08/27 09:25:32 INFO: * Feature/Scenario: LISTCALLS - Status: OK
+2021/08/27 09:25:37 INFO: Passed  1
+2021/08/27 09:25:37 INFO: Failed  0
+2021/08/27 09:25:37 INFO: ...END OF TEST SUITE
+2021/08/27 09:26:06 INFO: ****************************************
+2021/08/27 09:26:06 INFO: START OF TEST SUITE
+2021/08/27 09:26:06 INFO: Config: config/config.ini
+2021/08/27 09:26:06 INFO: Number of Tries: 3
+2021/08/27 09:26:06 INFO: Log: log/zarbat.log
+2021/08/27 09:26:06 INFO: Tests: [listcalls]
+2021/08/27 09:26:06 INFO: .........................................
+2021/08/27 09:26:07 INFO: * Feature/Scenario: LISTCALLS - Status: OK
+2021/08/27 09:26:12 INFO: Passed  1
+2021/08/27 09:26:12 INFO: Failed  0
+2021/08/27 09:26:12 INFO: ...END OF TEST SUITE
+2021/09/01 05:40:58 INFO: ****************************************
+2021/09/01 05:40:58 INFO: START OF TEST SUITE
+2021/09/01 05:40:58 INFO: Config: config/config.ini
+2021/09/01 05:40:58 INFO: Number of Tries: 3
+2021/09/01 05:40:58 INFO: Log: log/zarbat.log
+2021/09/01 05:40:58 INFO: Tests: [listcalls]
+2021/09/01 05:40:58 INFO: .........................................
+2021/09/01 05:40:59 INFO: * Feature/Scenario: LISTCALLS - Status: OK
+2021/09/01 05:41:04 INFO: Passed  1
+2021/09/01 05:41:04 INFO: Failed  0
+2021/09/01 05:41:04 INFO: ...END OF TEST SUITE
+2021/09/01 10:09:06 INFO: ****************************************
+2021/09/01 10:09:06 INFO: START OF TEST SUITE
+2021/09/01 10:09:06 INFO: Config: config/config.ini
+2021/09/01 10:09:06 INFO: Number of Tries: 3
+2021/09/01 10:09:06 INFO: Log: log/zarbat.log
+2021/09/01 10:09:06 INFO: Tests: [update_account]
+2021/09/01 10:09:06 INFO: .........................................
+2021/09/01 10:09:06 INFO: * Feature/Scenario: UPDATE_ACCOUNT - Status: OK
+2021/09/01 10:09:11 INFO: Passed  1
+2021/09/01 10:09:11 INFO: Failed  0
+2021/09/01 10:09:11 INFO: ...END OF TEST SUITE
+2021/09/02 05:07:10 INFO: ****************************************
+2021/09/02 05:07:10 INFO: START OF TEST SUITE
+2021/09/02 05:07:10 INFO: Config: config/config.ini
+2021/09/02 05:07:10 INFO: Number of Tries: 3
+2021/09/02 05:07:10 INFO: Log: log/zarbat.log
+2021/09/02 05:07:10 INFO: Tests: [update_account]
+2021/09/02 05:07:10 INFO: .........................................
+2021/09/02 05:07:10 INFO: * Feature/Scenario: UPDATE_ACCOUNT - Status: OK
+2021/09/02 05:07:15 INFO: Passed  1
+2021/09/02 05:07:15 INFO: Failed  0
+2021/09/02 05:07:15 INFO: ...END OF TEST SUITE
+2021/09/02 05:39:35 INFO: ****************************************
+2021/09/02 05:39:35 INFO: START OF TEST SUITE
+2021/09/02 05:39:35 INFO: Config: config/config.ini
+2021/09/02 05:39:35 INFO: Number of Tries: 3
+2021/09/02 05:39:35 INFO: Log: log/zarbat.log
+2021/09/02 05:39:35 INFO: Tests: [update_account]
+2021/09/02 05:39:35 INFO: .........................................
+2021/09/02 05:39:35 INFO: * Feature/Scenario: UPDATE_ACCOUNT - Status: OK
+2021/09/02 05:39:40 INFO: Passed  1
+2021/09/02 05:39:40 INFO: Failed  0
+2021/09/02 05:39:40 INFO: ...END OF TEST SUITE
+2021/09/02 05:52:48 INFO: ****************************************
+2021/09/02 05:52:48 INFO: START OF TEST SUITE
+2021/09/02 05:52:48 INFO: Config: config/config.ini
+2021/09/02 05:52:48 INFO: Number of Tries: 3
+2021/09/02 05:52:48 INFO: Log: log/zarbat.log
+2021/09/02 05:52:48 INFO: Tests: [update_account]
+2021/09/02 05:52:48 INFO: .........................................
+2021/09/02 05:52:48 INFO: * Feature/Scenario: UPDATE_ACCOUNT - Status: OK
+2021/09/02 05:52:53 INFO: Passed  1
+2021/09/02 05:52:53 INFO: Failed  0
+2021/09/02 05:52:53 INFO: ...END OF TEST SUITE
+2021/09/02 05:54:03 INFO: ****************************************
+2021/09/02 05:54:03 INFO: START OF TEST SUITE
+2021/09/02 05:54:03 INFO: Config: config/config.ini
+2021/09/02 05:54:03 INFO: Number of Tries: 3
+2021/09/02 05:54:03 INFO: Log: log/zarbat.log
+2021/09/02 05:54:03 INFO: Tests: [update_account]
+2021/09/02 05:54:03 INFO: .........................................
+2021/09/02 05:54:06 INFO: * Feature/Scenario: UPDATE_ACCOUNT - Status: OK
+2021/09/02 05:54:11 INFO: Passed  1
+2021/09/02 05:54:11 INFO: Failed  0
+2021/09/02 05:54:11 INFO: ...END OF TEST SUITE
+2021/09/02 05:58:58 INFO: ****************************************
+2021/09/02 05:58:58 INFO: START OF TEST SUITE
+2021/09/02 05:58:58 INFO: Config: config/config.ini
+2021/09/02 05:58:58 INFO: Number of Tries: 3
+2021/09/02 05:58:58 INFO: Log: log/zarbat.log
+2021/09/02 05:58:58 INFO: Tests: [update_account]
+2021/09/02 05:58:58 INFO: .........................................
+2021/09/02 05:59:01 INFO: * Feature/Scenario: UPDATE_ACCOUNT - Status: OK
+2021/09/02 05:59:06 INFO: Passed  1
+2021/09/02 05:59:06 INFO: Failed  0
+2021/09/02 05:59:06 INFO: ...END OF TEST SUITE
+2021/09/02 06:23:11 INFO: ****************************************
+2021/09/02 06:23:11 INFO: START OF TEST SUITE
+2021/09/02 06:23:11 INFO: Config: config/config.ini
+2021/09/02 06:23:11 INFO: Number of Tries: 3
+2021/09/02 06:23:11 INFO: Log: log/zarbat.log
+2021/09/02 06:23:11 INFO: Tests: [update_account]
+2021/09/02 06:23:11 INFO: .........................................
+2021/09/02 06:23:14 INFO: * Feature/Scenario: UPDATE_ACCOUNT - Status: Not OK
+2021/09/02 06:23:21 INFO: * Feature/Scenario: UPDATE_ACCOUNT - Status: Not OK
+2021/09/02 06:23:28 INFO: * Feature/Scenario: UPDATE_ACCOUNT - Status: Not OK
+2021/09/02 06:23:33 INFO: Passed  0
+2021/09/02 06:23:33 INFO: Failed  1
+2021/09/02 06:23:33 INFO: ...END OF TEST SUITE
+2021/09/02 06:25:48 INFO: ****************************************
+2021/09/02 06:25:48 INFO: START OF TEST SUITE
+2021/09/02 06:25:48 INFO: Config: config/config.ini
+2021/09/02 06:25:48 INFO: Number of Tries: 3
+2021/09/02 06:25:48 INFO: Log: log/zarbat.log
+2021/09/02 06:25:48 INFO: Tests: [update_account]
+2021/09/02 06:25:48 INFO: .........................................
+2021/09/02 06:29:29 INFO: ****************************************
+2021/09/02 06:29:29 INFO: START OF TEST SUITE
+2021/09/02 06:29:29 INFO: Config: config/config.ini
+2021/09/02 06:29:29 INFO: Number of Tries: 3
+2021/09/02 06:29:29 INFO: Log: log/zarbat.log
+2021/09/02 06:29:29 INFO: Tests: [update_account]
+2021/09/02 06:29:29 INFO: .........................................
+2021/09/02 06:29:51 INFO: * Feature/Scenario: UPDATE_ACCOUNT - Status: OK
+2021/09/02 06:29:56 INFO: Passed  1
+2021/09/02 06:29:56 INFO: Failed  0
+2021/09/02 06:29:56 INFO: ...END OF TEST SUITE
+2021/09/02 06:30:37 INFO: ****************************************
+2021/09/02 06:30:37 INFO: START OF TEST SUITE
+2021/09/02 06:30:37 INFO: Config: config/config.ini
+2021/09/02 06:30:37 INFO: Number of Tries: 3
+2021/09/02 06:30:37 INFO: Log: log/zarbat.log
+2021/09/02 06:30:37 INFO: Tests: [update_account]
+2021/09/02 06:30:37 INFO: .........................................
+2021/09/02 06:31:24 INFO: ****************************************
+2021/09/02 06:31:24 INFO: START OF TEST SUITE
+2021/09/02 06:31:24 INFO: Config: config/config.ini
+2021/09/02 06:31:24 INFO: Number of Tries: 3
+2021/09/02 06:31:24 INFO: Log: log/zarbat.log
+2021/09/02 06:31:24 INFO: Tests: [update_account]
+2021/09/02 06:31:24 INFO: .........................................
+2021/09/02 06:31:35 INFO: * Feature/Scenario: UPDATE_ACCOUNT - Status: OK
