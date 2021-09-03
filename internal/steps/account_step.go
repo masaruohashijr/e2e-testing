@@ -10,7 +10,10 @@ func IShouldGetToSeeAsTheFriendlyNameForMyAccount(friendlyName string) error {
 	if AccountInfo.FriendlyName == "" {
 		AccountInfo, err = AccountPrimaryPort.ViewAccount()
 		if err != nil {
-			return fmt.Errorf("Error %s", err.Error())
+			return fmt.Errorf("Error: %s", err.Error())
+		}
+		if AccountInfo.FriendlyName != friendlyName {
+			return fmt.Errorf("Error: Expected friendly name %s but got %s", friendlyName, AccountInfo.FriendlyName)
 		}
 	}
 	return nil
@@ -19,7 +22,7 @@ func IShouldGetToSeeAsTheFriendlyNameForMyAccount(friendlyName string) error {
 func IUpdateTheFriendlyNameForMyAccountTo(friendlyName string) error {
 	err := AccountPrimaryPort.UpdateAccount(friendlyName)
 	if err != nil {
-		return fmt.Errorf("Error %s", err.Error())
+		return fmt.Errorf("Error: %s", err.Error())
 	}
 	return nil
 }
