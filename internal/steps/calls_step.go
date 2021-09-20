@@ -39,6 +39,6 @@ func ListCalls(number string) error {
 	return nil
 }
 
-func ShouldGetCallDurationWithMoreThanSeconds(number string, duration int) error {
+func ShouldGetLastDurationCallWithMoreThanSeconds(number string, duration int) error {
 	return nil
 }
