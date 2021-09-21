@@ -1,11 +1,10 @@
-Feature: Add Number    
-  In order to add a new number
-  As an end user
-  I want to list at least one number and add a new number
-  And list again and see the added number inside the list
+Feature: ViewLastCall
 
-  Scenario: List available numbers and buy one
+  Scenario: View Last Call
 
     Given my test setup runs    
-    When I list all available numbers
-    Then I should get to buy 1 from list 
+    And "NumberC" configured to pause 2 seconds
+    And Append To "NumberC" config hang up
+    When I make a call from "NumberB" to "NumberC"
+    And After waiting for 10 seconds
+    Then I should get last call duration greater than or equal to 2 seconds

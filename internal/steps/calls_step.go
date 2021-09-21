@@ -2,7 +2,9 @@ package steps
 
 import (
 	"encoding/xml"
+	"fmt"
 	"strings"
+	"time"
 	"zarbat_test/internal/godog/services"
 	"zarbat_test/internal/logging"
 	"zarbat_test/pkg/domains"
@@ -35,10 +37,40 @@ func checkSayGather() {
 	}
 }
 
-func ListCalls(number string) error {
+func ListCallsAfterSeconds(timeInSeconds int) error {
+	time.Sleep(time.Duration(timeInSeconds) * time.Second)
+	CallPrimaryPort.ListCalls()
 	return nil
 }
 
-func ShouldGetCallDurationWithMoreThanSeconds(number string, duration int) error {
+func ShouldGetLastCallDurationWithMoreThanSeconds(number string, duration int) error {
+	return nil
+}
+
+func AfterWaitingForSeconds(timeInSeconds int) error {
+	time.Sleep(time.Duration(timeInSeconds) * time.Second)
+	return nil
+}
+
+func IShouldGetLastCallDurationGreaterThanOrEqualToSeconds(timeInSeconds int) error {
+	calls, err := CallPrimaryPort.ListCalls()
+	if err != nil {
+		return fmt.Errorf("Error: An error has occured within list calls.")
+	}
+	if calls[0].Duration < timeInSeconds {
+		return fmt.Errorf("Error: An error has occured within list calls.")
+	}
+	return nil
+}
+
+func IShouldListAtLeastCall(numberOfCalls int) error {
+	calls, err := CallPrimaryPort.ListCalls()
+	println("Number of calls: ", len(calls))
+	if err != nil {
+		return fmt.Errorf("Error: An error has occured within list calls.")
+	}
+	if len(calls) <= numberOfCalls {
+		return fmt.Errorf("The returned number of calls \"%d\" is different from the one expected by the test.", len(calls))
+	}
 	return nil
 }

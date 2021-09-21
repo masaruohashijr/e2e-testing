@@ -108,11 +108,13 @@ func InitializeScenario(ctx *godog.ScenarioContext) {
 	ctx.Step(`^I list my numbers$`, IListMyNumbers)
 	ctx.Step(`^I want to write my name "([^"]*)"$`, IWantToWriteMyName)
 	ctx.Step(`^I should see "([^"]*)" on console$`, IShouldSeeOnConsole)
-	ctx.Step(`^"([^"]*)" list calls$`, ListCalls)
-	ctx.Step(`^"([^"]*)" should get call duration with more than (\d+) seconds$`, ShouldGetCallDurationWithMoreThanSeconds)
+	ctx.Step(`^List calls after (\d+) seconds$`, ListCallsAfterSeconds)
+	ctx.Step(`^After waiting for (\d+) seconds$`, AfterWaitingForSeconds)
+	ctx.Step(`^I should list at least (\d+) call$`, IShouldListAtLeastCall)
 	ctx.Step(`^I should get to see "([^"]*)" as the friendly name for my account$`, IShouldGetToSeeAsTheFriendlyNameForMyAccount)
 	ctx.Step(`^I update the friendly name for my account to "([^"]*)"$`, IUpdateTheFriendlyNameForMyAccountTo)
 	ctx.Step(`^I view my account information$`, IViewMyAccountInformation)
+	ctx.Step(`^I should get last call duration greater than or equal to (\d+) seconds$`, IShouldGetLastCallDurationGreaterThanOrEqualToSeconds)
 }
 
 func InitializeTestSuite(ctx *godog.TestSuiteContext) {
