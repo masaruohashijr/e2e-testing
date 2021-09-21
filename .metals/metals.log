@@ -31,3 +31,7 @@ INFORMAï¿½ï¿½ES: Unsupported notification method: $/setTrace
 [0m2021.09.20 08:24:42 WARN  no build tool detected in workspace 'I:\workspace\src\zarbat_test'. The most common cause for this problem is that the editor was opened in the wrong working directory, for example if you use sbt then the workspace directory should contain build.sbt. [0m
 set 20, 2021 8:48:08 AM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
 INFORMAÇÕES: Unsupported notification method: $/setTrace
+set 20, 2021 3:08:28 PM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+INFORMAÇÕES: Unsupported notification method: $/setTrace
+set 20, 2021 3:15:24 PM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+INFORMAÇÕES: Unsupported notification method: $/setTrace
