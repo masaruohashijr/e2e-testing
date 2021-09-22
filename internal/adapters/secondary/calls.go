@@ -90,8 +90,8 @@ func (a *callsAPI) ListCalls() ([]domains.Call, error) {
 	}
 	defer resp.Body.Close()
 	// Print Response
-	//fmt.Println("response Status:", resp.Status)
-	//fmt.Println("response Headers:", resp.Header)
+	fmt.Println("response Status:", resp.Status)
+	fmt.Println("response Headers:", resp.Header)
 	body, err := ioutil.ReadAll(resp.Body)
 	if err != nil {
 		return nil, err
