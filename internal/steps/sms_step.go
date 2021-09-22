@@ -9,11 +9,12 @@ import (
 	"zarbat_test/pkg/domains"
 )
 
-func IShouldViewTheSMSFromTo(message, numberA, numberB string) error {
-	smss, err1 := SmsPrimaryPort.ListSMS(numberA, numberB)
+func IShouldViewTheSMSFromTo(message, numberFrom, numberTo string) error {
+	Configuration.From, Configuration.FromSid = Configuration.SelectNumber(numberFrom)
+	Configuration.To, Configuration.ToSid = Configuration.SelectNumber(numberTo)
+	smss, err1 := SmsPrimaryPort.ListSMS(Configuration.From, Configuration.To)
 	if err1 != nil {
 		return nil
-
 	}
 	println(smss[0].DateSent)
 	Sms, err2 := SmsPrimaryPort.ViewSMS("smsSid")
@@ -24,8 +25,10 @@ func IShouldViewTheSMSFromTo(message, numberA, numberB string) error {
 	return nil
 }
 
-func ISendSMSFromTo(message, numberA, numberB string) error {
-	SmsPrimaryPort.SendSMS(numberA, numberB, message)
+func ISendSMSFromTo(message, numberFrom, numberTo string) error {
+	Configuration.From, Configuration.FromSid = Configuration.SelectNumber(numberFrom)
+	Configuration.To, Configuration.ToSid = Configuration.SelectNumber(numberTo)
+	SmsPrimaryPort.SendSMS(Configuration.From, Configuration.To, message)
 	return nil
 }
 

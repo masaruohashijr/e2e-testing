@@ -107,6 +107,31 @@ func (a *callsAPI) ListCalls() ([]domains.Call, error) {
 }
 
 func (a *callsAPI) ViewCall(callSid string) (domains.Call, error) {
+	apiEndpoint := fmt.Sprintf(a.config.GetApiURL()+"/Accounts/%s/Calls/%s.json", a.config.AccountSid, callSid)
+	req, err := http.NewRequest("GET", apiEndpoint, nil)
+	println(apiEndpoint)
+	req.Header.Set("Content-Type", "application/json")
+	encoded := EncodeToBasicAuth(a.config.AccountSid, a.config.AuthToken)
+	req.Header.Add("Authorization", "Basic "+encoded)
+	// TODO
+	client := &http.Client{}
+	resp, err := client.Do(req)
+	dummyCall := domains.Call{}
+	if err != nil {
+		return dummyCall, err
+	}
+	defer resp.Body.Close()
+	// Print Response
+	fmt.Println("response Status:", resp.Status)
+	fmt.Println("response Headers:", resp.Header)
+	body, err := ioutil.ReadAll(resp.Body)
+	if err != nil {
+		return dummyCall, err
+	}
+	b := string(body)
+	fmt.Println("response Body:", b)
 	c := domains.Call{}
+	json.Unmarshal(body, &c)
+	fmt.Println(c.From, c.To, c.DateCreated, c.Duration)
 	return c, nil
 }

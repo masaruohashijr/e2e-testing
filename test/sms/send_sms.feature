@@ -5,6 +5,6 @@ Feature: SendSMS
 
 Scenario: Send Sms
     Given my test setup runs
-    When I send SMS "Actions speak louder than words" from "NumberA" to "NumberC"
-    And After waiting for 10 seconds
-    Then I should view the SMS "Actions speak louder than words" from "NumberA" to "NumberC"
+    When I send SMS "Actions speak louder than words" from "NumberB" to "NumberC"
+    And After waiting for 1 seconds
+    Then I should view the SMS "Actions speak louder than words" from "NumberB" to "NumberC"

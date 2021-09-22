@@ -8,7 +8,7 @@ import (
 	"zarbat_test/internal/config"
 	"zarbat_test/internal/godog/services"
 	"zarbat_test/pkg/domains"
-	"zarbat_test/pkg/ports/sms"
+	"zarbat_test/pkg/ports/notifications"
 )
 
 type notificationsAPI struct {
@@ -16,14 +16,14 @@ type notificationsAPI struct {
 	VoiceUrl string `json:"VoiceUrl"`
 }
 
-func NewNotificationsApi(config *config.ConfigType) sms.SecondaryPort {
-	return &smsAPI{
+func NewNotificationsApi(config *config.ConfigType) notifications.SecondaryPort {
+	return &notificationsAPI{
 		config:   config,
 		VoiceUrl: "",
 	}
 }
 
-func (a *smsAPI) SendNotification(to, from, message string) error {
+func (a *notificationsAPI) SendNotification(to, from, message string) error {
 	apiEndpoint := fmt.Sprintf(a.config.GetApiURL()+
 		"/Accounts/%s/SMS/Messages.json",
 		a.config.AccountSid)
@@ -52,13 +52,13 @@ func (a *smsAPI) SendNotification(to, from, message string) error {
 	return nil
 }
 
-func (a *smsAPI) ViewNotification(smsSid string) (domains.Sms, error) {
-	s := domains.Sms{}
+func (a *notificationsAPI) ViewNotification(smsSid string) (domains.Notification, error) {
+	s := domains.Notification{}
 	return s, nil
 }
 
-func (a *smsAPI) ListNotifications(from, to string) ([]domains.Sms, error) {
-	s := domains.Sms{}
-	ss := []domains.Sms{s}
+func (a *notificationsAPI) ListNotifications(from, to string) ([]domains.Notification, error) {
+	s := domains.Notification{}
+	ss := []domains.Notification{s}
 	return ss, nil
 }

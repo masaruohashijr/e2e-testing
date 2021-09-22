@@ -12,7 +12,7 @@
                 "-url","http://mohashi.ngrok.io",
                 "-port","5000",
                 "-l","log/zarbat.log",
-                "-n","3",
+                "-n","1",
                 "-test", "test/call/view_call.feature"
             ]
         }

@@ -53,8 +53,12 @@ func IShouldGetLastCallDurationGreaterThanOrEqualToSeconds(timeInSeconds int) er
 	if err != nil {
 		return fmt.Errorf("Error: An error has occured within list calls.")
 	}
-	if calls[0].Duration < timeInSeconds {
-		return fmt.Errorf("Error: An error has occured within list calls.")
+	call, err := CallPrimaryPort.ViewCall(calls[0].Sid)
+	if err != nil {
+		return fmt.Errorf("Error: An error has occured within view call.")
+	}
+	if call.Duration < timeInSeconds {
+		return fmt.Errorf("Error: Expected call duration >= %d and got %d.", timeInSeconds, calls[0].Duration)
 	}
 	return nil
 }

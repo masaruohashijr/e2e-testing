@@ -7,9 +7,7 @@ import (
 	"io/ioutil"
 	"net/http"
 	"net/url"
-	"time"
 	"zarbat_test/internal/config"
-	"zarbat_test/internal/godog/services"
 	"zarbat_test/pkg/domains"
 	"zarbat_test/pkg/ports/sms"
 )
@@ -32,10 +30,9 @@ func (a *smsAPI) SendSMS(to, from, message string) error {
 		a.config.AccountSid)
 
 	values := &url.Values{}
-	values.Add("To", to)
 	values.Add("From", from)
+	values.Add("To", to)
 	values.Add("Body", message)
-	values.Add("StatusCallback", services.BaseUrl+"/SmsStatus")
 
 	var buffer *bytes.Buffer = bytes.NewBufferString(values.Encode())
 	req, err := http.NewRequest("POST", apiEndpoint, buffer)
@@ -43,7 +40,6 @@ func (a *smsAPI) SendSMS(to, from, message string) error {
 	if err != nil {
 		return err
 	}
-
 	req.Header.Set("Content-Type", "application/json")
 	req.Header.Add("Authorization", "Basic "+EncodeToBasicAuth(a.config.AccountSid, a.config.AuthToken))
 	client := &http.Client{}
@@ -51,6 +47,15 @@ func (a *smsAPI) SendSMS(to, from, message string) error {
 	if err != nil {
 		return err
 	}
+	// Print Response
+	fmt.Println("response Status:", resp.Status)
+	fmt.Println("response Headers:", resp.Header)
+	body, err := ioutil.ReadAll(resp.Body)
+	if err != nil {
+		return err
+	}
+	b := string(body)
+	fmt.Println("response Body:", b)
 	defer resp.Body.Close()
 	return nil
 }
@@ -61,21 +66,15 @@ func (a *smsAPI) ViewSMS(smsSid string) (domains.Sms, error) {
 }
 
 func (a *smsAPI) ListSMS(from, to string) ([]domains.Sms, error) {
-	apiEndpoint := fmt.Sprintf(a.config.GetApiURL()+"/Accounts/%s/SMS/Messages", a.config.AccountSid)
-	values := &url.Values{}
-	values.Add("From", a.config.From)
-	values.Add("To", a.config.To)
-	values.Add("DateSent", "<="+time.Now().Format("2021-09-21"))
-	values.Add("Page", "0")
-	values.Add("PageSize", "1")
-	var buffer *bytes.Buffer = bytes.NewBufferString(values.Encode())
-	req, err := http.NewRequest("GET", apiEndpoint, buffer)
+	apiEndpoint := fmt.Sprintf(a.config.GetApiURL()+"/Accounts/%s/SMS/Messages.json?Page=0&PageSize=1", a.config.AccountSid)
+	req, _ := http.NewRequest("GET", apiEndpoint, nil)
 	println(apiEndpoint)
-
-	if err != nil {
-		return nil, err
-	}
-
+	q := req.URL.Query()
+	q.Add("From", from)
+	q.Add("To", to)
+	q.Add("Page", "0")
+	q.Add("PageSize", "1")
+	req.URL.RawQuery = q.Encode()
 	req.Header.Set("Content-Type", "application/json")
 	encoded := EncodeToBasicAuth(a.config.AccountSid, a.config.AuthToken)
 	req.Header.Add("Authorization", "Basic "+encoded)

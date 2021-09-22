@@ -9,6 +9,10 @@ type CallsResponse struct {
 	Calls           []Call `json:"calls,omitempty"`
 }
 
+type ResponseCall struct {
+	Call Call `json:"call,omitempty"`
+}
+
 type Call struct {
 	DateUpdated     string `json:"date_updated,omitempty"`
 	ParentCallSid   string `json:"parent_call_sid,omitempty"`
