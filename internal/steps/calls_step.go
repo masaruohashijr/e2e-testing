@@ -43,10 +43,6 @@ func ListCallsAfterSeconds(timeInSeconds int) error {
 	return nil
 }
 
-func ShouldGetLastCallDurationWithMoreThanSeconds(number string, duration int) error {
-	return nil
-}
-
 func AfterWaitingForSeconds(timeInSeconds int) error {
 	time.Sleep(time.Duration(timeInSeconds) * time.Second)
 	return nil
