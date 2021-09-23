@@ -4,7 +4,6 @@ import (
 	"encoding/xml"
 	"fmt"
 	"net/url"
-	"strings"
 	"time"
 	"zarbat_test/internal/godog/services"
 	"zarbat_test/pkg/domains"
@@ -34,7 +33,13 @@ func IShouldViewTheSMSFromTo(message, numberFrom, numberTo string) error {
 	if err2 != nil {
 		return fmt.Errorf("Error found in view SMS.")
 	}
-	if sms.From != from || sms.To != to || !strings.Contains(message, sms.Body) {
+	if sms.From != from {
+		return fmt.Errorf("Error. From Number expected is %s and found %s.", from, sms.From)
+	}
+	if sms.To != to {
+		return fmt.Errorf("Error. To Number expected is %s and found %s.", to, sms.To)
+	}
+	if message != sms.Body {
 		return fmt.Errorf("Error. Message expected is %s and found %s.", message, sms.Body)
 	}
 	return nil
