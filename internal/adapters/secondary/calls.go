@@ -9,6 +9,7 @@ import (
 	"net/url"
 	"zarbat_test/internal/config"
 	"zarbat_test/internal/godog/services"
+	"zarbat_test/pkg/domains"
 	"zarbat_test/pkg/ports/calls"
 )
 
@@ -59,7 +60,7 @@ func (a *callsAPI) MakeCall() error {
 	}
 	b := string(body)
 	fmt.Println("response Body:", b)
-	c := Call{}
+	c := domains.Call{}
 	err = json.Unmarshal(body, &c)
 	if err != nil {
 		println(err.Error())
@@ -69,24 +70,68 @@ func (a *callsAPI) MakeCall() error {
 	return nil
 }
 
-type Call struct {
-	DateUpdated     string `json:"date_updated,omitempty"`
-	ParentCallSid   string `json:"parent_call_sid,omitempty"`
-	Duration        int    `json:"duration,omitempty"`
-	From            string `json:"from,omitempty"`
-	To              string `json:"to,omitempty"`
-	CallerIdBlocked string `json:"caller_id_blocked,omitempty"`
-	AnsweredBy      string `json:"answered_by,omitempty"`
-	Sid             string `json:"sid,omitempty"`
-	RecordingsCount string `json:"recordings_count,omitempty"`
-	Price           string `json:"price,omitempty"`
-	ApiVersion      string `json:"api_version,omitempty"`
-	Status          string `json:"status,omitempty"`
-	Direction       string `json:"direction,omitempty"`
-	StartTime       string `json:"start_time,omitempty"`
-	DateCreated     string `json:"date_created,omitempty"`
-	ForwardedFrom   string `json:"forwarded_from,omitempty"`
-	AccountSid      string `json:"account_sid,omitempty"`
-	DurationBilled  int    `json:"duration_billed,omitempty"`
-	PhoneNumberSid  string `json:"phone_number_sid,omitempty"`
+func (a *callsAPI) ListCalls() ([]domains.Call, error) {
+	apiEndpoint := fmt.Sprintf(a.config.GetApiURL()+"/Accounts/%s/Calls.json", a.config.AccountSid)
+	req, err := http.NewRequest("GET", apiEndpoint, nil)
+	println(apiEndpoint)
+
+	if err != nil {
+		return nil, err
+	}
+
+	req.Header.Set("Content-Type", "application/json")
+	encoded := EncodeToBasicAuth(a.config.AccountSid, a.config.AuthToken)
+	req.Header.Add("Authorization", "Basic "+encoded)
+	// TODO
+	client := &http.Client{}
+	resp, err := client.Do(req)
+	if err != nil {
+		return nil, err
+	}
+	defer resp.Body.Close()
+	// Print Response
+	fmt.Println("response Status:", resp.Status)
+	fmt.Println("response Headers:", resp.Header)
+	body, err := ioutil.ReadAll(resp.Body)
+	if err != nil {
+		return nil, err
+	}
+	b := string(body)
+	fmt.Println("response Body:", b)
+	callsResponse := domains.CallsResponse{}
+	json.Unmarshal(body, &callsResponse)
+	for _, c := range callsResponse.Calls {
+		fmt.Println(c.From, c.To, c.DateCreated, c.Duration)
+	}
+	return callsResponse.Calls, nil
+}
+
+func (a *callsAPI) ViewCall(callSid string) (domains.Call, error) {
+	apiEndpoint := fmt.Sprintf(a.config.GetApiURL()+"/Accounts/%s/Calls/%s.json", a.config.AccountSid, callSid)
+	req, err := http.NewRequest("GET", apiEndpoint, nil)
+	println(apiEndpoint)
+	req.Header.Set("Content-Type", "application/json")
+	encoded := EncodeToBasicAuth(a.config.AccountSid, a.config.AuthToken)
+	req.Header.Add("Authorization", "Basic "+encoded)
+	// TODO
+	client := &http.Client{}
+	resp, err := client.Do(req)
+	dummyCall := domains.Call{}
+	if err != nil {
+		return dummyCall, err
+	}
+	defer resp.Body.Close()
+	// Print Response
+	fmt.Println("response Status:", resp.Status)
+	fmt.Println("response Headers:", resp.Header)
+	body, err := ioutil.ReadAll(resp.Body)
+	if err != nil {
+		return dummyCall, err
+	}
+	b := string(body)
+	fmt.Println("response Body:", b)
+	c := domains.Call{}
+	json.Unmarshal(body, &c)
+	fmt.Println(c.From, c.To, c.DateCreated, c.Duration)
+	return c, nil
 }

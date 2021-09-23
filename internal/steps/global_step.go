@@ -8,6 +8,8 @@ import (
 	"zarbat_test/pkg/domains"
 	"zarbat_test/pkg/ports/account"
 	"zarbat_test/pkg/ports/calls"
+	"zarbat_test/pkg/ports/mms"
+	"zarbat_test/pkg/ports/notifications"
 	"zarbat_test/pkg/ports/numbers"
 	"zarbat_test/pkg/ports/sms"
 
@@ -23,6 +25,10 @@ var AccountSecondaryPort account.SecondaryPort
 var AccountPrimaryPort account.PrimaryPort
 var SmsSecondaryPort sms.SecondaryPort
 var SmsPrimaryPort sms.PrimaryPort
+var MmsSecondaryPort mms.SecondaryPort
+var MmsPrimaryPort mms.PrimaryPort
+var NotificationSecondaryPort notifications.SecondaryPort
+var NotificationPrimaryPort notifications.PrimaryPort
 var IncomingPhoneNumber *domains.IncomingPhoneNumber
 var AccountInfo *domains.Account
 var ResponsePlayLastRecording domains.ResponsePlayLastRecording
@@ -52,6 +58,10 @@ func MyTestSetupRuns() error {
 	go services.RunServer(Ch, false)
 	CallSecondaryPort = secondary.NewCallsApi(&Configuration)
 	CallPrimaryPort = primary.NewCallsService(CallSecondaryPort)
+	SmsSecondaryPort = secondary.NewSmsApi(&Configuration)
+	SmsPrimaryPort = primary.NewSmsService(SmsSecondaryPort)
+	MmsSecondaryPort = secondary.NewMmsApi(&Configuration)
+	MmsPrimaryPort = primary.NewMmsService(MmsSecondaryPort)
 	NumberSecondaryPort = secondary.NewNumbersApi(&Configuration)
 	NumberPrimaryPort = primary.NewNumbersService(NumberSecondaryPort)
 	AccountSecondaryPort = secondary.NewAccountApi(&Configuration)
@@ -108,11 +118,16 @@ func InitializeScenario(ctx *godog.ScenarioContext) {
 	ctx.Step(`^I list my numbers$`, IListMyNumbers)
 	ctx.Step(`^I want to write my name "([^"]*)"$`, IWantToWriteMyName)
 	ctx.Step(`^I should see "([^"]*)" on console$`, IShouldSeeOnConsole)
-	ctx.Step(`^"([^"]*)" list calls$`, ListCalls)
-	ctx.Step(`^"([^"]*)" should get call duration with more than (\d+) seconds$`, ShouldGetCallDurationWithMoreThanSeconds)
+	ctx.Step(`^List calls after (\d+) seconds$`, ListCallsAfterSeconds)
+	ctx.Step(`^After waiting for (\d+) seconds$`, AfterWaitingForSeconds)
+	ctx.Step(`^I should list at least (\d+) call$`, IShouldListAtLeastCall)
 	ctx.Step(`^I should get to see "([^"]*)" as the friendly name for my account$`, IShouldGetToSeeAsTheFriendlyNameForMyAccount)
 	ctx.Step(`^I update the friendly name for my account to "([^"]*)"$`, IUpdateTheFriendlyNameForMyAccountTo)
 	ctx.Step(`^I view my account information$`, IViewMyAccountInformation)
+	ctx.Step(`^I should get last call duration greater than or equal to (\d+) seconds$`, IShouldGetLastCallDurationGreaterThanOrEqualToSeconds)
+	ctx.Step(`^I send SMS "([^"]*)" from "([^"]*)" to "([^"]*)"$`, ISendSMSFromTo)
+	ctx.Step(`^I should view the SMS "([^"]*)" from "([^"]*)" to "([^"]*)"$`, IShouldViewTheSMSFromTo)
+	ctx.Step(`^I should list at least (\d+) SMS from "([^"]*)" to "([^"]*)"$`, IShouldListAtLeastSMSFromTo)
 }
 
 func InitializeTestSuite(ctx *godog.TestSuiteContext) {
