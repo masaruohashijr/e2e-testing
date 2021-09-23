@@ -13,7 +13,7 @@
                 "-port","5000",
                 "-l","log/zarbat.log",
                 "-n","1",
-                "-test", "test/sms/send_sms.feature"
+                "-test", "test/sms/list_sms.feature"
             ]
         }
     ]    

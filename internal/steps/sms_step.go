@@ -10,6 +10,18 @@ import (
 	"zarbat_test/pkg/domains"
 )
 
+func IShouldListAtLeastSMSFromTo(number int, numberFrom, numberTo string) error {
+	from, _ := Configuration.SelectNumber(numberFrom)
+	to, _ := Configuration.SelectNumber(numberTo)
+	smss, err1 := SmsPrimaryPort.ListSMS(from, to)
+	if err1 != nil {
+		return fmt.Errorf("Error found in list SMSs.")
+	}
+	if len(smss) < number {
+		return fmt.Errorf("Error. Minimum number of sms expected is %d and found %d.", number, len(smss))
+	}
+	return nil
+}
 func IShouldViewTheSMSFromTo(message, numberFrom, numberTo string) error {
 	from, _ := Configuration.SelectNumber(numberFrom)
 	to, _ := Configuration.SelectNumber(numberTo)
