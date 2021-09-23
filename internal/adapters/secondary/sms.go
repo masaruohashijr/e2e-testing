@@ -61,12 +61,38 @@ func (a *smsAPI) SendSMS(to, from, message string) error {
 }
 
 func (a *smsAPI) ViewSMS(smsSid string) (domains.Sms, error) {
-	s := domains.Sms{}
-	return s, nil
+	apiEndpoint := fmt.Sprintf(a.config.GetApiURL()+"/Accounts/%s/SMS/Messages/%s.json", a.config.AccountSid, smsSid)
+	req, _ := http.NewRequest("GET", apiEndpoint, nil)
+	println(apiEndpoint)
+	q := req.URL.Query()
+	req.URL.RawQuery = q.Encode()
+	req.Header.Set("Content-Type", "application/json")
+	encoded := EncodeToBasicAuth(a.config.AccountSid, a.config.AuthToken)
+	req.Header.Add("Authorization", "Basic "+encoded)
+	// TODO
+	client := &http.Client{}
+	resp, err := client.Do(req)
+	dummySms := domains.Sms{}
+	if err != nil {
+		return dummySms, err
+	}
+	defer resp.Body.Close()
+	// Print Response
+	fmt.Println("response Status:", resp.Status)
+	fmt.Println("response Headers:", resp.Header)
+	body, err := ioutil.ReadAll(resp.Body)
+	if err != nil {
+		return dummySms, err
+	}
+	b := string(body)
+	fmt.Println("response Body:", b)
+	sms := domains.Sms{}
+	json.Unmarshal(body, &sms)
+	return sms, nil
 }
 
 func (a *smsAPI) ListSMS(from, to string) ([]domains.Sms, error) {
-	apiEndpoint := fmt.Sprintf(a.config.GetApiURL()+"/Accounts/%s/SMS/Messages.json?Page=0&PageSize=1", a.config.AccountSid)
+	apiEndpoint := fmt.Sprintf(a.config.GetApiURL()+"/Accounts/%s/SMS/Messages.json", a.config.AccountSid)
 	req, _ := http.NewRequest("GET", apiEndpoint, nil)
 	println(apiEndpoint)
 	q := req.URL.Query()

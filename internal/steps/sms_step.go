@@ -4,24 +4,27 @@ import (
 	"encoding/xml"
 	"fmt"
 	"net/url"
+	"strings"
 	"time"
 	"zarbat_test/internal/godog/services"
 	"zarbat_test/pkg/domains"
 )
 
 func IShouldViewTheSMSFromTo(message, numberFrom, numberTo string) error {
-	Configuration.From, Configuration.FromSid = Configuration.SelectNumber(numberFrom)
-	Configuration.To, Configuration.ToSid = Configuration.SelectNumber(numberTo)
-	smss, err1 := SmsPrimaryPort.ListSMS(Configuration.From, Configuration.To)
+	from, _ := Configuration.SelectNumber(numberFrom)
+	to, _ := Configuration.SelectNumber(numberTo)
+	smss, err1 := SmsPrimaryPort.ListSMS(from, to)
 	if err1 != nil {
-		return nil
+		return fmt.Errorf("Error found in list SMSs.")
 	}
 	println(smss[0].DateSent)
-	Sms, err2 := SmsPrimaryPort.ViewSMS("smsSid")
+	sms, err2 := SmsPrimaryPort.ViewSMS(smss[0].Sid)
 	if err2 != nil {
-		return nil
+		return fmt.Errorf("Error found in view SMS.")
 	}
-	println(Sms.Body)
+	if sms.From != from || sms.To != to || !strings.Contains(message, sms.Body) {
+		return fmt.Errorf("Error. Message expected is %s and found %s.", message, sms.Body)
+	}
 	return nil
 }
 
