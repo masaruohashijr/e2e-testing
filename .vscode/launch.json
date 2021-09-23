@@ -12,8 +12,8 @@
                 "-url","http://mohashi.ngrok.io",
                 "-port","5000",
                 "-l","log/zarbat.log",
-                "-n","3",
-                "-test", "test/account/update_account.feature"
+                "-n","1",
+                "-test", "test/mms/send_mms.feature"
             ]
         }
     ]    
