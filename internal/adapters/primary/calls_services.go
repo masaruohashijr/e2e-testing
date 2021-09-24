@@ -25,6 +25,11 @@ func (p *port_calls) ListCalls() ([]domains.Call, error) {
 	return call, err
 }
 
+func (p *port_calls) FilterCalls(from, to, status string) ([]domains.Call, error) {
+	call, err := p.driven.FilterCalls(from, to, status)
+	return call, err
+}
+
 func (p *port_calls) ViewCall(callSid string) (domains.Call, error) {
 	call, err := p.driven.ViewCall(callSid)
 	return call, err

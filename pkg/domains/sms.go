@@ -26,7 +26,7 @@ type Sms struct {
 	StatusCallback string `xml:"statusCallback,attr"`
 	Value          string `xml:",chardata"`
 	From           string `xml:"from,attr" json:"from,omitempty"`
-	To             string `xml:"to,attr" json:"tp,omitempty"`
+	To             string `xml:"to,attr" json:"to,omitempty"`
 	Body           string `json:"body,omitempty"`
 	Status         string `json:"status,omitempty"`
 	Direction      string `json:"direction,omitempty"`

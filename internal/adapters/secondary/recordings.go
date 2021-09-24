@@ -7,32 +7,31 @@ import (
 	"io/ioutil"
 	"net/http"
 	"net/url"
+	"strconv"
 	"zarbat_test/internal/config"
 	"zarbat_test/pkg/domains"
-	"zarbat_test/pkg/ports/mms"
+	"zarbat_test/pkg/ports/recordings"
 )
 
-type mmsAPI struct {
+type recordingsAPI struct {
 	config   *config.ConfigType
 	VoiceUrl string `json:"VoiceUrl"`
 }
 
-func NewMmsApi(config *config.ConfigType) mms.SecondaryPort {
-	return &mmsAPI{
+func NewRecordingsApi(config *config.ConfigType) recordings.SecondaryPort {
+	return &recordingsAPI{
 		config:   config,
 		VoiceUrl: "",
 	}
 }
 
-func (a *mmsAPI) SendMMS(to, from, message string) error {
+func (a *recordingsAPI) RecordCall(callSid string, timeInSeconds int) error {
 	apiEndpoint := fmt.Sprintf(a.config.GetApiURL()+
-		"/Accounts/%s/MMS/Messages.json",
-		a.config.AccountSid)
-
+		"/Accounts/%s/Calls/%s/Recordings.json",
+		a.config.AccountSid, callSid)
 	values := &url.Values{}
-	values.Add("From", from)
-	values.Add("To", to)
-	values.Add("Body", message)
+	values.Add("Record", "true")
+	values.Add("TimeLimit", strconv.Itoa(timeInSeconds))
 
 	var buffer *bytes.Buffer = bytes.NewBufferString(values.Encode())
 	req, err := http.NewRequest("POST", apiEndpoint, buffer)
@@ -40,6 +39,7 @@ func (a *mmsAPI) SendMMS(to, from, message string) error {
 	if err != nil {
 		return err
 	}
+
 	req.Header.Set("Content-Type", "application/json")
 	req.Header.Add("Authorization", "Basic "+EncodeToBasicAuth(a.config.AccountSid, a.config.AuthToken))
 	client := &http.Client{}
@@ -47,21 +47,12 @@ func (a *mmsAPI) SendMMS(to, from, message string) error {
 	if err != nil {
 		return err
 	}
-	// Print Response
-	fmt.Println("response Status:", resp.Status)
-	fmt.Println("response Headers:", resp.Header)
-	body, err := ioutil.ReadAll(resp.Body)
-	if err != nil {
-		return err
-	}
-	b := string(body)
-	fmt.Println("response Body:", b)
 	defer resp.Body.Close()
 	return nil
 }
 
-func (a *mmsAPI) ViewMMS(mmsSid string) (domains.Mms, error) {
-	apiEndpoint := fmt.Sprintf(a.config.GetApiURL()+"/Accounts/%s/MMS/Messages/%s.json", a.config.AccountSid, mmsSid)
+func (a *recordingsAPI) ViewRecording(recordingSid string) (domains.Recording, error) {
+	apiEndpoint := fmt.Sprintf(a.config.GetApiURL()+"/Accounts/%s/Recordings/%s.json", a.config.AccountSid, recordingSid)
 	req, _ := http.NewRequest("GET", apiEndpoint, nil)
 	println(apiEndpoint)
 	q := req.URL.Query()
@@ -72,9 +63,9 @@ func (a *mmsAPI) ViewMMS(mmsSid string) (domains.Mms, error) {
 	// TODO
 	client := &http.Client{}
 	resp, err := client.Do(req)
-	dummyMms := domains.Mms{}
+	dummyRecording := domains.Recording{}
 	if err != nil {
-		return dummyMms, err
+		return dummyRecording, err
 	}
 	defer resp.Body.Close()
 	// Print Response
@@ -82,22 +73,52 @@ func (a *mmsAPI) ViewMMS(mmsSid string) (domains.Mms, error) {
 	fmt.Println("response Headers:", resp.Header)
 	body, err := ioutil.ReadAll(resp.Body)
 	if err != nil {
-		return dummyMms, err
+		return dummyRecording, err
 	}
 	b := string(body)
 	fmt.Println("response Body:", b)
-	mms := domains.Mms{}
-	json.Unmarshal(body, &mms)
-	return mms, nil
+	recording := domains.Recording{}
+	json.Unmarshal(body, &recording)
+	return recording, nil
 }
 
-func (a *mmsAPI) ListMMS(from, to string) ([]domains.Mms, error) {
-	apiEndpoint := fmt.Sprintf(a.config.GetApiURL()+"/Accounts/%s/MMS/Messages.json", a.config.AccountSid)
+func (a *recordingsAPI) DeleteRecording(recordingSid string) (domains.Recording, error) {
+	apiEndpoint := fmt.Sprintf(a.config.GetApiURL()+"/Accounts/%s/Recordings/%s.json", a.config.AccountSid, recordingSid)
+	req, _ := http.NewRequest("DELETE", apiEndpoint, nil)
+	println(apiEndpoint)
+	q := req.URL.Query()
+	req.URL.RawQuery = q.Encode()
+	req.Header.Set("Content-Type", "application/json")
+	encoded := EncodeToBasicAuth(a.config.AccountSid, a.config.AuthToken)
+	req.Header.Add("Authorization", "Basic "+encoded)
+	// TODO
+	client := &http.Client{}
+	resp, err := client.Do(req)
+	dummyRecording := domains.Recording{}
+	if err != nil {
+		return dummyRecording, err
+	}
+	defer resp.Body.Close()
+	// Print Response
+	fmt.Println("response Status:", resp.Status)
+	fmt.Println("response Headers:", resp.Header)
+	body, err := ioutil.ReadAll(resp.Body)
+	if err != nil {
+		return dummyRecording, err
+	}
+	b := string(body)
+	fmt.Println("response Body:", b)
+	recording := domains.Recording{}
+	json.Unmarshal(body, &recording)
+	return recording, nil
+}
+
+func (a *recordingsAPI) ListRecordings(callSid string) ([]domains.Recording, error) {
+	apiEndpoint := fmt.Sprintf(a.config.GetApiURL()+"/Accounts/%s/SMS/Messages.json", a.config.AccountSid)
 	req, _ := http.NewRequest("GET", apiEndpoint, nil)
 	println(apiEndpoint)
 	q := req.URL.Query()
-	q.Add("From", from)
-	q.Add("To", to)
+	q.Add("CallSid", callSid)
 	q.Add("Page", "0")
 	q.Add("PageSize", "1")
 	req.URL.RawQuery = q.Encode()
@@ -120,10 +141,10 @@ func (a *mmsAPI) ListMMS(from, to string) ([]domains.Mms, error) {
 	}
 	b := string(body)
 	fmt.Println("response Body:", b)
-	mmsResponse := domains.MMSResponse{}
-	json.Unmarshal(body, &mmsResponse)
-	for _, mms := range mmsResponse.MmsMessages {
-		fmt.Println(mms.From, mms.To, mms.DateCreated, mms.Body)
+	responseRecording := domains.ResponseRecording{}
+	json.Unmarshal(body, &responseRecording)
+	for _, recording := range responseRecording.Recordings {
+		fmt.Println(recording.Sid, recording.CallSid, recording.DateCreated, recording.Duration)
 	}
-	return mmsResponse.MmsMessages, nil
+	return responseRecording.Recordings, nil
 }

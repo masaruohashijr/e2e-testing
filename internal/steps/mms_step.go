@@ -10,6 +10,49 @@ import (
 	"zarbat_test/pkg/domains"
 )
 
+func IShouldListAtLeastMMSFromTo(number int, numberFrom, numberTo string) error {
+	from, _ := Configuration.SelectNumber(numberFrom)
+	to, _ := Configuration.SelectNumber(numberTo)
+	mmss, err1 := MmsPrimaryPort.ListMMS(from, to)
+	if err1 != nil {
+		return fmt.Errorf("Error found in list MMSs.")
+	}
+	if len(mmss) < number {
+		return fmt.Errorf("Error. Minimum number of mms expected is %d and found %d.", number, len(mmss))
+	}
+	return nil
+}
+func IShouldViewTheMMSFromTo(message, numberFrom, numberTo string) error {
+	from, _ := Configuration.SelectNumber(numberFrom)
+	to, _ := Configuration.SelectNumber(numberTo)
+	mmss, err1 := MmsPrimaryPort.ListMMS(from, to)
+	if err1 != nil {
+		return fmt.Errorf("Error found in list MMSs.")
+	}
+	println(mmss[0].DateSent)
+	mms, err2 := MmsPrimaryPort.ViewMMS(mmss[0].Sid)
+	if err2 != nil {
+		return fmt.Errorf("Error found in view MMS.")
+	}
+	if mms.From != from {
+		return fmt.Errorf("Error. From Number expected is %s and found %s.", from, mms.From)
+	}
+	if mms.To != to {
+		return fmt.Errorf("Error. To Number expected is %s and found %s.", to, mms.To)
+	}
+	if message != mms.Body {
+		return fmt.Errorf("Error. Message expected is %s and found %s.", message, mms.Body)
+	}
+	return nil
+}
+
+func ISendMMSFromTo(message, numberFrom, numberTo string) error {
+	Configuration.From, Configuration.FromSid = Configuration.SelectNumber(numberFrom)
+	Configuration.To, Configuration.ToSid = Configuration.SelectNumber(numberTo)
+	MmsPrimaryPort.SendMMS(Configuration.From, Configuration.To, message)
+	return nil
+}
+
 func ConfiguredToSendMMSAndMediaTo(numberB, message, media, numberC string) error {
 	Configuration.From, _ = Configuration.SelectNumber(numberB)
 	Configuration.To, _ = Configuration.SelectNumber(numberC)

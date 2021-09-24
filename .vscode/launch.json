@@ -1,6 +1,7 @@
 {
     "version": "0.2.0",
     "configurations": [
+        
         {
             "name": "Zarbat Test",
             "type": "go",
@@ -13,7 +14,7 @@
                 "-port","5000",
                 "-l","log/zarbat.log",
                 "-n","1",
-                "-test", "test/call/view_call.feature"
+                "-test", "test/transcriptions/view_transcription.feature"
             ]
         }
     ]    

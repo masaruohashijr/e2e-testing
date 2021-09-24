@@ -9,19 +9,39 @@ import (
 	"zarbat_test/pkg/domains"
 )
 
-func IShouldViewTheSMSFromTo(message, numberFrom, numberTo string) error {
-	Configuration.From, Configuration.FromSid = Configuration.SelectNumber(numberFrom)
-	Configuration.To, Configuration.ToSid = Configuration.SelectNumber(numberTo)
-	smss, err1 := SmsPrimaryPort.ListSMS(Configuration.From, Configuration.To)
+func IShouldListAtLeastSMSFromTo(number int, numberFrom, numberTo string) error {
+	from, _ := Configuration.SelectNumber(numberFrom)
+	to, _ := Configuration.SelectNumber(numberTo)
+	smss, err1 := SmsPrimaryPort.ListSMS(from, to)
 	if err1 != nil {
-		return nil
+		return fmt.Errorf("Error found in list SMSs.")
+	}
+	if len(smss) < number {
+		return fmt.Errorf("Error. Minimum number of sms expected is %d and found %d.", number, len(smss))
+	}
+	return nil
+}
+func IShouldViewTheSMSFromTo(message, numberFrom, numberTo string) error {
+	from, _ := Configuration.SelectNumber(numberFrom)
+	to, _ := Configuration.SelectNumber(numberTo)
+	smss, err1 := SmsPrimaryPort.ListSMS(from, to)
+	if err1 != nil {
+		return fmt.Errorf("Error found in list SMSs.")
 	}
 	println(smss[0].DateSent)
-	Sms, err2 := SmsPrimaryPort.ViewSMS("smsSid")
+	sms, err2 := SmsPrimaryPort.ViewSMS(smss[0].Sid)
 	if err2 != nil {
-		return nil
+		return fmt.Errorf("Error found in view SMS.")
 	}
-	println(Sms.Body)
+	if sms.From != from {
+		return fmt.Errorf("Error. From Number expected is %s and found %s.", from, sms.From)
+	}
+	if sms.To != to {
+		return fmt.Errorf("Error. To Number expected is %s and found %s.", to, sms.To)
+	}
+	if message != sms.Body {
+		return fmt.Errorf("Error. Message expected is %s and found %s.", message, sms.Body)
+	}
 	return nil
 }
 

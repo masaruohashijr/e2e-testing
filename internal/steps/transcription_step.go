@@ -7,7 +7,7 @@ import (
 	"zarbat_test/pkg/domains"
 )
 
-func IRecordCurrentCallFromToForSeconds(from, to string, timeInSeconds int) error {
+func IShouldListAtLeastTranscription(from, to string, timeInSeconds int) error {
 	calls, err := CallPrimaryPort.FilterCalls(from, to, "in-progress")
 	if err != nil {
 		return fmt.Errorf("Error %s", err.Error())
@@ -19,7 +19,7 @@ func IRecordCurrentCallFromToForSeconds(from, to string, timeInSeconds int) erro
 	}
 	return nil
 }
-func IShouldListAtLeastRecordingFromTo(from, to string) error {
+func IProvideAnAudioUrl(from, to string) error {
 	calls, err := CallPrimaryPort.FilterCalls(from, to, "completed")
 	if err != nil {
 		return fmt.Errorf("Error %s", err.Error())
@@ -36,7 +36,7 @@ func IShouldListAtLeastRecordingFromTo(from, to string) error {
 	return nil
 }
 
-func ConfiguredToRecordCalls(number string) error {
+func IShouldGetTranscriptionTextAs(number string) error {
 	testHash := fmt.Sprint(TestHash)
 	r := &domains.Record{
 		Background:         services.Background,
@@ -60,7 +60,7 @@ func ConfiguredToRecordCalls(number string) error {
 	return nil
 }
 
-func ConfiguredToRecordCallsForDownload(number string) error {
+func ITranscribeAudioUrl(number string) error {
 	testHash := fmt.Sprint(TestHash)
 	r := &domains.Record{
 		Background: services.Background,
@@ -84,14 +84,10 @@ func ConfiguredToRecordCallsForDownload(number string) error {
 	return nil
 }
 
-func IDeleteAllRecordingsFromTo() error {
+func IShouldGetLastTranscriptionTextAs() error {
 	return nil
 }
 
-func IShouldListNoRecordingFromTo() error {
-	return nil
-}
-
-func IShouldGetLastRecordingDurationGreaterThanOrEqualToSeconds() error {
+func ITranscribeLastRecodingFromTo() error {
 	return nil
 }
