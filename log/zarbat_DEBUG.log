@@ -1,0 +1,264 @@
+2021/09/23 11:16:23 DEBUG: ************************************************
+2021/09/23 11:16:23 DEBUG: *** Config: config/config.ini
+2021/09/23 11:16:23 DEBUG: *** Number of Tries: 1
+2021/09/23 11:16:23 DEBUG: *** Log: log/zarbat.log
+2021/09/23 11:16:23 DEBUG: *** Logging Level: info
+2021/09/23 11:16:23 DEBUG: *** Features: [listsms]
+2021/09/23 11:16:23 DEBUG: ************************************************
+2021/09/23 11:16:23 DEBUG: Server running
+2021/09/23 11:22:03 DEBUG: ************************************************
+2021/09/23 11:22:03 DEBUG: *** Config: config/config.ini
+2021/09/23 11:22:03 DEBUG: *** Number of Tries: 1
+2021/09/23 11:22:03 DEBUG: *** Log: log/zarbat.log
+2021/09/23 11:22:03 DEBUG: *** Logging Level: info
+2021/09/23 11:22:03 DEBUG: *** Features: [listsms]
+2021/09/23 11:22:03 DEBUG: ************************************************
+2021/09/23 11:22:03 DEBUG: Server running
+2021/09/23 11:24:01 DEBUG: ************************************************
+2021/09/23 11:24:01 DEBUG: *** Config: config/config.ini
+2021/09/23 11:24:01 DEBUG: *** Number of Tries: 1
+2021/09/23 11:24:01 DEBUG: *** Log: log/zarbat.log
+2021/09/23 11:24:01 DEBUG: *** Logging Level: info
+2021/09/23 11:24:01 DEBUG: *** Features: [listsms]
+2021/09/23 11:24:01 DEBUG: ************************************************
+2021/09/23 11:24:01 DEBUG: Server running
+2021/09/23 11:25:08 DEBUG: ************************************************
+2021/09/23 11:25:08 DEBUG: *** Config: config/config.ini
+2021/09/23 11:25:08 DEBUG: *** Number of Tries: 1
+2021/09/23 11:25:08 DEBUG: *** Log: log/zarbat.log
+2021/09/23 11:25:08 DEBUG: *** Logging Level: info
+2021/09/23 11:25:08 DEBUG: *** Features: [viewsms]
+2021/09/23 11:25:08 DEBUG: ************************************************
+2021/09/23 11:25:08 DEBUG: Server running
+2021/09/23 11:35:09 DEBUG: ************************************************
+2021/09/23 11:35:09 DEBUG: *** Config: config/config.ini
+2021/09/23 11:35:09 DEBUG: *** Number of Tries: 1
+2021/09/23 11:35:09 DEBUG: *** Log: log/zarbat.log
+2021/09/23 11:35:09 DEBUG: *** Logging Level: info
+2021/09/23 11:35:09 DEBUG: *** Features: [viewsms]
+2021/09/23 11:35:09 DEBUG: ************************************************
+2021/09/23 11:35:09 DEBUG: Server running
+2021/09/23 11:37:59 DEBUG: ************************************************
+2021/09/23 11:37:59 DEBUG: *** Config: config/config.ini
+2021/09/23 11:37:59 DEBUG: *** Number of Tries: 1
+2021/09/23 11:37:59 DEBUG: *** Log: log/zarbat.log
+2021/09/23 11:37:59 DEBUG: *** Logging Level: info
+2021/09/23 11:37:59 DEBUG: *** Features: [viewsms]
+2021/09/23 11:37:59 DEBUG: ************************************************
+2021/09/23 11:37:59 DEBUG: Server running
+2021/09/23 11:39:52 DEBUG: ************************************************
+2021/09/23 11:39:52 DEBUG: *** Config: config/config.ini
+2021/09/23 11:39:52 DEBUG: *** Number of Tries: 1
+2021/09/23 11:39:52 DEBUG: *** Log: log/zarbat.log
+2021/09/23 11:39:52 DEBUG: *** Logging Level: info
+2021/09/23 11:39:52 DEBUG: *** Features: [viewsms]
+2021/09/23 11:39:52 DEBUG: ************************************************
+2021/09/23 11:39:52 DEBUG: Server running
+2021/09/23 11:53:47 DEBUG: ************************************************
+2021/09/23 11:53:47 DEBUG: *** Config: config/config.ini
+2021/09/23 11:53:47 DEBUG: *** Number of Tries: 1
+2021/09/23 11:53:47 DEBUG: *** Log: log/zarbat.log
+2021/09/23 11:53:47 DEBUG: *** Logging Level: info
+2021/09/23 11:53:47 DEBUG: *** Features: [listsms]
+2021/09/23 11:53:47 DEBUG: ************************************************
+2021/09/23 11:53:47 DEBUG: Server running
+2021/09/23 11:54:15 DEBUG: ************************************************
+2021/09/23 11:54:15 DEBUG: *** Config: config/config.ini
+2021/09/23 11:54:15 DEBUG: *** Number of Tries: 1
+2021/09/23 11:54:15 DEBUG: *** Log: log/zarbat.log
+2021/09/23 11:54:15 DEBUG: *** Logging Level: info
+2021/09/23 11:54:15 DEBUG: *** Features: [viewsms]
+2021/09/23 11:54:15 DEBUG: ************************************************
+2021/09/23 11:54:15 DEBUG: Server running
+2021/09/23 11:54:30 DEBUG: ************************************************
+2021/09/23 11:54:30 DEBUG: *** Config: config/config.ini
+2021/09/23 11:54:30 DEBUG: *** Number of Tries: 1
+2021/09/23 11:54:30 DEBUG: *** Log: log/zarbat.log
+2021/09/23 11:54:30 DEBUG: *** Logging Level: info
+2021/09/23 11:54:30 DEBUG: *** Features: [sendsms]
+2021/09/23 11:54:30 DEBUG: ************************************************
+2021/09/23 11:54:30 DEBUG: Server running
+2021/09/23 13:23:34 DEBUG: ************************************************
+2021/09/23 13:23:34 DEBUG: *** Config: config/config.ini
+2021/09/23 13:23:34 DEBUG: *** Number of Tries: 1
+2021/09/23 13:23:34 DEBUG: *** Log: log/zarbat.log
+2021/09/23 13:23:34 DEBUG: *** Logging Level: info
+2021/09/23 13:23:34 DEBUG: *** Features: [record_rest_api]
+2021/09/23 13:23:34 DEBUG: ************************************************
+2021/09/23 13:23:34 DEBUG: Server running
+2021/09/23 13:31:51 DEBUG: ************************************************
+2021/09/23 13:31:51 DEBUG: *** Config: config/config.ini
+2021/09/23 13:31:51 DEBUG: *** Number of Tries: 1
+2021/09/23 13:31:51 DEBUG: *** Log: log/zarbat.log
+2021/09/23 13:31:51 DEBUG: *** Logging Level: info
+2021/09/23 13:31:51 DEBUG: *** Features: [record_rest_api]
+2021/09/23 13:31:51 DEBUG: ************************************************
+2021/09/23 13:32:34 DEBUG: ************************************************
+2021/09/23 13:32:34 DEBUG: *** Config: config/config.ini
+2021/09/23 13:32:34 DEBUG: *** Number of Tries: 1
+2021/09/23 13:32:34 DEBUG: *** Log: log/zarbat.log
+2021/09/23 13:32:34 DEBUG: *** Logging Level: info
+2021/09/23 13:32:34 DEBUG: *** Features: [record_rest_api]
+2021/09/23 13:32:34 DEBUG: ************************************************
+2021/09/23 13:32:34 DEBUG: Server running
+2021/09/23 20:59:46 DEBUG: ************************************************
+2021/09/23 20:59:46 DEBUG: *** Config: config/config.ini
+2021/09/23 20:59:46 DEBUG: *** Number of Tries: 1
+2021/09/23 20:59:46 DEBUG: *** Log: log/zarbat.log
+2021/09/23 20:59:46 DEBUG: *** Logging Level: info
+2021/09/23 20:59:46 DEBUG: *** Features: [record_rest_api]
+2021/09/23 20:59:46 DEBUG: ************************************************
+2021/09/23 20:59:46 DEBUG: Server running
+2021/09/23 21:04:42 DEBUG: ************************************************
+2021/09/23 21:04:42 DEBUG: *** Config: config/config.ini
+2021/09/23 21:04:42 DEBUG: *** Number of Tries: 1
+2021/09/23 21:04:42 DEBUG: *** Log: log/zarbat.log
+2021/09/23 21:04:42 DEBUG: *** Logging Level: info
+2021/09/23 21:04:42 DEBUG: *** Features: [record_rest_api]
+2021/09/23 21:04:42 DEBUG: ************************************************
+2021/09/23 21:04:42 DEBUG: Server running
+2021/09/24 06:47:03 DEBUG: ************************************************
+2021/09/24 06:47:03 DEBUG: *** Config: config/config.ini
+2021/09/24 06:47:03 DEBUG: *** Number of Tries: 1
+2021/09/24 06:47:03 DEBUG: *** Log: log/zarbat.log
+2021/09/24 06:47:03 DEBUG: *** Logging Level: info
+2021/09/24 06:47:03 DEBUG: *** Features: [record_rest_api]
+2021/09/24 06:47:03 DEBUG: ************************************************
+2021/09/24 06:47:03 DEBUG: Server running
+2021/09/24 06:47:04 DEBUG: AppendActionXML:
+ <?xml version="1.0"?>
+<Response><Pause length="3"></Pause><Hangup></Hangup><Say voice="man" language="en-US" loop="3">what we do in life echoes in eternity</Say></Response>
+2021/09/24 06:51:33 DEBUG: ************************************************
+2021/09/24 06:51:33 DEBUG: *** Config: config/config.ini
+2021/09/24 06:51:33 DEBUG: *** Number of Tries: 1
+2021/09/24 06:51:33 DEBUG: *** Log: log/zarbat.log
+2021/09/24 06:51:33 DEBUG: *** Logging Level: info
+2021/09/24 06:51:33 DEBUG: *** Features: [record_rest_api]
+2021/09/24 06:51:33 DEBUG: ************************************************
+2021/09/24 06:51:33 DEBUG: Server running
+2021/09/24 06:51:33 DEBUG: ******************************** Callback START
+2021/09/24 06:51:33 DEBUG: Call Status in-progress.
+
+2021/09/24 06:51:33 DEBUG: Call Sid CA777c3e32c622084ff78c4a4d8e6f4727.
+
+2021/09/24 06:51:33 DEBUG: Call Sid Context .
+
+2021/09/24 06:51:33 DEBUG: ******************************** Callback END
+2021/09/24 06:51:33 DEBUG: ******************************** Callback START
+2021/09/24 06:51:33 DEBUG: Call Status completed.
+
+2021/09/24 06:51:33 DEBUG: Call Sid CA777c3e32c622084ff78c4a4d8e6f4727.
+
+2021/09/24 06:51:33 DEBUG: Call Sid Context .
+
+2021/09/24 06:51:33 DEBUG: ******************************** Callback END
+2021/09/24 06:51:34 DEBUG: AppendActionXML:
+ <?xml version="1.0"?>
+<Response><Pause length="3"></Pause><Say voice="man" language="en-US" loop="3">what we do in life echoes in eternity</Say></Response>
+2021/09/24 14:45:08 DEBUG: ************************************************
+2021/09/24 14:45:08 DEBUG: *** Config: config/config.ini
+2021/09/24 14:45:08 DEBUG: *** Number of Tries: 1
+2021/09/24 14:45:08 DEBUG: *** Log: log/zarbat.log
+2021/09/24 14:45:08 DEBUG: *** Logging Level: info
+2021/09/24 14:45:08 DEBUG: *** Features: [list_notification]
+2021/09/24 14:45:08 DEBUG: ************************************************
+2021/09/24 14:45:08 DEBUG: Server running
+2021/09/24 14:45:09 DEBUG: AppendActionXML:
+ <?xml version="1.0"?>
+<Response><Pause length="3"></Pause><Say voice="man" language="en-US" loop="3">what we do in life echoes in eternity</Say></Response>
+2021/09/24 14:51:09 DEBUG: ************************************************
+2021/09/24 14:51:09 DEBUG: *** Config: config/config.ini
+2021/09/24 14:51:09 DEBUG: *** Number of Tries: 1
+2021/09/24 14:51:09 DEBUG: *** Log: log/zarbat.log
+2021/09/24 14:51:09 DEBUG: *** Logging Level: info
+2021/09/24 14:51:09 DEBUG: *** Features: [view_notification]
+2021/09/24 14:51:09 DEBUG: ************************************************
+2021/09/24 14:51:09 DEBUG: Server running
+2021/09/24 14:51:10 DEBUG: AppendActionXML:
+ <?xml version="1.0"?>
+<Response><Pause length="3"></Pause><Say voice="man" language="en-US" loop="3">what we do in life echoes in eternity</Say></Response>
+2021/09/24 14:54:01 DEBUG: ************************************************
+2021/09/24 14:54:01 DEBUG: *** Config: config/config.ini
+2021/09/24 14:54:01 DEBUG: *** Number of Tries: 1
+2021/09/24 14:54:01 DEBUG: *** Log: log/zarbat.log
+2021/09/24 14:54:01 DEBUG: *** Logging Level: info
+2021/09/24 14:54:01 DEBUG: *** Features: [delete_recording]
+2021/09/24 14:54:01 DEBUG: ************************************************
+2021/09/24 14:54:01 DEBUG: Server running
+2021/09/24 14:54:02 DEBUG: AppendActionXML:
+ <?xml version="1.0"?>
+<Response><Pause length="3"></Pause><Say voice="man" language="en-US" loop="3">what we do in life echoes in eternity</Say></Response>
+2021/09/24 14:57:46 DEBUG: ************************************************
+2021/09/24 14:57:46 DEBUG: *** Config: config/config.ini
+2021/09/24 14:57:46 DEBUG: *** Number of Tries: 1
+2021/09/24 14:57:46 DEBUG: *** Log: log/zarbat.log
+2021/09/24 14:57:46 DEBUG: *** Logging Level: info
+2021/09/24 14:57:46 DEBUG: *** Features: [list_recordings]
+2021/09/24 14:57:46 DEBUG: ************************************************
+2021/09/24 14:57:46 DEBUG: Server running
+2021/09/24 14:57:47 DEBUG: AppendActionXML:
+ <?xml version="1.0"?>
+<Response><Pause length="3"></Pause><Say voice="man" language="en-US" loop="3">what we do in life echoes in eternity</Say></Response>
+2021/09/24 15:01:57 DEBUG: ************************************************
+2021/09/24 15:01:57 DEBUG: *** Config: config/config.ini
+2021/09/24 15:01:57 DEBUG: *** Number of Tries: 1
+2021/09/24 15:01:57 DEBUG: *** Log: log/zarbat.log
+2021/09/24 15:01:57 DEBUG: *** Logging Level: info
+2021/09/24 15:01:57 DEBUG: *** Features: [record_rest_api]
+2021/09/24 15:01:57 DEBUG: ************************************************
+2021/09/24 15:01:57 DEBUG: Server running
+2021/09/24 15:01:58 DEBUG: AppendActionXML:
+ <?xml version="1.0"?>
+<Response><Pause length="3"></Pause><Say voice="man" language="en-US" loop="3">what we do in life echoes in eternity</Say></Response>
+2021/09/24 15:02:36 DEBUG: ************************************************
+2021/09/24 15:02:36 DEBUG: *** Config: config/config.ini
+2021/09/24 15:02:36 DEBUG: *** Number of Tries: 1
+2021/09/24 15:02:36 DEBUG: *** Log: log/zarbat.log
+2021/09/24 15:02:36 DEBUG: *** Logging Level: info
+2021/09/24 15:02:36 DEBUG: *** Features: [view_recording]
+2021/09/24 15:02:36 DEBUG: ************************************************
+2021/09/24 15:02:36 DEBUG: Server running
+2021/09/24 15:02:37 DEBUG: AppendActionXML:
+ <?xml version="1.0"?>
+<Response><Pause length="3"></Pause><Say voice="man" language="en-US" loop="3">what we do in life echoes in eternity</Say></Response>
+2021/09/24 15:04:07 DEBUG: ************************************************
+2021/09/24 15:04:07 DEBUG: *** Config: config/config.ini
+2021/09/24 15:04:07 DEBUG: *** Number of Tries: 1
+2021/09/24 15:04:07 DEBUG: *** Log: log/zarbat.log
+2021/09/24 15:04:07 DEBUG: *** Logging Level: info
+2021/09/24 15:04:07 DEBUG: *** Features: [view_recording]
+2021/09/24 15:04:07 DEBUG: ************************************************
+2021/09/24 15:04:07 DEBUG: Server running
+2021/09/24 15:04:08 DEBUG: AppendActionXML:
+ <?xml version="1.0"?>
+<Response><Pause length="3"></Pause><Say voice="man" language="en-US" loop="3">what we do in life echoes in eternity</Say></Response>
+2021/09/24 15:04:44 DEBUG: ************************************************
+2021/09/24 15:04:44 DEBUG: *** Config: config/config.ini
+2021/09/24 15:04:44 DEBUG: *** Number of Tries: 1
+2021/09/24 15:04:44 DEBUG: *** Log: log/zarbat.log
+2021/09/24 15:04:44 DEBUG: *** Logging Level: info
+2021/09/24 15:04:44 DEBUG: *** Features: [list_transcriptions]
+2021/09/24 15:04:44 DEBUG: ************************************************
+2021/09/24 15:04:44 DEBUG: Server running
+2021/09/24 15:04:45 DEBUG: AppendActionXML:
+ <?xml version="1.0"?>
+<Response><Pause length="3"></Pause><Say voice="man" language="en-US" loop="3">what we do in life echoes in eternity</Say></Response>
+2021/09/24 15:06:35 DEBUG: ************************************************
+2021/09/24 15:06:35 DEBUG: *** Config: config/config.ini
+2021/09/24 15:06:35 DEBUG: *** Number of Tries: 1
+2021/09/24 15:06:35 DEBUG: *** Log: log/zarbat.log
+2021/09/24 15:06:35 DEBUG: *** Logging Level: info
+2021/09/24 15:06:35 DEBUG: *** Features: [transcribe_audio_url]
+2021/09/24 15:06:35 DEBUG: ************************************************
+2021/09/24 15:06:35 DEBUG: Server running
+2021/09/24 15:08:59 DEBUG: ************************************************
+2021/09/24 15:08:59 DEBUG: *** Config: config/config.ini
+2021/09/24 15:08:59 DEBUG: *** Number of Tries: 1
+2021/09/24 15:08:59 DEBUG: *** Log: log/zarbat.log
+2021/09/24 15:08:59 DEBUG: *** Logging Level: info
+2021/09/24 15:08:59 DEBUG: *** Features: [transcribe recording]
+2021/09/24 15:08:59 DEBUG: ************************************************
+2021/09/24 15:08:59 DEBUG: Server running
+2021/09/24 15:09:00 DEBUG: AppendActionXML:
+ <?xml version="1.0"?>
+<Response><Pause length="3"></Pause><Say voice="man" language="en-US" loop="3">what we do in life echoes in eternity</Say></Response>
