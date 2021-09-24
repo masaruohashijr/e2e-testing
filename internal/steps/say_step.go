@@ -26,3 +26,16 @@ func ConfiguredToSay(numberA, speech string) error {
 	Configuration.ActionUrl = services.BaseUrl + "/Say"
 	return nil
 }
+
+func AppendToConfigSay(numberA, speech string) error {
+	Say := &domains.Say{
+		Value:    speech,
+		Voice:    "man",
+		Language: "en-US",
+		Loop:     3,
+	}
+	x, _ := xml.MarshalIndent(*Say, "", "")
+	strXML := string(x)
+	services.AppendActionXML(Configuration.VoiceUrl, strXML)
+	return nil
+}

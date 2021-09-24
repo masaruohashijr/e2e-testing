@@ -11,6 +11,7 @@ import (
 	"zarbat_test/pkg/ports/mms"
 	"zarbat_test/pkg/ports/notifications"
 	"zarbat_test/pkg/ports/numbers"
+	"zarbat_test/pkg/ports/recordings"
 	"zarbat_test/pkg/ports/sms"
 
 	"github.com/cucumber/godog"
@@ -29,6 +30,8 @@ var MmsSecondaryPort mms.SecondaryPort
 var MmsPrimaryPort mms.PrimaryPort
 var NotificationSecondaryPort notifications.SecondaryPort
 var NotificationPrimaryPort notifications.PrimaryPort
+var RecordingSecondaryPort recordings.SecondaryPort
+var RecordingPrimaryPort recordings.PrimaryPort
 var IncomingPhoneNumber *domains.IncomingPhoneNumber
 var AccountInfo *domains.Account
 var ResponsePlayLastRecording domains.ResponsePlayLastRecording
@@ -64,6 +67,8 @@ func MyTestSetupRuns() error {
 	MmsPrimaryPort = primary.NewMmsService(MmsSecondaryPort)
 	NumberSecondaryPort = secondary.NewNumbersApi(&Configuration)
 	NumberPrimaryPort = primary.NewNumbersService(NumberSecondaryPort)
+	RecordingSecondaryPort = secondary.NewRecordingsApi(&Configuration)
+	RecordingPrimaryPort = primary.NewRecordingsService(RecordingPrimaryPort)
 	AccountSecondaryPort = secondary.NewAccountApi(&Configuration)
 	AccountPrimaryPort = primary.NewAccountsService(AccountSecondaryPort)
 	Configuration.ActionUrl = "http://zang.io/ivr/welcome/call"
@@ -128,6 +133,20 @@ func InitializeScenario(ctx *godog.ScenarioContext) {
 	ctx.Step(`^I send SMS "([^"]*)" from "([^"]*)" to "([^"]*)"$`, ISendSMSFromTo)
 	ctx.Step(`^I should view the SMS "([^"]*)" from "([^"]*)" to "([^"]*)"$`, IShouldViewTheSMSFromTo)
 	ctx.Step(`^I should list at least (\d+) SMS from "([^"]*)" to "([^"]*)"$`, IShouldListAtLeastSMSFromTo)
+	ctx.Step(`^I record current call from "([^"]*)" to "([^"]*)" for (\d+) seconds$`, IRecordCurrentCallFromToForSeconds)
+	ctx.Step(`^I should list at least (\d+) recording from "([^"]*)" to "([^"]*)"$`, IShouldListAtLeastRecordingFromTo)
+	ctx.Step(`^Append To "([^"]*)" config say "([^"]*)"$`, AppendToConfigSay)
+	ctx.Step(`^I should list at least (\d+) notification from "([^"]*)" to "([^"]*)"$`, IShouldListAtLeastNotificationFromTo)
+	ctx.Step(`^I should view the last notification from "([^"]*)" to "([^"]*)"$`, IShouldViewTheLastNotificationFromTo)
+	ctx.Step(`^I delete all recordings from "([^"]*)" to "([^"]*)"$`, IDeleteAllRecordingsFromTo)
+	ctx.Step(`^I should list no recording from "([^"]*)" to "([^"]*)"$`, IShouldListNoRecordingFromTo)
+	ctx.Step(`^I should get last recording duration greater than or equal to (\d+) seconds$`, IShouldGetLastRecordingDurationGreaterThanOrEqualToSeconds)
+	ctx.Step(`^I should list at least (\d+) transcription$`, IShouldListAtLeastTranscription)
+	ctx.Step(`^I provide an audio url "([^"]*)"$`, IProvideAnAudioUrl)
+	ctx.Step(`^I should get transcription text as "([^"]*)"$`, IShouldGetTranscriptionTextAs)
+	ctx.Step(`^I transcribe audio url "([^"]*)"$`, ITranscribeAudioUrl)
+	ctx.Step(`^I should get last transcription text as "([^"]*)"$`, IShouldGetLastTranscriptionTextAs)
+	ctx.Step(`^I transcribe last recoding from "([^"]*)" to "([^"]*)"$`, ITranscribeLastRecodingFromTo)
 }
 
 func InitializeTestSuite(ctx *godog.TestSuiteContext) {
