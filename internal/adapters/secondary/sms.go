@@ -24,7 +24,7 @@ func NewSmsApi(config *config.ConfigType) sms.SecondaryPort {
 	}
 }
 
-func (a *smsAPI) SendSMS(to, from, message string) error {
+func (a *smsAPI) SendSMS(from, to, message string) error {
 	apiEndpoint := fmt.Sprintf(a.config.GetApiURL()+
 		"/Accounts/%s/SMS/Messages.json",
 		a.config.AccountSid)
@@ -99,7 +99,7 @@ func (a *smsAPI) ListSMS(from, to string) ([]domains.Sms, error) {
 	q.Add("From", from)
 	q.Add("To", to)
 	q.Add("Page", "0")
-	q.Add("PageSize", "1")
+	q.Add("PageSize", "10")
 	req.URL.RawQuery = q.Encode()
 	req.Header.Set("Content-Type", "application/json")
 	encoded := EncodeToBasicAuth(a.config.AccountSid, a.config.AuthToken)

@@ -5,6 +5,6 @@ Feature: SendSMS
 
 Scenario: Send Sms
     Given my test setup runs
-    When I send SMS "Actions speak louder than words" from "NumberB" to "NumberC"
+    When I send SMS "Ask not what your country can do for you. Ask what you can do for your country." from "NumberA" to "NumberB"
     And After waiting for 1 seconds
-    Then I should view the SMS "Actions speak louder than words" from "NumberB" to "NumberC"
+    Then I should view the SMS "Ask not what your country can do for you. Ask what you can do for your country." from "NumberA" to "NumberB"
