@@ -74,3 +74,20 @@ func IShouldListAtLeastCall(numberOfCalls int) error {
 	}
 	return nil
 }
+
+func IShouldGetToViewACallFromToWithStatus(from, to, status string) error {
+	calls, err := CallPrimaryPort.ListCalls()
+	if err != nil {
+		return fmt.Errorf("Error: An error has occured within list calls.")
+	}
+	call, err := CallPrimaryPort.ViewCall(calls[0].Sid)
+	if err != nil {
+		return fmt.Errorf("Error: An error has occured within view call.")
+	}
+	_from, _ := Configuration.SelectNumber(from)
+	_to, _ := Configuration.SelectNumber(to)
+	if call.From != _from || call.To != _to || call.Status != status {
+		return fmt.Errorf("Expected call status %s and from %s and to %s and got different values.", status, call.From, call.To)
+	}
+	return nil
+}

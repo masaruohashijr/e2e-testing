@@ -147,6 +147,7 @@ func InitializeScenario(ctx *godog.ScenarioContext) {
 	ctx.Step(`^I transcribe audio url "([^"]*)"$`, ITranscribeAudioUrl)
 	ctx.Step(`^I should get last transcription text as "([^"]*)"$`, IShouldGetLastTranscriptionTextAs)
 	ctx.Step(`^I transcribe last recoding from "([^"]*)" to "([^"]*)"$`, ITranscribeLastRecodingFromTo)
+	ctx.Step(`^I should get to view a call from "([^"]*)" to "([^"]*)" with status "([^"]*)"$`, IShouldGetToViewACallFromToWithStatus)
 }
 
 func InitializeTestSuite(ctx *godog.TestSuiteContext) {
