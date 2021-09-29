@@ -13,6 +13,7 @@ import (
 	"zarbat_test/pkg/ports/numbers"
 	"zarbat_test/pkg/ports/recordings"
 	"zarbat_test/pkg/ports/sms"
+	usage "zarbat_test/pkg/ports/usages"
 
 	"github.com/cucumber/godog"
 )
@@ -26,6 +27,8 @@ var AccountSecondaryPort account.SecondaryPort
 var AccountPrimaryPort account.PrimaryPort
 var SmsSecondaryPort sms.SecondaryPort
 var SmsPrimaryPort sms.PrimaryPort
+var UsageSecondaryPort usage.SecondaryPort
+var UsagePrimaryPort usage.PrimaryPort
 var MmsSecondaryPort mms.SecondaryPort
 var MmsPrimaryPort mms.PrimaryPort
 var NotificationSecondaryPort notifications.SecondaryPort
@@ -63,6 +66,8 @@ func MyTestSetupRuns() error {
 	CallPrimaryPort = primary.NewCallsService(CallSecondaryPort)
 	SmsSecondaryPort = secondary.NewSmsApi(&Configuration)
 	SmsPrimaryPort = primary.NewSmsService(SmsSecondaryPort)
+	UsageSecondaryPort = secondary.NewUsageApi(&Configuration)
+	UsagePrimaryPort = primary.NewUsageService(UsageSecondaryPort)
 	MmsSecondaryPort = secondary.NewMmsApi(&Configuration)
 	MmsPrimaryPort = primary.NewMmsService(MmsSecondaryPort)
 	NumberSecondaryPort = secondary.NewNumbersApi(&Configuration)
@@ -150,6 +155,8 @@ func InitializeScenario(ctx *godog.ScenarioContext) {
 	ctx.Step(`^I should get last transcription text as "([^"]*)"$`, IShouldGetLastTranscriptionTextAs)
 	ctx.Step(`^I transcribe last recoding from "([^"]*)" to "([^"]*)"$`, ITranscribeLastRecodingFromTo)
 	ctx.Step(`^I should get to view a call from "([^"]*)" to "([^"]*)" with status "([^"]*)"$`, IShouldGetToViewACallFromToWithStatus)
+	ctx.Step(`^I should list at least (\d+) usage$`, IShouldListAtLeastUsage)
+	ctx.Step(`^I should view the total cost usage more than (\d+)$`, IShouldViewTheTotalCostUsageMoreThan)
 }
 
 func InitializeTestSuite(ctx *godog.TestSuiteContext) {
