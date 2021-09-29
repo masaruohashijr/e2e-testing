@@ -7,6 +7,35 @@ import (
 	"zarbat_test/pkg/domains"
 )
 
+func IRecordCurrentCallFromToForSeconds(from, to string, timeInSeconds int) error {
+	calls, err := CallPrimaryPort.FilterCalls(from, to, "in-progress")
+	if err != nil {
+		return fmt.Errorf("Error %s", err.Error())
+	}
+	if len(calls) > 0 {
+		RecordingPrimaryPort.RecordCall(calls[0].Sid, timeInSeconds)
+	} else {
+		return fmt.Errorf("There is no in-progress call.")
+	}
+	return nil
+}
+func IShouldListAtLeastRecordingFromTo(from, to string) error {
+	calls, err := CallPrimaryPort.FilterCalls(from, to, "completed")
+	if err != nil {
+		return fmt.Errorf("Error %s", err.Error())
+	}
+	if len(calls) > 0 {
+		recordings, err := RecordingPrimaryPort.ListRecordings(calls[0].Sid)
+		if err != nil {
+			return fmt.Errorf("Error %s", err.Error())
+		}
+		if len(recordings) == 0 {
+			return fmt.Errorf("Error %s", err.Error())
+		}
+	}
+	return nil
+}
+
 func ConfiguredToRecordCalls(number string) error {
 	testHash := fmt.Sprint(TestHash)
 	r := &domains.Record{
@@ -52,5 +81,17 @@ func ConfiguredToRecordCallsForDownload(number string) error {
 	Configuration.VoiceUrl = services.BaseUrl + "/Record"
 	Configuration.To, Configuration.ToSid = Configuration.SelectNumber(number)
 	NumberPrimaryPort.UpdateNumber()
+	return nil
+}
+
+func IDeleteAllRecordingsFromTo() error {
+	return nil
+}
+
+func IShouldListNoRecordingFromTo() error {
+	return nil
+}
+
+func IShouldGetLastRecordingDurationGreaterThanOrEqualToSeconds() error {
 	return nil
 }

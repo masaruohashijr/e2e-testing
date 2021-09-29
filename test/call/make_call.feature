@@ -1,11 +1,11 @@
-Feature: Add Number    
-  In order to add a new number
+Feature: MakeCall   
+  In order to make a call
   As an end user
-  I want to list at least one number and add a new number
-  And list again and see the added number inside the list
+  I want to make a call from a number to another number
 
-  Scenario: List available numbers and buy one
+  Scenario: Make a Call
 
     Given my test setup runs    
-    When I list all available numbers
-    Then I should get to buy 1 from list 
+    When I make a call from "NumberA" to "NumberB"
+    And After waiting for 3 seconds
+    Then I should get to view a call from "NumberA" to "NumberB" with status "completed"

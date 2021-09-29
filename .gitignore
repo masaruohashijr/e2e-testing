@@ -1,3 +1,4 @@
-temp/temp*
-log/*.log
-zarbat_test.exe
+temp/*
+log/*
+zarbat_tester.exe
+.metals/*

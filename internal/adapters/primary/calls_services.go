@@ -1,6 +1,9 @@
 package primary
 
-import "zarbat_test/pkg/ports/calls"
+import (
+	"zarbat_test/pkg/domains"
+	"zarbat_test/pkg/ports/calls"
+)
 
 type port_calls struct {
 	driven calls.SecondaryPort
@@ -15,4 +18,19 @@ func NewCallsService(driven calls.SecondaryPort) calls.PrimaryPort {
 func (p *port_calls) MakeCall() error {
 	err := p.driven.MakeCall()
 	return err
+}
+
+func (p *port_calls) ListCalls() ([]domains.Call, error) {
+	call, err := p.driven.ListCalls()
+	return call, err
+}
+
+func (p *port_calls) FilterCalls(from, to, status string) ([]domains.Call, error) {
+	call, err := p.driven.FilterCalls(from, to, status)
+	return call, err
+}
+
+func (p *port_calls) ViewCall(callSid string) (domains.Call, error) {
+	call, err := p.driven.ViewCall(callSid)
+	return call, err
 }

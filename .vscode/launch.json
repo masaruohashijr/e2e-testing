@@ -1,6 +1,7 @@
 {
     "version": "0.2.0",
     "configurations": [
+        
         {
             "name": "Zarbat Test",
             "type": "go",
@@ -12,8 +13,8 @@
                 "-url","http://mohashi.ngrok.io",
                 "-port","5000",
                 "-l","log/zarbat.log",
-                "-n","3",
-                "-test", "test/account/update_account.feature"
+                "-n","1",
+                "-test", "test/usages/view_usage.feature"
             ]
         }
     ]    
