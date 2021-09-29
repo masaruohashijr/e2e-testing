@@ -132,6 +132,8 @@ func InitializeScenario(ctx *godog.ScenarioContext) {
 	ctx.Step(`^I should get last call duration greater than or equal to (\d+) seconds$`, IShouldGetLastCallDurationGreaterThanOrEqualToSeconds)
 	ctx.Step(`^I send SMS "([^"]*)" from "([^"]*)" to "([^"]*)"$`, ISendSMSFromTo)
 	ctx.Step(`^I should view the SMS "([^"]*)" from "([^"]*)" to "([^"]*)"$`, IShouldViewTheSMSFromTo)
+	ctx.Step(`^I send MMS "([^"]*)" from "([^"]*)" to "([^"]*)"$`, ISendMMSFromTo)
+	ctx.Step(`^I should view the MMS "([^"]*)" from "([^"]*)" to "([^"]*)"$`, IShouldViewTheMMSFromTo)
 	ctx.Step(`^I should list at least (\d+) SMS from "([^"]*)" to "([^"]*)"$`, IShouldListAtLeastSMSFromTo)
 	ctx.Step(`^I record current call from "([^"]*)" to "([^"]*)" for (\d+) seconds$`, IRecordCurrentCallFromToForSeconds)
 	ctx.Step(`^I should list at least (\d+) recording from "([^"]*)" to "([^"]*)"$`, IShouldListAtLeastRecordingFromTo)

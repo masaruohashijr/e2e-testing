@@ -24,7 +24,7 @@ func NewMmsApi(config *config.ConfigType) mms.SecondaryPort {
 	}
 }
 
-func (a *mmsAPI) SendMMS(to, from, message string) error {
+func (a *mmsAPI) SendMMS(from, to, message string) error {
 	apiEndpoint := fmt.Sprintf(a.config.GetApiURL()+
 		"/Accounts/%s/MMS/Messages.json",
 		a.config.AccountSid)
