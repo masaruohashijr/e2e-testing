@@ -16,12 +16,7 @@ func main() {
 }
 
 func ZarbatTest(w http.ResponseWriter, r *http.Request) {
-	println("WORKED")
-	s := "WORKED"
+	s := "Hello World !!! - It Worked!!!"
+	println(s)
 	w.Write([]byte(s))
-}
-
-type Number struct {
-	Phone string `json:"phone"`
-	Name  string `json:"name"`
 }
