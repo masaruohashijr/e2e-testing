@@ -159,7 +159,7 @@ func InitializeScenario(ctx *godog.ScenarioContext) {
 	ctx.Step(`^I should get to view a call from "([^"]*)" to "([^"]*)" with status "([^"]*)"$`, IShouldGetToViewACallFromToWithStatus)
 	ctx.Step(`^I should list at least (\d+) usage$`, IShouldListAtLeastUsage)
 	ctx.Step(`^I should view the total cost usage more than (\d+)$`, IShouldViewTheTotalCostUsageMoreThan)
-	ctx.Step(`^I should get to see my account balance more than or equal "([^"]*)"$`, IShouldGetToSeeMyAccountBalanceMoreThanOrEqual)
+	ctx.Step(`^I should get to see my account balance more than or equal to "([^"]*)"$`, IShouldGetToSeeMyAccountBalanceMoreThanOrEqualTo)
 }
 
 func InitializeTestSuite(ctx *godog.TestSuiteContext) {

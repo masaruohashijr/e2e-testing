@@ -4,8 +4,8 @@ Feature: View_Account
   I want to view my account's friendly name
   And update a new alias for my account
 
-  Scenario: View Account
+  Scenario: View Account Balance
 
     Given my test setup runs    
     When I view my account information
-    Then I should get to see my account balance more than or equal "0"
+    Then I should get to see my account balance more than or equal to "0"

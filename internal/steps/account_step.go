@@ -6,17 +6,16 @@ import (
 	"zarbat_test/internal/logging"
 )
 
-func IShouldGetToSeeMyAccountBalanceMoreThanOrEqual(balance int) error {
+func IShouldGetToSeeMyAccountBalanceMoreThanOrEqualTo(balance float64) error {
 	var err error
 
 	AccountInfo, err = AccountPrimaryPort.ViewAccount()
 	if err != nil {
-		return fmt.Errorf("Error: %s", err.Error())
+		return fmt.Errorf("%s", err.Error())
 	}
 	accountBalance, _ := strconv.ParseFloat(AccountInfo.AccountBalance, 64)
-	fBalance := float64(balance)
-	if accountBalance < fBalance {
-		return fmt.Errorf("Error: Expected account balance should be %d but got %s", balance, AccountInfo.AccountBalance)
+	if accountBalance < balance {
+		return fmt.Errorf("Expected account balance should be %f but got %f", balance, accountBalance)
 	}
 
 	return nil

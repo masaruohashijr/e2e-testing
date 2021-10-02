@@ -7,6 +7,6 @@ Feature: Update_Account
   Scenario: Update Account
 
     Given my test setup runs    
-    And I update the friendly name for my account to "Zarbat"
+    And I update the friendly name for my account to "Masaru"
     When I view my account information
-    Then I should get to see "Zarbat" as the friendly name for my account
+    Then I should get to see "Masaru" as the friendly name for my account
