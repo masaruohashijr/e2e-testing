@@ -6,5 +6,5 @@ Feature: ListMMS
 Scenario: List Mms
     Given my test setup runs
     When I send MMS "Actions speak louder than words" from "NumberB" to "NumberC"
-    And After waiting for 1 seconds
+    And After waiting for 15 seconds
     Then I should list at least 1 MMS from "NumberB" to "NumberC"

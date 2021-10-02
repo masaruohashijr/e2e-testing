@@ -24,7 +24,7 @@ func NewMmsApi(config *config.ConfigType) mms.SecondaryPort {
 	}
 }
 
-func (a *mmsAPI) SendMMS(from, to, message string) error {
+func (a *mmsAPI) SendMMS(from, to, message string) (domains.Mms, error) {
 	apiEndpoint := fmt.Sprintf(a.config.GetApiURL()+
 		"/Accounts/%s/MMS/Messages.json",
 		a.config.AccountSid)
@@ -36,28 +36,29 @@ func (a *mmsAPI) SendMMS(from, to, message string) error {
 
 	var buffer *bytes.Buffer = bytes.NewBufferString(values.Encode())
 	req, err := http.NewRequest("POST", apiEndpoint, buffer)
-
+	dummyMms := domains.Mms{}
 	if err != nil {
-		return err
+		return dummyMms, err
 	}
 	req.Header.Set("Content-Type", "application/json")
 	req.Header.Add("Authorization", "Basic "+EncodeToBasicAuth(a.config.AccountSid, a.config.AuthToken))
 	client := &http.Client{}
 	resp, err := client.Do(req)
 	if err != nil {
-		return err
+		return dummyMms, err
 	}
 	// Print Response
 	fmt.Println("response Status:", resp.Status)
 	fmt.Println("response Headers:", resp.Header)
 	body, err := ioutil.ReadAll(resp.Body)
 	if err != nil {
-		return err
+		return dummyMms, err
 	}
 	b := string(body)
 	fmt.Println("response Body:", b)
-	defer resp.Body.Close()
-	return nil
+	mms := domains.Mms{}
+	json.Unmarshal(body, &mms)
+	return mms, nil
 }
 
 func (a *mmsAPI) ViewMMS(mmsSid string) (domains.Mms, error) {

@@ -25,12 +25,7 @@ func IShouldListAtLeastMMSFromTo(number int, numberFrom, numberTo string) error 
 func IShouldViewTheMMSFromTo(message, numberFrom, numberTo string) error {
 	from, _ := Configuration.SelectNumber(numberFrom)
 	to, _ := Configuration.SelectNumber(numberTo)
-	mmss, err1 := MmsPrimaryPort.ListMMS(from, to)
-	if err1 != nil {
-		return fmt.Errorf("Error found in list MMSs.")
-	}
-	println(mmss[0].DateSent)
-	mms, err2 := MmsPrimaryPort.ViewMMS(mmss[0].Sid)
+	mms, err2 := MmsPrimaryPort.ViewMMS(MmsSid)
 	if err2 != nil {
 		return fmt.Errorf("Error found in view MMS.")
 	}

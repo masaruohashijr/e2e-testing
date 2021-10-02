@@ -56,6 +56,8 @@ var AvailableNumbers []string
 var IncomingNumbers []string
 var Ch = make(chan string)
 var CallSid = ""
+var SmsSid = ""
+var MmsSid = ""
 var TestHash uint32
 
 func MyTestSetupRuns() error {
