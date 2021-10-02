@@ -6,5 +6,5 @@ Feature: ListUsages
 Scenario: List Usage
     Given my test setup runs
     When I make a call from "NumberA" to "NumberB"
-    And After waiting for 2 seconds
+    And After waiting for 5 seconds
     Then I should list at least 1 usage
