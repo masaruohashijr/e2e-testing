@@ -14,7 +14,7 @@
                 "-port","5000",
                 "-l","log/zarbat.log",
                 "-n","1",
-                "-test", "test/call/make_call.feature"
+                "-test", "test/call/view_call.feature"
             ]
         }
     ]    
