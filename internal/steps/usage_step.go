@@ -16,7 +16,7 @@ func IShouldListAtLeastUsage(number int) error {
 	return nil
 }
 
-func IShouldViewTheTotalCostUsageMoreThan(expectedCost int) error {
+func IShouldViewTheTotalCostUsageMoreThan(expectedCost float64) error {
 	usages, err1 := UsagePrimaryPort.ListUsage()
 	if err1 != nil {
 		return fmt.Errorf("Error found in list Usages.")
@@ -24,9 +24,9 @@ func IShouldViewTheTotalCostUsageMoreThan(expectedCost int) error {
 	if len(usages) == 0 {
 		return fmt.Errorf("No usages available.")
 	}
-	total, _ := strconv.Atoi(usages[0].TotalCost)
+	total, _ := strconv.ParseFloat(usages[0].TotalCost, 64)
 	if total < expectedCost {
-		return fmt.Errorf("Total cost expected is %d and got %d.", expectedCost, total)
+		return fmt.Errorf("Total cost expected is %f and got %f.", expectedCost, total)
 	}
 	return nil
 }

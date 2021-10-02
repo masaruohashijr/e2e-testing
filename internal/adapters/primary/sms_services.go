@@ -25,7 +25,7 @@ func (p *port_sms) ListSMS(from, to string) ([]domains.Sms, error) {
 	return smss, err
 }
 
-func (p *port_sms) SendSMS(from, to, message string) error {
-	err := p.driven.SendSMS(from, to, message)
-	return err
+func (p *port_sms) SendSMS(from, to, message string) (domains.Sms, error) {
+	sms, err := p.driven.SendSMS(from, to, message)
+	return sms, err
 }

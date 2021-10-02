@@ -37,7 +37,7 @@ func main() {
 	RegMap = test.InitRegister()
 	tests, tempDir := initArgs(RegMap)
 	if checkEmpty(tests) != nil {
-		fmt.Println("Failed to find ctlang file.")
+		fmt.Println("Failed to find feature file.")
 		os.Exit(2)
 	}
 	initLoggers()

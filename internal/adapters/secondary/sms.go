@@ -24,7 +24,7 @@ func NewSmsApi(config *config.ConfigType) sms.SecondaryPort {
 	}
 }
 
-func (a *smsAPI) SendSMS(from, to, message string) error {
+func (a *smsAPI) SendSMS(from, to, message string) (domains.Sms, error) {
 	apiEndpoint := fmt.Sprintf(a.config.GetApiURL()+
 		"/Accounts/%s/SMS/Messages.json",
 		a.config.AccountSid)
@@ -37,27 +37,30 @@ func (a *smsAPI) SendSMS(from, to, message string) error {
 	var buffer *bytes.Buffer = bytes.NewBufferString(values.Encode())
 	req, err := http.NewRequest("POST", apiEndpoint, buffer)
 
+	dummySms := domains.Sms{}
 	if err != nil {
-		return err
+		return dummySms, err
 	}
 	req.Header.Set("Content-Type", "application/json")
 	req.Header.Add("Authorization", "Basic "+EncodeToBasicAuth(a.config.AccountSid, a.config.AuthToken))
 	client := &http.Client{}
 	resp, err := client.Do(req)
 	if err != nil {
-		return err
+		return dummySms, err
 	}
 	// Print Response
 	fmt.Println("response Status:", resp.Status)
 	fmt.Println("response Headers:", resp.Header)
 	body, err := ioutil.ReadAll(resp.Body)
 	if err != nil {
-		return err
+		return dummySms, err
 	}
 	b := string(body)
 	fmt.Println("response Body:", b)
 	defer resp.Body.Close()
-	return nil
+	sms := domains.Sms{}
+	json.Unmarshal(body, &sms)
+	return sms, nil
 }
 
 func (a *smsAPI) ViewSMS(smsSid string) (domains.Sms, error) {

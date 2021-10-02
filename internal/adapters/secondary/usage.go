@@ -65,6 +65,7 @@ func (a *usageAPI) ListUsage() ([]domains.Usage, error) {
 	m := int(today.Month())
 	q.Add("Month", strconv.Itoa(m))
 	q.Add("Year", strconv.Itoa(today.Year()))
+	q.Add("Product", "1")
 	q.Add("Page", "0")
 	q.Add("PageSize", "10")
 	req.URL.RawQuery = q.Encode()

@@ -24,23 +24,18 @@ func IShouldListAtLeastSMSFromTo(number int, numberFrom, numberTo string) error 
 func IShouldViewTheSMSFromTo(message, numberFrom, numberTo string) error {
 	from, _ := Configuration.SelectNumber(numberFrom)
 	to, _ := Configuration.SelectNumber(numberTo)
-	smss, err1 := SmsPrimaryPort.ListSMS(from, to)
-	if err1 != nil {
-		return fmt.Errorf("Error found in list SMSs.")
-	}
-	println(smss[0].DateSent)
-	sms, err2 := SmsPrimaryPort.ViewSMS(smss[0].Sid)
+	sms, err2 := SmsPrimaryPort.ViewSMS(SmsSid)
 	if err2 != nil {
 		return fmt.Errorf("Error found in view SMS.")
 	}
-	if sms.From != from {
-		return fmt.Errorf("Error. From Number expected is %s and found %s.", from, sms.From)
-	}
-	if sms.To != to {
-		return fmt.Errorf("Error. To Number expected is %s and found %s.", to, sms.To)
-	}
-	if message != sms.Body {
-		return fmt.Errorf("Error. Message expected is %s and found %s.", message, sms.Body)
+	if sms.Status != "sent" {
+		return fmt.Errorf("Status expected is %s and found %s.", "sent", sms.Status)
+	} else if sms.From != from {
+		return fmt.Errorf("From Number expected is %s and found %s.", from, sms.From)
+	} else if sms.To != to {
+		return fmt.Errorf("To Number expected is %s and found %s.", to, sms.To)
+	} else if message != sms.Body {
+		return fmt.Errorf("Message expected is %s and found %s.", message, sms.Body)
 	}
 	return nil
 }
@@ -48,7 +43,8 @@ func IShouldViewTheSMSFromTo(message, numberFrom, numberTo string) error {
 func ISendSMSFromTo(message, numberFrom, numberTo string) error {
 	Configuration.From, Configuration.FromSid = Configuration.SelectNumber(numberFrom)
 	Configuration.To, Configuration.ToSid = Configuration.SelectNumber(numberTo)
-	SmsPrimaryPort.SendSMS(Configuration.From, Configuration.To, message)
+	sms, _ := SmsPrimaryPort.SendSMS(Configuration.From, Configuration.To, message)
+	SmsSid = sms.Sid
 	return nil
 }
 

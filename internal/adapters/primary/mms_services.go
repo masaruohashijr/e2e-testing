@@ -25,7 +25,7 @@ func (p *port_mms) ListMMS(from, to string) ([]domains.Mms, error) {
 	return mmss, err
 }
 
-func (p *port_mms) SendMMS(from, to, message string) error {
-	err := p.driven.SendMMS(from, to, message)
-	return err
+func (p *port_mms) SendMMS(from, to, message string) (domains.Mms, error) {
+	mms, err := p.driven.SendMMS(from, to, message)
+	return mms, err
 }

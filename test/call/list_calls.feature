@@ -6,6 +6,7 @@ Feature: ListCalls
   Scenario: List My Calls
 
     Given my test setup runs    
+    And "NumberB" configured to hang up after 2 seconds    
     When I make a call from "NumberA" to "NumberB"
     And After waiting for 3 seconds
     Then I should list at least 1 call
