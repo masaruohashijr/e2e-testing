@@ -7,15 +7,13 @@ import (
 	"zarbat_test/pkg/domains"
 )
 
-func IShouldListAtLeastTranscription(from, to string, timeInSeconds int) error {
-	calls, err := CallPrimaryPort.FilterCalls(from, to, "in-progress")
+func IShouldListAtLeastTranscription(number int) error {
+	notifications, err := NotificationPrimaryPort.ListNotifications()
 	if err != nil {
-		return fmt.Errorf("Error %s", err.Error())
+		return fmt.Errorf("Could not list notifications.")
 	}
-	if len(calls) > 0 {
-		RecordingPrimaryPort.RecordCall(calls[0].Sid, timeInSeconds)
-	} else {
-		return fmt.Errorf("There is no in-progress call.")
+	if len(notifications) < number {
+		return fmt.Errorf("Expected %d notifications, but got %d.", number, len(notifications))
 	}
 	return nil
 }
