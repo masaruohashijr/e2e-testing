@@ -167,7 +167,7 @@ func InitializeScenario(ctx *godog.ScenarioContext) {
 	ctx.Step(`^I should get transcription text as "([^"]*)"$`, IShouldGetTranscriptionTextAs)
 	ctx.Step(`^I transcribe audio url "([^"]*)"$`, ITranscribeAudioUrl)
 	ctx.Step(`^I should get last transcription text as "([^"]*)"$`, IShouldGetLastTranscriptionTextAs)
-	ctx.Step(`^I transcribe last recoding from "([^"]*)" to "([^"]*)"$`, ITranscribeLastRecodingFromTo)
+	ctx.Step(`^I transcribe last recording$`, ITranscribeLastRecording)
 	ctx.Step(`^I should get to view a call from "([^"]*)" to "([^"]*)" with status "([^"]*)"$`, IShouldGetToViewACallFromToWithStatus)
 	ctx.Step(`^I should list at least (\d+) usage$`, IShouldListAtLeastUsage)
 	ctx.Step(`^I should view the total cost usage more than (\d+)$`, IShouldViewTheTotalCostUsageMoreThan)

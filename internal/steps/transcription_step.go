@@ -82,10 +82,24 @@ func ITranscribeAudioUrl(number string) error {
 	return nil
 }
 
-func IShouldGetLastTranscriptionTextAs() error {
+func IShouldGetLastTranscriptionTextAs(expected string) error {
+	transcriptions, err := TranscriptionPrimaryPort.ListTranscriptions()
+	if err != nil {
+		return fmt.Errorf("Could not list transcriptions.")
+	}
+	tr := transcriptions[0]
+	txt := tr.TranscriptionText
+	if txt != expected {
+		return fmt.Errorf("Transcription text %s is different from the expected %s", txt, expected)
+	}
 	return nil
 }
 
-func ITranscribeLastRecodingFromTo() error {
+func ITranscribeLastRecording() error {
+	recording, err := RecordingPrimaryPort.ViewRecording(CallSid)
+	if err != nil {
+		return fmt.Errorf("Could not view recording from call: %s", CallSid)
+	}
+	TranscriptionPrimaryPort.TranscribeRecording(recording.Sid)
 	return nil
 }
