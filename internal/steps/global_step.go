@@ -148,7 +148,7 @@ func InitializeScenario(ctx *godog.ScenarioContext) {
 	ctx.Step(`^I should list at least (\d+) recording from "([^"]*)" to "([^"]*)"$`, IShouldListAtLeastRecordingFromTo)
 	ctx.Step(`^Append To "([^"]*)" config say "([^"]*)"$`, AppendToConfigSay)
 	ctx.Step(`^I should list at least (\d+) notification$`, IShouldListAtLeastNotification)
-	ctx.Step(`^I should view the last notification from "([^"]*)" to "([^"]*)"$`, IShouldViewTheLastNotificationFromTo)
+	ctx.Step(`^I should view the last notification$`, IShouldViewTheLastNotification)
 	ctx.Step(`^I delete all recordings from "([^"]*)" to "([^"]*)"$`, IDeleteAllRecordingsFromTo)
 	ctx.Step(`^I should list no recording from "([^"]*)" to "([^"]*)"$`, IShouldListNoRecordingFromTo)
 	ctx.Step(`^I should get last recording duration greater than or equal to (\d+) seconds$`, IShouldGetLastRecordingDurationGreaterThanOrEqualToSeconds)

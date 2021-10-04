@@ -13,6 +13,15 @@ func IShouldListAtLeastNotification(amount int) error {
 	return nil
 }
 
-func IShouldViewTheLastNotificationFromTo(number string) error {
+func IShouldViewTheLastNotification() error {
+	notifications, err := NotificationPrimaryPort.ListNotifications()
+	if err != nil {
+		return fmt.Errorf("Could not list notifications.")
+	}
+	notification, err := NotificationPrimaryPort.ViewNotification(notifications[0].Sid)
+	if err != nil {
+		return fmt.Errorf("Expected one notification, but got 0.")
+	}
+	println("Log Level: ", notification.Log)
 	return nil
 }

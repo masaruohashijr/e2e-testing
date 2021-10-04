@@ -9,4 +9,4 @@ Feature: View_Notification
       And "NumberA" configured to pause 3 seconds
       And Append To "NumberA" config say "what we do in life echoes in eternity"
       When I make a call from "NumberA" to "NumberB"
-      Then I should view the last notification from "NumberA" to "NumberB"
+      Then I should view the last notification
