@@ -7,12 +7,14 @@ import (
 	"zarbat_test/internal/godog/services"
 	"zarbat_test/pkg/domains"
 	"zarbat_test/pkg/ports/account"
+	"zarbat_test/pkg/ports/application"
 	"zarbat_test/pkg/ports/calls"
 	"zarbat_test/pkg/ports/mms"
 	"zarbat_test/pkg/ports/notifications"
 	"zarbat_test/pkg/ports/numbers"
 	"zarbat_test/pkg/ports/recordings"
 	"zarbat_test/pkg/ports/sms"
+	"zarbat_test/pkg/ports/transcriptions"
 	usage "zarbat_test/pkg/ports/usages"
 
 	"github.com/cucumber/godog"
@@ -33,6 +35,10 @@ var MmsSecondaryPort mms.SecondaryPort
 var MmsPrimaryPort mms.PrimaryPort
 var NotificationSecondaryPort notifications.SecondaryPort
 var NotificationPrimaryPort notifications.PrimaryPort
+var TranscriptionSecondaryPort transcriptions.SecondaryPort
+var TranscriptionPrimaryPort transcriptions.PrimaryPort
+var ApplicationSecondaryPort application.SecondaryPort
+var ApplicationPrimaryPort application.PrimaryPort
 var RecordingSecondaryPort recordings.SecondaryPort
 var RecordingPrimaryPort recordings.PrimaryPort
 var IncomingPhoneNumber *domains.IncomingPhoneNumber
@@ -80,6 +86,10 @@ func MyTestSetupRuns() error {
 	NotificationPrimaryPort = primary.NewNotificationsService(NotificationSecondaryPort)
 	AccountSecondaryPort = secondary.NewAccountApi(&Configuration)
 	AccountPrimaryPort = primary.NewAccountsService(AccountSecondaryPort)
+	TranscriptionSecondaryPort = secondary.NewTranscriptionApi(&Configuration)
+	TranscriptionPrimaryPort = primary.NewTranscriptionService(TranscriptionSecondaryPort)
+	ApplicationSecondaryPort = secondary.NewApplicationApi(&Configuration)
+	ApplicationPrimaryPort = primary.NewApplicationsService(ApplicationSecondaryPort)
 	Configuration.ActionUrl = "http://zang.io/ivr/welcome/call"
 	Configuration.StatusCallback = services.BaseUrl + "/Callback"
 	return nil
