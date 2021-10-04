@@ -3,17 +3,22 @@ package steps
 import (
 	"encoding/xml"
 	"fmt"
+	"strconv"
 	"zarbat_test/internal/godog/services"
 	"zarbat_test/pkg/domains"
 )
 
 func IRecordCurrentCallFromToForSeconds(from, to string, timeInSeconds int) error {
-	calls, err := CallPrimaryPort.FilterCalls(from, to, "in-progress")
+	Configuration.From, Configuration.FromSid = Configuration.SelectNumber(from)
+	Configuration.To, Configuration.ToSid = Configuration.SelectNumber(to)
+	CallPrimaryPort.MakeCall()
+	calls, err := CallPrimaryPort.FilterCalls(Configuration.From, Configuration.To, "in-progress")
 	if err != nil {
 		return fmt.Errorf("Error %s", err.Error())
 	}
 	if len(calls) > 0 {
-		RecordingPrimaryPort.RecordCall(calls[0].Sid, timeInSeconds)
+		CallSid = calls[0].Sid
+		RecordingPrimaryPort.RecordCall(CallSid, timeInSeconds)
 	} else {
 		return fmt.Errorf("There is no in-progress call.")
 	}
@@ -85,13 +90,36 @@ func ConfiguredToRecordCallsForDownload(number string) error {
 }
 
 func IDeleteAllRecordingsFromTo() error {
+	list, err := RecordingPrimaryPort.ListRecordings(CallSid)
+	if err != nil {
+		return fmt.Errorf("Could not list recordings from a call.")
+	}
+	for _, rec := range list {
+		RecordingPrimaryPort.DeleteRecording(rec.Sid)
+	}
 	return nil
 }
 
 func IShouldListNoRecordingFromTo() error {
+	list, err := RecordingPrimaryPort.ListRecordings(CallSid)
+	if err != nil {
+		return fmt.Errorf("Could not list recordings from a call.")
+	}
+	if len(list) > 0 {
+		return fmt.Errorf("Could not list recordings from a call.")
+	}
 	return nil
 }
 
-func IShouldGetLastRecordingDurationGreaterThanOrEqualToSeconds() error {
+func IShouldGetLastRecordingDurationGreaterThanOrEqualToSeconds(timeInSeconds int) error {
+	list, err := RecordingPrimaryPort.ListRecordings(CallSid)
+	rec, err := RecordingPrimaryPort.ViewRecording(list[0].Sid)
+	if err != nil {
+		return fmt.Errorf("Could not list recordings from a call.")
+	}
+	duration, _ := strconv.Atoi(rec.Duration)
+	if duration < timeInSeconds {
+		return fmt.Errorf("Could not list recordings from a call.")
+	}
 	return nil
 }

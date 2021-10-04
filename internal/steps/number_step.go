@@ -120,26 +120,13 @@ func IReleaseAllMyNumbersExcept(exceptionList string) error {
 	return nil
 }
 
-func IShouldGetNumbersFromMyList(amount int) error {
-	ok := false
-	myNumbers, err := NumberSecondaryPort.ListAvailableNumbers()
+func IShouldGetNumbersFromMyList(expectedAmount int) error {
+	phoneNumbers, err := NumberSecondaryPort.ListNumbers()
 	if err != nil {
-		return fmt.Errorf("Error %s", "Not able to list my numbers.")
+		return fmt.Errorf("Could not perform List Numbers.")
 	}
-	for i := 0; i < amount; i++ {
-		logging.Debug.Println("Buying number is: ", AvailableNumbers[i])
-		NumberSecondaryPort.AddNumber(AvailableNumbers[i])
-		purchased, _ := NumberSecondaryPort.ListNumbers()
-		for _, n := range *purchased {
-			if myNumbers[i] == n.PhoneNumber {
-				logging.Debug.Println("Purchased number is: ", IncomingNumbers[i])
-				ok = true
-				break
-			}
-		}
-		if !ok {
-			return fmt.Errorf("Error %s", "Not able to list my numbers.")
-		}
+	if len(*phoneNumbers) != expectedAmount {
+		return fmt.Errorf("Expected %d phone numbers, but got %d.", expectedAmount, len(*phoneNumbers))
 	}
 	return nil
 }

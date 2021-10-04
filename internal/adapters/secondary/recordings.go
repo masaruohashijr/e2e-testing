@@ -26,6 +26,9 @@ func NewRecordingsApi(config *config.ConfigType) recordings.SecondaryPort {
 }
 
 func (a *recordingsAPI) RecordCall(callSid string, timeInSeconds int) error {
+	println("=====================================================")
+	println("CallSid inside RecordCall: " + callSid)
+	println("=====================================================")
 	apiEndpoint := fmt.Sprintf(a.config.GetApiURL()+
 		"/Accounts/%s/Calls/%s/Recordings.json",
 		a.config.AccountSid, callSid)
@@ -114,7 +117,7 @@ func (a *recordingsAPI) DeleteRecording(recordingSid string) (domains.Recording,
 }
 
 func (a *recordingsAPI) ListRecordings(callSid string) ([]domains.Recording, error) {
-	apiEndpoint := fmt.Sprintf(a.config.GetApiURL()+"/Accounts/%s/SMS/Messages.json", a.config.AccountSid)
+	apiEndpoint := fmt.Sprintf(a.config.GetApiURL()+"/Accounts/%s/Recordings.json", a.config.AccountSid)
 	req, _ := http.NewRequest("GET", apiEndpoint, nil)
 	println(apiEndpoint)
 	q := req.URL.Query()

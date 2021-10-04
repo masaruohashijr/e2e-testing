@@ -20,12 +20,7 @@ func (p *port_notifications) ViewNotification(notificationsSid string) (domains.
 	return notifications, err
 }
 
-func (p *port_notifications) ListNotifications(from, to string) ([]domains.Notification, error) {
-	notificationss, err := p.driven.ListNotifications(from, to)
+func (p *port_notifications) ListNotifications() ([]domains.Notification, error) {
+	notificationss, err := p.driven.ListNotifications()
 	return notificationss, err
-}
-
-func (p *port_notifications) SendNotification(from, to, message string) error {
-	err := p.driven.SendNotification(from, to, message)
-	return err
 }
