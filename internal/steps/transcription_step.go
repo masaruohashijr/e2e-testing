@@ -89,17 +89,25 @@ func IShouldGetLastTranscriptionTextAs(expected string) error {
 	}
 	tr := transcriptions[0]
 	txt := tr.TranscriptionText
-	if txt != expected {
-		return fmt.Errorf("Transcription text %s is different from the expected %s", txt, expected)
+	if expected != txt {
+		return fmt.Errorf("Transcription text '%s' is different from the expected '%s'", txt, expected)
 	}
 	return nil
 }
 
 func ITranscribeLastRecording() error {
-	recording, err := RecordingPrimaryPort.ViewRecording(CallSid)
+	recordings, err := RecordingPrimaryPort.ListRecordings(CallSid)
 	if err != nil {
-		return fmt.Errorf("Could not view recording from call: %s", CallSid)
+		return fmt.Errorf("Could not list the recordings from call: %s", CallSid)
 	}
-	TranscriptionPrimaryPort.TranscribeRecording(recording.Sid)
+	if len(recordings) > 0 {
+		recording, err := RecordingPrimaryPort.ViewRecording(recordings[0].Sid)
+		if err != nil {
+			return fmt.Errorf("Could not view recording from call: %s", CallSid)
+		}
+		TranscriptionPrimaryPort.TranscribeRecording(recording.Sid)
+	} else {
+		return fmt.Errorf("No recordings created for call: %s", CallSid)
+	}
 	return nil
 }

@@ -4,14 +4,16 @@ import (
 	"encoding/xml"
 	"fmt"
 	"strconv"
+	"time"
 	"zarbat_test/internal/godog/services"
 	"zarbat_test/pkg/domains"
 )
 
-func IRecordCurrentCallFromToForSeconds(from, to string, timeInSeconds int) error {
+func IRecordACallFromToForSeconds(from, to string, timeInSeconds int) error {
 	Configuration.From, Configuration.FromSid = Configuration.SelectNumber(from)
 	Configuration.To, Configuration.ToSid = Configuration.SelectNumber(to)
 	CallPrimaryPort.MakeCall()
+	time.Sleep(5 * time.Second)
 	calls, err := CallPrimaryPort.FilterCalls(Configuration.From, Configuration.To, "in-progress")
 	if err != nil {
 		return fmt.Errorf("Error %s", err.Error())

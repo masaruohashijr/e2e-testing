@@ -154,7 +154,7 @@ func InitializeScenario(ctx *godog.ScenarioContext) {
 	ctx.Step(`^I send MMS "([^"]*)" from "([^"]*)" to "([^"]*)"$`, ISendMMSFromTo)
 	ctx.Step(`^I should view the MMS "([^"]*)" from "([^"]*)" to "([^"]*)"$`, IShouldViewTheMMSFromTo)
 	ctx.Step(`^I should list at least (\d+) SMS from "([^"]*)" to "([^"]*)"$`, IShouldListAtLeastSMSFromTo)
-	ctx.Step(`^I record current call from "([^"]*)" to "([^"]*)" for (\d+) seconds$`, IRecordCurrentCallFromToForSeconds)
+	ctx.Step(`^I record a call from "([^"]*)" to "([^"]*)" for (\d+) seconds$`, IRecordACallFromToForSeconds)
 	ctx.Step(`^I should list at least (\d+) recording from "([^"]*)" to "([^"]*)"$`, IShouldListAtLeastRecordingFromTo)
 	ctx.Step(`^Append To "([^"]*)" config say "([^"]*)"$`, AppendToConfigSay)
 	ctx.Step(`^I should list at least (\d+) notification$`, IShouldListAtLeastNotification)

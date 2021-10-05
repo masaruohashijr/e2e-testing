@@ -6,9 +6,8 @@ Feature: View_Transcription
   Scenario: View Transcrition
 
     Given my test setup runs
-      And "NumberA" configured to pause 3 seconds
-      And Append To "NumberA" config say "what we do in life echoes in eternity"
-      When I make a call from "NumberA" to "NumberB"
-      And I record current call from "NumberA" to "NumberB" for 5 seconds
+      And "NumberB" configured to pause 3 seconds
+      And Append To "NumberB" config say "what we do in life echoes in eternity"
+      When I record a call from "NumberA" to "NumberB" for 8 seconds
       And I transcribe last recording
       Then I should get last transcription text as "what we do in life echoes in eternity"

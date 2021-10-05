@@ -37,5 +37,8 @@ func AppendToConfigSay(numberA, speech string) error {
 	x, _ := xml.MarshalIndent(*Say, "", "")
 	strXML := string(x)
 	services.AppendActionXML(Configuration.VoiceUrl, strXML)
+	Configuration.To, Configuration.ToSid = Configuration.SelectNumber(numberA)
+	Configuration.VoiceUrl = services.BaseUrl + "/Say"
+	NumberSecondaryPort.UpdateNumber()
 	return nil
 }
