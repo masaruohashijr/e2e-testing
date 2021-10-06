@@ -24,7 +24,7 @@ func NewApplicationApi(config *config.ConfigType) application.SecondaryPort {
 
 func (a *applicationAPI) UpdateApplication(applicationSid, friendlyName string) (domains.Application, error) {
 	apiEndpoint := fmt.Sprintf(a.config.GetApiURL()+
-		"/Accounts/%s.json/Applications/%s.json",
+		"/Accounts/%s/Applications/%s.json",
 		a.config.AccountSid, applicationSid)
 
 	values := &url.Values{}
@@ -50,7 +50,7 @@ func (a *applicationAPI) UpdateApplication(applicationSid, friendlyName string) 
 
 func (a *applicationAPI) ListApplications() ([]domains.Application, error) {
 	apiEndpoint := fmt.Sprintf(a.config.GetApiURL()+
-		"/Accounts/%s.json/Applications.json",
+		"/Accounts/%s/Applications.json",
 		a.config.AccountSid)
 
 	req, err := http.NewRequest("GET", apiEndpoint, nil)
@@ -106,12 +106,12 @@ func (a *applicationAPI) ViewApplication(applicationSid string) (domains.Applica
 	if err != nil {
 		return dummyApplication, err
 	}
-	var acc domains.Account
-	err = json.Unmarshal(body, &acc)
+	var app domains.Application
+	err = json.Unmarshal(body, &app)
 	if err != nil {
 		return dummyApplication, err
 	}
-	return dummyApplication, nil
+	return app, nil
 }
 
 func (a *applicationAPI) DeleteApplication(applicationSid string) (domains.Application, error) {

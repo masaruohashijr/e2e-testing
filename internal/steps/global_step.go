@@ -9,6 +9,7 @@ import (
 	"zarbat_test/pkg/ports/account"
 	"zarbat_test/pkg/ports/application"
 	"zarbat_test/pkg/ports/calls"
+	"zarbat_test/pkg/ports/carrier"
 	"zarbat_test/pkg/ports/mms"
 	"zarbat_test/pkg/ports/notifications"
 	"zarbat_test/pkg/ports/numbers"
@@ -41,6 +42,8 @@ var ApplicationSecondaryPort application.SecondaryPort
 var ApplicationPrimaryPort application.PrimaryPort
 var RecordingSecondaryPort recordings.SecondaryPort
 var RecordingPrimaryPort recordings.PrimaryPort
+var CarrierSecondaryPort carrier.SecondaryPort
+var CarrierPrimaryPort carrier.PrimaryPort
 var IncomingPhoneNumber *domains.IncomingPhoneNumber
 var AccountInfo *domains.Account
 var ResponsePlayLastRecording domains.ResponsePlayLastRecording
