@@ -44,6 +44,7 @@ func main() {
 	l.Info.Println("****************************************")
 	l.Info.Println("START OF TEST SUITE")
 	logArgs(tests)
+	mainStatus := 0
 	status := 0
 	passed := 0
 	failed := 0
@@ -66,6 +67,7 @@ func main() {
 			Options:             &opts,
 		}.Run()
 		if status != 0 {
+			mainStatus = status
 			logResult(tests[i].Name, "Not OK")
 			ft.Tries += 1
 			if ft.Tries < *triesPtr {
@@ -83,7 +85,9 @@ func main() {
 	l.Info.Println("Failed ", failed)
 	l.Info.Println("...END OF TEST SUITE")
 	os.RemoveAll(tempDir)
-	os.Exit(status)
+	if mainStatus != 0 {
+		log.Fatal("Errors were found during last tests.")
+	}
 }
 
 func checkEmpty(tests []test.FeatureTest) error {
