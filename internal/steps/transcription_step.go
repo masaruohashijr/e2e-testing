@@ -4,6 +4,7 @@ import (
 	"encoding/xml"
 	"fmt"
 	"zarbat_test/internal/godog/services"
+	"zarbat_test/internal/logging"
 	"zarbat_test/pkg/domains"
 )
 
@@ -50,7 +51,7 @@ func IShouldGetTranscriptionTextAs(number string) error {
 	ResponseRecord.Record = *r
 	x, _ := xml.MarshalIndent(ResponseRecord, "", "")
 	strXML := domains.Header + string(x)
-	println(strXML)
+	logging.Debug.Println(strXML)
 	services.WriteActionXML("record", strXML)
 	Configuration.VoiceUrl = services.BaseUrl + "/Record"
 	Configuration.To, Configuration.ToSid = Configuration.SelectNumber(number)
@@ -74,7 +75,7 @@ func ITranscribeAudioUrl(number string) error {
 	ResponseRecord.Record = *r
 	x, _ := xml.MarshalIndent(ResponseRecord, "", "")
 	strXML := domains.Header + string(x)
-	println(strXML)
+	logging.Debug.Println(strXML)
 	services.WriteActionXML("record", strXML)
 	Configuration.VoiceUrl = services.BaseUrl + "/Record"
 	Configuration.To, Configuration.ToSid = Configuration.SelectNumber(number)

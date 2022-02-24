@@ -6,6 +6,7 @@ import (
 	"math"
 	"math/cmplx"
 	"os"
+	"zarbat_test/internal/logging"
 	l "zarbat_test/internal/logging"
 
 	"github.com/xigh/go-wavreader"
@@ -55,7 +56,7 @@ func GetFrequencies(filePath string, expectedFrequency int, similarity int) (err
 	for i := range freqs {
 		m := cmplx.Abs(freqs[i])
 		if m > max/2 {
-			fmt.Println(i, m)
+			logging.Debug.Println(i, m)
 			fq = append(fq, int(wr.Rate())/LENGTH*i)
 		}
 	}

@@ -2,3 +2,4 @@ temp/*
 log/*
 zarbat_tester.exe
 .metals/*
+.vendor/*

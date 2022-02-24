@@ -12,7 +12,7 @@ func GatherHandler(w http.ResponseWriter, r *http.Request) {
 	l.Debug.Println("GatherHandler")
 	xml, err := os.ReadFile("xml/gather.xml")
 	if err != nil {
-		println(err.Error())
+		logging.Debug.Println(err.Error())
 	}
 	l.Debug.Println(string(xml))
 	w.Write([]byte(xml))
@@ -30,10 +30,10 @@ func SpeechResultHandler(w http.ResponseWriter, r *http.Request) {
 	logging.Debug.Println(sr)
 	hash := r.FormValue("hash")
 	sTestHash := fmt.Sprint(TestHash)
-	fmt.Println("SpeechResultHandler Hash: ", hash)
-	fmt.Println("SpeechResultHandler TestHash: ", sTestHash)
-	fmt.Println("SpeechResult: ", sr)
-	fmt.Println("Digits: ", dg)
+	logging.Debug.Println("SpeechResultHandler Hash: ", hash)
+	logging.Debug.Println("SpeechResultHandler TestHash: ", sTestHash)
+	logging.Debug.Println("SpeechResult: ", sr)
+	logging.Debug.Println("Digits: ", dg)
 	if (sr != "" && sr != "welcome to your new Zhang account" || dg != "") && hash == sTestHash {
 		//f IsOpen(Ch) {
 		Ch <- sr

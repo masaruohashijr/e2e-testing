@@ -8,6 +8,7 @@ import (
 	"net/http"
 	"net/url"
 	"zarbat_test/internal/config"
+	"zarbat_test/internal/logging"
 	"zarbat_test/pkg/domains"
 	"zarbat_test/pkg/ports/conference"
 )
@@ -40,7 +41,7 @@ func (a *conferenceAPI) ViewParticipant(conferenceSid, participantSid string) (d
 		return dummyParticipant, err
 	}
 	defer resp.Body.Close()
-	fmt.Println("response Status:", resp.Status)
+	logging.Debug.Println("response Status:", resp.Status)
 	body, err := ioutil.ReadAll(resp.Body)
 	if err != nil {
 		return dummyParticipant, err
@@ -71,7 +72,7 @@ func (a *conferenceAPI) ViewConference(conferenceSid string) (domains.Conference
 		return dummyConference, err
 	}
 	defer resp.Body.Close()
-	fmt.Println("response Status:", resp.Status)
+	logging.Debug.Println("response Status:", resp.Status)
 	body, err := ioutil.ReadAll(resp.Body)
 	if err != nil {
 		return dummyConference, err
@@ -106,7 +107,7 @@ func (a *conferenceAPI) MuteDeafParticipant(conferenceSid, participantSid string
 		return dummyParticipant, err
 	}
 	defer resp.Body.Close()
-	fmt.Println("response Status:", resp.Status)
+	logging.Debug.Println("response Status:", resp.Status)
 	body, err := ioutil.ReadAll(resp.Body)
 	if err != nil {
 		return dummyParticipant, err
@@ -135,7 +136,7 @@ func (a *conferenceAPI) HangupParticipant(conferenceSid, participantSid string) 
 		return dummyParticipant, err
 	}
 	defer resp.Body.Close()
-	fmt.Println("response Status:", resp.Status)
+	logging.Debug.Println("response Status:", resp.Status)
 	body, err := ioutil.ReadAll(resp.Body)
 	if err != nil {
 		return dummyParticipant, err
@@ -169,7 +170,7 @@ func (a *conferenceAPI) PlayAudioToParticipant(conferenceSid, participantSid str
 		return dummyParticipant, err
 	}
 	defer resp.Body.Close()
-	fmt.Println("response Status:", resp.Status)
+	logging.Debug.Println("response Status:", resp.Status)
 	body, err := ioutil.ReadAll(resp.Body)
 	if err != nil {
 		return dummyParticipant, err
@@ -200,7 +201,7 @@ func (a *conferenceAPI) ListConferences(friendlyName string) ([]domains.Conferen
 		return dummyConferences, err
 	}
 	defer resp.Body.Close()
-	fmt.Println("response Status:", resp.Status)
+	logging.Debug.Println("response Status:", resp.Status)
 	body, err := ioutil.ReadAll(resp.Body)
 	if err != nil {
 		return dummyConferences, err
@@ -230,7 +231,7 @@ func (a *conferenceAPI) ListParticipants(conferenceSid string) ([]domains.Partic
 		return dummyParticipants, err
 	}
 	defer resp.Body.Close()
-	fmt.Println("response Status:", resp.Status)
+	logging.Debug.Println("response Status:", resp.Status)
 	body, err := ioutil.ReadAll(resp.Body)
 	if err != nil {
 		return dummyParticipants, err

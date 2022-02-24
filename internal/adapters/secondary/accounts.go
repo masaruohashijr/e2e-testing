@@ -8,6 +8,7 @@ import (
 	"net/http"
 	"net/url"
 	"zarbat_test/internal/config"
+	"zarbat_test/internal/logging"
 	"zarbat_test/pkg/domains"
 	"zarbat_test/pkg/ports/account"
 )
@@ -69,7 +70,7 @@ func (a *accountAPI) ViewAccount() (*domains.Account, error) {
 		return nil, err
 	}
 	defer resp.Body.Close()
-	fmt.Println("response Status:", resp.Status)
+	logging.Debug.Println("response Status:", resp.Status)
 	body, err := ioutil.ReadAll(resp.Body)
 	if err != nil {
 		return nil, err

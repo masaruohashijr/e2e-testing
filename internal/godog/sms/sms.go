@@ -10,6 +10,7 @@ import (
 	"zarbat_test/internal/adapters/secondary"
 	"zarbat_test/internal/config"
 	"zarbat_test/internal/godog/services"
+	"zarbat_test/internal/logging"
 	"zarbat_test/pkg/domains"
 	"zarbat_test/pkg/ports/calls"
 	"zarbat_test/pkg/ports/sms"
@@ -53,7 +54,7 @@ func IMakeACallFromTo(numberA, numberB string) error {
 	Configuration.VoiceUrl = ""
 	x, _ := xml.MarshalIndent(ResponseSMS, "", "")
 	strXML := domains.Header + string(x)
-	println(strXML)
+	logging.Debug.Println(strXML)
 	services.WriteActionXML("sms", strXML)
 	CallPrimaryPort.MakeCall()
 	return nil
@@ -76,12 +77,12 @@ func SMSStatusShouldBeSentToCallStatusURL() error {
 	case bodyContent = <-Ch:
 		fmt.Printf("Result: %s\n", bodyContent)
 	case <-time.After(time.Duration(services.TestTimeout) * time.Second):
-		fmt.Println("timeout")
+		logging.Debug.Println("timeout")
 		Ch = nil
 		return fmt.Errorf("timeout")
 	}
 	url_parameters, _ := url.ParseQuery(bodyContent)
-	println(url_parameters)
+	logging.Debug.Println(url_parameters)
 	status := url_parameters["DlrStatus"][0]
 	from_number := url_parameters["From"][0]
 	to_number := url_parameters["To"][0]
@@ -105,13 +106,13 @@ func ShouldBeAbleToViewTheSMS(number, message string) error {
 	case bodyContent = <-Ch:
 		fmt.Printf("Result: %s\n", bodyContent)
 	case <-time.After(time.Duration(services.TestTimeout) * time.Second):
-		fmt.Println("timeout")
+		logging.Debug.Println("timeout")
 		Ch = nil
 		return fmt.Errorf("timeout")
 	}
 
 	url_parameters, _ := url.ParseQuery(bodyContent)
-	println(url_parameters)
+	logging.Debug.Println(url_parameters)
 
 	status := url_parameters["DlrStatus"][0]
 	from_number := url_parameters["From"][0]

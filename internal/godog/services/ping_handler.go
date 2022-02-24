@@ -4,6 +4,7 @@ import (
 	"fmt"
 	"net/http"
 	"os"
+	"zarbat_test/internal/logging"
 	l "zarbat_test/internal/logging"
 )
 
@@ -13,9 +14,9 @@ func PingingHandler(w http.ResponseWriter, r *http.Request) {
 	l.Debug.Println("PingingHandler")
 	hash := r.FormValue("hash")
 	sTestHash := fmt.Sprint(TestHash)
-	fmt.Println("SpeechResultHandler Hash: ", hash)
+	logging.Debug.Println("SpeechResultHandler Hash: ", hash)
 	l.Debug.Println("SpeechResultHandler Hash: ", hash)
-	fmt.Println("SpeechResultHandler TestHash: ", sTestHash)
+	logging.Debug.Println("SpeechResultHandler TestHash: ", sTestHash)
 	l.Debug.Println("SpeechResultHandler TestHash: ", sTestHash)
 	if hash == sTestHash {
 		Ch <- "Pinged"

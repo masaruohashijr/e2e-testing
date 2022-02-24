@@ -8,6 +8,7 @@ import (
 	"net/http"
 	"net/url"
 	"zarbat_test/internal/config"
+	"zarbat_test/internal/logging"
 	"zarbat_test/pkg/domains"
 	"zarbat_test/pkg/ports/sms"
 )
@@ -49,14 +50,14 @@ func (a *smsAPI) SendSMS(from, to, message string) (domains.Sms, error) {
 		return dummySms, err
 	}
 	// Print Response
-	fmt.Println("response Status:", resp.Status)
-	fmt.Println("response Headers:", resp.Header)
+	logging.Debug.Println("response Status:", resp.Status)
+	logging.Debug.Println("response Headers:", resp.Header)
 	body, err := ioutil.ReadAll(resp.Body)
 	if err != nil {
 		return dummySms, err
 	}
 	b := string(body)
-	fmt.Println("response Body:", b)
+	logging.Debug.Println("response Body:", b)
 	defer resp.Body.Close()
 	sms := domains.Sms{}
 	json.Unmarshal(body, &sms)
@@ -66,7 +67,7 @@ func (a *smsAPI) SendSMS(from, to, message string) (domains.Sms, error) {
 func (a *smsAPI) ViewSMS(smsSid string) (domains.Sms, error) {
 	apiEndpoint := fmt.Sprintf(a.config.GetApiURL()+"/Accounts/%s/SMS/Messages/%s.json", a.config.AccountSid, smsSid)
 	req, _ := http.NewRequest("GET", apiEndpoint, nil)
-	println(apiEndpoint)
+	logging.Debug.Println(apiEndpoint)
 	q := req.URL.Query()
 	req.URL.RawQuery = q.Encode()
 	req.Header.Set("Content-Type", "application/json")
@@ -81,14 +82,14 @@ func (a *smsAPI) ViewSMS(smsSid string) (domains.Sms, error) {
 	}
 	defer resp.Body.Close()
 	// Print Response
-	fmt.Println("response Status:", resp.Status)
-	fmt.Println("response Headers:", resp.Header)
+	logging.Debug.Println("response Status:", resp.Status)
+	logging.Debug.Println("response Headers:", resp.Header)
 	body, err := ioutil.ReadAll(resp.Body)
 	if err != nil {
 		return dummySms, err
 	}
 	b := string(body)
-	fmt.Println("response Body:", b)
+	logging.Debug.Println("response Body:", b)
 	sms := domains.Sms{}
 	json.Unmarshal(body, &sms)
 	return sms, nil
@@ -97,7 +98,7 @@ func (a *smsAPI) ViewSMS(smsSid string) (domains.Sms, error) {
 func (a *smsAPI) ListSMS(from, to string) ([]domains.Sms, error) {
 	apiEndpoint := fmt.Sprintf(a.config.GetApiURL()+"/Accounts/%s/SMS/Messages.json", a.config.AccountSid)
 	req, _ := http.NewRequest("GET", apiEndpoint, nil)
-	println(apiEndpoint)
+	logging.Debug.Println(apiEndpoint)
 	q := req.URL.Query()
 	q.Add("From", from)
 	q.Add("To", to)
@@ -115,18 +116,18 @@ func (a *smsAPI) ListSMS(from, to string) ([]domains.Sms, error) {
 	}
 	defer resp.Body.Close()
 	// Print Response
-	fmt.Println("response Status:", resp.Status)
-	fmt.Println("response Headers:", resp.Header)
+	logging.Debug.Println("response Status:", resp.Status)
+	logging.Debug.Println("response Headers:", resp.Header)
 	body, err := ioutil.ReadAll(resp.Body)
 	if err != nil {
 		return nil, err
 	}
 	b := string(body)
-	fmt.Println("response Body:", b)
+	logging.Debug.Println("response Body:", b)
 	smsResponse := domains.SMSResponse{}
 	json.Unmarshal(body, &smsResponse)
 	for _, sms := range smsResponse.SmsMessages {
-		fmt.Println(sms.From, sms.To, sms.DateCreated, sms.Body)
+		logging.Debug.Println(sms.From, sms.To, sms.DateCreated, sms.Body)
 	}
 	return smsResponse.SmsMessages, nil
 }

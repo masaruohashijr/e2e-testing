@@ -65,7 +65,7 @@ func NewConfig() (config ConfigType) {
 	config.ConfigPath = ConfigPath
 	config = ReadConfig(config)
 	config.HttpClient = http.Client{
-		Timeout: 60 * time.Second,
+		Timeout: 180 * time.Second,
 	}
 	return config
 }

@@ -48,7 +48,7 @@ func IListAllAvailableNumbers() error {
 	}
 	for _, a := range AvailableNumbers {
 		logging.Debug.Println(a)
-		println(a)
+		logging.Debug.Println(a)
 	}
 	return nil
 }
@@ -82,7 +82,7 @@ func IListMyNumbers() error {
 	}
 	for _, in := range *myNumbers {
 		logging.Debug.Println(in.PhoneNumber)
-		println(in.PhoneNumber)
+		logging.Debug.Println(in.PhoneNumber)
 	}
 	return nil
 }
@@ -113,7 +113,7 @@ func IReleaseAllMyNumbersExcept(exceptionList string) error {
 			}
 		}
 		if !exceptionNumberFound {
-			println("Releasing " + a.PhoneNumber)
+			logging.Debug.Println("Releasing " + a.PhoneNumber)
 			NumberPrimaryPort.DeleteNumber(a.Sid)
 		}
 	}
@@ -139,6 +139,14 @@ func ConfiguredWithFriendlyNameAs(number, friendlyName string) error {
 	NumberPrimaryPort.UpdateNumber()
 	return nil
 }
+
+func ConfiguredWithVoiceUrlAs(number, voiceUrl string) error {
+	services.CloseChannel = true
+	Configuration.To, Configuration.ToSid = Configuration.SelectNumber(number)
+	Configuration.VoiceUrl = voiceUrl
+	NumberPrimaryPort.UpdateNumber()
+	return nil
+}
 func IShouldGetFriendlyNameOn(friendlyName, number string) error {
 	selectedNumber, sid := Configuration.SelectNumber(number)
 	ipn, err := NumberPrimaryPort.ViewNumber(sid)
@@ -147,7 +155,7 @@ func IShouldGetFriendlyNameOn(friendlyName, number string) error {
 		logging.Debug.Printf("Error %s", "Not able to view number info.")
 		return fmt.Errorf("Error %s", "Not able to view number info.")
 	}
-	println(IncomingPhoneNumber.FriendlyName)
+	logging.Debug.Println(IncomingPhoneNumber.FriendlyName)
 	if IncomingPhoneNumber != nil {
 		if IncomingPhoneNumber.PhoneNumber == selectedNumber {
 			if IncomingPhoneNumber.FriendlyName == friendlyName {
@@ -168,7 +176,7 @@ func IViewInfo(number string) error {
 		return fmt.Errorf("Error %s", "Not able to view number info.")
 	}
 	logging.Debug.Println(IncomingPhoneNumber.FriendlyName)
-	println(IncomingPhoneNumber.FriendlyName)
+	logging.Debug.Println(IncomingPhoneNumber.FriendlyName)
 	return nil
 
 }
@@ -182,15 +190,40 @@ func IShouldListMyNumbersAs(list string) error {
 	arr := strings.Split(list, ",")
 	for _, n := range *myNumbers {
 		found := false
+
 		for j := 0; j < len(arr); j++ {
-			if n.PhoneNumber == arr[j] {
+			pn, _ := Configuration.SelectNumber(arr[j])
+			if pn == n.PhoneNumber {
 				found = true
+				break
 			}
 		}
 		if !found {
-			logging.Debug.Printf("Error %s", "List is different than expected.")
-			return fmt.Errorf("Error %s", "List is different than expected.")
+			logging.Debug.Printf("Error %s", "List is different from expected.")
+			return fmt.Errorf("Error %s", "List is different from expected.")
 		}
 	}
 	return nil
+}
+
+func IShouldGetVoiceUrlOn(voiceUrl, number string) error {
+	selectedNumber, sid := Configuration.SelectNumber(number)
+	ipn, err := NumberPrimaryPort.ViewNumber(sid)
+	IncomingPhoneNumber = ipn
+	if err != nil {
+		logging.Debug.Printf("Error %s", "Not able to view number info.")
+		return fmt.Errorf("Error %s", "Not able to view number info.")
+	}
+	logging.Debug.Println(IncomingPhoneNumber.FriendlyName)
+	if IncomingPhoneNumber != nil {
+		if IncomingPhoneNumber.PhoneNumber == selectedNumber {
+			if IncomingPhoneNumber.VoiceURL == voiceUrl {
+				logging.Debug.Printf("Successs %s", voiceUrl)
+				return nil
+			}
+		}
+	}
+	logging.Debug.Printf("Error %s", "Not able to get voice url on number.")
+	return fmt.Errorf("Error %s", "Not able to get voice url on number.")
+
 }

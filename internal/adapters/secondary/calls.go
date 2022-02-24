@@ -9,6 +9,7 @@ import (
 	"net/url"
 	"zarbat_test/internal/config"
 	"zarbat_test/internal/godog/services"
+	"zarbat_test/internal/logging"
 	"zarbat_test/pkg/domains"
 	"zarbat_test/pkg/ports/calls"
 )
@@ -34,7 +35,7 @@ func (a *callsAPI) MakeCall() error {
 
 	var buffer *bytes.Buffer = bytes.NewBufferString(values.Encode())
 	req, err := http.NewRequest("POST", apiEndpoint, buffer)
-	println(apiEndpoint)
+	logging.Debug.Println(apiEndpoint)
 
 	if err != nil {
 		return err
@@ -42,7 +43,7 @@ func (a *callsAPI) MakeCall() error {
 
 	req.Header.Set("Content-Type", "application/json")
 	encoded := EncodeToBasicAuth(a.config.AccountSid, a.config.AuthToken)
-	println("Basic " + encoded)
+	logging.Debug.Println("Basic " + encoded)
 	req.Header.Add("Authorization", "Basic "+encoded)
 	// TODO
 	client := &http.Client{}
@@ -52,27 +53,27 @@ func (a *callsAPI) MakeCall() error {
 	}
 	defer resp.Body.Close()
 	// Print Response
-	fmt.Println("response Status:", resp.Status)
-	fmt.Println("response Headers:", resp.Header)
+	logging.Debug.Println("response Status:", resp.Status)
+	logging.Debug.Println("response Headers:", resp.Header)
 	body, err := ioutil.ReadAll(resp.Body)
 	if err != nil {
 		return err
 	}
 	b := string(body)
-	fmt.Println("response Body:", b)
+	logging.Debug.Println("response Body:", b)
 	c := domains.Call{}
 	err = json.Unmarshal(body, &c)
 	if err != nil {
-		println(err.Error())
+		logging.Debug.Println(err.Error())
 	}
-	println("CallSid: ", c.Sid)
+	logging.Debug.Println("CallSid: ", c.Sid)
 	services.CallSidContext = c.Sid
 	return nil
 }
 
 func (a *callsAPI) FilterCalls(from, to, status string) ([]domains.Call, error) {
 	apiEndpoint := fmt.Sprintf(a.config.GetApiURL()+"/Accounts/%s/Calls.json", a.config.AccountSid)
-	println(apiEndpoint)
+	logging.Debug.Println(apiEndpoint)
 	req, err := http.NewRequest("GET", apiEndpoint, nil)
 	q := req.URL.Query()
 	q.Add("From", from)
@@ -95,18 +96,18 @@ func (a *callsAPI) FilterCalls(from, to, status string) ([]domains.Call, error) 
 	}
 	defer resp.Body.Close()
 	// Print Response
-	fmt.Println("response Status:", resp.Status)
-	fmt.Println("response Headers:", resp.Header)
+	logging.Debug.Println("response Status:", resp.Status)
+	logging.Debug.Println("response Headers:", resp.Header)
 	body, err := ioutil.ReadAll(resp.Body)
 	if err != nil {
 		return nil, err
 	}
 	b := string(body)
-	fmt.Println("response Body:", b)
+	logging.Debug.Println("response Body:", b)
 	callsResponse := domains.CallsResponse{}
 	json.Unmarshal(body, &callsResponse)
 	for _, c := range callsResponse.Calls {
-		fmt.Println(c.From, c.To, c.DateCreated, c.Duration)
+		logging.Debug.Println(c.From, c.To, c.DateCreated, c.Duration)
 	}
 	return callsResponse.Calls, nil
 }
@@ -114,7 +115,7 @@ func (a *callsAPI) FilterCalls(from, to, status string) ([]domains.Call, error) 
 func (a *callsAPI) ListCalls() ([]domains.Call, error) {
 	apiEndpoint := fmt.Sprintf(a.config.GetApiURL()+"/Accounts/%s/Calls.json", a.config.AccountSid)
 	req, err := http.NewRequest("GET", apiEndpoint, nil)
-	println(apiEndpoint)
+	logging.Debug.Println(apiEndpoint)
 
 	if err != nil {
 		return nil, err
@@ -131,18 +132,18 @@ func (a *callsAPI) ListCalls() ([]domains.Call, error) {
 	}
 	defer resp.Body.Close()
 	// Print Response
-	fmt.Println("response Status:", resp.Status)
-	fmt.Println("response Headers:", resp.Header)
+	logging.Debug.Println("response Status:", resp.Status)
+	logging.Debug.Println("response Headers:", resp.Header)
 	body, err := ioutil.ReadAll(resp.Body)
 	if err != nil {
 		return nil, err
 	}
 	b := string(body)
-	fmt.Println("response Body:", b)
+	logging.Debug.Println("response Body:", b)
 	callsResponse := domains.CallsResponse{}
 	json.Unmarshal(body, &callsResponse)
 	for _, c := range callsResponse.Calls {
-		fmt.Println(c.From, c.To, c.DateCreated, c.Duration)
+		logging.Debug.Println(c.From, c.To, c.DateCreated, c.Duration)
 	}
 	return callsResponse.Calls, nil
 }
@@ -150,7 +151,7 @@ func (a *callsAPI) ListCalls() ([]domains.Call, error) {
 func (a *callsAPI) ViewCall(callSid string) (domains.Call, error) {
 	apiEndpoint := fmt.Sprintf(a.config.GetApiURL()+"/Accounts/%s/Calls/%s.json", a.config.AccountSid, callSid)
 	req, err := http.NewRequest("GET", apiEndpoint, nil)
-	println(apiEndpoint)
+	logging.Debug.Println(apiEndpoint)
 	req.Header.Set("Content-Type", "application/json")
 	encoded := EncodeToBasicAuth(a.config.AccountSid, a.config.AuthToken)
 	req.Header.Add("Authorization", "Basic "+encoded)
@@ -163,16 +164,16 @@ func (a *callsAPI) ViewCall(callSid string) (domains.Call, error) {
 	}
 	defer resp.Body.Close()
 	// Print Response
-	fmt.Println("response Status:", resp.Status)
-	fmt.Println("response Headers:", resp.Header)
+	logging.Debug.Println("response Status:", resp.Status)
+	logging.Debug.Println("response Headers:", resp.Header)
 	body, err := ioutil.ReadAll(resp.Body)
 	if err != nil {
 		return dummyCall, err
 	}
 	b := string(body)
-	fmt.Println("response Body:", b)
+	logging.Debug.Println("response Body:", b)
 	c := domains.Call{}
 	json.Unmarshal(body, &c)
-	fmt.Println(c.From, c.To, c.DateCreated, c.Duration)
+	logging.Debug.Println(c.From, c.To, c.DateCreated, c.Duration)
 	return c, nil
 }

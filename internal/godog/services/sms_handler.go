@@ -5,6 +5,7 @@ import (
 	"net/http"
 	"net/url"
 	"os"
+	"zarbat_test/internal/logging"
 	l "zarbat_test/internal/logging"
 )
 
@@ -22,7 +23,7 @@ func SmsStatusHandler(w http.ResponseWriter, r *http.Request) {
 	l.Debug.Println("*********** SMS Status Callback")
 	body, err := ioutil.ReadAll(r.Body)
 	if err != nil {
-		println(err.Error())
+		logging.Debug.Println(err.Error())
 		l.Debug.Println(err.Error())
 	}
 	bodyContent := string(body)

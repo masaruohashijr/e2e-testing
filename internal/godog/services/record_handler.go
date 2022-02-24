@@ -4,6 +4,7 @@ import (
 	"fmt"
 	"net/http"
 	"os"
+	"zarbat_test/internal/logging"
 	l "zarbat_test/internal/logging"
 )
 
@@ -11,7 +12,7 @@ func RecordHandler(w http.ResponseWriter, r *http.Request) {
 	l.Debug.Println("RecordHandler")
 	xml, err := os.ReadFile("xml/record.xml")
 	if err != nil {
-		println(err.Error())
+		logging.Debug.Println(err.Error())
 	}
 	l.Debug.Println(string(xml))
 	w.Write([]byte(xml))
@@ -25,15 +26,15 @@ func RecordActionHandler(w http.ResponseWriter, r *http.Request) {
 	l.Debug.Println(rURL)
 	hash := r.FormValue("hash")
 	sTestHash := fmt.Sprint(TestHash)
-	fmt.Println("RecordActionHandler Hash: ", hash)
+	logging.Debug.Println("RecordActionHandler Hash: ", hash)
 	l.Debug.Println("RecordActionHandler Hash: ", hash)
-	fmt.Println("RecordActionHandler TestHash: ", sTestHash)
+	logging.Debug.Println("RecordActionHandler TestHash: ", sTestHash)
 	l.Debug.Println("RecordActionHandler TestHash: ", sTestHash)
 	Ch <- rURL
 	/*if rURL != "" { //&& hash == sTestHash {
 		Ch <- rURL
 	} else {
-		fmt.Println("RecordActionHandler - Erro: ", rURL)
+		logging.Debug.Println("RecordActionHandler - Erro: ", rURL)
 	}*/
 	l.Debug.Println("******************************** RecordAction END")
 }
@@ -46,21 +47,21 @@ func TranscribeCallbackHandler(w http.ResponseWriter, r *http.Request) {
 	l.Debug.Println("************************************************")
 	l.Debug.Println("Transcribe Callback")
 	l.Debug.Println("transcribed text: ", transcriptionText)
-	fmt.Println("transcribed text: ", transcriptionText)
+	logging.Debug.Println("transcribed text: ", transcriptionText)
 	hash := r.FormValue("hash")
 	sTestHash := fmt.Sprint(TestHash)
-	fmt.Println("TranscribeCallbackHandler Hash: ", hash)
-	fmt.Println("TranscribeCallbackHandler TestHash: ", sTestHash)
+	logging.Debug.Println("TranscribeCallbackHandler Hash: ", hash)
+	logging.Debug.Println("TranscribeCallbackHandler TestHash: ", sTestHash)
 	if transcriptionText != "" && transcriptionText != "welcome to your new zhang account" && transcriptionText != "view in any way during your development" && transcriptionText != "let us know if we can help you in any way during your development" && transcriptionText != "can help you in any way during your development" && transcriptionText != "can i help you in any way during your development" && transcriptionText != "so we can help you in any way during your development" && transcriptionText != "help you in any way during your development" {
 		if hash == sTestHash {
-			fmt.Println("::: Ch <- ", transcriptionText)
+			logging.Debug.Println("::: Ch <- ", transcriptionText)
 			//if IsOpen(Ch) {
 			Ch <- transcriptionText
 			//}
 			return
 		}
 	} else {
-		fmt.Println("TranscribeCallbackHandler - Erro: ", transcriptionText)
+		logging.Debug.Println("TranscribeCallbackHandler - Erro: ", transcriptionText)
 		l.Debug.Println("TranscribeCallbackHandler - Erro: ", transcriptionText)
 	}
 	l.Debug.Println("******************************** Transcribe END")

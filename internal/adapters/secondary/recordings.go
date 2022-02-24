@@ -9,6 +9,7 @@ import (
 	"net/url"
 	"strconv"
 	"zarbat_test/internal/config"
+	"zarbat_test/internal/logging"
 	"zarbat_test/pkg/domains"
 	"zarbat_test/pkg/ports/recordings"
 )
@@ -26,9 +27,9 @@ func NewRecordingsApi(config *config.ConfigType) recordings.SecondaryPort {
 }
 
 func (a *recordingsAPI) RecordCall(callSid string, timeInSeconds int) error {
-	println("=====================================================")
-	println("CallSid inside RecordCall: " + callSid)
-	println("=====================================================")
+	logging.Debug.Println("=====================================================")
+	logging.Debug.Println("CallSid inside RecordCall: " + callSid)
+	logging.Debug.Println("=====================================================")
 	apiEndpoint := fmt.Sprintf(a.config.GetApiURL()+
 		"/Accounts/%s/Calls/%s/Recordings.json",
 		a.config.AccountSid, callSid)
@@ -57,7 +58,7 @@ func (a *recordingsAPI) RecordCall(callSid string, timeInSeconds int) error {
 func (a *recordingsAPI) ViewRecording(recordingSid string) (domains.Recording, error) {
 	apiEndpoint := fmt.Sprintf(a.config.GetApiURL()+"/Accounts/%s/Recordings/%s.json", a.config.AccountSid, recordingSid)
 	req, _ := http.NewRequest("GET", apiEndpoint, nil)
-	println(apiEndpoint)
+	logging.Debug.Println(apiEndpoint)
 	q := req.URL.Query()
 	req.URL.RawQuery = q.Encode()
 	req.Header.Set("Content-Type", "application/json")
@@ -72,14 +73,14 @@ func (a *recordingsAPI) ViewRecording(recordingSid string) (domains.Recording, e
 	}
 	defer resp.Body.Close()
 	// Print Response
-	fmt.Println("response Status:", resp.Status)
-	fmt.Println("response Headers:", resp.Header)
+	logging.Debug.Println("response Status:", resp.Status)
+	logging.Debug.Println("response Headers:", resp.Header)
 	body, err := ioutil.ReadAll(resp.Body)
 	if err != nil {
 		return dummyRecording, err
 	}
 	b := string(body)
-	fmt.Println("response Body:", b)
+	logging.Debug.Println("response Body:", b)
 	recording := domains.Recording{}
 	json.Unmarshal(body, &recording)
 	return recording, nil
@@ -88,7 +89,7 @@ func (a *recordingsAPI) ViewRecording(recordingSid string) (domains.Recording, e
 func (a *recordingsAPI) DeleteRecording(recordingSid string) (domains.Recording, error) {
 	apiEndpoint := fmt.Sprintf(a.config.GetApiURL()+"/Accounts/%s/Recordings/%s.json", a.config.AccountSid, recordingSid)
 	req, _ := http.NewRequest("DELETE", apiEndpoint, nil)
-	println(apiEndpoint)
+	logging.Debug.Println(apiEndpoint)
 	q := req.URL.Query()
 	req.URL.RawQuery = q.Encode()
 	req.Header.Set("Content-Type", "application/json")
@@ -103,14 +104,14 @@ func (a *recordingsAPI) DeleteRecording(recordingSid string) (domains.Recording,
 	}
 	defer resp.Body.Close()
 	// Print Response
-	fmt.Println("response Status:", resp.Status)
-	fmt.Println("response Headers:", resp.Header)
+	logging.Debug.Println("response Status:", resp.Status)
+	logging.Debug.Println("response Headers:", resp.Header)
 	body, err := ioutil.ReadAll(resp.Body)
 	if err != nil {
 		return dummyRecording, err
 	}
 	b := string(body)
-	fmt.Println("response Body:", b)
+	logging.Debug.Println("response Body:", b)
 	recording := domains.Recording{}
 	json.Unmarshal(body, &recording)
 	return recording, nil
@@ -119,7 +120,7 @@ func (a *recordingsAPI) DeleteRecording(recordingSid string) (domains.Recording,
 func (a *recordingsAPI) ListRecordings(callSid string) ([]domains.Recording, error) {
 	apiEndpoint := fmt.Sprintf(a.config.GetApiURL()+"/Accounts/%s/Recordings.json", a.config.AccountSid)
 	req, _ := http.NewRequest("GET", apiEndpoint, nil)
-	println(apiEndpoint)
+	logging.Debug.Println(apiEndpoint)
 	q := req.URL.Query()
 	q.Add("CallSid", callSid)
 	q.Add("Page", "0")
@@ -136,18 +137,18 @@ func (a *recordingsAPI) ListRecordings(callSid string) ([]domains.Recording, err
 	}
 	defer resp.Body.Close()
 	// Print Response
-	fmt.Println("response Status:", resp.Status)
-	fmt.Println("response Headers:", resp.Header)
+	logging.Debug.Println("response Status:", resp.Status)
+	logging.Debug.Println("response Headers:", resp.Header)
 	body, err := ioutil.ReadAll(resp.Body)
 	if err != nil {
 		return nil, err
 	}
 	b := string(body)
-	fmt.Println("response Body:", b)
+	logging.Debug.Println("response Body:", b)
 	responseRecording := domains.ResponseRecording{}
 	json.Unmarshal(body, &responseRecording)
 	for _, recording := range responseRecording.Recordings {
-		fmt.Println(recording.Sid, recording.CallSid, recording.DateCreated, recording.Duration)
+		logging.Debug.Println(recording.Sid, recording.CallSid, recording.DateCreated, recording.Duration)
 	}
 	return responseRecording.Recordings, nil
 }

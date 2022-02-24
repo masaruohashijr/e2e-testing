@@ -8,3 +8,4 @@ Feature: List Number
     Given my test setup runs
     When I release all my numbers except "NumberA,NumberB,NumberC,NumberD,NumberE"
     Then I should list my 5 numbers
+    Then I should see VoiceUrl info

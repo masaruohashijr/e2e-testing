@@ -9,6 +9,7 @@ import (
 	"net/http"
 	"net/url"
 	"zarbat_test/internal/config"
+	"zarbat_test/internal/logging"
 	"zarbat_test/pkg/domains"
 	"zarbat_test/pkg/ports/numbers"
 )
@@ -44,7 +45,7 @@ func (a *numbersAPI) ViewNumber(numberSid string) (*domains.IncomingPhoneNumber,
 		return nil, err
 	}
 	defer resp.Body.Close()
-	fmt.Println("response Status:", resp.Status)
+	logging.Debug.Println("response Status:", resp.Status)
 	body, err := ioutil.ReadAll(resp.Body)
 	if err != nil {
 		return nil, err
@@ -119,7 +120,7 @@ func (a *numbersAPI) AddNumber(n string) error {
 	req, err := http.NewRequest("POST", apiEndpoint, buffer)
 
 	if err != nil {
-		println(err.Error())
+		logging.Debug.Println(err.Error())
 		return err
 	}
 
@@ -155,7 +156,7 @@ func (a *numbersAPI) ListNumbers() (*[]domains.IncomingPhoneNumber, error) {
 		return nil, err
 	}
 	defer resp.Body.Close()
-	fmt.Println("response Status:", resp.Status)
+	logging.Debug.Println("response Status:", resp.Status)
 	body, err := ioutil.ReadAll(resp.Body)
 	if err != nil {
 		return nil, err
@@ -186,7 +187,7 @@ func (a *numbersAPI) ListAvailableNumbers() ([]string, error) {
 		return nil, err
 	}
 	defer resp.Body.Close()
-	fmt.Println("response Status:", resp.Status)
+	logging.Debug.Println("response Status:", resp.Status)
 	body, err := ioutil.ReadAll(resp.Body)
 	if err != nil {
 		return nil, err

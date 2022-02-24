@@ -38,7 +38,7 @@ func IMakeACallFromTo(numberA, numberB string) error {
 
 func ConfiguredToPlayLastRecording(number string) error {
 	strXML := domains.Header + string("<Response><PlayLastRecording/></Response>")
-	println(strXML)
+	logging.Debug.Println(strXML)
 	services.WriteActionXML("playlastrecording", strXML)
 	Configuration.To, Configuration.ToSid = Configuration.SelectNumber(number)
 	NumberPrimaryPort.UpdateNumber()
@@ -60,7 +60,7 @@ func ConfiguredToSay(numberA, speech string) error {
 	ResponseSay = *s
 	x, _ := xml.MarshalIndent(ResponseSay, "", "")
 	strXML := domains.Header + string(x)
-	println(strXML)
+	logging.Debug.Println(strXML)
 	services.WriteActionXML("say", strXML)
 	Configuration.ActionUrl = services.BaseUrl + "/Say"
 	return nil
@@ -72,16 +72,16 @@ func ShouldGetSpeech(originalSpeech string) error {
 	case speechResult = <-Ch:
 		fmt.Printf("Result: %s\n", speechResult)
 	case <-time.After(time.Duration(services.TestTimeout) * time.Second):
-		fmt.Println("timeout")
+		logging.Debug.Println("timeout")
 		Ch = nil
 		return fmt.Errorf("timeout")
 	}
 	originalSpeech = strings.ToLower(originalSpeech)
 	speechResult = strings.ToLower(speechResult)
 	logging.Debug.Println("original speech: ", originalSpeech)
-	fmt.Println("original speech: ", originalSpeech)
+	logging.Debug.Println("original speech: ", originalSpeech)
 	logging.Debug.Println("speech result: ", speechResult)
-	fmt.Println("speech result: ", speechResult)
+	logging.Debug.Println("speech result: ", speechResult)
 	if strings.TrimSpace(originalSpeech) != strings.TrimSpace(speechResult) && !strings.HasPrefix(strings.TrimSpace(originalSpeech), strings.TrimSpace(speechResult)) {
 		return fmt.Errorf("Error: The returned speech \"%s\" is different from the one expected by the test.", speechResult)
 	}
@@ -103,7 +103,7 @@ func ConfiguredToRecordCalls(number string) error {
 	ResponseRecord.Record = *r
 	x, _ := xml.MarshalIndent(ResponseRecord, "", "")
 	strXML := domains.Header + string(x)
-	println(strXML)
+	logging.Debug.Println(strXML)
 	services.WriteActionXML("record", strXML)
 	Configuration.VoiceUrl = services.BaseUrl + "/Record"
 	Configuration.To, Configuration.ToSid = Configuration.SelectNumber(number)
@@ -126,7 +126,7 @@ func ConfiguredToGatherSpeech(numberA string) error {
 	ResponseGather = *r
 	x, _ := xml.MarshalIndent(ResponseGather, "", "")
 	strXML := domains.Header + string(x)
-	println(strXML)
+	logging.Debug.Println(strXML)
 	services.WriteActionXML("gather", strXML)
 	Configuration.To, Configuration.ToSid = Configuration.SelectNumber(numberA)
 	Configuration.VoiceUrl = services.BaseUrl + "/Gather"

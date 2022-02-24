@@ -2,11 +2,11 @@ package files
 
 import (
 	"bytes"
-	"fmt"
 	"io/ioutil"
 	"log"
 	"os"
 	"strings"
+	"zarbat_test/internal/logging"
 )
 
 var finalFileContent bytes.Buffer
@@ -33,7 +33,7 @@ func NewTempFiles(testFile string) (tmps []*os.File, tempDir string) {
 
 func NewTempDir() string {
 	test := ""
-	println(test)
+	logging.Debug.Println(test)
 
 	tempDir, err := ioutil.TempDir(TempRootDir, "~ctlang")
 	if err != nil {
@@ -45,13 +45,13 @@ func NewTempDir() string {
 func NewTempFile(tempDir, featureName string) *os.File {
 	tempFile, err := ioutil.TempFile(tempDir, "~test."+featureName+".*.feature")
 	if err != nil {
-		println(err.Error())
+		logging.Debug.Println(err.Error())
 	}
 	return tempFile
 }
 
 func AddLineToTemp(tmp *os.File, line string) {
 	if _, err := tmp.Write([]byte(line + "\n")); err != nil {
-		fmt.Println("Failed to write to temporary file", err)
+		logging.Debug.Println("Failed to write to temporary file", err)
 	}
 }
