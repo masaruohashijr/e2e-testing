@@ -1,6 +1,7 @@
 package api
 
 import (
+	"bytes"
 	"fmt"
 	"io/ioutil"
 	"log"
@@ -43,22 +44,23 @@ func RunSingleTest(testRun TestRun) TestRun {
 	// Generate Temporary Test Dir
 	tempDir := NewTempDir()
 	// Generate Temporary Test File
-	tempFile := NewTempFile(tempDir, testRun.FeatureName)
+	tempFile := NewTempFile(tempDir, testRun.Name)
 	lines := GetListOfSteps(testRun.ListOfSteps)
-	AddLineToTemp(tempFile, "Feature: "+testRun.FeatureName)
+	AddLineToTemp(tempFile, "Feature: "+testRun.Name)
 	AddLineToTemp(tempFile, "Scenario: "+testRun.Name)
 	for _, line := range lines {
 		AddLineToTemp(tempFile, line)
 	}
 	var tests []test.FeatureTest
+	logging.Debug.Println(tempFile.Name())
 	ft := &test.FeatureTest{
-		Name:                testRun.FeatureName,
+		Name:                testRun.Name,
 		Path:                tempFile.Name(),
-		Hash:                test.Hash(testRun.FeatureName),
+		Hash:                test.Hash(testRun.Name),
 		ScenarioInitializer: steps.InitializeScenario,
 	}
 	regMap = test.InitRegister()
-	regMap[testRun.FeatureName] = ft
+	regMap[testRun.Name] = ft
 	tests = append(tests, *ft)
 	tests = ExecuteTest(tempDir, regMap, tests, &testRun.Args)
 	if tests[0].Result {
@@ -103,9 +105,11 @@ func ExecuteTest(tempDir string, regMap map[string]*test.FeatureTest, tests []te
 		steps.TestHash = ft.Hash
 		services.TestHash = ft.Hash
 		logging.Debug.Println(ft.Hash)
+		buf := new(bytes.Buffer)
 		opts := godog.Options{
 			Format:    "progress",
 			Paths:     []string{ft.Path},
+			Output:    buf,
 			Randomize: time.Now().UTC().UnixNano(),
 		}
 		status = godog.TestSuite{
@@ -113,6 +117,7 @@ func ExecuteTest(tempDir string, regMap map[string]*test.FeatureTest, tests []te
 			ScenarioInitializer: ft.ScenarioInitializer,
 			Options:             &opts,
 		}.Run()
+		status = dealStatus(buf.String())
 		if status != 0 {
 			mainStatus = status
 			tests[i].Result = false
@@ -120,6 +125,7 @@ func ExecuteTest(tempDir string, regMap map[string]*test.FeatureTest, tests []te
 			ft.Tries += 1
 			if ft.Tries < tmpTriesPtr {
 				i--
+				time.Sleep(5 * time.Second)
 			} else {
 				failed++
 			}
@@ -128,7 +134,6 @@ func ExecuteTest(tempDir string, regMap map[string]*test.FeatureTest, tests []te
 			tests[i].Result = true
 			passed++
 		}
-		time.Sleep(5 * time.Second)
 	}
 	logging.Info.Println("Passed ", passed)
 	logging.Info.Println("Failed ", failed)
@@ -138,6 +143,10 @@ func ExecuteTest(tempDir string, regMap map[string]*test.FeatureTest, tests []te
 		logging.Debug.Println("Errors were found during last tests.")
 	}
 	return tests
+}
+
+func checkStatus(s string) {
+	panic("unimplemented")
 }
 
 func setArgs(args *Arguments) {
@@ -166,8 +175,10 @@ func NewTempDir() string {
 	return tempDir
 }
 
-func NewTempFile(tempDir, featureName string) *os.File {
-	tempFile, err := ioutil.TempFile(tempDir, "~test."+featureName+".*.feature")
+func NewTempFile(tempDir, fileName string) *os.File {
+	// remove special characteres to allow file creation.
+	fileName = replaceSpecialCharacteres(fileName)
+	tempFile, err := ioutil.TempFile(tempDir, "~test."+fileName+".*.feature")
 	if err != nil {
 		logging.Debug.Println(err.Error())
 	}
@@ -235,4 +246,22 @@ func LogArgs(tests []test.FeatureTest, logPtr *string, logLevelPtr *string, trie
 	logging.Debug.Println("*** Logging Level:", *logLevelPtr)
 	logging.Debug.Printf("*** Features: %v\n", tsts)
 	logging.Debug.Println("************************************************")
+}
+
+func replaceSpecialCharacteres(str1 string) string {
+	re, err := regexp.Compile(`[^\w]`)
+	if err != nil {
+		log.Fatal(err)
+	}
+	str1 = re.ReplaceAllString(str1, "_")
+	return fmt.Sprintf(str1)
+}
+
+func dealStatus(str string) int {
+	logging.Debug.Println(str)
+	if strings.Index(str, "You can implement step definitions for undefined steps with these snippets") > -1 || strings.Index(str, "\nNo steps\n") > -1 {
+		return 1
+
+	}
+	return 0
 }

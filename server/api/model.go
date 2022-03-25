@@ -7,8 +7,6 @@ type TestRun struct {
 	Description   string    `json:"description"`
 	Result        string    `json:"result"`
 	Logs          string    `json:"logs"`
-	FeatureId     string    `json:"featureId"`
-	FeatureName   string    `json:"featureName"`
 	EnvironmentId string    `json:"environmentId"`
 	ContextId     string    `json:"contextId"`
 	UserId        string    `json:"userId"`
