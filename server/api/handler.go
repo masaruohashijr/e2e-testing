@@ -2,8 +2,10 @@ package api
 
 import (
 	"encoding/json"
+	"fmt"
 	"net/http"
 	"zarbat_test/internal/logging"
+	"zarbat_test/server/api/helper"
 )
 
 func RunSingleTestHandler(w http.ResponseWriter, r *http.Request) {
@@ -15,12 +17,6 @@ func RunSingleTestHandler(w http.ResponseWriter, r *http.Request) {
 	logging.Debug.Println(string(bytes))
 	executed := RunSingleTest(run)
 	response, _ := json.Marshal(executed)
-	println(string(response))
-	w.Write(response)
-	w.Header().Add("Content-Type", "text/html; charset=utf-8")
-	w.Header().Add("Access-Control-Allow-Methods", "POST")
-	w.Header().Add("Access-Control-Allow-Methods", "OPTIONS")
-	w.Header().Add("Content-Type", "application/json")
-	w.Header().Add("Access-Control-Allow-Origin", "*")
-	w.Header().Add("Access-Control-Request-Headers", "*")
+	helper.EnsureCors(w)
+	fmt.Fprintf(w, string(response))
 }
