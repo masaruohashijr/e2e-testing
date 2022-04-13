@@ -30,6 +30,8 @@ type ConfigType struct {
 	ToSid          string
 	AvayaNumBR     string
 	AvayaNumCA     string
+	PhoneNumbers   map[string]PhoneNumber
+	Parameters     map[string]string
 	NumberA        string
 	NumberB        string
 	NumberASid     string
@@ -82,6 +84,9 @@ func ReadConfig(config ConfigType) ConfigType {
 }
 
 func (c *ConfigType) SelectNumber(option string) (string, string) {
+	if phone, ok := c.PhoneNumbers[option]; ok {
+		return phone.Number, phone.NumberSid
+	}
 	switch option {
 	case "NumberA":
 		return c.NumberA, c.NumberASid
@@ -101,4 +106,20 @@ func (c *ConfigType) SelectNumber(option string) (string, string) {
 		return c.NumberBR2, ""
 	}
 	return option, ""
+}
+
+type Context struct {
+	Numbers    []PhoneNumber `json:"phoneNumbers"`
+	Parameters []Parameter   `json:"parameters"`
+}
+
+type PhoneNumber struct {
+	Number    string `json:"phoneNumber"`
+	NumberSid string `json:"sid"`
+	Alias     string `json:"alias"`
+}
+
+type Parameter struct {
+	Key   string `json:"name"`
+	Value string `json:"value"`
 }

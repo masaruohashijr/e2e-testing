@@ -31,6 +31,16 @@ var logLevelPtr *string
 var regMap map[string]*test.FeatureTest
 
 func RunSingleTest(testRun TestRun) TestRun {
+	args := &Arguments{
+		Config:   "config/config.ini",
+		Url:      "http://zarbat.ngrok.io",
+		Port:     "5004",
+		Log:      "log/zarbat.log",
+		NTries:   "1",
+		LogLevel: "INFO",
+		Test:     "",
+	}
+	testRun.Args = *args
 	tmpTriesPtr := testRun.Args.NTries
 	triesPtr = &tmpTriesPtr
 	tmpLogPtr := testRun.Args.Log

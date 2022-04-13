@@ -9,7 +9,6 @@ import (
 )
 
 func RunSingleTestHandler(w http.ResponseWriter, r *http.Request) {
-
 	logging.Debug.Println("RUN SINGLE")
 	var run TestRun
 	_ = json.NewDecoder(r.Body).Decode(&run)
