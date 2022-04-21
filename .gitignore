@@ -3,3 +3,6 @@ log/*
 zarbat_tester.exe
 .metals/*
 .vendor/*
+main.exe
+.media/*
+.media/*
