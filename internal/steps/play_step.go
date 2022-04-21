@@ -6,6 +6,7 @@ import (
 	"strconv"
 	"time"
 	"zarbat_test/internal/godog/services"
+	"zarbat_test/internal/logging"
 	"zarbat_test/pkg/domains"
 )
 
@@ -18,7 +19,7 @@ func ConfiguredToPlayTone(number, tone string) error {
 	ResponsePlay.Play = *p
 	x, _ := xml.MarshalIndent(ResponsePlay, "", "")
 	strXML := domains.Header + string(x)
-	println(strXML)
+	logging.Debug.Println(strXML)
 	services.WriteActionXML("play", strXML)
 	Configuration.ActionUrl = services.BaseUrl + "/Play"
 	return nil
@@ -30,7 +31,7 @@ func ShouldBeAlaybleToListenToFrequencies(number, frequencies string) error {
 	case recordUrl = <-Ch:
 		fmt.Printf("Result: %s\n", recordUrl)
 	case <-time.After(time.Duration(services.TestTimeout) * time.Second):
-		fmt.Println("timeout")
+		logging.Debug.Println("timeout")
 		Ch = nil
 		return fmt.Errorf("timeout")
 	}

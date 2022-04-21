@@ -8,6 +8,7 @@ import (
 	"strconv"
 	"time"
 	"zarbat_test/internal/config"
+	"zarbat_test/internal/logging"
 	"zarbat_test/pkg/domains"
 	usage "zarbat_test/pkg/ports/usages"
 )
@@ -27,7 +28,7 @@ func NewUsageApi(config *config.ConfigType) usage.SecondaryPort {
 func (a *usageAPI) ViewUsage(usageSid string) (domains.Usage, error) {
 	apiEndpoint := fmt.Sprintf(a.config.GetApiURL()+"/Accounts/%s/Usages/%s.json", a.config.AccountSid, usageSid)
 	req, _ := http.NewRequest("GET", apiEndpoint, nil)
-	println(apiEndpoint)
+	logging.Debug.Println(apiEndpoint)
 	q := req.URL.Query()
 	req.URL.RawQuery = q.Encode()
 	req.Header.Set("Content-Type", "application/json")
@@ -42,14 +43,14 @@ func (a *usageAPI) ViewUsage(usageSid string) (domains.Usage, error) {
 	}
 	defer resp.Body.Close()
 	// Print Response
-	fmt.Println("response Status:", resp.Status)
-	fmt.Println("response Headers:", resp.Header)
+	logging.Debug.Println("response Status:", resp.Status)
+	logging.Debug.Println("response Headers:", resp.Header)
 	body, err := ioutil.ReadAll(resp.Body)
 	if err != nil {
 		return dummyUsage, err
 	}
 	b := string(body)
-	fmt.Println("response Body:", b)
+	logging.Debug.Println("response Body:", b)
 	usage := domains.Usage{}
 	json.Unmarshal(body, &usage)
 	return usage, nil
@@ -58,7 +59,7 @@ func (a *usageAPI) ViewUsage(usageSid string) (domains.Usage, error) {
 func (a *usageAPI) ListUsage() ([]domains.Usage, error) {
 	apiEndpoint := fmt.Sprintf(a.config.GetApiURL()+"/Accounts/%s/Usages.json", a.config.AccountSid)
 	req, _ := http.NewRequest("GET", apiEndpoint, nil)
-	println(apiEndpoint)
+	logging.Debug.Println(apiEndpoint)
 	q := req.URL.Query()
 	today := time.Now()
 	q.Add("Day", strconv.Itoa(today.Day()))
@@ -80,18 +81,18 @@ func (a *usageAPI) ListUsage() ([]domains.Usage, error) {
 	}
 	defer resp.Body.Close()
 	// Print Response
-	fmt.Println("response Status:", resp.Status)
-	fmt.Println("response Headers:", resp.Header)
+	logging.Debug.Println("response Status:", resp.Status)
+	logging.Debug.Println("response Headers:", resp.Header)
 	body, err := ioutil.ReadAll(resp.Body)
 	if err != nil {
 		return nil, err
 	}
 	b := string(body)
-	fmt.Println("response Body:", b)
+	logging.Debug.Println("response Body:", b)
 	usageResponse := domains.UsageResponse{}
 	json.Unmarshal(body, &usageResponse)
 	for _, usage := range usageResponse.Usages {
-		fmt.Println(usage.Product, usage.ProdutctId, usage.Quantity)
+		logging.Debug.Println(usage.Product, usage.ProdutctId, usage.Quantity)
 	}
 	return usageResponse.Usages, nil
 }

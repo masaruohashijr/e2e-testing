@@ -9,12 +9,13 @@
             "mode": "auto",
             "program": "${workspaceRoot}/main.go",
             "args": [
-                "-config","config/config.ini",
-                "-url","http://mohashi.ngrok.io",
-                "-port","5000",
+                /*"-config","config/config.ini",
+                "-url","http://zarbat.ngrok.io",
+                "-port","5004",
                 "-l","log/zarbat.log",
                 "-n","1",
-                "-test", "test/transcriptions/list_transcriptions.feature"
+                "-test", "features/play/play.feature",*/
+                "-start", "true" // MICROSERVICE
             ]
         }
     ]    

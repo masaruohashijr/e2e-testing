@@ -5,6 +5,7 @@ import (
 	"io/ioutil"
 	"net/http"
 	"net/url"
+	"zarbat_test/internal/logging"
 	l "zarbat_test/internal/logging"
 )
 
@@ -12,14 +13,14 @@ var CallSidContext = ""
 
 func CallbackHandler(w http.ResponseWriter, r *http.Request) {
 	l.Debug.Println("******************************** Callback START")
-	fmt.Println("******************************** Callback START")
+	logging.Debug.Println("******************************** Callback START")
 	body, err := ioutil.ReadAll(r.Body)
 	if err != nil {
-		println(err.Error())
+		logging.Debug.Println(err.Error())
 	}
 	r.ParseForm()
 	b := string(body)
-	fmt.Println(b)
+	logging.Debug.Println(b)
 	url_parameters, err := url.ParseQuery(b)
 	if len(url_parameters["CallStatus"]) > 0 {
 		status := url_parameters["CallStatus"][0]
@@ -35,19 +36,19 @@ func CallbackHandler(w http.ResponseWriter, r *http.Request) {
 		}
 	}
 	l.Debug.Println("******************************** Callback END")
-	fmt.Println("******************************** Callback END")
+	logging.Debug.Println("******************************** Callback END")
 }
 
 func DialCallbackHandler(w http.ResponseWriter, r *http.Request) {
 	l.Debug.Println("******************************** Dial Callback START")
-	fmt.Println("******************************** Dial Callback START")
+	logging.Debug.Println("******************************** Dial Callback START")
 	body, err := ioutil.ReadAll(r.Body)
 	if err != nil {
-		println(err.Error())
+		logging.Debug.Println(err.Error())
 	}
 	r.ParseForm()
 	b := string(body)
-	fmt.Println(b)
+	logging.Debug.Println(b)
 	url_parameters, err := url.ParseQuery(b)
 	status := url_parameters["CallStatus"][0]
 	callSid := url_parameters["CallSid"][0]
@@ -61,29 +62,29 @@ func DialCallbackHandler(w http.ResponseWriter, r *http.Request) {
 		Ch <- b
 	}
 	l.Debug.Println("******************************** Dial Callback END")
-	fmt.Println("******************************** Dial Callback END")
+	logging.Debug.Println("******************************** Dial Callback END")
 }
 
 func FallbackHandler(w http.ResponseWriter, r *http.Request) {
-	println("******************************** FallbackHandler")
+	logging.Debug.Println("******************************** FallbackHandler")
 	body, err := ioutil.ReadAll(r.Body)
 	if err != nil {
-		println(err.Error())
+		logging.Debug.Println(err.Error())
 	}
 	b := string(body)
-	println(b)
+	logging.Debug.Println(b)
 }
 
 func ConferenceCallbackHandler(w http.ResponseWriter, r *http.Request) {
 	l.Debug.Println("******************************** Callback START")
-	fmt.Println("******************************** Callback START")
+	logging.Debug.Println("******************************** Callback START")
 	body, err := ioutil.ReadAll(r.Body)
 	if err != nil {
-		println(err.Error())
+		logging.Debug.Println(err.Error())
 	}
 	r.ParseForm()
 	b := string(body)
-	fmt.Println(b)
+	logging.Debug.Println(b)
 	url_parameters, err := url.ParseQuery(b)
 	status := url_parameters["CallStatus"][0]
 	callSid := url_parameters["CallSid"][0]
@@ -98,5 +99,5 @@ func ConferenceCallbackHandler(w http.ResponseWriter, r *http.Request) {
 		}
 	}
 	l.Debug.Println("******************************** Callback END")
-	fmt.Println("******************************** Callback END")
+	logging.Debug.Println("******************************** Callback END")
 }

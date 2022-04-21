@@ -35,7 +35,7 @@ func ShouldGetTheIncomingCallFrom(dialedNumber, dialerNumber string) error {
 	bodyContent := ""
 	select {
 	case bodyContent = <-Ch:
-		fmt.Println(bodyContent)
+		logging.Debug.Println(bodyContent)
 	case <-time.After(time.Duration(services.TestTimeout) * time.Second):
 		tt := strconv.FormatInt(services.TestTimeout, 10)
 		return fmt.Errorf("Timeout %s.", tt)

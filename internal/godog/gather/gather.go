@@ -9,6 +9,7 @@ import (
 	"zarbat_test/internal/adapters/secondary"
 	"zarbat_test/internal/config"
 	"zarbat_test/internal/godog/services"
+	"zarbat_test/internal/logging"
 	"zarbat_test/pkg/domains"
 	"zarbat_test/pkg/ports/calls"
 	"zarbat_test/pkg/ports/numbers"
@@ -41,7 +42,7 @@ func ConfiguredToGatherSpeech(numberA string) error {
 	ResponseGather = *r
 	x, _ := xml.MarshalIndent(ResponseGather, "", "")
 	strXML := domains.Header + string(x)
-	println(strXML)
+	logging.Debug.Println(strXML)
 	services.WriteActionXML("gather", strXML)
 	Configuration.To, Configuration.ToSid = Configuration.SelectNumber(numberA)
 	Configuration.VoiceUrl = services.BaseUrl + "/Gather"
@@ -64,7 +65,7 @@ func ConfiguredToSay(numberA, speech string) error {
 	ResponseSay = *s
 	x, _ := xml.MarshalIndent(ResponseSay, "", "")
 	strXML := domains.Header + string(x)
-	println(strXML)
+	logging.Debug.Println(strXML)
 	services.WriteActionXML("say", strXML)
 	return nil
 }
@@ -95,7 +96,7 @@ func ShouldGetSpeech(numberA, speechOriginal string) error {
 	case speechResult = <-Ch:
 		fmt.Printf("Result: %s\n", speechResult)
 	case <-time.After(time.Duration(services.TestTimeout) * time.Second):
-		fmt.Println("timeout")
+		logging.Debug.Println("timeout")
 		Ch = nil
 		return fmt.Errorf("timeout")
 	}

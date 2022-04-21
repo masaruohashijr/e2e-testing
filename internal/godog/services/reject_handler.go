@@ -6,6 +6,7 @@ import (
 	"net/http"
 	"net/url"
 	"os"
+	"zarbat_test/internal/logging"
 	l "zarbat_test/internal/logging"
 )
 
@@ -21,15 +22,15 @@ func RejectHandler(w http.ResponseWriter, r *http.Request) {
 
 func RejectCallBackHandler(w http.ResponseWriter, r *http.Request) {
 	l.Debug.Println("******************************** RejectCallback START")
-	fmt.Println("******************************** RejectCallback START")
+	logging.Debug.Println("******************************** RejectCallback START")
 	body, err := ioutil.ReadAll(r.Body)
 	if err != nil {
 		l.Debug.Println(err.Error())
-		println(err.Error())
+		logging.Debug.Println(err.Error())
 	}
 	r.ParseForm()
 	b := string(body)
-	fmt.Println(b)
+	logging.Debug.Println(b)
 	l.Debug.Println(b)
 	url_parameters, err := url.ParseQuery(b)
 	status := url_parameters["CallStatus"][0]
@@ -44,5 +45,5 @@ func RejectCallBackHandler(w http.ResponseWriter, r *http.Request) {
 		Ch <- "Call Cancelled"
 	}
 	l.Debug.Println("******************************** RejectCallback END")
-	fmt.Println("******************************** RejectCallback END")
+	logging.Debug.Println("******************************** RejectCallback END")
 }

@@ -8,6 +8,7 @@ import (
 	"zarbat_test/internal/adapters/secondary"
 	"zarbat_test/internal/config"
 	"zarbat_test/internal/godog/services"
+	"zarbat_test/internal/logging"
 	"zarbat_test/pkg/domains"
 	"zarbat_test/pkg/ports/calls"
 	"zarbat_test/pkg/ports/numbers"
@@ -40,7 +41,7 @@ func IMakeACallFromTo(numberA, numberB string) error {
 	Configuration.StatusCallback = services.BaseUrl + "/Callback"
 	x, _ := xml.MarshalIndent(ResponseRedirect, "", "")
 	strXML := domains.Header + string(x)
-	println(strXML)
+	logging.Debug.Println(strXML)
 	services.WriteActionXML("redirect", strXML)
 	CallsPrimaryPort.MakeCall()
 	return nil
@@ -62,7 +63,7 @@ func ShouldGetAPingRequestOnTheURL() error {
 	case res := <-Ch:
 		fmt.Printf("Result: %s\n", res)
 	case <-time.After(time.Duration(services.TestTimeout) * time.Second):
-		fmt.Println("timeout")
+		logging.Debug.Println("timeout")
 		Ch = nil
 		return fmt.Errorf("timeout")
 	}

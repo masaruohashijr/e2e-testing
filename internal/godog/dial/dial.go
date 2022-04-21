@@ -10,6 +10,7 @@ import (
 	"zarbat_test/internal/adapters/secondary"
 	"zarbat_test/internal/config"
 	"zarbat_test/internal/godog/services"
+	"zarbat_test/internal/logging"
 	"zarbat_test/internal/steps"
 	"zarbat_test/pkg/domains"
 	"zarbat_test/pkg/ports/calls"
@@ -41,7 +42,7 @@ func ConfiguredToDial(dialerNumber, dialedNumber string) error {
 	Configuration.To, Configuration.ToSid = Configuration.SelectNumber(dialerNumber)
 	Configuration.VoiceUrl = services.BaseUrl + "/Dial"
 	NumbersPrimaryPort.UpdateNumber()
-	println(string(x))
+	logging.Debug.Println(string(x))
 	return nil
 }
 
@@ -66,7 +67,7 @@ func ShouldGetTheIncomingCallFrom(dialedNumber, dialerNumber string) error {
 	bodyContent := ""
 	select {
 	case bodyContent = <-Ch:
-		fmt.Println(bodyContent)
+		logging.Debug.Println(bodyContent)
 	case <-time.After(time.Duration(services.TestTimeout) * time.Second):
 		tt := strconv.FormatInt(services.TestTimeout, 10)
 		return fmt.Errorf("Timeout %s.", tt)

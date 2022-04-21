@@ -6,6 +6,7 @@ import (
 	"net/url"
 	"time"
 	"zarbat_test/internal/godog/services"
+	"zarbat_test/internal/logging"
 	"zarbat_test/pkg/domains"
 )
 
@@ -60,7 +61,7 @@ func ConfiguredToSendSMSTo(numberB, message, numberC string) error {
 	ResponseSMS.Sms = *s
 	x, _ := xml.MarshalIndent(ResponseSMS, "", "")
 	strXML := domains.Header + string(x)
-	println(strXML)
+	logging.Debug.Println(strXML)
 	services.WriteActionXML("sms", strXML)
 	Configuration.To, Configuration.ToSid = Configuration.SelectNumber(numberB)
 	Configuration.VoiceUrl = services.BaseUrl + "/Sms"
@@ -74,7 +75,7 @@ func ShouldBeAbleToViewTheSMS(number, message string) error {
 	case bodyContent = <-Ch:
 		fmt.Printf("Result: %s\n", bodyContent)
 	case <-time.After(time.Duration(services.TestTimeout) * time.Second):
-		fmt.Println("timeout")
+		logging.Debug.Println("timeout")
 		Ch = nil
 		return fmt.Errorf("timeout")
 	}

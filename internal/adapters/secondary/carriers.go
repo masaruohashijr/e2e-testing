@@ -8,6 +8,7 @@ import (
 	"net/http"
 	"net/url"
 	"zarbat_test/internal/config"
+	"zarbat_test/internal/logging"
 	"zarbat_test/pkg/domains"
 	"zarbat_test/pkg/ports/carrier"
 )
@@ -44,7 +45,7 @@ func (a *carrierAPI) CarrierLookup(phoneNumber string) (domains.CarrierLookup, e
 		return dummyCarrierLookup, err
 	}
 	defer resp.Body.Close()
-	fmt.Println("response Status:", resp.Status)
+	logging.Debug.Println("response Status:", resp.Status)
 	body, err := ioutil.ReadAll(resp.Body)
 	if err != nil {
 		return dummyCarrierLookup, err
@@ -74,7 +75,7 @@ func (a *carrierAPI) CarrierLookupList() ([]domains.CarrierLookup, error) {
 		return dummyCarrierLookups, err
 	}
 	defer resp.Body.Close()
-	fmt.Println("response Status:", resp.Status)
+	logging.Debug.Println("response Status:", resp.Status)
 	body, err := ioutil.ReadAll(resp.Body)
 	if err != nil {
 		return dummyCarrierLookups, err
@@ -108,7 +109,7 @@ func (a *carrierAPI) CNAMLookup(phoneNumber string) (domains.CNAM, error) {
 		return dummyCNAM, err
 	}
 	defer resp.Body.Close()
-	fmt.Println("response Status:", resp.Status)
+	logging.Debug.Println("response Status:", resp.Status)
 	body, err := ioutil.ReadAll(resp.Body)
 	if err != nil {
 		return dummyCNAM, err
@@ -138,7 +139,7 @@ func (a *carrierAPI) CNAMLookupList() ([]domains.CNAM, error) {
 		return dummyCNAM, err
 	}
 	defer resp.Body.Close()
-	fmt.Println("response Status:", resp.Status)
+	logging.Debug.Println("response Status:", resp.Status)
 	body, err := ioutil.ReadAll(resp.Body)
 	if err != nil {
 		return dummyCNAM, err
@@ -172,7 +173,7 @@ func (a *carrierAPI) BNALookup(phoneNumber string) (domains.BNA, error) {
 		return dummyBNA, err
 	}
 	defer resp.Body.Close()
-	fmt.Println("response Status:", resp.Status)
+	logging.Debug.Println("response Status:", resp.Status)
 	body, err := ioutil.ReadAll(resp.Body)
 	if err != nil {
 		return dummyBNA, err
@@ -202,7 +203,7 @@ func (a *carrierAPI) BNALookupList() ([]domains.BNA, error) {
 		return dummyBNALookups, err
 	}
 	defer resp.Body.Close()
-	fmt.Println("response Status:", resp.Status)
+	logging.Debug.Println("response Status:", resp.Status)
 	body, err := ioutil.ReadAll(resp.Body)
 	if err != nil {
 		return dummyBNALookups, err

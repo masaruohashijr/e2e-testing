@@ -13,6 +13,9 @@ func IShouldGetToSeeAsTheFriendlyNameForMyAccount(friendlyName string) error {
 			return fmt.Errorf("Error %s", err.Error())
 		}
 	}
+	if AccountInfo.FriendlyName != friendlyName {
+		return fmt.Errorf("Error %s", "account update did not work")
+	}
 	return nil
 }
 

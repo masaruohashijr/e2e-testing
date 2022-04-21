@@ -5,6 +5,7 @@ import (
 	"fmt"
 	"time"
 	"zarbat_test/internal/godog/services"
+	"zarbat_test/internal/logging"
 	"zarbat_test/pkg/domains"
 )
 
@@ -18,18 +19,18 @@ func ConfiguredToRejectCall(number string) error {
 	Configuration.To, Configuration.ToSid = Configuration.SelectNumber(number)
 	Configuration.VoiceUrl = ""
 	NumberSecondaryPort.UpdateNumber()
-	println(strXML)
+	logging.Debug.Println(strXML)
 	services.WriteActionXML("reject", strXML)
 	return nil
 }
 
 func ShouldGetCallCancelStatus(number string) error {
-	println("Timer has started.")
+	logging.Debug.Println("Timer has started.")
 	select {
 	case res := <-Ch:
-		fmt.Println(res)
+		logging.Debug.Println(res)
 	case <-time.After(time.Duration(services.TestTimeout) * time.Second):
-		fmt.Println("timeout")
+		logging.Debug.Println("timeout")
 		return fmt.Errorf("timeout")
 	}
 	// Reset

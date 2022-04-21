@@ -61,7 +61,7 @@ func ConfiguredToSendMMSAndMediaTo(numberB, message, media, numberC string) erro
 	ResponseMMS.Mms = *m
 	x, _ := xml.MarshalIndent(ResponseMMS, "", "")
 	strXML := domains.Header + string(x)
-	println(strXML)
+	logging.Debug.Println(strXML)
 	services.WriteActionXML("mms", strXML)
 	Configuration.To, Configuration.ToSid = Configuration.SelectNumber(numberB)
 	Configuration.VoiceUrl = services.BaseUrl + "/Mms"
@@ -76,7 +76,7 @@ func ShouldBeAbleToViewTheMMSWithMedia(number, message string, mediaName string)
 		fmt.Printf("Result: %s\n", bodyContent)
 		logging.Debug.Printf("Result: %s\n", bodyContent)
 	case <-time.After(time.Duration(services.TestTimeout) * time.Second):
-		fmt.Println("timeout")
+		logging.Debug.Println("timeout")
 		logging.Debug.Println("timeout")
 		Ch = nil
 		return fmt.Errorf("timeout")

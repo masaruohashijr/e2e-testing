@@ -9,6 +9,7 @@ import (
 	"zarbat_test/internal/adapters/secondary"
 	"zarbat_test/internal/config"
 	"zarbat_test/internal/godog/services"
+	"zarbat_test/internal/logging"
 	"zarbat_test/pkg/domains"
 	"zarbat_test/pkg/ports/calls"
 	"zarbat_test/pkg/ports/numbers"
@@ -35,7 +36,7 @@ func ConfiguredToPlayTone(number, tone string) error {
 	}
 	ResponsePlay.Play = *p
 	x, _ := xml.MarshalIndent(p, "", "")
-	println(string(x))
+	logging.Debug.Println(string(x))
 	return nil
 }
 
@@ -56,7 +57,7 @@ func ConfiguredToRecordCallsForDownload(number string) error {
 	ResponseRecord.Record = *r
 	x, _ := xml.MarshalIndent(ResponseRecord, "", "")
 	strXML := domains.Header + string(x)
-	println(strXML)
+	logging.Debug.Println(strXML)
 	services.WriteActionXML("record", strXML)
 	NumberPrimaryPort.UpdateNumber()
 	return nil
@@ -66,7 +67,7 @@ func IMakeACallFromTo(numberA, numberB string) error {
 	Configuration.Timeout = services.Timeout
 	x, _ := xml.MarshalIndent(ResponsePlay, "", "")
 	strXML := domains.Header + string(x)
-	println(strXML)
+	logging.Debug.Println(strXML)
 	services.WriteActionXML("play", strXML)
 	CallPrimaryPort.MakeCall()
 	return nil
@@ -74,7 +75,7 @@ func IMakeACallFromTo(numberA, numberB string) error {
 
 func MyTestSetupRuns() error {
 	ConfigurationSetup()
-	// println(Configuration.AccountSid)
+	// logging.Debug.Println(Configuration.AccountSid)
 	CallSecondaryPort = secondary.NewCallsApi(&Configuration)
 	CallPrimaryPort = primary.NewCallsService(CallSecondaryPort)
 	NumberSecondaryPort = secondary.NewNumbersApi(&Configuration)
@@ -99,9 +100,9 @@ func ShouldBeAbleToListenToFrequencies(frequencies string) error {
 	case recordUrl = <-Ch:
 		fmt.Printf("Result: %s\n", recordUrl)
 	case <-time.After(time.Duration(services.TestTimeout) * time.Second):
-		fmt.Println("timeout")
+		logging.Debug.Println("timeout at step: ShouldBeAbleToListenToFrequencies")
 		Ch = nil
-		return fmt.Errorf("timeout")
+		return fmt.Errorf("timeout at step: ShouldBeAbleToListenToFrequencies")
 	}
 	time.Sleep(1 * time.Second)
 	err := services.DownloadFile("media/record.wav", recordUrl)

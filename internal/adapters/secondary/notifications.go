@@ -6,6 +6,7 @@ import (
 	"io/ioutil"
 	"net/http"
 	"zarbat_test/internal/config"
+	"zarbat_test/internal/logging"
 	"zarbat_test/pkg/domains"
 	"zarbat_test/pkg/ports/notifications"
 )
@@ -25,7 +26,7 @@ func NewNotificationsApi(config *config.ConfigType) notifications.SecondaryPort 
 func (a *notificationsAPI) ViewNotification(notificationSid string) (domains.Notification, error) {
 	apiEndpoint := fmt.Sprintf(a.config.GetApiURL()+"/Accounts/%s/Notifications/%s.json", a.config.AccountSid, notificationSid)
 	req, _ := http.NewRequest("GET", apiEndpoint, nil)
-	println(apiEndpoint)
+	logging.Debug.Println(apiEndpoint)
 	q := req.URL.Query()
 	req.URL.RawQuery = q.Encode()
 	req.Header.Set("Content-Type", "application/json")
@@ -40,24 +41,24 @@ func (a *notificationsAPI) ViewNotification(notificationSid string) (domains.Not
 	}
 	defer resp.Body.Close()
 	// Print Response
-	fmt.Println("response Status:", resp.Status)
-	fmt.Println("response Headers:", resp.Header)
+	logging.Debug.Println("response Status:", resp.Status)
+	logging.Debug.Println("response Headers:", resp.Header)
 	body, err := ioutil.ReadAll(resp.Body)
 	if err != nil {
 		return dummyNotification, err
 	}
 	b := string(body)
-	fmt.Println("response Body:", b)
+	logging.Debug.Println("response Body:", b)
 	notification := domains.Notification{}
 	json.Unmarshal(body, &notification)
-	fmt.Println(notification.Sid, notification.CallSid, notification.DateCreated, notification.Duration)
+	logging.Debug.Println(notification.Sid, notification.CallSid, notification.DateCreated, notification.Duration)
 	return notification, nil
 }
 
 func (a *notificationsAPI) ListNotifications() ([]domains.Notification, error) {
 	apiEndpoint := fmt.Sprintf(a.config.GetApiURL()+"/Accounts/%s/Notifications.json", a.config.AccountSid)
 	req, _ := http.NewRequest("GET", apiEndpoint, nil)
-	println(apiEndpoint)
+	logging.Debug.Println(apiEndpoint)
 	q := req.URL.Query()
 	q.Add("Page", "0")
 	q.Add("PageSize", "50")
@@ -73,18 +74,18 @@ func (a *notificationsAPI) ListNotifications() ([]domains.Notification, error) {
 	}
 	defer resp.Body.Close()
 	// Print Response
-	fmt.Println("response Status:", resp.Status)
-	fmt.Println("response Headers:", resp.Header)
+	logging.Debug.Println("response Status:", resp.Status)
+	logging.Debug.Println("response Headers:", resp.Header)
 	body, err := ioutil.ReadAll(resp.Body)
 	if err != nil {
 		return nil, err
 	}
 	b := string(body)
-	fmt.Println("response Body:", b)
+	logging.Debug.Println("response Body:", b)
 	responseNotification := domains.ResponseNotification{}
 	json.Unmarshal(body, &responseNotification)
 	for _, notification := range responseNotification.Notifications {
-		fmt.Println(notification.Sid, notification.CallSid, notification.DateCreated, notification.Duration)
+		logging.Debug.Println(notification.Sid, notification.CallSid, notification.DateCreated, notification.Duration)
 	}
 	return responseNotification.Notifications, nil
 }

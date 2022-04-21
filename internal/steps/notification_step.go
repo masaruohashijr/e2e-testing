@@ -1,6 +1,9 @@
 package steps
 
-import "fmt"
+import (
+	"fmt"
+	"zarbat_test/internal/logging"
+)
 
 func IShouldListAtLeastNotification(amount int) error {
 	notifications, err := NotificationPrimaryPort.ListNotifications()
@@ -22,6 +25,6 @@ func IShouldViewTheLastNotification() error {
 	if err != nil {
 		return fmt.Errorf("Expected one notification, but got 0.")
 	}
-	println("Log Level: ", notification.Log)
+	logging.Debug.Println("Log Level: ", notification.Log)
 	return nil
 }

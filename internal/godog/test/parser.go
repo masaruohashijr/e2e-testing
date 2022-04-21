@@ -6,6 +6,7 @@ import (
 	"os"
 	"regexp"
 	"strings"
+	"zarbat_test/internal/logging"
 )
 
 func ParseGherkinDocument(filePath string, ctx ScenarioContext) {
@@ -40,7 +41,7 @@ func findBackGround(s string, background *StepDefinition) *StepDefinition {
 	}
 	backgroundIndex := re.SubexpIndex("StepExpression")
 	bg := strings.TrimSpace(matches[backgroundIndex])
-	println(bg)
+	logging.Debug.Println(bg)
 	return background
 }
 

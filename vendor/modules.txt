@@ -1,9 +1,9 @@
 # github.com/BurntSushi/toml v0.3.1
 ## explicit
 github.com/BurntSushi/toml
-# github.com/cucumber/gherkin-go/v11 v11.0.0
-github.com/cucumber/gherkin-go/v11
-# github.com/cucumber/godog v0.11.0
+# github.com/cucumber/gherkin-go/v19 v19.0.3
+github.com/cucumber/gherkin-go/v19
+# github.com/cucumber/godog v0.12.4
 ## explicit
 github.com/cucumber/godog
 github.com/cucumber/godog/colors
@@ -16,13 +16,10 @@ github.com/cucumber/godog/internal/parser
 github.com/cucumber/godog/internal/storage
 github.com/cucumber/godog/internal/tags
 github.com/cucumber/godog/internal/utils
-# github.com/cucumber/messages-go/v10 v10.0.3
-github.com/cucumber/messages-go/v10
-# github.com/gofrs/uuid v3.3.0+incompatible
+# github.com/cucumber/messages-go/v16 v16.0.1
+github.com/cucumber/messages-go/v16
+# github.com/gofrs/uuid v4.0.0+incompatible
 github.com/gofrs/uuid
-# github.com/gogo/protobuf v1.3.1
-github.com/gogo/protobuf/io
-github.com/gogo/protobuf/proto
 # github.com/gorilla/mux v1.8.0
 ## explicit
 github.com/gorilla/mux
@@ -34,10 +31,14 @@ github.com/hashicorp/go-memdb
 github.com/hashicorp/golang-lru/simplelru
 # github.com/spf13/pflag v1.0.5
 github.com/spf13/pflag
-# github.com/tidwall/gjson v1.8.1
+# github.com/tidwall/gjson v1.13.0
 ## explicit
+github.com/tidwall/gjson
+# github.com/tidwall/match v1.1.1
+github.com/tidwall/match
 # github.com/tidwall/pretty v1.2.0
 ## explicit
+github.com/tidwall/pretty
 # github.com/xigh/go-wavreader v0.0.0-20210516212152-f49019aa7352
 ## explicit
 github.com/xigh/go-wavreader

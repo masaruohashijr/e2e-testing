@@ -5,6 +5,7 @@ import (
 	"zarbat_test/internal/adapters/primary"
 	"zarbat_test/internal/adapters/secondary"
 	"zarbat_test/internal/config"
+	"zarbat_test/internal/logging"
 	"zarbat_test/pkg/domains"
 	"zarbat_test/pkg/ports/calls"
 	"zarbat_test/pkg/ports/numbers"
@@ -29,7 +30,7 @@ func IListAllAvailableNumbers() error {
 		return fmt.Errorf("Error %s", "Not able to list available numbers.")
 	}
 	for _, a := range AvailableNumbers {
-		println(a)
+		logging.Debug.Println(a)
 	}
 	return nil
 }

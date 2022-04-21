@@ -4,6 +4,7 @@ import (
 	"fmt"
 	"time"
 	"zarbat_test/internal/godog/services"
+	"zarbat_test/internal/logging"
 )
 
 func main() {
@@ -14,7 +15,7 @@ func main() {
 	case speechResult = <-Ch:
 		fmt.Printf("Result: %s\n", speechResult)
 	case <-time.After(time.Duration(services.TestTimeout) * time.Second):
-		fmt.Println("timeout")
+		logging.Debug.Println("timeout")
 		Ch = nil
 	}
 	return

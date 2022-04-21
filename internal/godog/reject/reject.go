@@ -8,6 +8,7 @@ import (
 	"zarbat_test/internal/adapters/secondary"
 	"zarbat_test/internal/config"
 	"zarbat_test/internal/godog/services"
+	"zarbat_test/internal/logging"
 	"zarbat_test/pkg/domains"
 	"zarbat_test/pkg/ports/calls"
 	"zarbat_test/pkg/ports/numbers"
@@ -28,7 +29,7 @@ func ConfiguredToRejectCall(numberA string) error {
 	p := &domains.Reject{}
 	ResponseReject.Reject = *p
 	x, _ := xml.MarshalIndent(p, "", "")
-	println(string(x))
+	logging.Debug.Println(string(x))
 	return nil
 }
 
@@ -39,7 +40,7 @@ func IMakeACallFromTo(numberA, numberB string) error {
 	NumberSecondaryPort.UpdateNumber()
 	x, _ := xml.MarshalIndent(ResponseReject, "", "")
 	strXML := domains.Header + string(x)
-	println(strXML)
+	logging.Debug.Println(strXML)
 	services.WriteActionXML("reject", strXML)
 	CallPrimaryPort.MakeCall()
 	return nil
@@ -47,7 +48,7 @@ func IMakeACallFromTo(numberA, numberB string) error {
 
 func MyTestSetupRuns() error {
 	ConfigurationSetup()
-	println(Configuration.AccountSid)
+	logging.Debug.Println(Configuration.AccountSid)
 	CallSecondaryPort = secondary.NewCallsApi(&Configuration)
 	CallPrimaryPort = primary.NewCallsService(CallSecondaryPort)
 	NumberSecondaryPort = secondary.NewNumbersApi(&Configuration)
@@ -63,12 +64,12 @@ func ConfigurationSetup() {
 }
 
 func ShouldGetCallCancelStatus() error {
-	println("Timer has started.")
+	logging.Debug.Println("Timer has started.")
 	select {
 	case res := <-Ch:
-		fmt.Println(res)
+		logging.Debug.Println(res)
 	case <-time.After(time.Duration(services.TestTimeout) * time.Second):
-		fmt.Println("timeout")
+		logging.Debug.Println("timeout")
 		return fmt.Errorf("timeout")
 	}
 	return nil

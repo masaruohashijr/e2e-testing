@@ -65,7 +65,7 @@ func IShouldGetLastCallDurationGreaterThanOrEqualToSeconds(timeInSeconds int) er
 
 func IShouldListAtLeastCall(numberOfCalls int) error {
 	calls, err := CallPrimaryPort.ListCalls()
-	println("Number of calls: ", len(calls))
+	logging.Debug.Println("Number of calls: ", len(calls))
 	if err != nil {
 		return fmt.Errorf("Error: An error has occured within list calls.")
 	}

@@ -8,6 +8,7 @@ import (
 	"net/http"
 	"net/url"
 	"zarbat_test/internal/config"
+	"zarbat_test/internal/logging"
 	"zarbat_test/pkg/domains"
 	"zarbat_test/pkg/ports/fraudcontrol"
 )
@@ -44,7 +45,7 @@ func (a *fraudControlAPI) BlockDestination(countryCode string) (domains.Blocked,
 		return dummyBlocked, err
 	}
 	defer resp.Body.Close()
-	fmt.Println("response Status:", resp.Status)
+	logging.Debug.Println("response Status:", resp.Status)
 	body, err := ioutil.ReadAll(resp.Body)
 	if err != nil {
 		return dummyBlocked, err
@@ -78,7 +79,7 @@ func (a *fraudControlAPI) AuthorizeDestination(countryCode string) (domains.Auth
 		return dummyAuthorized, err
 	}
 	defer resp.Body.Close()
-	fmt.Println("response Status:", resp.Status)
+	logging.Debug.Println("response Status:", resp.Status)
 	body, err := ioutil.ReadAll(resp.Body)
 	if err != nil {
 		return dummyAuthorized, err
@@ -112,7 +113,7 @@ func (a *fraudControlAPI) ExtendDestinationAuthorization(countryCode string) (do
 		return dummyAuthorized, err
 	}
 	defer resp.Body.Close()
-	fmt.Println("response Status:", resp.Status)
+	logging.Debug.Println("response Status:", resp.Status)
 	body, err := ioutil.ReadAll(resp.Body)
 	if err != nil {
 		return dummyAuthorized, err
@@ -146,7 +147,7 @@ func (a *fraudControlAPI) WhiteListDestination(countryCode string) (domains.Whit
 		return dummyWhitelisted, err
 	}
 	defer resp.Body.Close()
-	fmt.Println("response Status:", resp.Status)
+	logging.Debug.Println("response Status:", resp.Status)
 	body, err := ioutil.ReadAll(resp.Body)
 	if err != nil {
 		return dummyWhitelisted, err
@@ -176,7 +177,7 @@ func (a *fraudControlAPI) ListFraudControl() ([]domains.Fraud, error) {
 		return dummyFrauds, err
 	}
 	defer resp.Body.Close()
-	fmt.Println("response Status:", resp.Status)
+	logging.Debug.Println("response Status:", resp.Status)
 	body, err := ioutil.ReadAll(resp.Body)
 	if err != nil {
 		return dummyFrauds, err

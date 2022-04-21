@@ -61,3 +61,10 @@ func GetFeatureTestsFromMap(tests []string, regMap map[string]*test.FeatureTest)
 	}
 	return
 }
+
+func IsParametersValid(testPtr *string) bool {
+	if *testPtr == "" {
+		return false
+	}
+	return true
+}

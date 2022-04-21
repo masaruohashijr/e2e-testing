@@ -8,6 +8,7 @@ import (
 	"net/http"
 	"net/url"
 	"zarbat_test/internal/config"
+	"zarbat_test/internal/logging"
 	"zarbat_test/pkg/domains"
 	"zarbat_test/pkg/ports/transcriptions"
 )
@@ -41,7 +42,7 @@ func (a *transcriptionAPI) ViewTranscription(transcriptionSid string) (domains.T
 		return dummyTranscription, err
 	}
 	defer resp.Body.Close()
-	fmt.Println("response Status:", resp.Status)
+	logging.Debug.Println("response Status:", resp.Status)
 	body, err := ioutil.ReadAll(resp.Body)
 	if err != nil {
 		return dummyTranscription, err
@@ -73,17 +74,17 @@ func (a *transcriptionAPI) ListTranscriptions() ([]domains.Transcription, error)
 		return nil, err
 	}
 	defer resp.Body.Close()
-	fmt.Println("response Status:", resp.Status)
+	logging.Debug.Println("response Status:", resp.Status)
 	body, err := ioutil.ReadAll(resp.Body)
 	if err != nil {
 		return nil, err
 	}
 	b := string(body)
-	fmt.Println("response Body:", b)
+	logging.Debug.Println("response Body:", b)
 	responseTranscription := domains.ResponseTranscription{}
 	json.Unmarshal(body, &responseTranscription)
 	for _, transcription := range responseTranscription.Transcriptions {
-		fmt.Println(transcription.Sid)
+		logging.Debug.Println(transcription.Sid)
 	}
 	return responseTranscription.Transcriptions, nil
 }
@@ -107,7 +108,7 @@ func (a *transcriptionAPI) TranscribeRecording(recordingSid string) (domains.Tra
 		return dummyTranscription, err
 	}
 	defer resp.Body.Close()
-	fmt.Println("response Status:", resp.Status)
+	logging.Debug.Println("response Status:", resp.Status)
 	body, err := ioutil.ReadAll(resp.Body)
 	if err != nil {
 		return dummyTranscription, err
@@ -142,7 +143,7 @@ func (a *transcriptionAPI) TranscribeAudioUrl(audioUrl string) (domains.Transcri
 		return dummyTranscription, err
 	}
 	defer resp.Body.Close()
-	fmt.Println("response Status:", resp.Status)
+	logging.Debug.Println("response Status:", resp.Status)
 	body, err := ioutil.ReadAll(resp.Body)
 	if err != nil {
 		return dummyTranscription, err

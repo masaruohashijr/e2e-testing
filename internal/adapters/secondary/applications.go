@@ -8,6 +8,7 @@ import (
 	"net/http"
 	"net/url"
 	"zarbat_test/internal/config"
+	"zarbat_test/internal/logging"
 	"zarbat_test/pkg/domains"
 	"zarbat_test/pkg/ports/application"
 )
@@ -67,17 +68,17 @@ func (a *applicationAPI) ListApplications() ([]domains.Application, error) {
 		return nil, err
 	}
 	defer resp.Body.Close()
-	fmt.Println("response Status:", resp.Status)
+	logging.Debug.Println("response Status:", resp.Status)
 	body, err := ioutil.ReadAll(resp.Body)
 	if err != nil {
 		return nil, err
 	}
 	b := string(body)
-	fmt.Println("response Body:", b)
+	logging.Debug.Println("response Body:", b)
 	responseApplication := domains.ResponseApplication{}
 	json.Unmarshal(body, &responseApplication)
 	for _, application := range responseApplication.Applications {
-		fmt.Println(application.Sid, application.Sid, application.FriendlyName, application.DateCreated)
+		logging.Debug.Println(application.Sid, application.Sid, application.FriendlyName, application.DateCreated)
 	}
 	return responseApplication.Applications, nil
 }
@@ -101,7 +102,7 @@ func (a *applicationAPI) ViewApplication(applicationSid string) (domains.Applica
 		return dummyApplication, err
 	}
 	defer resp.Body.Close()
-	fmt.Println("response Status:", resp.Status)
+	logging.Debug.Println("response Status:", resp.Status)
 	body, err := ioutil.ReadAll(resp.Body)
 	if err != nil {
 		return dummyApplication, err
@@ -133,7 +134,7 @@ func (a *applicationAPI) DeleteApplication(applicationSid string) (domains.Appli
 		return dummyApplication, err
 	}
 	defer resp.Body.Close()
-	fmt.Println("response Status:", resp.Status)
+	logging.Debug.Println("response Status:", resp.Status)
 	body, err := ioutil.ReadAll(resp.Body)
 	if err != nil {
 		return dummyApplication, err
@@ -167,7 +168,7 @@ func (a *applicationAPI) CreateApplication(friendlyName string) (domains.Applica
 		return dummyApplication, err
 	}
 	defer resp.Body.Close()
-	fmt.Println("response Status:", resp.Status)
+	logging.Debug.Println("response Status:", resp.Status)
 	body, err := ioutil.ReadAll(resp.Body)
 	if err != nil {
 		return dummyApplication, err

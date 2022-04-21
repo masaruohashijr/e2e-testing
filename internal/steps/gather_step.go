@@ -46,16 +46,16 @@ func ShouldGetSpeech(number, originalSpeech string) error {
 	case speechResult = <-Ch:
 		fmt.Printf("Result: %s\n", speechResult)
 	case <-time.After(time.Duration(services.TestTimeout) * time.Second):
-		fmt.Println("timeout")
+		logging.Debug.Println("timeout")
 		Ch = nil
 		return fmt.Errorf("timeout")
 	}
 	originalSpeech = strings.ToLower(originalSpeech)
 	speechResult = strings.ToLower(speechResult)
 	logging.Debug.Println("original speech: ", originalSpeech)
-	fmt.Println("original speech: ", originalSpeech)
+	logging.Debug.Println("original speech: ", originalSpeech)
 	logging.Debug.Println("speech result: ", speechResult)
-	fmt.Println("speech result: ", speechResult)
+	logging.Debug.Println("speech result: ", speechResult)
 	if strings.TrimSpace(originalSpeech) != strings.TrimSpace(speechResult) && speechResult != "" && speechResult != "welcome to your new zhang account" {
 		return fmt.Errorf("The returned speech \"%s\" is different from the one expected by the test.", speechResult)
 	}
@@ -70,7 +70,7 @@ func ShouldGetDigitsFrom(number, expectedDigits string) error {
 		fmt.Printf("Result: %s\n", digitsResult)
 		logging.Debug.Printf("Result: %s\n", digitsResult)
 	case <-time.After(time.Duration(services.TestTimeout) * time.Second):
-		fmt.Println("timeout")
+		logging.Debug.Println("timeout")
 		logging.Debug.Println("timeout")
 		Ch = nil
 		return fmt.Errorf("timeout")
@@ -78,9 +78,9 @@ func ShouldGetDigitsFrom(number, expectedDigits string) error {
 	expectedDigits = strings.ToLower(expectedDigits)
 	digitsResult = strings.ToLower(digitsResult)
 	logging.Debug.Println("original speech: ", expectedDigits)
-	fmt.Println("original speech: ", expectedDigits)
+	logging.Debug.Println("original speech: ", expectedDigits)
 	logging.Debug.Println("speech result: ", digitsResult)
-	fmt.Println("speech result: ", digitsResult)
+	logging.Debug.Println("speech result: ", digitsResult)
 	if strings.TrimSpace(expectedDigits) != strings.TrimSpace(digitsResult) && digitsResult != "" && digitsResult != "welcome to your new zhang account" {
 		return fmt.Errorf("The returned speech \"%s\" is different from the one expected by the test.", digitsResult)
 	}

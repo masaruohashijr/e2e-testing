@@ -13,9 +13,11 @@ var CloseChannel bool
 var ChComplete chan string
 
 var BaseUrl string
-var BasePort int = 5000
-var TestTimeout int64 = 60
-var GatherTimeOut = 60
+
+// o.s. argument overrides the line below.
+var BasePort int = 5004
+var TestTimeout int64 = 30
+var GatherTimeOut = 30
 var GatherPause = 0
 var PlayPause = 3
 var PlayLoop = 100
@@ -28,7 +30,7 @@ var TestHash uint32
 
 func RunServer(c chan string, close bool) {
 	Ch = c
-	println("RENEWING CHANNEL")
+	logging.Debug.Println("RENEWING CHANNEL")
 	CloseChannel = close
 	if router != nil {
 		return

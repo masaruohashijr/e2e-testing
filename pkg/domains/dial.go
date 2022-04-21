@@ -40,11 +40,3 @@ type Number struct {
 	Value      string `xml:",chardata"`
 	SendDigits string `xml:"sendDigits,attr"`
 }
-
-type Conference struct {
-	Value                  string `xml:",chardata"`
-	StartConferenceOnEnter bool   `xml:"startConferenceOnEnter,attr"`
-	CallbackUrl            string `xml:"callbackUrl,attr"`
-	HangupOnStar           bool   `xml:"hangupOnStar,attr"`
-	MaxParticipants        int    `xml:"maxParticipants,attr"`
-}

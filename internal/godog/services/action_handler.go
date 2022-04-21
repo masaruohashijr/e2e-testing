@@ -1,10 +1,10 @@
 package services
 
 import (
-	"fmt"
 	"io/ioutil"
 	"log"
 	"strings"
+	"zarbat_test/internal/logging"
 	l "zarbat_test/internal/logging"
 )
 
@@ -25,7 +25,7 @@ func AppendActionXML(actionUrl, appendix string) {
 	strXML := string(bXML)
 	index := strings.Index(strXML, "</Response>")
 	strXML = strXML[:index] + appendix + strXML[index:]
-	fmt.Println(strXML)
+	logging.Debug.Println(strXML)
 	l.Debug.Println("AppendActionXML:\n", strXML)
 	WriteActionXML(xmlName, strXML)
 }

@@ -13,6 +13,7 @@ type FeatureTest struct {
 	ScenarioInitializer  func(ctx *godog.ScenarioContext)
 	TestSuiteInitializer func(ctx *godog.TestSuiteContext)
 	Tries                int
+	Result               bool
 }
 
 func Hash(s string) uint32 {

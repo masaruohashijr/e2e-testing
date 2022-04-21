@@ -5,6 +5,7 @@ import (
 	"fmt"
 	"time"
 	"zarbat_test/internal/godog/services"
+	"zarbat_test/internal/logging"
 	"zarbat_test/pkg/domains"
 )
 
@@ -17,7 +18,7 @@ func ConfiguredToPingURL(number string) error {
 	x, _ := xml.MarshalIndent(ResponsePing, "", "")
 	strXML := domains.Header + string(x)
 	services.WriteActionXML("ping", strXML)
-	println(string(x))
+	logging.Debug.Println(string(x))
 	Configuration.ActionUrl = "http://zang.io/ivr/welcome/call"
 	Configuration.To, Configuration.ToSid = Configuration.SelectNumber(number)
 	Configuration.VoiceUrl = services.BaseUrl + "/Ping"
@@ -28,9 +29,9 @@ func ConfiguredToPingURL(number string) error {
 func ShouldGetAPingRequestOnTheURL(number string) error {
 	select {
 	case res := <-Ch:
-		fmt.Println(res)
+		logging.Debug.Println(res)
 	case <-time.After(time.Duration(services.TestTimeout) * time.Second):
-		fmt.Println("timeout")
+		logging.Debug.Println("timeout")
 		Ch = nil
 		return fmt.Errorf("timeout")
 	}

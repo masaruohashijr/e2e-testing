@@ -1,12 +1,12 @@
 package files
 
 import (
-	"fmt"
 	"io/fs"
 	"io/ioutil"
 	"log"
 	"os"
 	"strings"
+	"zarbat_test/internal/logging"
 )
 
 func NewSingleFile(tests []string) {
@@ -20,7 +20,7 @@ func NewSingleFile(tests []string) {
 	}
 	mergeFeatureFiles(tempFile, featuresDir, tests)
 	tempFile.Write(finalFileContent.Bytes())
-	println(tempFile.Name())
+	logging.Debug.Println(tempFile.Name())
 	tempFile.Close()
 }
 
@@ -45,7 +45,7 @@ func mergeFeatureFiles(tempFile *os.File, path string, tests []string) {
 func containsDirWithTest(tests []string, name string) bool {
 	for _, v := range tests {
 		if name == v {
-			println(v)
+			logging.Debug.Println(v)
 			return true
 		}
 	}
@@ -54,8 +54,8 @@ func containsDirWithTest(tests []string, name string) bool {
 
 func mergeFeatureFileToTempFile(tempFile *os.File, path string, f fs.FileInfo) {
 	subFileContent, _ := ioutil.ReadFile(path + "/" + f.Name())
-	fmt.Println(string(subFileContent))
+	logging.Debug.Println(string(subFileContent))
 	finalFileContent.Write(subFileContent)
 	finalFileContent.Write([]byte("\n\n\n"))
-	fmt.Println("finalFileContent:", len(finalFileContent.Bytes()))
+	logging.Debug.Println("finalFileContent:", len(finalFileContent.Bytes()))
 }
