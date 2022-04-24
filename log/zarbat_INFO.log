@@ -1,0 +1,1529 @@
+2022/02/28 09:42:27 INFO: ****************************************
+2022/02/28 09:42:27 INFO: START OF TEST SUITE
+2022/02/28 09:42:27 INFO: Config: config/config.ini
+2022/02/28 09:42:27 INFO: Number of Tries: 1
+2022/02/28 09:42:27 INFO: Log: log/zarbat.log
+2022/02/28 09:42:27 INFO: Tests: [play]
+2022/02/28 09:42:27 INFO: .........................................
+2022/02/28 09:42:50 INFO: * Feature/Scenario: PLAY - Status: OK
+2022/02/28 09:42:55 INFO: Passed  1
+2022/02/28 09:42:55 INFO: Failed  0
+2022/02/28 09:42:55 INFO: ...END OF TEST SUITE
+2022/02/28 09:48:10 INFO: ****************************************
+2022/02/28 09:48:10 INFO: START OF TEST SUITE
+2022/02/28 09:48:10 INFO: Config: config/config.ini
+2022/02/28 09:48:10 INFO: Number of Tries: 1
+2022/02/28 09:48:10 INFO: Log: log/zarbat.log
+2022/02/28 09:48:10 INFO: Tests: [play]
+2022/02/28 09:48:10 INFO: .........................................
+2022/02/28 09:48:34 INFO: * Feature/Scenario: PLAY - Status: OK
+2022/02/28 09:48:39 INFO: Passed  1
+2022/02/28 09:48:39 INFO: Failed  0
+2022/02/28 09:48:39 INFO: ...END OF TEST SUITE
+2022/02/28 10:00:17 INFO: ****************************************
+2022/02/28 10:00:17 INFO: START OF TEST SUITE
+2022/02/28 10:00:17 INFO: Config: config/config.ini
+2022/02/28 10:00:17 INFO: Number of Tries: 1
+2022/02/28 10:00:17 INFO: Log: log/zarbat.log
+2022/02/28 10:00:17 INFO: Tests: []
+2022/02/28 10:00:17 INFO: .........................................
+2022/02/28 10:00:43 INFO: * Feature/Scenario:  - Status: OK
+2022/02/28 10:00:48 INFO: Passed  1
+2022/02/28 10:00:48 INFO: Failed  0
+2022/02/28 10:00:48 INFO: ...END OF TEST SUITE
+2022/02/28 10:14:00 INFO: ****************************************
+2022/02/28 10:14:00 INFO: START OF TEST SUITE
+2022/02/28 10:14:00 INFO: Config: config/config.ini
+2022/02/28 10:14:00 INFO: Number of Tries: 1
+2022/02/28 10:14:00 INFO: Log: log/zarbat.log
+2022/02/28 10:14:00 INFO: Tests: []
+2022/02/28 10:14:00 INFO: .........................................
+2022/02/28 10:14:24 INFO: * Feature/Scenario:  - Status: OK
+2022/02/28 10:14:29 INFO: Passed  1
+2022/02/28 10:14:29 INFO: Failed  0
+2022/02/28 10:14:29 INFO: ...END OF TEST SUITE
+2022/02/28 10:40:04 INFO: ****************************************
+2022/02/28 10:40:04 INFO: START OF TEST SUITE
+2022/02/28 10:40:04 INFO: Config: config/config.ini
+2022/02/28 10:40:04 INFO: Number of Tries: 1
+2022/02/28 10:40:04 INFO: Log: log/zarbat.log
+2022/02/28 10:40:04 INFO: Tests: []
+2022/02/28 10:40:04 INFO: .........................................
+2022/02/28 10:40:29 INFO: * Feature/Scenario:  - Status: OK
+2022/02/28 10:40:34 INFO: Passed  1
+2022/02/28 10:40:34 INFO: Failed  0
+2022/02/28 10:40:34 INFO: ...END OF TEST SUITE
+2022/02/28 10:41:59 INFO: ****************************************
+2022/02/28 10:41:59 INFO: START OF TEST SUITE
+2022/02/28 10:41:59 INFO: Config: config/config.ini
+2022/02/28 10:41:59 INFO: Number of Tries: 1
+2022/02/28 10:41:59 INFO: Log: log/zarbat.log
+2022/02/28 10:41:59 INFO: Tests: []
+2022/02/28 10:41:59 INFO: .........................................
+2022/02/28 10:42:23 INFO: * Feature/Scenario:  - Status: OK
+2022/02/28 10:42:28 INFO: Passed  1
+2022/02/28 10:42:28 INFO: Failed  0
+2022/02/28 10:42:28 INFO: ...END OF TEST SUITE
+2022/02/28 10:44:04 INFO: ****************************************
+2022/02/28 10:44:04 INFO: START OF TEST SUITE
+2022/02/28 10:44:04 INFO: Config: config/config.ini
+2022/02/28 10:44:04 INFO: Number of Tries: 1
+2022/02/28 10:44:04 INFO: Log: log/zarbat.log
+2022/02/28 10:44:04 INFO: Tests: []
+2022/02/28 10:44:04 INFO: .........................................
+2022/02/28 10:44:27 INFO: * Feature/Scenario:  - Status: OK
+2022/02/28 10:44:32 INFO: Passed  1
+2022/02/28 10:44:32 INFO: Failed  0
+2022/02/28 10:44:32 INFO: ...END OF TEST SUITE
+2022/02/28 10:49:17 INFO: ****************************************
+2022/02/28 10:49:17 INFO: START OF TEST SUITE
+2022/02/28 10:49:17 INFO: Config: config/config.ini
+2022/02/28 10:49:17 INFO: Number of Tries: 1
+2022/02/28 10:49:17 INFO: Log: log/zarbat.log
+2022/02/28 10:49:17 INFO: Tests: []
+2022/02/28 10:49:17 INFO: .........................................
+2022/02/28 10:49:29 INFO: * Feature/Scenario:  - Status: Not OK
+2022/02/28 10:49:34 INFO: Passed  0
+2022/02/28 10:49:34 INFO: Failed  1
+2022/02/28 10:49:34 INFO: ...END OF TEST SUITE
+2022/02/28 10:53:11 INFO: ****************************************
+2022/02/28 10:53:11 INFO: START OF TEST SUITE
+2022/02/28 10:53:11 INFO: Config: config/config.ini
+2022/02/28 10:53:11 INFO: Number of Tries: 1
+2022/02/28 10:53:11 INFO: Log: log/zarbat.log
+2022/02/28 10:53:11 INFO: Tests: []
+2022/02/28 10:53:11 INFO: .........................................
+2022/02/28 10:53:23 INFO: * Feature/Scenario:  - Status: OK
+2022/02/28 10:53:28 INFO: Passed  1
+2022/02/28 10:53:28 INFO: Failed  0
+2022/02/28 10:53:28 INFO: ...END OF TEST SUITE
+2022/02/28 11:26:09 INFO: ****************************************
+2022/02/28 11:26:09 INFO: START OF TEST SUITE
+2022/02/28 11:26:09 INFO: Config: config/config.ini
+2022/02/28 11:26:09 INFO: Number of Tries: 1
+2022/02/28 11:26:09 INFO: Log: log/zarbat.log
+2022/02/28 11:26:09 INFO: Tests: [Make Call - 2022-02-28, 11:11:01 a.m.]
+2022/02/28 11:26:09 INFO: .........................................
+2022/02/28 11:26:09 INFO: * Feature/Scenario: MAKE CALL - 2022-02-28, 11:11:01 A.M. - Status: Not OK
+2022/02/28 11:26:14 INFO: Passed  0
+2022/02/28 11:26:14 INFO: Failed  1
+2022/02/28 11:26:14 INFO: ...END OF TEST SUITE
+2022/02/28 11:35:08 INFO: ****************************************
+2022/02/28 11:35:08 INFO: START OF TEST SUITE
+2022/02/28 11:35:08 INFO: Config: config/config.ini
+2022/02/28 11:35:08 INFO: Number of Tries: 1
+2022/02/28 11:35:08 INFO: Log: log/zarbat.log
+2022/02/28 11:35:08 INFO: Tests: [Make Call - 2022-02-28, 11:29:03 a.m.]
+2022/02/28 11:35:08 INFO: .........................................
+2022/02/28 11:35:30 INFO: * Feature/Scenario: MAKE CALL - 2022-02-28, 11:29:03 A.M. - Status: Not OK
+2022/02/28 11:35:45 INFO: Passed  0
+2022/02/28 11:35:45 INFO: Failed  1
+2022/02/28 11:35:45 INFO: ...END OF TEST SUITE
+2022/03/02 10:45:59 INFO: ****************************************
+2022/03/02 10:45:59 INFO: START OF TEST SUITE
+2022/03/02 10:45:59 INFO: Config: config/config.ini
+2022/03/02 10:45:59 INFO: Number of Tries: 1
+2022/03/02 10:45:59 INFO: Log: log/zarbat.log
+2022/03/02 10:45:59 INFO: Tests: [Play a tone]
+2022/03/02 10:45:59 INFO: .........................................
+2022/03/02 10:45:59 INFO: * Feature/Scenario: PLAY A TONE - Status: Not OK
+2022/03/02 10:46:04 INFO: Passed  0
+2022/03/02 10:46:04 INFO: Failed  1
+2022/03/02 10:46:04 INFO: ...END OF TEST SUITE
+2022/03/02 10:49:18 INFO: ****************************************
+2022/03/02 10:49:18 INFO: START OF TEST SUITE
+2022/03/02 10:49:18 INFO: Config: config/config.ini
+2022/03/02 10:49:18 INFO: Number of Tries: 1
+2022/03/02 10:49:18 INFO: Log: log/zarbat.log
+2022/03/02 10:49:18 INFO: Tests: [Play a tone]
+2022/03/02 10:49:18 INFO: .........................................
+2022/03/02 10:49:18 INFO: * Feature/Scenario: PLAY A TONE - Status: Not OK
+2022/03/02 10:49:23 INFO: Passed  0
+2022/03/02 10:49:23 INFO: Failed  1
+2022/03/02 10:49:23 INFO: ...END OF TEST SUITE
+2022/03/02 10:49:58 INFO: ****************************************
+2022/03/02 10:49:58 INFO: START OF TEST SUITE
+2022/03/02 10:49:58 INFO: Config: config/config.ini
+2022/03/02 10:49:58 INFO: Number of Tries: 1
+2022/03/02 10:49:58 INFO: Log: log/zarbat.log
+2022/03/02 10:49:58 INFO: Tests: [Play a tone]
+2022/03/02 10:49:58 INFO: .........................................
+2022/03/02 10:49:58 INFO: * Feature/Scenario: PLAY A TONE - Status: Not OK
+2022/03/02 10:50:03 INFO: Passed  0
+2022/03/02 10:50:03 INFO: Failed  1
+2022/03/02 10:50:03 INFO: ...END OF TEST SUITE
+2022/03/02 10:51:27 INFO: ****************************************
+2022/03/02 10:51:27 INFO: START OF TEST SUITE
+2022/03/02 10:51:27 INFO: Config: config/config.ini
+2022/03/02 10:51:27 INFO: Number of Tries: 1
+2022/03/02 10:51:27 INFO: Log: log/zarbat.log
+2022/03/02 10:51:27 INFO: Tests: [Play a tone]
+2022/03/02 10:51:27 INFO: .........................................
+2022/03/02 10:51:42 INFO: * Feature/Scenario: PLAY A TONE - Status: Not OK
+2022/03/02 11:27:51 INFO: ****************************************
+2022/03/02 11:27:51 INFO: START OF TEST SUITE
+2022/03/02 11:27:51 INFO: Config: config/config.ini
+2022/03/02 11:27:51 INFO: Number of Tries: 1
+2022/03/02 11:27:51 INFO: Log: log/zarbat.log
+2022/03/02 11:27:51 INFO: Tests: [Play a tone]
+2022/03/02 11:27:51 INFO: .........................................
+2022/03/02 11:27:58 INFO: * Feature/Scenario: PLAY A TONE - Status: Not OK
+2022/03/02 11:27:58 INFO: Passed  0
+2022/03/02 11:27:58 INFO: Failed  1
+2022/03/02 11:27:58 INFO: ...END OF TEST SUITE
+2022/03/02 11:28:19 INFO: ****************************************
+2022/03/02 11:28:19 INFO: START OF TEST SUITE
+2022/03/02 11:28:19 INFO: Config: config/config.ini
+2022/03/02 11:28:19 INFO: Number of Tries: 1
+2022/03/02 11:28:19 INFO: Log: log/zarbat.log
+2022/03/02 11:28:19 INFO: Tests: [Play a tone]
+2022/03/02 11:28:19 INFO: .........................................
+2022/03/02 11:28:23 INFO: * Feature/Scenario: PLAY A TONE - Status: Not OK
+2022/03/02 11:28:23 INFO: Passed  0
+2022/03/02 11:28:23 INFO: Failed  1
+2022/03/02 11:28:23 INFO: ...END OF TEST SUITE
+2022/03/02 11:29:58 INFO: ****************************************
+2022/03/02 11:29:58 INFO: START OF TEST SUITE
+2022/03/02 11:29:58 INFO: Config: config/config.ini
+2022/03/02 11:29:58 INFO: Number of Tries: 1
+2022/03/02 11:29:58 INFO: Log: log/zarbat.log
+2022/03/02 11:29:58 INFO: Tests: [Play a tone]
+2022/03/02 11:29:58 INFO: .........................................
+2022/03/02 11:30:02 INFO: * Feature/Scenario: PLAY A TONE - Status: Not OK
+2022/03/02 11:30:02 INFO: Passed  0
+2022/03/02 11:30:02 INFO: Failed  1
+2022/03/02 11:30:02 INFO: ...END OF TEST SUITE
+2022/03/02 11:31:56 INFO: ****************************************
+2022/03/02 11:31:56 INFO: START OF TEST SUITE
+2022/03/02 11:31:56 INFO: Config: config/config.ini
+2022/03/02 11:31:56 INFO: Number of Tries: 1
+2022/03/02 11:31:56 INFO: Log: log/zarbat.log
+2022/03/02 11:31:56 INFO: Tests: [Play a tone]
+2022/03/02 11:31:56 INFO: .........................................
+2022/03/02 12:15:49 INFO: * Feature/Scenario: PLAY A TONE - Status: OK
+2022/03/02 12:15:49 INFO: Passed  1
+2022/03/02 12:15:49 INFO: Failed  0
+2022/03/02 12:15:49 INFO: ...END OF TEST SUITE
+2022/03/02 19:53:10 INFO: ****************************************
+2022/03/02 19:53:10 INFO: START OF TEST SUITE
+2022/03/02 19:53:10 INFO: Config: config/config.ini
+2022/03/02 19:53:10 INFO: Number of Tries: 1
+2022/03/02 19:53:10 INFO: Log: log/zarbat.log
+2022/03/02 19:53:10 INFO: Tests: [Play a tone]
+2022/03/02 19:53:10 INFO: .........................................
+2022/03/02 19:54:27 INFO: * Feature/Scenario: PLAY A TONE - Status: Not OK
+2022/03/02 19:54:27 INFO: Passed  0
+2022/03/02 19:54:27 INFO: Failed  1
+2022/03/02 19:54:27 INFO: ...END OF TEST SUITE
+2022/03/02 19:55:39 INFO: ****************************************
+2022/03/02 19:55:39 INFO: START OF TEST SUITE
+2022/03/02 19:55:39 INFO: Config: config/config.ini
+2022/03/02 19:55:39 INFO: Number of Tries: 1
+2022/03/02 19:55:39 INFO: Log: log/zarbat.log
+2022/03/02 19:55:39 INFO: Tests: [Play a tone]
+2022/03/02 19:55:39 INFO: .........................................
+2022/03/02 19:56:05 INFO: * Feature/Scenario: PLAY A TONE - Status: OK
+2022/03/02 19:56:05 INFO: Passed  1
+2022/03/02 19:56:05 INFO: Failed  0
+2022/03/02 19:56:05 INFO: ...END OF TEST SUITE
+2022/03/02 20:04:05 INFO: ****************************************
+2022/03/02 20:04:05 INFO: START OF TEST SUITE
+2022/03/02 20:04:05 INFO: Config: config/config.ini
+2022/03/02 20:04:05 INFO: Number of Tries: 1
+2022/03/02 20:04:05 INFO: Log: log/zarbat.log
+2022/03/02 20:04:05 INFO: Tests: [Play a tone - 2022-03-02, 7:56:05 p.m.]
+2022/03/02 20:04:05 INFO: .........................................
+2022/03/02 20:04:05 INFO: * Feature/Scenario: PLAY A TONE - 2022-03-02, 7:56:05 P.M. - Status: OK
+2022/03/02 20:04:05 INFO: Passed  1
+2022/03/02 20:04:05 INFO: Failed  0
+2022/03/02 20:04:05 INFO: ...END OF TEST SUITE
+2022/03/02 20:04:08 INFO: ****************************************
+2022/03/02 20:04:08 INFO: START OF TEST SUITE
+2022/03/02 20:04:08 INFO: Config: config/config.ini
+2022/03/02 20:04:08 INFO: Number of Tries: 1
+2022/03/02 20:04:08 INFO: Log: log/zarbat.log
+2022/03/02 20:04:08 INFO: Tests: [Play a tone - 2022-03-02, 7:56:05 p.m. - 2022-03-02, 8:04:05 p.m.]
+2022/03/02 20:04:08 INFO: .........................................
+2022/03/02 20:04:08 INFO: * Feature/Scenario: PLAY A TONE - 2022-03-02, 7:56:05 P.M. - 2022-03-02, 8:04:05 P.M. - Status: OK
+2022/03/02 20:04:08 INFO: Passed  1
+2022/03/02 20:04:08 INFO: Failed  0
+2022/03/02 20:04:08 INFO: ...END OF TEST SUITE
+2022/03/02 20:04:09 INFO: ****************************************
+2022/03/02 20:04:09 INFO: START OF TEST SUITE
+2022/03/02 20:04:09 INFO: Config: config/config.ini
+2022/03/02 20:04:09 INFO: Number of Tries: 1
+2022/03/02 20:04:09 INFO: Log: log/zarbat.log
+2022/03/02 20:04:09 INFO: Tests: [Play a tone - 2022-03-02, 7:56:05 p.m. - 2022-03-02, 8:04:05 p.m. - 2022-03-02, 8:04:08 p.m.]
+2022/03/02 20:04:09 INFO: .........................................
+2022/03/02 20:04:09 INFO: * Feature/Scenario: PLAY A TONE - 2022-03-02, 7:56:05 P.M. - 2022-03-02, 8:04:05 P.M. - 2022-03-02, 8:04:08 P.M. - Status: OK
+2022/03/02 20:04:09 INFO: Passed  1
+2022/03/02 20:04:09 INFO: Failed  0
+2022/03/02 20:04:09 INFO: ...END OF TEST SUITE
+2022/03/02 20:04:16 INFO: ****************************************
+2022/03/02 20:04:16 INFO: START OF TEST SUITE
+2022/03/02 20:04:16 INFO: Config: config/config.ini
+2022/03/02 20:04:16 INFO: Number of Tries: 1
+2022/03/02 20:04:16 INFO: Log: log/zarbat.log
+2022/03/02 20:04:16 INFO: Tests: [Play a tone - 2022-03-02, 7:56:05 p.m. - 2022-03-02, 8:04:05 p.m. - 2022-03-02, 8:04:08 p.m. - 2022-03-02, 8:04:09 p.m.]
+2022/03/02 20:04:16 INFO: .........................................
+2022/03/02 20:04:16 INFO: * Feature/Scenario: PLAY A TONE - 2022-03-02, 7:56:05 P.M. - 2022-03-02, 8:04:05 P.M. - 2022-03-02, 8:04:08 P.M. - 2022-03-02, 8:04:09 P.M. - Status: OK
+2022/03/02 20:04:16 INFO: Passed  1
+2022/03/02 20:04:16 INFO: Failed  0
+2022/03/02 20:04:16 INFO: ...END OF TEST SUITE
+2022/03/02 20:04:38 INFO: ****************************************
+2022/03/02 20:04:38 INFO: START OF TEST SUITE
+2022/03/02 20:04:38 INFO: Config: config/config.ini
+2022/03/02 20:04:38 INFO: Number of Tries: 1
+2022/03/02 20:04:38 INFO: Log: log/zarbat.log
+2022/03/02 20:04:38 INFO: Tests: [Play a tone]
+2022/03/02 20:04:38 INFO: .........................................
+2022/03/02 20:04:38 INFO: * Feature/Scenario: PLAY A TONE - Status: OK
+2022/03/02 20:04:38 INFO: Passed  1
+2022/03/02 20:04:38 INFO: Failed  0
+2022/03/02 20:04:38 INFO: ...END OF TEST SUITE
+2022/03/02 20:05:12 INFO: ****************************************
+2022/03/02 20:05:12 INFO: START OF TEST SUITE
+2022/03/02 20:05:12 INFO: Config: config/config.ini
+2022/03/02 20:05:12 INFO: Number of Tries: 1
+2022/03/02 20:05:12 INFO: Log: log/zarbat.log
+2022/03/02 20:05:12 INFO: Tests: [Play a tone]
+2022/03/02 20:05:12 INFO: .........................................
+2022/03/02 20:05:12 INFO: * Feature/Scenario: PLAY A TONE - Status: OK
+2022/03/02 20:05:12 INFO: Passed  1
+2022/03/02 20:05:12 INFO: Failed  0
+2022/03/02 20:05:12 INFO: ...END OF TEST SUITE
+2022/03/02 20:07:25 INFO: ****************************************
+2022/03/02 20:07:25 INFO: START OF TEST SUITE
+2022/03/02 20:07:25 INFO: Config: config/config.ini
+2022/03/02 20:07:25 INFO: Number of Tries: 1
+2022/03/02 20:07:25 INFO: Log: log/zarbat.log
+2022/03/02 20:07:25 INFO: Tests: [Play a tone]
+2022/03/02 20:07:25 INFO: .........................................
+2022/03/02 20:07:50 INFO: * Feature/Scenario: PLAY A TONE - Status: OK
+2022/03/02 20:07:50 INFO: Passed  1
+2022/03/02 20:07:50 INFO: Failed  0
+2022/03/02 20:07:50 INFO: ...END OF TEST SUITE
+2022/03/02 20:08:06 INFO: ****************************************
+2022/03/02 20:08:06 INFO: START OF TEST SUITE
+2022/03/02 20:08:06 INFO: Config: config/config.ini
+2022/03/02 20:08:06 INFO: Number of Tries: 1
+2022/03/02 20:08:06 INFO: Log: log/zarbat.log
+2022/03/02 20:08:06 INFO: Tests: [Play a tone - 2022-03-02, 8:07:50 p.m.]
+2022/03/02 20:08:06 INFO: .........................................
+2022/03/02 20:08:31 INFO: * Feature/Scenario: PLAY A TONE - 2022-03-02, 8:07:50 P.M. - Status: OK
+2022/03/02 20:08:31 INFO: Passed  1
+2022/03/02 20:08:31 INFO: Failed  0
+2022/03/02 20:08:31 INFO: ...END OF TEST SUITE
+2022/03/02 20:18:04 INFO: ****************************************
+2022/03/02 20:18:04 INFO: START OF TEST SUITE
+2022/03/02 20:18:04 INFO: Config: config/config.ini
+2022/03/02 20:18:04 INFO: Number of Tries: 1
+2022/03/02 20:18:04 INFO: Log: log/zarbat.log
+2022/03/02 20:18:04 INFO: Tests: [Make Call]
+2022/03/02 20:18:04 INFO: .........................................
+2022/03/02 20:18:16 INFO: * Feature/Scenario: MAKE CALL - Status: OK
+2022/03/02 20:18:16 INFO: Passed  1
+2022/03/02 20:18:16 INFO: Failed  0
+2022/03/02 20:18:16 INFO: ...END OF TEST SUITE
+2022/03/02 20:18:44 INFO: ****************************************
+2022/03/02 20:18:44 INFO: START OF TEST SUITE
+2022/03/02 20:18:44 INFO: Config: config/config.ini
+2022/03/02 20:18:44 INFO: Number of Tries: 1
+2022/03/02 20:18:44 INFO: Log: log/zarbat.log
+2022/03/02 20:18:44 INFO: Tests: [View Call]
+2022/03/02 20:18:44 INFO: .........................................
+2022/03/02 20:18:44 INFO: * Feature/Scenario: VIEW CALL - Status: OK
+2022/03/02 20:18:44 INFO: Passed  1
+2022/03/02 20:18:44 INFO: Failed  0
+2022/03/02 20:18:44 INFO: ...END OF TEST SUITE
+2022/03/02 20:21:18 INFO: ****************************************
+2022/03/02 20:21:18 INFO: START OF TEST SUITE
+2022/03/02 20:21:18 INFO: Config: config/config.ini
+2022/03/02 20:21:18 INFO: Number of Tries: 1
+2022/03/02 20:21:18 INFO: Log: log/zarbat.log
+2022/03/02 20:21:18 INFO: Tests: [View Call]
+2022/03/02 20:21:18 INFO: .........................................
+2022/03/02 20:21:18 INFO: * Feature/Scenario: VIEW CALL - Status: OK
+2022/03/02 20:21:18 INFO: Passed  1
+2022/03/02 20:21:18 INFO: Failed  0
+2022/03/02 20:21:18 INFO: ...END OF TEST SUITE
+2022/03/02 20:22:15 INFO: ****************************************
+2022/03/02 20:22:15 INFO: START OF TEST SUITE
+2022/03/02 20:22:15 INFO: Config: config/config.ini
+2022/03/02 20:22:15 INFO: Number of Tries: 1
+2022/03/02 20:22:15 INFO: Log: log/zarbat.log
+2022/03/02 20:22:15 INFO: Tests: [View Call]
+2022/03/02 20:22:15 INFO: .........................................
+2022/03/02 20:22:15 INFO: * Feature/Scenario: VIEW CALL - Status: OK
+2022/03/02 20:22:15 INFO: Passed  1
+2022/03/02 20:22:15 INFO: Failed  0
+2022/03/02 20:22:15 INFO: ...END OF TEST SUITE
+2022/03/02 20:24:31 INFO: ****************************************
+2022/03/02 20:24:32 INFO: START OF TEST SUITE
+2022/03/02 20:24:33 INFO: Config: config/config.ini
+2022/03/02 20:24:33 INFO: Number of Tries: 1
+2022/03/02 20:24:33 INFO: Log: log/zarbat.log
+2022/03/02 20:24:33 INFO: Tests: [View Call]
+2022/03/02 20:24:33 INFO: .........................................
+2022/03/02 20:26:03 INFO: * Feature/Scenario: VIEW CALL - Status: OK
+2022/03/02 20:26:03 INFO: Passed  1
+2022/03/02 20:26:03 INFO: Failed  0
+2022/03/02 20:26:03 INFO: ...END OF TEST SUITE
+2022/03/02 20:31:07 INFO: ****************************************
+2022/03/02 20:31:07 INFO: START OF TEST SUITE
+2022/03/02 20:31:07 INFO: Config: config/config.ini
+2022/03/02 20:31:07 INFO: Number of Tries: 1
+2022/03/02 20:31:07 INFO: Log: log/zarbat.log
+2022/03/02 20:31:07 INFO: Tests: [View Call]
+2022/03/02 20:31:07 INFO: .........................................
+2022/03/02 20:31:07 INFO: * Feature/Scenario: VIEW CALL - Status: OK
+2022/03/02 20:31:07 INFO: Passed  1
+2022/03/02 20:31:07 INFO: Failed  0
+2022/03/02 20:31:07 INFO: ...END OF TEST SUITE
+2022/03/02 20:31:29 INFO: ****************************************
+2022/03/02 20:31:29 INFO: START OF TEST SUITE
+2022/03/02 20:31:29 INFO: Config: config/config.ini
+2022/03/02 20:31:29 INFO: Number of Tries: 1
+2022/03/02 20:31:29 INFO: Log: log/zarbat.log
+2022/03/02 20:31:29 INFO: Tests: [View Call]
+2022/03/02 20:31:29 INFO: .........................................
+2022/03/02 20:31:29 INFO: * Feature/Scenario: VIEW CALL - Status: OK
+2022/03/02 20:31:29 INFO: Passed  1
+2022/03/02 20:31:29 INFO: Failed  0
+2022/03/02 20:31:29 INFO: ...END OF TEST SUITE
+2022/03/02 20:32:16 INFO: ****************************************
+2022/03/02 20:32:16 INFO: START OF TEST SUITE
+2022/03/02 20:32:16 INFO: Config: config/config.ini
+2022/03/02 20:32:16 INFO: Number of Tries: 1
+2022/03/02 20:32:16 INFO: Log: log/zarbat.log
+2022/03/02 20:32:16 INFO: Tests: [View Call]
+2022/03/02 20:32:16 INFO: .........................................
+2022/03/02 20:32:51 INFO: * Feature/Scenario: VIEW CALL - Status: OK
+2022/03/02 20:32:51 INFO: Passed  1
+2022/03/02 20:32:51 INFO: Failed  0
+2022/03/02 20:32:51 INFO: ...END OF TEST SUITE
+2022/03/02 20:44:05 INFO: ****************************************
+2022/03/02 20:44:05 INFO: START OF TEST SUITE
+2022/03/02 20:44:05 INFO: Config: config/config.ini
+2022/03/02 20:44:05 INFO: Number of Tries: 1
+2022/03/02 20:44:05 INFO: Log: log/zarbat.log
+2022/03/02 20:44:05 INFO: Tests: [play]
+2022/03/02 20:44:05 INFO: .........................................
+2022/03/02 20:46:13 INFO: * Feature/Scenario: PLAY - Status: OK
+2022/03/02 20:46:13 INFO: Passed  1
+2022/03/02 20:46:13 INFO: Failed  0
+2022/03/02 20:46:13 INFO: ...END OF TEST SUITE
+2022/03/02 20:46:52 INFO: ****************************************
+2022/03/02 20:46:52 INFO: START OF TEST SUITE
+2022/03/02 20:46:52 INFO: Config: config/config.ini
+2022/03/02 20:46:52 INFO: Number of Tries: 1
+2022/03/02 20:46:52 INFO: Log: log/zarbat.log
+2022/03/02 20:46:52 INFO: Tests: [play]
+2022/03/02 20:46:52 INFO: .........................................
+2022/03/02 20:46:52 INFO: * Feature/Scenario: PLAY - Status: OK
+2022/03/02 20:46:52 INFO: Passed  1
+2022/03/02 20:46:52 INFO: Failed  0
+2022/03/02 20:46:52 INFO: ...END OF TEST SUITE
+2022/03/02 20:48:38 INFO: ****************************************
+2022/03/02 20:48:38 INFO: START OF TEST SUITE
+2022/03/02 20:48:38 INFO: Config: config/config.ini
+2022/03/02 20:48:38 INFO: Number of Tries: 1
+2022/03/02 20:48:38 INFO: Log: log/zarbat.log
+2022/03/02 20:48:38 INFO: Tests: [View Call]
+2022/03/02 20:48:38 INFO: .........................................
+2022/03/02 20:48:38 INFO: * Feature/Scenario: VIEW CALL - Status: OK
+2022/03/02 20:48:38 INFO: Passed  1
+2022/03/02 20:48:38 INFO: Failed  0
+2022/03/02 20:48:38 INFO: ...END OF TEST SUITE
+2022/03/02 21:41:12 INFO: ****************************************
+2022/03/02 21:41:13 INFO: START OF TEST SUITE
+2022/03/02 21:41:13 INFO: Config: config/config.ini
+2022/03/02 21:41:13 INFO: Number of Tries: 1
+2022/03/02 21:41:13 INFO: Log: log/zarbat.log
+2022/03/02 21:41:13 INFO: Tests: [View Call]
+2022/03/02 21:41:13 INFO: .........................................
+2022/03/02 21:49:08 INFO: ****************************************
+2022/03/02 21:49:08 INFO: START OF TEST SUITE
+2022/03/02 21:49:08 INFO: Config: config/config.ini
+2022/03/02 21:49:08 INFO: Number of Tries: 1
+2022/03/02 21:49:08 INFO: Log: log/zarbat.log
+2022/03/02 21:49:08 INFO: Tests: [View Call]
+2022/03/02 21:49:08 INFO: .........................................
+2022/03/02 21:49:19 INFO: * Feature/Scenario: VIEW CALL - Status: Not OK
+2022/03/02 21:49:19 INFO: Passed  0
+2022/03/02 21:49:19 INFO: Failed  1
+2022/03/02 21:49:19 INFO: ...END OF TEST SUITE
+2022/03/02 21:55:06 INFO: ****************************************
+2022/03/02 21:55:06 INFO: START OF TEST SUITE
+2022/03/02 21:55:06 INFO: Config: config/config.ini
+2022/03/02 21:55:06 INFO: Number of Tries: 1
+2022/03/02 21:55:06 INFO: Log: log/zarbat.log
+2022/03/02 21:55:06 INFO: Tests: [Make Call]
+2022/03/02 21:55:06 INFO: .........................................
+2022/03/02 21:55:24 INFO: * Feature/Scenario: MAKE CALL - Status: OK
+2022/03/02 21:55:24 INFO: Passed  1
+2022/03/02 21:55:24 INFO: Failed  0
+2022/03/02 21:55:24 INFO: ...END OF TEST SUITE
+2022/03/15 13:09:39 INFO: ****************************************
+2022/03/15 13:09:39 INFO: START OF TEST SUITE
+2022/03/15 13:09:39 INFO: Config: config/config.ini
+2022/03/15 13:09:39 INFO: Number of Tries: 1
+2022/03/15 13:09:39 INFO: Log: log/zarbat.log
+2022/03/15 13:09:39 INFO: Tests: [Make Call]
+2022/03/15 13:09:39 INFO: .........................................
+2022/03/15 13:09:53 INFO: * Feature/Scenario: MAKE CALL - Status: OK
+2022/03/15 13:09:53 INFO: Passed  1
+2022/03/15 13:09:53 INFO: Failed  0
+2022/03/15 13:09:53 INFO: ...END OF TEST SUITE
+2022/03/15 13:10:01 INFO: ****************************************
+2022/03/15 13:10:01 INFO: START OF TEST SUITE
+2022/03/15 13:10:01 INFO: Config: config/config.ini
+2022/03/15 13:10:01 INFO: Number of Tries: 1
+2022/03/15 13:10:01 INFO: Log: log/zarbat.log
+2022/03/15 13:10:01 INFO: Tests: [List Calls]
+2022/03/15 13:10:01 INFO: .........................................
+2022/03/15 13:10:01 INFO: * Feature/Scenario: LIST CALLS - Status: OK
+2022/03/15 13:10:01 INFO: Passed  1
+2022/03/15 13:10:01 INFO: Failed  0
+2022/03/15 13:10:01 INFO: ...END OF TEST SUITE
+2022/03/15 13:10:04 INFO: ****************************************
+2022/03/15 13:10:04 INFO: START OF TEST SUITE
+2022/03/15 13:10:04 INFO: Config: config/config.ini
+2022/03/15 13:10:04 INFO: Number of Tries: 1
+2022/03/15 13:10:04 INFO: Log: log/zarbat.log
+2022/03/15 13:10:04 INFO: Tests: [List Calls]
+2022/03/15 13:10:04 INFO: .........................................
+2022/03/15 13:10:04 INFO: * Feature/Scenario: LIST CALLS - Status: OK
+2022/03/15 13:10:04 INFO: Passed  1
+2022/03/15 13:10:04 INFO: Failed  0
+2022/03/15 13:10:04 INFO: ...END OF TEST SUITE
+2022/03/15 13:10:58 INFO: ****************************************
+2022/03/15 13:10:58 INFO: START OF TEST SUITE
+2022/03/15 13:10:58 INFO: Config: config/config.ini
+2022/03/15 13:10:58 INFO: Number of Tries: 1
+2022/03/15 13:10:58 INFO: Log: log/zarbat.log
+2022/03/15 13:10:58 INFO: Tests: [List Calls]
+2022/03/15 13:10:58 INFO: .........................................
+2022/03/15 13:10:58 INFO: * Feature/Scenario: LIST CALLS - Status: OK
+2022/03/15 13:10:58 INFO: Passed  1
+2022/03/15 13:10:58 INFO: Failed  0
+2022/03/15 13:10:58 INFO: ...END OF TEST SUITE
+2022/03/15 13:42:34 INFO: ****************************************
+2022/03/15 13:42:34 INFO: START OF TEST SUITE
+2022/03/15 13:42:34 INFO: Config: config/config.ini
+2022/03/15 13:42:34 INFO: Number of Tries: 1
+2022/03/15 13:42:34 INFO: Log: log/zarbat.log
+2022/03/15 13:42:34 INFO: Tests: [List Calls]
+2022/03/15 13:42:34 INFO: .........................................
+2022/03/15 13:42:34 INFO: * Feature/Scenario: LIST CALLS - Status: OK
+2022/03/15 13:42:34 INFO: Passed  1
+2022/03/15 13:42:34 INFO: Failed  0
+2022/03/15 13:42:34 INFO: ...END OF TEST SUITE
+2022/03/15 13:43:41 INFO: ****************************************
+2022/03/15 13:43:41 INFO: START OF TEST SUITE
+2022/03/15 13:43:41 INFO: Config: config/config.ini
+2022/03/15 13:43:41 INFO: Number of Tries: 1
+2022/03/15 13:43:41 INFO: Log: log/zarbat.log
+2022/03/15 13:43:41 INFO: Tests: [List Calls]
+2022/03/15 13:43:41 INFO: .........................................
+2022/03/15 13:43:42 INFO: * Feature/Scenario: LIST CALLS - Status: OK
+2022/03/15 13:43:42 INFO: Passed  1
+2022/03/15 13:43:42 INFO: Failed  0
+2022/03/15 13:43:42 INFO: ...END OF TEST SUITE
+2022/03/15 13:44:29 INFO: ****************************************
+2022/03/15 13:44:29 INFO: START OF TEST SUITE
+2022/03/15 13:44:29 INFO: Config: config/config.ini
+2022/03/15 13:44:29 INFO: Number of Tries: 1
+2022/03/15 13:44:29 INFO: Log: log/zarbat.log
+2022/03/15 13:44:29 INFO: Tests: [List Calls]
+2022/03/15 13:44:29 INFO: .........................................
+2022/03/15 19:43:31 INFO: ****************************************
+2022/03/15 19:43:31 INFO: START OF TEST SUITE
+2022/03/15 19:43:31 INFO: Config: config/config.ini
+2022/03/15 19:43:31 INFO: Number of Tries: 1
+2022/03/15 19:43:31 INFO: Log: log/zarbat.log
+2022/03/15 19:43:31 INFO: Tests: [Make Call]
+2022/03/15 19:43:31 INFO: .........................................
+2022/03/15 19:43:54 INFO: * Feature/Scenario: MAKE CALL - Status: OK
+2022/03/15 19:43:54 INFO: Passed  1
+2022/03/15 19:43:54 INFO: Failed  0
+2022/03/15 19:43:54 INFO: ...END OF TEST SUITE
+2022/03/15 19:46:10 INFO: ****************************************
+2022/03/15 19:46:10 INFO: START OF TEST SUITE
+2022/03/15 19:46:10 INFO: Config: config/config.ini
+2022/03/15 19:46:10 INFO: Number of Tries: 1
+2022/03/15 19:46:10 INFO: Log: log/zarbat.log
+2022/03/15 19:46:10 INFO: Tests: [View Call]
+2022/03/15 19:46:10 INFO: .........................................
+2022/03/15 19:46:10 INFO: * Feature/Scenario: VIEW CALL - Status: Not OK
+2022/03/15 19:46:10 INFO: Passed  0
+2022/03/15 19:46:10 INFO: Failed  1
+2022/03/15 19:46:10 INFO: ...END OF TEST SUITE
+2022/03/15 19:46:19 INFO: ****************************************
+2022/03/15 19:46:19 INFO: START OF TEST SUITE
+2022/03/15 19:46:19 INFO: Config: config/config.ini
+2022/03/15 19:46:19 INFO: Number of Tries: 1
+2022/03/15 19:46:19 INFO: Log: log/zarbat.log
+2022/03/15 19:46:19 INFO: Tests: [Make Call]
+2022/03/15 19:46:19 INFO: .........................................
+2022/03/15 19:46:30 INFO: * Feature/Scenario: MAKE CALL - Status: OK
+2022/03/15 19:46:30 INFO: Passed  1
+2022/03/15 19:46:30 INFO: Failed  0
+2022/03/15 19:46:30 INFO: ...END OF TEST SUITE
+2022/03/15 19:46:38 INFO: ****************************************
+2022/03/15 19:46:38 INFO: START OF TEST SUITE
+2022/03/15 19:46:38 INFO: Config: config/config.ini
+2022/03/15 19:46:38 INFO: Number of Tries: 1
+2022/03/15 19:46:38 INFO: Log: log/zarbat.log
+2022/03/15 19:46:38 INFO: Tests: [List Calls]
+2022/03/15 19:46:38 INFO: .........................................
+2022/03/15 19:46:38 INFO: * Feature/Scenario: LIST CALLS - Status: Not OK
+2022/03/15 19:46:38 INFO: Passed  0
+2022/03/15 19:46:38 INFO: Failed  1
+2022/03/15 19:46:38 INFO: ...END OF TEST SUITE
+2022/03/15 19:46:57 INFO: ****************************************
+2022/03/15 19:46:57 INFO: START OF TEST SUITE
+2022/03/15 19:46:57 INFO: Config: config/config.ini
+2022/03/15 19:46:57 INFO: Number of Tries: 1
+2022/03/15 19:46:57 INFO: Log: log/zarbat.log
+2022/03/15 19:46:57 INFO: Tests: [Make Call]
+2022/03/15 19:46:57 INFO: .........................................
+2022/03/15 19:47:09 INFO: * Feature/Scenario: MAKE CALL - Status: OK
+2022/03/15 19:47:09 INFO: Passed  1
+2022/03/15 19:47:09 INFO: Failed  0
+2022/03/15 19:47:09 INFO: ...END OF TEST SUITE
+2022/03/15 20:46:50 INFO: ****************************************
+2022/03/15 20:46:50 INFO: START OF TEST SUITE
+2022/03/15 20:46:50 INFO: Config: config/config.ini
+2022/03/15 20:46:50 INFO: Number of Tries: 1
+2022/03/15 20:46:50 INFO: Log: log/zarbat.log
+2022/03/15 20:46:50 INFO: Tests: [Make Call]
+2022/03/15 20:46:50 INFO: .........................................
+2022/03/15 20:47:02 INFO: * Feature/Scenario: MAKE CALL - Status: OK
+2022/03/15 20:47:02 INFO: Passed  1
+2022/03/15 20:47:02 INFO: Failed  0
+2022/03/15 20:47:02 INFO: ...END OF TEST SUITE
+2022/03/15 20:47:17 INFO: ****************************************
+2022/03/15 20:47:17 INFO: START OF TEST SUITE
+2022/03/15 20:47:17 INFO: Config: config/config.ini
+2022/03/15 20:47:17 INFO: Number of Tries: 1
+2022/03/15 20:47:17 INFO: Log: log/zarbat.log
+2022/03/15 20:47:17 INFO: Tests: [View Call]
+2022/03/15 20:47:17 INFO: .........................................
+2022/03/15 20:47:17 INFO: * Feature/Scenario: VIEW CALL - Status: Not OK
+2022/03/15 20:47:17 INFO: Passed  0
+2022/03/15 20:47:17 INFO: Failed  1
+2022/03/15 20:47:17 INFO: ...END OF TEST SUITE
+2022/03/15 20:47:51 INFO: ****************************************
+2022/03/15 20:47:51 INFO: START OF TEST SUITE
+2022/03/15 20:47:51 INFO: Config: config/config.ini
+2022/03/15 20:47:51 INFO: Number of Tries: 1
+2022/03/15 20:47:51 INFO: Log: log/zarbat.log
+2022/03/15 20:47:51 INFO: Tests: [View Call]
+2022/03/15 20:47:51 INFO: .........................................
+2022/03/15 20:47:51 INFO: * Feature/Scenario: VIEW CALL - Status: Not OK
+2022/03/15 20:47:51 INFO: Passed  0
+2022/03/15 20:47:51 INFO: Failed  1
+2022/03/15 20:47:51 INFO: ...END OF TEST SUITE
+2022/03/15 20:47:51 INFO: ****************************************
+2022/03/15 20:47:51 INFO: START OF TEST SUITE
+2022/03/15 20:47:51 INFO: Config: config/config.ini
+2022/03/15 20:47:51 INFO: Number of Tries: 1
+2022/03/15 20:47:51 INFO: Log: log/zarbat.log
+2022/03/15 20:47:51 INFO: Tests: [Make Call]
+2022/03/15 20:47:51 INFO: .........................................
+2022/03/15 20:48:02 INFO: * Feature/Scenario: MAKE CALL - Status: OK
+2022/03/15 20:48:02 INFO: Passed  1
+2022/03/15 20:48:02 INFO: Failed  0
+2022/03/15 20:48:02 INFO: ...END OF TEST SUITE
+2022/03/15 21:02:24 INFO: ****************************************
+2022/03/15 21:02:24 INFO: START OF TEST SUITE
+2022/03/15 21:02:24 INFO: Config: config/config.ini
+2022/03/15 21:02:24 INFO: Number of Tries: 1
+2022/03/15 21:02:24 INFO: Log: log/zarbat.log
+2022/03/15 21:02:24 INFO: Tests: [Make Call]
+2022/03/15 21:02:24 INFO: .........................................
+2022/03/15 21:02:35 INFO: * Feature/Scenario: MAKE CALL - Status: OK
+2022/03/15 21:02:35 INFO: Passed  1
+2022/03/15 21:02:35 INFO: Failed  0
+2022/03/15 21:02:35 INFO: ...END OF TEST SUITE
+2022/03/15 21:11:20 INFO: ****************************************
+2022/03/15 21:11:20 INFO: START OF TEST SUITE
+2022/03/15 21:11:20 INFO: Config: config/config.ini
+2022/03/15 21:11:20 INFO: Number of Tries: 1
+2022/03/15 21:11:20 INFO: Log: log/zarbat.log
+2022/03/15 21:11:20 INFO: Tests: [Make Call]
+2022/03/15 21:11:20 INFO: .........................................
+2022/03/15 21:11:32 INFO: * Feature/Scenario: MAKE CALL - Status: OK
+2022/03/15 21:11:32 INFO: Passed  1
+2022/03/15 21:11:32 INFO: Failed  0
+2022/03/15 21:11:32 INFO: ...END OF TEST SUITE
+2022/03/15 21:11:35 INFO: ****************************************
+2022/03/15 21:11:35 INFO: START OF TEST SUITE
+2022/03/15 21:11:35 INFO: Config: config/config.ini
+2022/03/15 21:11:35 INFO: Number of Tries: 1
+2022/03/15 21:11:35 INFO: Log: log/zarbat.log
+2022/03/15 21:11:35 INFO: Tests: [View Call]
+2022/03/15 21:11:35 INFO: .........................................
+2022/03/15 21:11:35 INFO: * Feature/Scenario: VIEW CALL - Status: Not OK
+2022/03/15 21:11:35 INFO: Passed  0
+2022/03/15 21:11:35 INFO: Failed  1
+2022/03/15 21:11:35 INFO: ...END OF TEST SUITE
+2022/03/15 21:14:29 INFO: ****************************************
+2022/03/15 21:14:29 INFO: START OF TEST SUITE
+2022/03/15 21:14:29 INFO: Config: config/config.ini
+2022/03/15 21:14:29 INFO: Number of Tries: 1
+2022/03/15 21:14:29 INFO: Log: log/zarbat.log
+2022/03/15 21:14:29 INFO: Tests: [Make Call]
+2022/03/15 21:14:29 INFO: .........................................
+2022/03/15 21:14:40 INFO: * Feature/Scenario: MAKE CALL - Status: OK
+2022/03/15 21:14:40 INFO: Passed  1
+2022/03/15 21:14:40 INFO: Failed  0
+2022/03/15 21:14:40 INFO: ...END OF TEST SUITE
+2022/03/15 21:14:40 INFO: ****************************************
+2022/03/15 21:14:40 INFO: START OF TEST SUITE
+2022/03/15 21:14:40 INFO: Config: config/config.ini
+2022/03/15 21:14:40 INFO: Number of Tries: 1
+2022/03/15 21:14:40 INFO: Log: log/zarbat.log
+2022/03/15 21:14:40 INFO: Tests: [View Call]
+2022/03/15 21:14:40 INFO: .........................................
+2022/03/15 21:14:40 INFO: * Feature/Scenario: VIEW CALL - Status: Not OK
+2022/03/15 21:14:40 INFO: Passed  0
+2022/03/15 21:14:40 INFO: Failed  1
+2022/03/15 21:14:40 INFO: ...END OF TEST SUITE
+2022/03/15 21:15:10 INFO: ****************************************
+2022/03/15 21:15:10 INFO: START OF TEST SUITE
+2022/03/15 21:15:10 INFO: Config: config/config.ini
+2022/03/15 21:15:10 INFO: Number of Tries: 1
+2022/03/15 21:15:10 INFO: Log: log/zarbat.log
+2022/03/15 21:15:10 INFO: Tests: [View Call]
+2022/03/15 21:15:10 INFO: .........................................
+2022/03/15 21:15:10 INFO: * Feature/Scenario: VIEW CALL - Status: Not OK
+2022/03/15 21:15:10 INFO: Passed  0
+2022/03/15 21:15:10 INFO: Failed  1
+2022/03/15 21:15:10 INFO: ...END OF TEST SUITE
+2022/03/15 21:15:26 INFO: ****************************************
+2022/03/15 21:15:26 INFO: START OF TEST SUITE
+2022/03/15 21:15:26 INFO: Config: config/config.ini
+2022/03/15 21:15:26 INFO: Number of Tries: 1
+2022/03/15 21:15:26 INFO: Log: log/zarbat.log
+2022/03/15 21:15:26 INFO: Tests: [Make Call]
+2022/03/15 21:15:26 INFO: .........................................
+2022/03/15 21:15:38 INFO: * Feature/Scenario: MAKE CALL - Status: OK
+2022/03/15 21:15:38 INFO: Passed  1
+2022/03/15 21:15:38 INFO: Failed  0
+2022/03/15 21:15:38 INFO: ...END OF TEST SUITE
+2022/03/15 21:17:14 INFO: ****************************************
+2022/03/15 21:17:14 INFO: START OF TEST SUITE
+2022/03/15 21:17:14 INFO: Config: config/config.ini
+2022/03/15 21:17:14 INFO: Number of Tries: 1
+2022/03/15 21:17:14 INFO: Log: log/zarbat.log
+2022/03/15 21:17:14 INFO: Tests: [Make Call]
+2022/03/15 21:17:14 INFO: .........................................
+2022/03/15 21:17:25 INFO: * Feature/Scenario: MAKE CALL - Status: OK
+2022/03/15 21:17:25 INFO: Passed  1
+2022/03/15 21:17:25 INFO: Failed  0
+2022/03/15 21:17:25 INFO: ...END OF TEST SUITE
+2022/03/15 21:19:53 INFO: ****************************************
+2022/03/15 21:19:53 INFO: START OF TEST SUITE
+2022/03/15 21:19:53 INFO: Config: config/config.ini
+2022/03/15 21:19:53 INFO: Number of Tries: 1
+2022/03/15 21:19:53 INFO: Log: log/zarbat.log
+2022/03/15 21:19:53 INFO: Tests: [Make Call]
+2022/03/15 21:19:53 INFO: .........................................
+2022/03/15 21:20:05 INFO: * Feature/Scenario: MAKE CALL - Status: OK
+2022/03/15 21:20:05 INFO: Passed  1
+2022/03/15 21:20:05 INFO: Failed  0
+2022/03/15 21:20:05 INFO: ...END OF TEST SUITE
+2022/03/15 21:20:41 INFO: ****************************************
+2022/03/15 21:20:41 INFO: START OF TEST SUITE
+2022/03/15 21:20:41 INFO: Config: config/config.ini
+2022/03/15 21:20:41 INFO: Number of Tries: 1
+2022/03/15 21:20:41 INFO: Log: log/zarbat.log
+2022/03/15 21:20:41 INFO: Tests: [Make Call]
+2022/03/15 21:20:41 INFO: .........................................
+2022/03/15 21:20:53 INFO: * Feature/Scenario: MAKE CALL - Status: OK
+2022/03/15 21:20:53 INFO: Passed  1
+2022/03/15 21:20:53 INFO: Failed  0
+2022/03/15 21:20:53 INFO: ...END OF TEST SUITE
+2022/03/15 21:20:53 INFO: ****************************************
+2022/03/15 21:20:53 INFO: START OF TEST SUITE
+2022/03/15 21:20:53 INFO: Config: config/config.ini
+2022/03/15 21:20:53 INFO: Number of Tries: 1
+2022/03/15 21:20:53 INFO: Log: log/zarbat.log
+2022/03/15 21:20:53 INFO: Tests: [Make Call]
+2022/03/15 21:20:53 INFO: .........................................
+2022/03/15 21:21:04 INFO: * Feature/Scenario: MAKE CALL - Status: OK
+2022/03/15 21:21:04 INFO: Passed  1
+2022/03/15 21:21:04 INFO: Failed  0
+2022/03/15 21:21:04 INFO: ...END OF TEST SUITE
+2022/03/15 21:21:35 INFO: ****************************************
+2022/03/15 21:21:35 INFO: START OF TEST SUITE
+2022/03/15 21:21:35 INFO: Config: config/config.ini
+2022/03/15 21:21:35 INFO: Number of Tries: 1
+2022/03/15 21:21:35 INFO: Log: log/zarbat.log
+2022/03/15 21:21:35 INFO: Tests: [Make Call]
+2022/03/15 21:21:35 INFO: .........................................
+2022/03/15 21:21:46 INFO: * Feature/Scenario: MAKE CALL - Status: OK
+2022/03/15 21:21:46 INFO: Passed  1
+2022/03/15 21:21:46 INFO: Failed  0
+2022/03/15 21:21:46 INFO: ...END OF TEST SUITE
+2022/03/15 21:21:46 INFO: ****************************************
+2022/03/15 21:21:46 INFO: START OF TEST SUITE
+2022/03/15 21:21:46 INFO: Config: config/config.ini
+2022/03/15 21:21:46 INFO: Number of Tries: 1
+2022/03/15 21:21:46 INFO: Log: log/zarbat.log
+2022/03/15 21:21:46 INFO: Tests: [Make Call]
+2022/03/15 21:21:46 INFO: .........................................
+2022/03/15 21:21:58 INFO: * Feature/Scenario: MAKE CALL - Status: OK
+2022/03/15 21:21:58 INFO: Passed  1
+2022/03/15 21:21:58 INFO: Failed  0
+2022/03/15 21:21:58 INFO: ...END OF TEST SUITE
+2022/03/15 21:21:58 INFO: ****************************************
+2022/03/15 21:21:58 INFO: START OF TEST SUITE
+2022/03/15 21:21:58 INFO: Config: config/config.ini
+2022/03/15 21:21:58 INFO: Number of Tries: 1
+2022/03/15 21:21:58 INFO: Log: log/zarbat.log
+2022/03/15 21:21:58 INFO: Tests: [Make Call]
+2022/03/15 21:21:58 INFO: .........................................
+2022/03/15 21:22:09 INFO: * Feature/Scenario: MAKE CALL - Status: OK
+2022/03/15 21:22:09 INFO: Passed  1
+2022/03/15 21:22:09 INFO: Failed  0
+2022/03/15 21:22:09 INFO: ...END OF TEST SUITE
+2022/03/15 21:22:37 INFO: ****************************************
+2022/03/15 21:22:37 INFO: START OF TEST SUITE
+2022/03/15 21:22:37 INFO: Config: config/config.ini
+2022/03/15 21:22:37 INFO: Number of Tries: 1
+2022/03/15 21:22:37 INFO: Log: log/zarbat.log
+2022/03/15 21:22:37 INFO: Tests: [Make Call]
+2022/03/15 21:22:37 INFO: .........................................
+2022/03/15 21:22:48 INFO: * Feature/Scenario: MAKE CALL - Status: OK
+2022/03/15 21:22:48 INFO: Passed  1
+2022/03/15 21:22:48 INFO: Failed  0
+2022/03/15 21:22:48 INFO: ...END OF TEST SUITE
+2022/03/15 21:22:53 INFO: ****************************************
+2022/03/15 21:22:53 INFO: START OF TEST SUITE
+2022/03/15 21:22:53 INFO: Config: config/config.ini
+2022/03/15 21:22:53 INFO: Number of Tries: 1
+2022/03/15 21:22:53 INFO: Log: log/zarbat.log
+2022/03/15 21:22:53 INFO: Tests: [Make Call]
+2022/03/15 21:22:53 INFO: .........................................
+2022/03/15 21:23:05 INFO: * Feature/Scenario: MAKE CALL - Status: OK
+2022/03/15 21:23:05 INFO: Passed  1
+2022/03/15 21:23:05 INFO: Failed  0
+2022/03/15 21:23:05 INFO: ...END OF TEST SUITE
+2022/03/15 21:25:14 INFO: ****************************************
+2022/03/15 21:25:14 INFO: START OF TEST SUITE
+2022/03/15 21:25:14 INFO: Config: config/config.ini
+2022/03/15 21:25:14 INFO: Number of Tries: 1
+2022/03/15 21:25:14 INFO: Log: log/zarbat.log
+2022/03/15 21:25:14 INFO: Tests: [Make Call]
+2022/03/15 21:25:14 INFO: .........................................
+2022/03/15 21:25:26 INFO: * Feature/Scenario: MAKE CALL - Status: OK
+2022/03/15 21:25:26 INFO: Passed  1
+2022/03/15 21:25:26 INFO: Failed  0
+2022/03/15 21:25:26 INFO: ...END OF TEST SUITE
+2022/03/15 21:25:29 INFO: ****************************************
+2022/03/15 21:25:29 INFO: START OF TEST SUITE
+2022/03/15 21:25:29 INFO: Config: config/config.ini
+2022/03/15 21:25:29 INFO: Number of Tries: 1
+2022/03/15 21:25:29 INFO: Log: log/zarbat.log
+2022/03/15 21:25:29 INFO: Tests: [Make Call]
+2022/03/15 21:25:29 INFO: .........................................
+2022/03/15 21:25:40 INFO: * Feature/Scenario: MAKE CALL - Status: OK
+2022/03/15 21:25:40 INFO: Passed  1
+2022/03/15 21:25:40 INFO: Failed  0
+2022/03/15 21:25:40 INFO: ...END OF TEST SUITE
+2022/03/15 21:25:48 INFO: ****************************************
+2022/03/15 21:25:48 INFO: START OF TEST SUITE
+2022/03/15 21:25:48 INFO: Config: config/config.ini
+2022/03/15 21:25:48 INFO: Number of Tries: 1
+2022/03/15 21:25:48 INFO: Log: log/zarbat.log
+2022/03/15 21:25:48 INFO: Tests: [Make Call]
+2022/03/15 21:25:48 INFO: .........................................
+2022/03/15 21:25:59 INFO: * Feature/Scenario: MAKE CALL - Status: OK
+2022/03/15 21:25:59 INFO: Passed  1
+2022/03/15 21:25:59 INFO: Failed  0
+2022/03/15 21:25:59 INFO: ...END OF TEST SUITE
+2022/03/15 21:26:25 INFO: ****************************************
+2022/03/15 21:26:25 INFO: START OF TEST SUITE
+2022/03/15 21:26:25 INFO: Config: config/config.ini
+2022/03/15 21:26:25 INFO: Number of Tries: 1
+2022/03/15 21:26:25 INFO: Log: log/zarbat.log
+2022/03/15 21:26:25 INFO: Tests: [Make Call]
+2022/03/15 21:26:25 INFO: .........................................
+2022/03/15 21:26:36 INFO: * Feature/Scenario: MAKE CALL - Status: OK
+2022/03/15 21:26:36 INFO: Passed  1
+2022/03/15 21:26:36 INFO: Failed  0
+2022/03/15 21:26:36 INFO: ...END OF TEST SUITE
+2022/03/15 21:31:09 INFO: ****************************************
+2022/03/15 21:31:09 INFO: START OF TEST SUITE
+2022/03/15 21:31:09 INFO: Config: config/config.ini
+2022/03/15 21:31:09 INFO: Number of Tries: 1
+2022/03/15 21:31:09 INFO: Log: log/zarbat.log
+2022/03/15 21:31:09 INFO: Tests: [Make Call]
+2022/03/15 21:31:09 INFO: .........................................
+2022/03/15 21:31:20 INFO: * Feature/Scenario: MAKE CALL - Status: OK
+2022/03/15 21:31:20 INFO: Passed  1
+2022/03/15 21:31:20 INFO: Failed  0
+2022/03/15 21:31:20 INFO: ...END OF TEST SUITE
+2022/03/15 21:31:21 INFO: ****************************************
+2022/03/15 21:31:21 INFO: START OF TEST SUITE
+2022/03/15 21:31:21 INFO: Config: config/config.ini
+2022/03/15 21:31:21 INFO: Number of Tries: 1
+2022/03/15 21:31:21 INFO: Log: log/zarbat.log
+2022/03/15 21:31:21 INFO: Tests: [View Call]
+2022/03/15 21:31:21 INFO: .........................................
+2022/03/15 21:31:21 INFO: * Feature/Scenario: VIEW CALL - Status: Not OK
+2022/03/15 21:31:21 INFO: Passed  0
+2022/03/15 21:31:21 INFO: Failed  1
+2022/03/15 21:31:21 INFO: ...END OF TEST SUITE
+2022/03/15 21:31:21 INFO: ****************************************
+2022/03/15 21:31:21 INFO: START OF TEST SUITE
+2022/03/15 21:31:21 INFO: Config: config/config.ini
+2022/03/15 21:31:21 INFO: Number of Tries: 1
+2022/03/15 21:31:21 INFO: Log: log/zarbat.log
+2022/03/15 21:31:21 INFO: Tests: [View Call]
+2022/03/15 21:31:21 INFO: .........................................
+2022/03/15 21:31:21 INFO: * Feature/Scenario: VIEW CALL - Status: Not OK
+2022/03/15 21:31:21 INFO: Passed  0
+2022/03/15 21:31:21 INFO: Failed  1
+2022/03/15 21:31:21 INFO: ...END OF TEST SUITE
+2022/03/15 21:31:21 INFO: ****************************************
+2022/03/15 21:31:21 INFO: START OF TEST SUITE
+2022/03/15 21:31:21 INFO: Config: config/config.ini
+2022/03/15 21:31:21 INFO: Number of Tries: 1
+2022/03/15 21:31:21 INFO: Log: log/zarbat.log
+2022/03/15 21:31:21 INFO: Tests: [View Call]
+2022/03/15 21:31:21 INFO: .........................................
+2022/03/15 21:31:21 INFO: * Feature/Scenario: VIEW CALL - Status: Not OK
+2022/03/15 21:31:21 INFO: Passed  0
+2022/03/15 21:31:21 INFO: Failed  1
+2022/03/15 21:31:21 INFO: ...END OF TEST SUITE
+2022/03/15 21:31:21 INFO: ****************************************
+2022/03/15 21:31:21 INFO: START OF TEST SUITE
+2022/03/15 21:31:21 INFO: Config: config/config.ini
+2022/03/15 21:31:21 INFO: Number of Tries: 1
+2022/03/15 21:31:21 INFO: Log: log/zarbat.log
+2022/03/15 21:31:21 INFO: Tests: [View Call]
+2022/03/15 21:31:21 INFO: .........................................
+2022/03/15 21:31:21 INFO: * Feature/Scenario: VIEW CALL - Status: Not OK
+2022/03/15 21:31:21 INFO: Passed  0
+2022/03/15 21:31:21 INFO: Failed  1
+2022/03/15 21:31:21 INFO: ...END OF TEST SUITE
+2022/03/15 21:31:22 INFO: ****************************************
+2022/03/15 21:31:22 INFO: START OF TEST SUITE
+2022/03/15 21:31:22 INFO: Config: config/config.ini
+2022/03/15 21:31:22 INFO: Number of Tries: 1
+2022/03/15 21:31:22 INFO: Log: log/zarbat.log
+2022/03/15 21:31:22 INFO: Tests: [View Call]
+2022/03/15 21:31:22 INFO: .........................................
+2022/03/15 21:31:22 INFO: * Feature/Scenario: VIEW CALL - Status: Not OK
+2022/03/15 21:31:22 INFO: Passed  0
+2022/03/15 21:31:22 INFO: Failed  1
+2022/03/15 21:31:22 INFO: ...END OF TEST SUITE
+2022/03/15 21:31:22 INFO: ****************************************
+2022/03/15 21:31:22 INFO: START OF TEST SUITE
+2022/03/15 21:31:22 INFO: Config: config/config.ini
+2022/03/15 21:31:22 INFO: Number of Tries: 1
+2022/03/15 21:31:22 INFO: Log: log/zarbat.log
+2022/03/15 21:31:22 INFO: Tests: [View Call]
+2022/03/15 21:31:22 INFO: .........................................
+2022/03/15 21:31:22 INFO: * Feature/Scenario: VIEW CALL - Status: Not OK
+2022/03/15 21:31:22 INFO: Passed  0
+2022/03/15 21:31:22 INFO: Failed  1
+2022/03/15 21:31:22 INFO: ...END OF TEST SUITE
+2022/03/15 21:31:22 INFO: ****************************************
+2022/03/15 21:31:22 INFO: START OF TEST SUITE
+2022/03/15 21:31:22 INFO: Config: config/config.ini
+2022/03/15 21:31:22 INFO: Number of Tries: 1
+2022/03/15 21:31:22 INFO: Log: log/zarbat.log
+2022/03/15 21:31:22 INFO: Tests: [View Call]
+2022/03/15 21:31:22 INFO: .........................................
+2022/03/15 21:31:22 INFO: * Feature/Scenario: VIEW CALL - Status: Not OK
+2022/03/15 21:31:22 INFO: Passed  0
+2022/03/15 21:31:22 INFO: Failed  1
+2022/03/15 21:31:22 INFO: ...END OF TEST SUITE
+2022/03/15 21:31:22 INFO: ****************************************
+2022/03/15 21:31:22 INFO: START OF TEST SUITE
+2022/03/15 21:31:22 INFO: Config: config/config.ini
+2022/03/15 21:31:22 INFO: Number of Tries: 1
+2022/03/15 21:31:22 INFO: Log: log/zarbat.log
+2022/03/15 21:31:22 INFO: Tests: [View Call]
+2022/03/15 21:31:22 INFO: .........................................
+2022/03/15 21:31:22 INFO: * Feature/Scenario: VIEW CALL - Status: Not OK
+2022/03/15 21:31:22 INFO: Passed  0
+2022/03/15 21:31:22 INFO: Failed  1
+2022/03/15 21:31:22 INFO: ...END OF TEST SUITE
+2022/03/15 21:31:23 INFO: ****************************************
+2022/03/15 21:31:23 INFO: START OF TEST SUITE
+2022/03/15 21:31:23 INFO: Config: config/config.ini
+2022/03/15 21:31:23 INFO: Number of Tries: 1
+2022/03/15 21:31:23 INFO: Log: log/zarbat.log
+2022/03/15 21:31:23 INFO: Tests: [View Call]
+2022/03/15 21:31:23 INFO: .........................................
+2022/03/15 21:31:23 INFO: * Feature/Scenario: VIEW CALL - Status: Not OK
+2022/03/15 21:31:23 INFO: Passed  0
+2022/03/15 21:31:23 INFO: Failed  1
+2022/03/15 21:31:23 INFO: ...END OF TEST SUITE
+2022/03/15 21:31:23 INFO: ****************************************
+2022/03/15 21:31:23 INFO: START OF TEST SUITE
+2022/03/15 21:31:23 INFO: Config: config/config.ini
+2022/03/15 21:31:23 INFO: Number of Tries: 1
+2022/03/15 21:31:23 INFO: Log: log/zarbat.log
+2022/03/15 21:31:23 INFO: Tests: [View Call]
+2022/03/15 21:31:23 INFO: .........................................
+2022/03/15 21:31:23 INFO: * Feature/Scenario: VIEW CALL - Status: Not OK
+2022/03/15 21:31:23 INFO: Passed  0
+2022/03/15 21:31:23 INFO: Failed  1
+2022/03/15 21:31:23 INFO: ...END OF TEST SUITE
+2022/03/15 21:31:24 INFO: ****************************************
+2022/03/15 21:31:24 INFO: START OF TEST SUITE
+2022/03/15 21:31:24 INFO: Config: config/config.ini
+2022/03/15 21:31:24 INFO: Number of Tries: 1
+2022/03/15 21:31:24 INFO: Log: log/zarbat.log
+2022/03/15 21:31:24 INFO: Tests: [View Call]
+2022/03/15 21:31:24 INFO: .........................................
+2022/03/15 21:31:24 INFO: * Feature/Scenario: VIEW CALL - Status: Not OK
+2022/03/15 21:31:24 INFO: Passed  0
+2022/03/15 21:31:24 INFO: Failed  1
+2022/03/15 21:31:24 INFO: ...END OF TEST SUITE
+2022/03/15 21:31:24 INFO: ****************************************
+2022/03/15 21:31:24 INFO: START OF TEST SUITE
+2022/03/15 21:31:24 INFO: Config: config/config.ini
+2022/03/15 21:31:24 INFO: Number of Tries: 1
+2022/03/15 21:31:24 INFO: Log: log/zarbat.log
+2022/03/15 21:31:24 INFO: Tests: [View Call]
+2022/03/15 21:31:24 INFO: .........................................
+2022/03/15 21:31:24 INFO: * Feature/Scenario: VIEW CALL - Status: Not OK
+2022/03/15 21:31:24 INFO: Passed  0
+2022/03/15 21:31:24 INFO: Failed  1
+2022/03/15 21:31:24 INFO: ...END OF TEST SUITE
+2022/03/15 21:31:24 INFO: ****************************************
+2022/03/15 21:31:24 INFO: START OF TEST SUITE
+2022/03/15 21:31:24 INFO: Config: config/config.ini
+2022/03/15 21:31:24 INFO: Number of Tries: 1
+2022/03/15 21:31:24 INFO: Log: log/zarbat.log
+2022/03/15 21:31:24 INFO: Tests: [View Call]
+2022/03/15 21:31:24 INFO: .........................................
+2022/03/15 21:31:25 INFO: * Feature/Scenario: VIEW CALL - Status: Not OK
+2022/03/15 21:31:25 INFO: Passed  0
+2022/03/15 21:31:25 INFO: Failed  1
+2022/03/15 21:31:25 INFO: ...END OF TEST SUITE
+2022/03/15 21:31:25 INFO: ****************************************
+2022/03/15 21:31:25 INFO: START OF TEST SUITE
+2022/03/15 21:31:25 INFO: Config: config/config.ini
+2022/03/15 21:31:25 INFO: Number of Tries: 1
+2022/03/15 21:31:25 INFO: Log: log/zarbat.log
+2022/03/15 21:31:25 INFO: Tests: [View Call]
+2022/03/15 21:31:25 INFO: .........................................
+2022/03/15 21:31:25 INFO: * Feature/Scenario: VIEW CALL - Status: Not OK
+2022/03/15 21:31:25 INFO: Passed  0
+2022/03/15 21:31:25 INFO: Failed  1
+2022/03/15 21:31:25 INFO: ...END OF TEST SUITE
+2022/03/15 21:31:25 INFO: ****************************************
+2022/03/15 21:31:25 INFO: START OF TEST SUITE
+2022/03/15 21:31:25 INFO: Config: config/config.ini
+2022/03/15 21:31:25 INFO: Number of Tries: 1
+2022/03/15 21:31:25 INFO: Log: log/zarbat.log
+2022/03/15 21:31:25 INFO: Tests: [View Call]
+2022/03/15 21:31:25 INFO: .........................................
+2022/03/15 21:31:25 INFO: * Feature/Scenario: VIEW CALL - Status: Not OK
+2022/03/15 21:31:25 INFO: Passed  0
+2022/03/15 21:31:25 INFO: Failed  1
+2022/03/15 21:31:25 INFO: ...END OF TEST SUITE
+2022/03/15 21:31:26 INFO: ****************************************
+2022/03/15 21:31:26 INFO: START OF TEST SUITE
+2022/03/15 21:31:26 INFO: Config: config/config.ini
+2022/03/15 21:31:26 INFO: Number of Tries: 1
+2022/03/15 21:31:26 INFO: Log: log/zarbat.log
+2022/03/15 21:31:26 INFO: Tests: [View Call]
+2022/03/15 21:31:26 INFO: .........................................
+2022/03/15 21:31:26 INFO: * Feature/Scenario: VIEW CALL - Status: Not OK
+2022/03/15 21:31:26 INFO: Passed  0
+2022/03/15 21:31:26 INFO: Failed  1
+2022/03/15 21:31:26 INFO: ...END OF TEST SUITE
+2022/03/15 21:31:26 INFO: ****************************************
+2022/03/15 21:31:26 INFO: START OF TEST SUITE
+2022/03/15 21:31:26 INFO: Config: config/config.ini
+2022/03/15 21:31:26 INFO: Number of Tries: 1
+2022/03/15 21:31:26 INFO: Log: log/zarbat.log
+2022/03/15 21:31:26 INFO: Tests: [View Call]
+2022/03/15 21:31:26 INFO: .........................................
+2022/03/15 21:31:26 INFO: * Feature/Scenario: VIEW CALL - Status: Not OK
+2022/03/15 21:31:26 INFO: Passed  0
+2022/03/15 21:31:26 INFO: Failed  1
+2022/03/15 21:31:26 INFO: ...END OF TEST SUITE
+2022/03/15 21:31:26 INFO: ****************************************
+2022/03/15 21:31:26 INFO: START OF TEST SUITE
+2022/03/15 21:31:26 INFO: Config: config/config.ini
+2022/03/15 21:31:26 INFO: Number of Tries: 1
+2022/03/15 21:31:26 INFO: Log: log/zarbat.log
+2022/03/15 21:31:26 INFO: Tests: [View Call]
+2022/03/15 21:31:26 INFO: .........................................
+2022/03/15 21:31:26 INFO: * Feature/Scenario: VIEW CALL - Status: Not OK
+2022/03/15 21:31:26 INFO: Passed  0
+2022/03/15 21:31:26 INFO: Failed  1
+2022/03/15 21:31:26 INFO: ...END OF TEST SUITE
+2022/03/15 21:31:27 INFO: ****************************************
+2022/03/15 21:31:27 INFO: START OF TEST SUITE
+2022/03/15 21:31:27 INFO: Config: config/config.ini
+2022/03/15 21:31:27 INFO: Number of Tries: 1
+2022/03/15 21:31:27 INFO: Log: log/zarbat.log
+2022/03/15 21:31:27 INFO: Tests: [View Call]
+2022/03/15 21:31:27 INFO: .........................................
+2022/03/15 21:31:27 INFO: * Feature/Scenario: VIEW CALL - Status: Not OK
+2022/03/15 21:31:27 INFO: Passed  0
+2022/03/15 21:31:27 INFO: Failed  1
+2022/03/15 21:31:27 INFO: ...END OF TEST SUITE
+2022/03/15 21:31:27 INFO: ****************************************
+2022/03/15 21:31:27 INFO: START OF TEST SUITE
+2022/03/15 21:31:27 INFO: Config: config/config.ini
+2022/03/15 21:31:27 INFO: Number of Tries: 1
+2022/03/15 21:31:27 INFO: Log: log/zarbat.log
+2022/03/15 21:31:27 INFO: Tests: [View Call]
+2022/03/15 21:31:27 INFO: .........................................
+2022/03/15 21:31:27 INFO: * Feature/Scenario: VIEW CALL - Status: Not OK
+2022/03/15 21:31:27 INFO: Passed  0
+2022/03/15 21:31:27 INFO: Failed  1
+2022/03/15 21:31:27 INFO: ...END OF TEST SUITE
+2022/03/15 21:31:28 INFO: ****************************************
+2022/03/15 21:31:28 INFO: START OF TEST SUITE
+2022/03/15 21:31:28 INFO: Config: config/config.ini
+2022/03/15 21:31:28 INFO: Number of Tries: 1
+2022/03/15 21:31:28 INFO: Log: log/zarbat.log
+2022/03/15 21:31:28 INFO: Tests: [View Call]
+2022/03/15 21:31:28 INFO: .........................................
+2022/03/15 21:31:28 INFO: * Feature/Scenario: VIEW CALL - Status: Not OK
+2022/03/15 21:31:28 INFO: Passed  0
+2022/03/15 21:31:28 INFO: Failed  1
+2022/03/15 21:31:28 INFO: ...END OF TEST SUITE
+2022/03/15 21:31:28 INFO: ****************************************
+2022/03/15 21:31:28 INFO: START OF TEST SUITE
+2022/03/15 21:31:28 INFO: Config: config/config.ini
+2022/03/15 21:31:28 INFO: Number of Tries: 1
+2022/03/15 21:31:28 INFO: Log: log/zarbat.log
+2022/03/15 21:31:28 INFO: Tests: [View Call]
+2022/03/15 21:31:28 INFO: .........................................
+2022/03/15 21:31:28 INFO: * Feature/Scenario: VIEW CALL - Status: Not OK
+2022/03/15 21:31:28 INFO: Passed  0
+2022/03/15 21:31:28 INFO: Failed  1
+2022/03/15 21:31:28 INFO: ...END OF TEST SUITE
+2022/03/15 21:31:29 INFO: ****************************************
+2022/03/15 21:31:29 INFO: START OF TEST SUITE
+2022/03/15 21:31:29 INFO: Config: config/config.ini
+2022/03/15 21:31:29 INFO: Number of Tries: 1
+2022/03/15 21:31:29 INFO: Log: log/zarbat.log
+2022/03/15 21:31:29 INFO: Tests: [View Call]
+2022/03/15 21:31:29 INFO: .........................................
+2022/03/15 21:31:29 INFO: * Feature/Scenario: VIEW CALL - Status: Not OK
+2022/03/15 21:31:29 INFO: Passed  0
+2022/03/15 21:31:29 INFO: Failed  1
+2022/03/15 21:31:29 INFO: ...END OF TEST SUITE
+2022/03/15 21:31:29 INFO: ****************************************
+2022/03/15 21:31:29 INFO: START OF TEST SUITE
+2022/03/15 21:31:29 INFO: Config: config/config.ini
+2022/03/15 21:31:29 INFO: Number of Tries: 1
+2022/03/15 21:31:29 INFO: Log: log/zarbat.log
+2022/03/15 21:31:29 INFO: Tests: [View Call]
+2022/03/15 21:31:29 INFO: .........................................
+2022/03/15 21:31:29 INFO: * Feature/Scenario: VIEW CALL - Status: Not OK
+2022/03/15 21:31:29 INFO: Passed  0
+2022/03/15 21:31:29 INFO: Failed  1
+2022/03/15 21:31:29 INFO: ...END OF TEST SUITE
+2022/03/15 21:31:30 INFO: ****************************************
+2022/03/15 21:31:30 INFO: START OF TEST SUITE
+2022/03/15 21:31:30 INFO: Config: config/config.ini
+2022/03/15 21:31:30 INFO: Number of Tries: 1
+2022/03/15 21:31:30 INFO: Log: log/zarbat.log
+2022/03/15 21:31:30 INFO: Tests: [View Call]
+2022/03/15 21:31:30 INFO: .........................................
+2022/03/15 21:31:30 INFO: * Feature/Scenario: VIEW CALL - Status: Not OK
+2022/03/15 21:31:30 INFO: Passed  0
+2022/03/15 21:31:30 INFO: Failed  1
+2022/03/15 21:31:30 INFO: ...END OF TEST SUITE
+2022/03/15 21:31:30 INFO: ****************************************
+2022/03/15 21:31:30 INFO: START OF TEST SUITE
+2022/03/15 21:31:30 INFO: Config: config/config.ini
+2022/03/15 21:31:30 INFO: Number of Tries: 1
+2022/03/15 21:31:30 INFO: Log: log/zarbat.log
+2022/03/15 21:31:30 INFO: Tests: [View Call]
+2022/03/15 21:31:30 INFO: .........................................
+2022/03/15 21:31:30 INFO: * Feature/Scenario: VIEW CALL - Status: Not OK
+2022/03/15 21:31:30 INFO: Passed  0
+2022/03/15 21:31:30 INFO: Failed  1
+2022/03/15 21:31:30 INFO: ...END OF TEST SUITE
+2022/03/15 21:31:31 INFO: ****************************************
+2022/03/15 21:31:31 INFO: START OF TEST SUITE
+2022/03/15 21:31:31 INFO: Config: config/config.ini
+2022/03/15 21:31:31 INFO: Number of Tries: 1
+2022/03/15 21:31:31 INFO: Log: log/zarbat.log
+2022/03/15 21:31:31 INFO: Tests: [View Call]
+2022/03/15 21:31:31 INFO: .........................................
+2022/03/15 21:31:31 INFO: * Feature/Scenario: VIEW CALL - Status: Not OK
+2022/03/15 21:31:31 INFO: Passed  0
+2022/03/15 21:31:31 INFO: Failed  1
+2022/03/15 21:31:31 INFO: ...END OF TEST SUITE
+2022/03/15 21:31:31 INFO: ****************************************
+2022/03/15 21:31:31 INFO: START OF TEST SUITE
+2022/03/15 21:31:31 INFO: Config: config/config.ini
+2022/03/15 21:31:31 INFO: Number of Tries: 1
+2022/03/15 21:31:31 INFO: Log: log/zarbat.log
+2022/03/15 21:31:31 INFO: Tests: [View Call]
+2022/03/15 21:31:31 INFO: .........................................
+2022/03/15 21:31:31 INFO: * Feature/Scenario: VIEW CALL - Status: Not OK
+2022/03/15 21:31:31 INFO: Passed  0
+2022/03/15 21:31:31 INFO: Failed  1
+2022/03/15 21:31:31 INFO: ...END OF TEST SUITE
+2022/03/15 21:31:31 INFO: ****************************************
+2022/03/15 21:31:31 INFO: START OF TEST SUITE
+2022/03/15 21:31:31 INFO: Config: config/config.ini
+2022/03/15 21:31:31 INFO: Number of Tries: 1
+2022/03/15 21:31:31 INFO: Log: log/zarbat.log
+2022/03/15 21:31:31 INFO: Tests: [View Call]
+2022/03/15 21:31:31 INFO: .........................................
+2022/03/15 21:31:31 INFO: * Feature/Scenario: VIEW CALL - Status: Not OK
+2022/03/15 21:31:31 INFO: Passed  0
+2022/03/15 21:31:31 INFO: Failed  1
+2022/03/15 21:31:31 INFO: ...END OF TEST SUITE
+2022/03/15 21:31:32 INFO: ****************************************
+2022/03/15 21:31:32 INFO: START OF TEST SUITE
+2022/03/15 21:31:32 INFO: Config: config/config.ini
+2022/03/15 21:31:32 INFO: Number of Tries: 1
+2022/03/15 21:31:32 INFO: Log: log/zarbat.log
+2022/03/15 21:31:32 INFO: Tests: [View Call]
+2022/03/15 21:31:32 INFO: .........................................
+2022/03/15 21:31:32 INFO: * Feature/Scenario: VIEW CALL - Status: Not OK
+2022/03/15 21:31:32 INFO: Passed  0
+2022/03/15 21:31:32 INFO: Failed  1
+2022/03/15 21:31:32 INFO: ...END OF TEST SUITE
+2022/03/15 21:31:32 INFO: ****************************************
+2022/03/15 21:31:32 INFO: START OF TEST SUITE
+2022/03/15 21:31:32 INFO: Config: config/config.ini
+2022/03/15 21:31:32 INFO: Number of Tries: 1
+2022/03/15 21:31:32 INFO: Log: log/zarbat.log
+2022/03/15 21:31:32 INFO: Tests: [View Call]
+2022/03/15 21:31:32 INFO: .........................................
+2022/03/15 21:31:32 INFO: * Feature/Scenario: VIEW CALL - Status: Not OK
+2022/03/15 21:31:32 INFO: Passed  0
+2022/03/15 21:31:32 INFO: Failed  1
+2022/03/15 21:31:32 INFO: ...END OF TEST SUITE
+2022/03/15 21:31:32 INFO: ****************************************
+2022/03/15 21:31:32 INFO: START OF TEST SUITE
+2022/03/15 21:31:32 INFO: Config: config/config.ini
+2022/03/15 21:31:32 INFO: Number of Tries: 1
+2022/03/15 21:31:32 INFO: Log: log/zarbat.log
+2022/03/15 21:31:32 INFO: Tests: [View Call]
+2022/03/15 21:31:32 INFO: .........................................
+2022/03/15 21:31:32 INFO: * Feature/Scenario: VIEW CALL - Status: Not OK
+2022/03/15 21:31:32 INFO: Passed  0
+2022/03/15 21:31:32 INFO: Failed  1
+2022/03/15 21:31:32 INFO: ...END OF TEST SUITE
+2022/03/15 21:31:33 INFO: ****************************************
+2022/03/15 21:31:33 INFO: START OF TEST SUITE
+2022/03/15 21:31:33 INFO: Config: config/config.ini
+2022/03/15 21:31:33 INFO: Number of Tries: 1
+2022/03/15 21:31:33 INFO: Log: log/zarbat.log
+2022/03/15 21:31:33 INFO: Tests: [View Call]
+2022/03/15 21:31:33 INFO: .........................................
+2022/03/15 21:31:33 INFO: * Feature/Scenario: VIEW CALL - Status: Not OK
+2022/03/15 21:31:33 INFO: Passed  0
+2022/03/15 21:31:33 INFO: Failed  1
+2022/03/15 21:31:33 INFO: ...END OF TEST SUITE
+2022/03/15 21:35:18 INFO: ****************************************
+2022/03/15 21:35:18 INFO: START OF TEST SUITE
+2022/03/15 21:35:18 INFO: Config: config/config.ini
+2022/03/15 21:35:18 INFO: Number of Tries: 1
+2022/03/15 21:35:18 INFO: Log: log/zarbat.log
+2022/03/15 21:35:18 INFO: Tests: [Make Call]
+2022/03/15 21:35:18 INFO: .........................................
+2022/03/15 21:35:29 INFO: * Feature/Scenario: MAKE CALL - Status: OK
+2022/03/15 21:35:29 INFO: Passed  1
+2022/03/15 21:35:29 INFO: Failed  0
+2022/03/15 21:35:29 INFO: ...END OF TEST SUITE
+2022/03/15 21:35:50 INFO: ****************************************
+2022/03/15 21:35:50 INFO: START OF TEST SUITE
+2022/03/15 21:35:50 INFO: Config: config/config.ini
+2022/03/15 21:35:50 INFO: Number of Tries: 1
+2022/03/15 21:35:50 INFO: Log: log/zarbat.log
+2022/03/15 21:35:50 INFO: Tests: [Make Call]
+2022/03/15 21:35:50 INFO: .........................................
+2022/03/15 21:36:02 INFO: * Feature/Scenario: MAKE CALL - Status: OK
+2022/03/15 21:36:02 INFO: Passed  1
+2022/03/15 21:36:02 INFO: Failed  0
+2022/03/15 21:36:02 INFO: ...END OF TEST SUITE
+2022/03/15 21:36:02 INFO: ****************************************
+2022/03/15 21:36:02 INFO: START OF TEST SUITE
+2022/03/15 21:36:02 INFO: Config: config/config.ini
+2022/03/15 21:36:02 INFO: Number of Tries: 1
+2022/03/15 21:36:02 INFO: Log: log/zarbat.log
+2022/03/15 21:36:02 INFO: Tests: [Make Call]
+2022/03/15 21:36:02 INFO: .........................................
+2022/03/15 21:36:13 INFO: * Feature/Scenario: MAKE CALL - Status: OK
+2022/03/15 21:36:13 INFO: Passed  1
+2022/03/15 21:36:13 INFO: Failed  0
+2022/03/15 21:36:13 INFO: ...END OF TEST SUITE
+2022/03/15 21:36:14 INFO: ****************************************
+2022/03/15 21:36:14 INFO: START OF TEST SUITE
+2022/03/15 21:36:14 INFO: Config: config/config.ini
+2022/03/15 21:36:14 INFO: Number of Tries: 1
+2022/03/15 21:36:14 INFO: Log: log/zarbat.log
+2022/03/15 21:36:14 INFO: Tests: [Make Call]
+2022/03/15 21:36:14 INFO: .........................................
+2022/03/15 21:36:25 INFO: * Feature/Scenario: MAKE CALL - Status: OK
+2022/03/15 21:36:25 INFO: Passed  1
+2022/03/15 21:36:25 INFO: Failed  0
+2022/03/15 21:36:25 INFO: ...END OF TEST SUITE
+2022/03/15 21:36:44 INFO: ****************************************
+2022/03/15 21:36:44 INFO: START OF TEST SUITE
+2022/03/15 21:36:44 INFO: Config: config/config.ini
+2022/03/15 21:36:44 INFO: Number of Tries: 1
+2022/03/15 21:36:44 INFO: Log: log/zarbat.log
+2022/03/15 21:36:44 INFO: Tests: [Make Call]
+2022/03/15 21:36:44 INFO: .........................................
+2022/03/15 21:36:55 INFO: * Feature/Scenario: MAKE CALL - Status: OK
+2022/03/15 21:36:55 INFO: Passed  1
+2022/03/15 21:36:55 INFO: Failed  0
+2022/03/15 21:36:55 INFO: ...END OF TEST SUITE
+2022/03/15 21:36:56 INFO: ****************************************
+2022/03/15 21:36:56 INFO: START OF TEST SUITE
+2022/03/15 21:36:56 INFO: Config: config/config.ini
+2022/03/15 21:36:56 INFO: Number of Tries: 1
+2022/03/15 21:36:56 INFO: Log: log/zarbat.log
+2022/03/15 21:36:56 INFO: Tests: [Make Call]
+2022/03/15 21:36:56 INFO: .........................................
+2022/03/15 21:37:07 INFO: * Feature/Scenario: MAKE CALL - Status: OK
+2022/03/15 21:37:07 INFO: Passed  1
+2022/03/15 21:37:07 INFO: Failed  0
+2022/03/15 21:37:07 INFO: ...END OF TEST SUITE
+2022/03/15 21:37:07 INFO: ****************************************
+2022/03/15 21:37:07 INFO: START OF TEST SUITE
+2022/03/15 21:37:07 INFO: Config: config/config.ini
+2022/03/15 21:37:07 INFO: Number of Tries: 1
+2022/03/15 21:37:07 INFO: Log: log/zarbat.log
+2022/03/15 21:37:07 INFO: Tests: [Make Call]
+2022/03/15 21:37:07 INFO: .........................................
+2022/03/15 21:37:19 INFO: * Feature/Scenario: MAKE CALL - Status: OK
+2022/03/15 21:37:19 INFO: Passed  1
+2022/03/15 21:37:19 INFO: Failed  0
+2022/03/15 21:37:19 INFO: ...END OF TEST SUITE
+2022/03/15 21:37:19 INFO: ****************************************
+2022/03/15 21:37:19 INFO: START OF TEST SUITE
+2022/03/15 21:37:19 INFO: Config: config/config.ini
+2022/03/15 21:37:19 INFO: Number of Tries: 1
+2022/03/15 21:37:19 INFO: Log: log/zarbat.log
+2022/03/15 21:37:19 INFO: Tests: [View Call]
+2022/03/15 21:37:19 INFO: .........................................
+2022/03/15 21:37:19 INFO: * Feature/Scenario: VIEW CALL - Status: Not OK
+2022/03/15 21:37:19 INFO: Passed  0
+2022/03/15 21:37:19 INFO: Failed  1
+2022/03/15 21:37:19 INFO: ...END OF TEST SUITE
+2022/03/15 21:39:47 INFO: ****************************************
+2022/03/15 21:39:47 INFO: START OF TEST SUITE
+2022/03/15 21:39:47 INFO: Config: config/config.ini
+2022/03/15 21:39:47 INFO: Number of Tries: 1
+2022/03/15 21:39:47 INFO: Log: log/zarbat.log
+2022/03/15 21:39:47 INFO: Tests: [Make Call]
+2022/03/15 21:39:47 INFO: .........................................
+2022/03/15 21:39:58 INFO: * Feature/Scenario: MAKE CALL - Status: OK
+2022/03/15 21:39:58 INFO: Passed  1
+2022/03/15 21:39:58 INFO: Failed  0
+2022/03/15 21:39:58 INFO: ...END OF TEST SUITE
+2022/03/15 21:39:59 INFO: ****************************************
+2022/03/15 21:39:59 INFO: START OF TEST SUITE
+2022/03/15 21:39:59 INFO: Config: config/config.ini
+2022/03/15 21:39:59 INFO: Number of Tries: 1
+2022/03/15 21:39:59 INFO: Log: log/zarbat.log
+2022/03/15 21:39:59 INFO: Tests: [List Calls]
+2022/03/15 21:39:59 INFO: .........................................
+2022/03/15 21:39:59 INFO: * Feature/Scenario: LIST CALLS - Status: Not OK
+2022/03/15 21:39:59 INFO: Passed  0
+2022/03/15 21:39:59 INFO: Failed  1
+2022/03/15 21:39:59 INFO: ...END OF TEST SUITE
+2022/03/16 11:45:49 INFO: ****************************************
+2022/03/16 11:45:49 INFO: START OF TEST SUITE
+2022/03/16 11:45:49 INFO: Config: config/config.ini
+2022/03/16 11:45:49 INFO: Number of Tries: 1
+2022/03/16 11:45:49 INFO: Log: log/zarbat.log
+2022/03/16 11:45:49 INFO: Tests: [Make Call]
+2022/03/16 11:45:49 INFO: .........................................
+2022/03/16 11:46:01 INFO: * Feature/Scenario: MAKE CALL - Status: OK
+2022/03/16 11:46:01 INFO: Passed  1
+2022/03/16 11:46:01 INFO: Failed  0
+2022/03/16 11:46:01 INFO: ...END OF TEST SUITE
+2022/03/16 11:46:01 INFO: ****************************************
+2022/03/16 11:46:01 INFO: START OF TEST SUITE
+2022/03/16 11:46:01 INFO: Config: config/config.ini
+2022/03/16 11:46:01 INFO: Number of Tries: 1
+2022/03/16 11:46:01 INFO: Log: log/zarbat.log
+2022/03/16 11:46:01 INFO: Tests: [List Calls]
+2022/03/16 11:46:01 INFO: .........................................
+2022/03/16 11:46:01 INFO: * Feature/Scenario: LIST CALLS - Status: Not OK
+2022/03/16 11:46:01 INFO: Passed  0
+2022/03/16 11:46:01 INFO: Failed  1
+2022/03/16 11:46:01 INFO: ...END OF TEST SUITE
+2022/03/16 11:46:01 INFO: ****************************************
+2022/03/16 11:46:01 INFO: START OF TEST SUITE
+2022/03/16 11:46:01 INFO: Config: config/config.ini
+2022/03/16 11:46:01 INFO: Number of Tries: 1
+2022/03/16 11:46:01 INFO: Log: log/zarbat.log
+2022/03/16 11:46:01 INFO: Tests: [View Call]
+2022/03/16 11:46:01 INFO: .........................................
+2022/03/16 11:46:01 INFO: * Feature/Scenario: VIEW CALL - Status: Not OK
+2022/03/16 11:46:01 INFO: Passed  0
+2022/03/16 11:46:01 INFO: Failed  1
+2022/03/16 11:46:01 INFO: ...END OF TEST SUITE
+2022/03/16 11:46:27 INFO: ****************************************
+2022/03/16 11:46:27 INFO: START OF TEST SUITE
+2022/03/16 11:46:27 INFO: Config: config/config.ini
+2022/03/16 11:46:27 INFO: Number of Tries: 1
+2022/03/16 11:46:27 INFO: Log: log/zarbat.log
+2022/03/16 11:46:27 INFO: Tests: [Make Call]
+2022/03/16 11:46:27 INFO: .........................................
+2022/03/16 11:46:39 INFO: * Feature/Scenario: MAKE CALL - Status: OK
+2022/03/16 11:46:39 INFO: Passed  1
+2022/03/16 11:46:39 INFO: Failed  0
+2022/03/16 11:46:39 INFO: ...END OF TEST SUITE
+2022/03/16 11:46:39 INFO: ****************************************
+2022/03/16 11:46:39 INFO: START OF TEST SUITE
+2022/03/16 11:46:39 INFO: Config: config/config.ini
+2022/03/16 11:46:39 INFO: Number of Tries: 1
+2022/03/16 11:46:39 INFO: Log: log/zarbat.log
+2022/03/16 11:46:39 INFO: Tests: [List Calls]
+2022/03/16 11:46:39 INFO: .........................................
+2022/03/16 11:46:39 INFO: * Feature/Scenario: LIST CALLS - Status: Not OK
+2022/03/16 11:46:39 INFO: Passed  0
+2022/03/16 11:46:39 INFO: Failed  1
+2022/03/16 11:46:39 INFO: ...END OF TEST SUITE
+2022/03/16 11:46:39 INFO: ****************************************
+2022/03/16 11:46:39 INFO: START OF TEST SUITE
+2022/03/16 11:46:39 INFO: Config: config/config.ini
+2022/03/16 11:46:39 INFO: Number of Tries: 1
+2022/03/16 11:46:39 INFO: Log: log/zarbat.log
+2022/03/16 11:46:39 INFO: Tests: [View Call]
+2022/03/16 11:46:39 INFO: .........................................
+2022/03/16 11:46:39 INFO: * Feature/Scenario: VIEW CALL - Status: Not OK
+2022/03/16 11:46:39 INFO: Passed  0
+2022/03/16 11:46:39 INFO: Failed  1
+2022/03/16 11:46:39 INFO: ...END OF TEST SUITE
+2022/03/16 11:46:39 INFO: ****************************************
+2022/03/16 11:46:39 INFO: START OF TEST SUITE
+2022/03/16 11:46:39 INFO: Config: config/config.ini
+2022/03/16 11:46:39 INFO: Number of Tries: 1
+2022/03/16 11:46:39 INFO: Log: log/zarbat.log
+2022/03/16 11:46:39 INFO: Tests: [Make Call]
+2022/03/16 11:46:39 INFO: .........................................
+2022/03/16 11:46:50 INFO: * Feature/Scenario: MAKE CALL - Status: OK
+2022/03/16 11:46:50 INFO: Passed  1
+2022/03/16 11:46:50 INFO: Failed  0
+2022/03/16 11:46:50 INFO: ...END OF TEST SUITE
+2022/03/16 11:46:51 INFO: ****************************************
+2022/03/16 11:46:51 INFO: START OF TEST SUITE
+2022/03/16 11:46:51 INFO: Config: config/config.ini
+2022/03/16 11:46:51 INFO: Number of Tries: 1
+2022/03/16 11:46:51 INFO: Log: log/zarbat.log
+2022/03/16 11:46:51 INFO: Tests: [Make Call]
+2022/03/16 11:46:51 INFO: .........................................
+2022/03/16 11:47:02 INFO: * Feature/Scenario: MAKE CALL - Status: OK
+2022/03/16 11:47:02 INFO: Passed  1
+2022/03/16 11:47:02 INFO: Failed  0
+2022/03/16 11:47:02 INFO: ...END OF TEST SUITE
+2022/04/11 19:57:14 INFO: ****************************************
+2022/04/11 19:57:14 INFO: START OF TEST SUITE
+2022/04/11 19:57:14 INFO: Config: config/config.ini
+2022/04/11 19:57:14 INFO: Number of Tries: 1
+2022/04/11 19:57:14 INFO: Log: log/zarbat.log
+2022/04/11 19:57:14 INFO: Tests: [Play a tone]
+2022/04/11 19:57:14 INFO: .........................................
+2022/04/11 19:57:49 INFO: * Feature/Scenario: PLAY A TONE - Status: OK
+2022/04/11 19:57:49 INFO: Passed  1
+2022/04/11 19:57:49 INFO: Failed  0
+2022/04/11 19:57:49 INFO: ...END OF TEST SUITE
+2022/04/11 20:50:09 INFO: ****************************************
+2022/04/11 20:50:09 INFO: START OF TEST SUITE
+2022/04/11 20:50:09 INFO: Config: config/config.ini
+2022/04/11 20:50:09 INFO: Number of Tries: 1
+2022/04/11 20:50:09 INFO: Log: log/zarbat.log
+2022/04/11 20:50:09 INFO: Tests: [Play a tone]
+2022/04/11 20:50:09 INFO: .........................................
+2022/04/11 20:50:27 INFO: ****************************************
+2022/04/11 20:50:27 INFO: START OF TEST SUITE
+2022/04/11 20:50:27 INFO: Config: config/config.ini
+2022/04/11 20:50:27 INFO: Number of Tries: 1
+2022/04/11 20:50:27 INFO: Log: log/zarbat.log
+2022/04/11 20:50:27 INFO: Tests: [Play a tone]
+2022/04/11 20:50:27 INFO: .........................................
+2022/04/11 20:50:37 INFO: * Feature/Scenario: PLAY A TONE - Status: OK
+2022/04/11 20:50:37 INFO: Passed  1
+2022/04/11 20:50:37 INFO: Failed  0
+2022/04/11 20:50:37 INFO: ...END OF TEST SUITE
+2022/04/11 20:50:41 INFO: * Feature/Scenario: PLAY A TONE - Status: OK
+2022/04/11 20:50:41 INFO: Passed  1
+2022/04/11 20:50:41 INFO: Failed  0
+2022/04/11 20:50:41 INFO: ...END OF TEST SUITE
+2022/04/11 20:50:47 INFO: ****************************************
+2022/04/11 20:50:47 INFO: START OF TEST SUITE
+2022/04/11 20:50:47 INFO: Config: config/config.ini
+2022/04/11 20:50:47 INFO: Number of Tries: 1
+2022/04/11 20:50:47 INFO: Log: log/zarbat.log
+2022/04/11 20:50:47 INFO: Tests: [Play a tone]
+2022/04/11 20:50:47 INFO: .........................................
+2022/04/11 20:50:54 INFO: * Feature/Scenario: PLAY A TONE - Status: OK
+2022/04/11 20:50:54 INFO: Passed  1
+2022/04/11 20:50:54 INFO: Failed  0
+2022/04/11 20:50:54 INFO: ...END OF TEST SUITE
+2022/04/11 20:56:15 INFO: ****************************************
+2022/04/11 20:56:15 INFO: START OF TEST SUITE
+2022/04/11 20:56:15 INFO: Config: config/config.ini
+2022/04/11 20:56:15 INFO: Number of Tries: 1
+2022/04/11 20:56:15 INFO: Log: log/zarbat.log
+2022/04/11 20:56:15 INFO: Tests: [Play a tone]
+2022/04/11 20:56:15 INFO: .........................................
+2022/04/11 20:56:45 INFO: * Feature/Scenario: PLAY A TONE - Status: OK
+2022/04/11 20:56:45 INFO: Passed  1
+2022/04/11 20:56:45 INFO: Failed  0
+2022/04/11 20:56:45 INFO: ...END OF TEST SUITE
+2022/04/11 21:23:12 INFO: ****************************************
+2022/04/11 21:23:12 INFO: START OF TEST SUITE
+2022/04/11 21:23:12 INFO: Config: config/config.ini
+2022/04/11 21:23:12 INFO: Number of Tries: 1
+2022/04/11 21:23:12 INFO: Log: log/zarbat.log
+2022/04/11 21:23:12 INFO: Tests: [Play a tone]
+2022/04/11 21:23:12 INFO: .........................................
+2022/04/11 21:23:44 INFO: * Feature/Scenario: PLAY A TONE - Status: OK
+2022/04/11 21:23:44 INFO: Passed  1
+2022/04/11 21:23:44 INFO: Failed  0
+2022/04/11 21:23:44 INFO: ...END OF TEST SUITE
+2022/04/11 21:24:58 INFO: ****************************************
+2022/04/11 21:24:58 INFO: START OF TEST SUITE
+2022/04/11 21:24:58 INFO: Config: config/config.ini
+2022/04/11 21:24:58 INFO: Number of Tries: 1
+2022/04/11 21:24:58 INFO: Log: log/zarbat.log
+2022/04/11 21:24:58 INFO: Tests: [Play a tone]
+2022/04/11 21:24:58 INFO: .........................................
+2022/04/11 21:25:27 INFO: * Feature/Scenario: PLAY A TONE - Status: OK
+2022/04/11 21:25:27 INFO: Passed  1
+2022/04/11 21:25:27 INFO: Failed  0
+2022/04/11 21:25:27 INFO: ...END OF TEST SUITE
+2022/04/11 21:27:49 INFO: ****************************************
+2022/04/11 21:27:49 INFO: START OF TEST SUITE
+2022/04/11 21:27:49 INFO: Config: config/config.ini
+2022/04/11 21:27:49 INFO: Number of Tries: 1
+2022/04/11 21:27:49 INFO: Log: log/zarbat.log
+2022/04/11 21:27:49 INFO: Tests: [Play a tone]
+2022/04/11 21:27:49 INFO: .........................................
+2022/04/11 21:28:17 INFO: * Feature/Scenario: PLAY A TONE - Status: OK
+2022/04/11 21:28:17 INFO: Passed  1
+2022/04/11 21:28:17 INFO: Failed  0
+2022/04/11 21:28:17 INFO: ...END OF TEST SUITE
+2022/04/11 21:29:05 INFO: ****************************************
+2022/04/11 21:29:05 INFO: START OF TEST SUITE
+2022/04/11 21:29:05 INFO: Config: config/config.ini
+2022/04/11 21:29:05 INFO: Number of Tries: 1
+2022/04/11 21:29:05 INFO: Log: log/zarbat.log
+2022/04/11 21:29:05 INFO: Tests: [Play a tone]
+2022/04/11 21:29:05 INFO: .........................................
+2022/04/11 21:29:33 INFO: * Feature/Scenario: PLAY A TONE - Status: OK
+2022/04/11 21:29:33 INFO: Passed  1
+2022/04/11 21:29:33 INFO: Failed  0
+2022/04/11 21:29:33 INFO: ...END OF TEST SUITE
