@@ -1527,3 +1527,47 @@
 2022/04/11 21:29:33 INFO: Passed  1
 2022/04/11 21:29:33 INFO: Failed  0
 2022/04/11 21:29:33 INFO: ...END OF TEST SUITE
+2022/04/24 15:25:13 INFO: ****************************************
+2022/04/24 15:25:13 INFO: START OF TEST SUITE
+2022/04/24 15:25:13 INFO: Config: 
+2022/04/24 15:25:13 INFO: Number of Tries: 1
+2022/04/24 15:25:13 INFO: Log: log/zarbat.log
+2022/04/24 15:25:13 INFO: Tests: [Play a tone]
+2022/04/24 15:25:13 INFO: .........................................
+2022/04/24 15:25:44 INFO: * Feature/Scenario: PLAY A TONE - Status: OK
+2022/04/24 15:25:44 INFO: Passed  1
+2022/04/24 15:25:44 INFO: Failed  0
+2022/04/24 15:25:44 INFO: ...END OF TEST SUITE
+2022/04/26 12:34:58 INFO: ****************************************
+2022/04/26 12:34:58 INFO: START OF TEST SUITE
+2022/04/26 12:34:58 INFO: Config: 
+2022/04/26 12:34:58 INFO: Number of Tries: 1
+2022/04/26 12:34:58 INFO: Log: log/zarbat.log
+2022/04/26 12:34:58 INFO: Tests: [Play a tone]
+2022/04/26 12:34:58 INFO: .........................................
+2022/04/26 12:35:30 INFO: * Feature/Scenario: PLAY A TONE - Status: OK
+2022/04/26 12:35:30 INFO: Passed  1
+2022/04/26 12:35:30 INFO: Failed  0
+2022/04/26 12:35:30 INFO: ...END OF TEST SUITE
+2022/04/26 12:36:24 INFO: ****************************************
+2022/04/26 12:36:24 INFO: START OF TEST SUITE
+2022/04/26 12:36:24 INFO: Config: 
+2022/04/26 12:36:24 INFO: Number of Tries: 1
+2022/04/26 12:36:24 INFO: Log: log/zarbat.log
+2022/04/26 12:36:24 INFO: Tests: [Play a tone]
+2022/04/26 12:36:24 INFO: .........................................
+2022/04/26 12:36:56 INFO: * Feature/Scenario: PLAY A TONE - Status: OK
+2022/04/26 12:36:56 INFO: Passed  1
+2022/04/26 12:36:56 INFO: Failed  0
+2022/04/26 12:36:56 INFO: ...END OF TEST SUITE
+2022/04/26 12:39:06 INFO: ****************************************
+2022/04/26 12:39:06 INFO: START OF TEST SUITE
+2022/04/26 12:39:06 INFO: Config: 
+2022/04/26 12:39:06 INFO: Number of Tries: 1
+2022/04/26 12:39:06 INFO: Log: log/zarbat.log
+2022/04/26 12:39:06 INFO: Tests: [Play a tone - 2022-04-26, 12:36:56 p.m.]
+2022/04/26 12:39:06 INFO: .........................................
+2022/04/26 12:39:38 INFO: * Feature/Scenario: PLAY A TONE - 2022-04-26, 12:36:56 P.M. - Status: OK
+2022/04/26 12:39:38 INFO: Passed  1
+2022/04/26 12:39:38 INFO: Failed  0
+2022/04/26 12:39:38 INFO: ...END OF TEST SUITE

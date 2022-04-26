@@ -10,6 +10,7 @@ import (
 func Start() {
 	router := mux.NewRouter()
 	router.HandleFunc("/intern/run", RunSingleTestHandler).Methods("POST", "OPTIONS")
+	router.HandleFunc("/intern/run", GenericHandler).Methods("GET")
 	addr := ":5003"
 	http.Handle("/intern/", router)
 	println("Zarbat Tester API Server")

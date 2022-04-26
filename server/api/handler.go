@@ -24,3 +24,7 @@ func RunSingleTestHandler(w http.ResponseWriter, r *http.Request) {
 	w.Header().Add("Access-Control-Allow-Origin", "*")
 	w.Header().Add("Access-Control-Request-Headers", "*")
 }
+
+func GenericHandler(w http.ResponseWriter, r *http.Request) {
+	w.Write([]byte("WORKING"))
+}

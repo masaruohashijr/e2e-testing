@@ -31,13 +31,27 @@ var logLevelPtr *string
 var regMap map[string]*test.FeatureTest
 
 func RunSingleTest(testRun TestRun) TestRun {
+	if testRun.Args.NTries == "" {
+		testRun.Args.NTries = "1"
+	}
 	tmpTriesPtr := testRun.Args.NTries
 	triesPtr = &tmpTriesPtr
-	tmpLogPtr := testRun.Args.Log
+	if testRun.Args.Log == "" {
+		testRun.Args.Log = "log/zarbat.log"
+	}
+	tmpLogPtr := testRun.Args.Log //
 	logPtr = &tmpLogPtr
 	logLevel := testRun.Args.LogLevel
 	logLevelPtr = &logLevel
-
+	/*startPtr = flag.Bool("start", false, "server api command")
+	configPtr = flag.String("config", "config/config.ini", "A configuration file")
+	config.ConfigPath = *configPtr
+	triesPtr = flag.String("n", "5", "number of tries")
+	logPtr = flag.String("l", "log/zarbat.log", "log location")
+	logLevelPtr = flag.String("level", "info", "options: info, debug")
+	testPtr = flag.String("test", "", "ctlang")
+	callbackUrlPtr = flag.String("url", "", "Public IP")
+	callbackPortPtr = flag.String("port", "", "Public Port")*/
 	_beginMark_INFO := beginLog("INFO")
 	_beginMark_DEBUG := beginLog("DEBUG")
 

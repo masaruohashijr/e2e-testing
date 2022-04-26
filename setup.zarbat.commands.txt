@@ -1,11 +1,45 @@
+sudo apt update
+sudo apt install git
+ssh-keygen -t ed25519 -C "mohashi@avaya.com"
+sudo cat /home/mohashi_avaya_com/.ssh/id_ed25519.pub
+git clone git@github.com:zang-cloud/zarbat_tester.git
+git clone git@github.com:zang-cloud/zarbat-tester-data.git
+git clone git@github.com:zang-cloud/zarbat-tester-webui.git
 sudo apt-get install wget
 wget https://go.dev/dl/go1.18.1.linux-amd64.tar.gz
 sudo tar -C /usr/local -xvf go1.18.1.linux-amd64.tar.gz
+sudo rm -rf go1.18.1.linux-amd64.tar.gz
+sudo rm -rf go
 export PATH=$PATH:/usr/local/go/bin
+ls -la ~/ | more
+sudo nano ~/.bashrc
+sudo chmod 644 .bashrc
+source ~/.profile
+source ~/.bashrc
 sudo apt install build-essential
-ssh-keygen -t ed25519 -C "mohashi@avaya.com"
-sudo apt-get -y update
+sudo apt-get remove nodejs npm
+sudo apt-get update
+sudo apt-get upgrade
 sudo apt-get install -y nodejs npm
-npm install npm@latest -g
+ldd --version
+node --version
+npm --version
 sudo npm install npm@latest -g
 sudo npm install -g @angular/cli@latest
+cd zarbat-tester-data/
+nohup go run main.go
+cd zarbat_tester/
+nohup go run main.go -start true
+cd zarbat-tester-webui/
+npm install
+npm audit fix
+rm node_modules/.package-lock.json
+nohup ng serve --host 0.0.0.0
+
+
+
+
+---------------------------
+Error 26-04-2022
+mohashi_avaya_com@zarbat-tester:/usr/lib/x86_64-linux-gnu$ sudo npm install npm@latest -g
+node: /lib/x86_64-linux-gnu/libc.so.6: version `GLIBC_2.28' not found (required by node)
